@@ -780,6 +780,206 @@ h2 span,
 .folder-tree.dark-tree pre{
   color:#e8eef7;
 }
+
+/* ===== QUALITY_POLISH_20260622 : restrained report-style finish ===== */
+:root{
+  --bg:#e7edf4;
+  --paper:#f8fafc;
+  --surface:#ffffff;
+  --surface-soft:#f6f8fb;
+  --ink:#1d2430;
+  --muted:#526071;
+  --line:#cfd8e5;
+  --line-strong:#94a4b8;
+  --accent:#285f9f;
+  --accent-soft:#edf4fb;
+  --dark:#27313f;
+  --shadow:0 14px 30px rgba(22,31,44,.065);
+  --shadow-soft:0 5px 14px rgba(22,31,44,.045);
+}
+html,body,.deck{
+  background:var(--bg);
+}
+.slide{
+  background:linear-gradient(180deg,#fbfcfe 0%,#f7f9fc 100%);
+}
+.slide-top{
+  top:24px;
+  height:30px;
+  align-items:center;
+  border-bottom:1px solid #cbd6e4;
+  color:#4c5b6f;
+}
+.slide-top .top-label,
+.slide-num{
+  color:#405166;
+}
+.core-wording{
+  top:62px;
+  font-size:17px;
+  line-height:1.46;
+  font-weight:850;
+  color:#202838;
+  border-bottom:1px solid #d5deea;
+  padding-bottom:11px;
+}
+.content{
+  top:136px;
+}
+.footer{
+  border-top:1px solid #cfd8e5;
+}
+.progress,
+.section-bars span{
+  background:#dce4ee;
+}
+h2{
+  color:var(--ink);
+  letter-spacing:-.02em;
+}
+h3{
+  color:#202838;
+}
+p,ul,ol{
+  color:var(--muted);
+}
+.plain-panel,
+.large-panel,
+.compare-panel,
+.demo-col,
+.file-card,
+.tool-cards div,
+.folder-map div,
+.deliverables-grid div,
+.report-structure div,
+.template-store div,
+.final-check div,
+.review-rubric div,
+.apply-form div,
+.md-principles div,
+.pipeline-steps div,
+.instruction-map div,
+.revision-flow div,
+.tone-map div,
+.practice-checklist div,
+.compact div,
+.split-table>div,
+.checklist-panel,
+.prompt-box,
+.orbit-card,
+.memo-example,
+.folder-tree,
+.md-layout pre{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+  border-color:var(--line);
+  border-radius:7px;
+  box-shadow:var(--shadow-soft);
+}
+.compare-panel,
+.split-table>div,
+.checklist-panel,
+.tool-cards div{
+  border-top:4px solid var(--dark);
+}
+.deliverables-grid div,
+.report-structure div,
+.review-rubric div,
+.final-check div,
+.template-store div,
+.tone-map div,
+.revision-flow div,
+.apply-form div,
+.pipeline-steps div,
+.folder-map div{
+  padding:24px 26px;
+}
+.deliverables-grid span,
+.report-structure span,
+.template-store span,
+.final-check span,
+.review-rubric span,
+.instruction-map span,
+.agenda-row span{
+  border-color:#27313f;
+  border-radius:3px;
+  color:#27313f;
+  background:#fff;
+}
+.action-line,
+.plain-note{
+  background:#eef5fc;
+  border-left:4px solid var(--accent);
+  border-radius:0 6px 6px 0;
+  box-shadow:inset 0 0 0 1px rgba(40,95,159,.08);
+}
+.prompt-box{
+  padding:22px 24px;
+}
+.prompt-box pre,
+.md-layout pre{
+  background:#f8fafc;
+  border:1px solid #dce4ee;
+  border-radius:6px;
+  padding:18px;
+}
+.prompt-box pre{
+  padding-right:112px;
+}
+.copy-btn{
+  border-color:#9aacbf;
+  border-radius:4px;
+  background:#ffffff;
+  box-shadow:0 2px 6px rgba(22,31,44,.04);
+}
+.copy-btn:hover{
+  background:#f4f7fb;
+}
+.folder-tree.dark-tree{
+  background:linear-gradient(180deg,#202838 0%,#253044 100%);
+  border-color:#202838;
+  box-shadow:0 16px 34px rgba(22,31,44,.14);
+}
+.folder-tree.dark-tree .tree-title{
+  color:#b5c1d2;
+}
+.folder-tree.dark-tree pre{
+  color:#eef4fb;
+}
+.cover{
+  background:
+    linear-gradient(135deg,#d7e6f6 0%,#eef5fc 50%,#f8fafc 100%);
+}
+.cover-shell{
+  border-top-color:rgba(40,95,159,.30);
+  border-bottom-color:rgba(40,95,159,.30);
+}
+.cover-line,
+.section-bars span.active,
+.progress span{
+  background:var(--accent);
+}
+.cover-meta span:first-child,
+.cover h1 span,
+h2 span,
+.accent,
+.eyebrow,
+.label,
+.agenda-row em,
+.resource-url{
+  color:var(--accent);
+}
+.side-nav{
+  width:36px;
+  height:60px;
+  border-color:#aebbcc;
+  border-radius:5px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 10px 24px rgba(22,31,44,.10);
+}
+.side-nav:hover{
+  background:#fff;
+  border-color:#8fa0b5;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 </head>
