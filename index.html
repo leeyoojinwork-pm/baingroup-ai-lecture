@@ -980,6 +980,285 @@ h2 span,
   background:#fff;
   border-color:#8fa0b5;
 }
+
+/* ===== USER_REFINEMENT_20260622 : cleaner footer, stronger key lines, richer cards ===== */
+.section-bars{
+  display:none;
+}
+.footer{
+  bottom:18px;
+  height:34px;
+  border-top:0;
+  grid-template-columns:minmax(220px,42%) 1fr 110px;
+  gap:18px;
+  opacity:.96;
+}
+.progress{
+  height:5px;
+  border-radius:999px;
+  background:#d9e2ec;
+}
+.progress span{
+  border-radius:999px;
+}
+.chapter{
+  text-align:center;
+  font-size:13px;
+  color:#5a6676;
+}
+.count{
+  display:block;
+  font-size:13px;
+  color:#5a6676;
+}
+.core-wording{
+  top:58px;
+  font-size:30px;
+  line-height:1.22;
+  font-weight:950;
+  color:#1d2430;
+  letter-spacing:-.018em;
+  padding-bottom:18px;
+  border-bottom:2px solid #d2dce8;
+}
+.content{
+  top:158px;
+  bottom:88px;
+}
+h2{
+  font-size:48px;
+  line-height:1.13;
+}
+.plain-panel,
+.large-panel,
+.compare-panel,
+.demo-col,
+.file-card,
+.tool-cards div,
+.folder-map div,
+.deliverables-grid div,
+.report-structure div,
+.template-store div,
+.final-check div,
+.review-rubric div,
+.apply-form div,
+.md-principles div,
+.pipeline-steps div,
+.instruction-map div,
+.revision-flow div,
+.tone-map div,
+.practice-checklist div,
+.compact div,
+.split-table>div{
+  border-radius:12px;
+  border-color:#cfdae7;
+  box-shadow:0 14px 34px rgba(22,31,44,.07);
+}
+.deliverables-grid div,
+.report-structure div,
+.review-rubric div,
+.final-check div,
+.template-store div,
+.tone-map div,
+.revision-flow div,
+.apply-form div,
+.pipeline-steps div,
+.folder-map div{
+  position:relative;
+  min-height:210px;
+  padding:34px 34px 30px;
+  overflow:hidden;
+}
+.deliverables-grid div:before,
+.report-structure div:before,
+.review-rubric div:before,
+.final-check div:before,
+.template-store div:before,
+.tone-map div:before,
+.revision-flow div:before,
+.apply-form div:before,
+.pipeline-steps div:before,
+.folder-map div:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:6px;
+  background:linear-gradient(90deg,var(--accent),#7fa6cf);
+}
+.deliverables-grid span,
+.report-structure span,
+.template-store span,
+.final-check span,
+.review-rubric span,
+.instruction-map span,
+.agenda-row span{
+  width:auto;
+  min-width:58px;
+  height:28px;
+  padding:0 12px;
+  border:0;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  font-size:13px;
+  letter-spacing:.04em;
+  margin-bottom:20px;
+}
+.deliverables-grid span::before,
+.report-structure span::before,
+.template-store span::before,
+.final-check span::before,
+.review-rubric span::before,
+.instruction-map span::before{
+  content:"STEP ";
+}
+.compare-two{
+  gap:32px;
+}
+.compare-panel{
+  min-height:330px;
+  padding:34px 38px;
+  border-top:0;
+  position:relative;
+  overflow:hidden;
+}
+.compare-panel:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:8px;
+  background:var(--accent);
+}
+.compare-panel:nth-child(2):before{
+  background:#27313f;
+}
+.compare-panel h3{
+  font-size:30px;
+  margin-bottom:20px;
+}
+.compare-panel li{
+  font-size:18px;
+  margin-bottom:7px;
+}
+.large-panel h2,
+.plain-panel h3,
+.compact b,
+.resource-sub-link{
+  color:#1f2633;
+}
+.plain-panel p,
+.large-panel p,
+.action-line{
+  color:#475467;
+  font-weight:800;
+}
+.resource-url{
+  color:var(--accent);
+  font-size:28px;
+  border-bottom-color:rgba(40,95,159,.38);
+}
+.padlet-list span,
+.padlet-list a{
+  color:#334155;
+  border-color:#cbd7e6;
+  background:#fff;
+}
+.compact div{
+  position:relative;
+  overflow:hidden;
+  padding:24px 24px;
+}
+.compact div:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--accent),#8eb1d6);
+}
+.compact b{
+  font-size:20px;
+}
+.compact p{
+  font-size:16px;
+  color:#526071;
+}
+.pipeline-steps{
+  gap:18px;
+}
+.pipeline-steps div{
+  background:linear-gradient(180deg,#ffffff 0%,#f5f8fc 100%);
+}
+.pipeline-steps b,
+.revision-flow b,
+.folder-map b{
+  font-size:28px;
+}
+.pipeline-steps p,
+.revision-flow p,
+.folder-map p{
+  font-size:18px;
+  line-height:1.55;
+}
+.split-table>div{
+  min-height:330px;
+  padding:40px 44px;
+  border-top:0;
+  position:relative;
+}
+.split-table>div:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:6px;
+  background:linear-gradient(90deg,var(--accent),#7fa6cf);
+}
+.split-table h3{
+  font-size:30px;
+}
+.split-table li{
+  font-size:18px;
+}
+.file-card span{
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  padding:7px 14px;
+}
+@media (max-height:780px){
+  .core-wording{
+    top:52px;
+    font-size:26px;
+    padding-bottom:12px;
+  }
+  .content{
+    top:138px;
+    bottom:82px;
+  }
+  h2{
+    font-size:42px;
+  }
+  .deliverables-grid div,
+  .report-structure div,
+  .review-rubric div,
+  .final-check div,
+  .template-store div,
+  .tone-map div,
+  .revision-flow div,
+  .apply-form div,
+  .pipeline-steps div,
+  .folder-map div{
+    min-height:176px;
+    padding:28px 28px 24px;
+  }
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 </head>
@@ -1063,11 +1342,11 @@ h2 span,
     <div class="stack-panels">
       <div class="plain-panel">
         <h3>소통 창구: Padlet</h3>
-        <p>질문 올리기, 실습 결과 공유하기, 좋은 프롬프트 서로 가져가기</p>
+        <p>질문과 실습 결과를 남기고, 바로 쓸 만한 요청문을 함께 모읍니다.</p>
       </div>
       <div class="plain-panel">
-        <h3>화면 전환</h3>
-        <p>Windows: Ctrl + Alt + T<br>Mac: Command + Option + T</p>
+        <h3>화면 준비</h3>
+        <p>교안 화면과 실습 도구를 나란히 열어두고 진행합니다.</p>
       </div>
     </div>
   </div>
@@ -1111,7 +1390,7 @@ h2 span,
   <div class="slide-top"><span class="top-label">Tool Map</span><span class="slide-num">06 / 36</span></div>
   <div class="core-wording">ChatGPT와 Gemini의 차이는 무엇인가요?</div>
   <div class="content">
-  <h2>ChatGPT와 Gemini는 경쟁보다 <span>역할 분담</span>입니다.</h2>
+  <h2>ChatGPT는 <span>문서 완성</span>, Gemini는 <span>자료 정리</span>에 강합니다.</h2>
   <div class="compare-two">
     <div class="compare-panel">
       <p class="label">ChatGPT</p>
@@ -1141,7 +1420,7 @@ h2 span,
 </section>
 <section class="slide" data-title="폴더는 어떻게 나누어야 하나요?" data-section="Tool Map">
   <div class="slide-top"><span class="top-label">Tool Map</span><span class="slide-num">07 / 36</span></div>
-  <div class="core-wording">데이터가 정리되어야 AI가 제대로 일합니다.</div>
+  <div class="core-wording">자료, 기준, 실행문을 분리하면 AI 결과가 훨씬 안정됩니다.</div>
   <div class="content">
   <div class="folder-pipeline-layout">
     <div class="folder-tree dark-tree">
@@ -1164,10 +1443,10 @@ h2 span,
     └── Padlet_제출문.md</pre>
     </div>
     <div class="pipeline-steps">
-      <div><b>자료</b><p>이번 주 실제 기록을 넣습니다.</p></div>
-      <div><b>기준</b><p>반복해서 적용할 판단 기준을 분리합니다.</p></div>
-      <div><b>실행</b><p>Gemini와 ChatGPT 요청문을 파일로 둡니다.</p></div>
-      <div><b>결과</b><p>완성본과 Padlet 제출문을 남깁니다.</p></div>
+      <div><b>업무 기록</b><p>이번 주 상담, 회의, 이슈를 한곳에 모읍니다.</p></div>
+      <div><b>판단 기준</b><p>보고서 목차, 문서 톤, 검토 기준을 따로 둡니다.</p></div>
+      <div><b>AI 요청문</b><p>Gemini용 정리 요청과 ChatGPT용 작성 요청을 분리합니다.</p></div>
+      <div><b>완성 산출물</b><p>보고서 초안, 템플릿, 공유용 문장을 남깁니다.</p></div>
     </div>
   </div>
 </div>
@@ -1198,7 +1477,7 @@ h2 span,
   <div class="split-table">
     <div>
       <p class="label">이번재료</p>
-      <h3>이번 주만 쓰는 내용</h3>
+      <h3>이번 업무에만 필요한 재료</h3>
       <ul>
         <li>이번 주 상담/코칭 일지</li>
         <li>이번 주 회의 메모</li>
@@ -1208,7 +1487,7 @@ h2 span,
     </div>
     <div>
       <p class="label">반복기준</p>
-      <h3>계속 적용할 기준</h3>
+      <h3>매번 다시 쓸 업무 기준</h3>
       <ul>
         <li>보고서 목차와 분량</li>
         <li>바인그룹 문서 톤</li>
@@ -1390,10 +1669,10 @@ h2 span,
   <div class="core-wording">첫 초안보다 중요한 것은 후속 요청으로 품질을 끌어올리는 일입니다.</div>
   <div class="content">
   <div class="revision-flow">
-    <div><b>초안 생성</b><p>자료를 보고서 구조로 바꿈</p></div>
-    <div><b>검토 기준 부여</b><p>누락, 과장, 모호한 표현 점검</p></div>
-    <div><b>대상별 조정</b><p>팀장, 실무자, 학생/학부모 버전</p></div>
-    <div><b>템플릿 저장</b><p>다음 업무에서 다시 쓸 .md 파일</p></div>
+    <div><b>초안 만들기</b><p>흩어진 기록을 보고서 흐름으로 정리</p></div>
+    <div><b>검토 기준 넣기</b><p>빠진 내용, 과장, 애매한 표현 확인</p></div>
+    <div><b>받는 사람 맞추기</b><p>팀장, 실무자, 학생/학부모용으로 조정</p></div>
+    <div><b>루틴으로 저장</b><p>다음에도 반복해서 쓸 템플릿으로 보관</p></div>
   </div>
 </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class=""></span></div>
@@ -1605,7 +1884,7 @@ h2 span,
 </section>
 <section class="slide" data-title="Step 4. 퇴고 기준을 먼저 정합니다." data-section="Practice">
   <div class="slide-top"><span class="top-label">Practice</span><span class="slide-num">27 / 36</span></div>
-  <div class="core-wording">좋은 문서는 작성보다 검토 기준이 먼저입니다.</div>
+  <div class="core-wording">좋은 문서는 쓰기 전에 무엇을 확인할지 정해둡니다.</div>
   <div class="content">
   <div class="review-rubric">
     <div><span>01</span><h3>논리</h3><p>성과, 이슈, 계획의 흐름이 자연스러운가?</p></div>
