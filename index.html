@@ -1259,6 +1259,53 @@ h2{
     padding:28px 28px 24px;
   }
 }
+
+/* Slide 24 has a long title plus a tall folder tree; keep it top-aligned on short screens. */
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .content{
+  top:154px;
+  bottom:88px;
+  justify-content:flex-start;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] h2{
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:18px;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .md-save-layout{
+  align-items:start;
+  gap:24px;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .folder-tree{
+  height:360px;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .folder-tree pre{
+  font-size:13px;
+  line-height:1.36;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .md-principles{
+  gap:12px;
+}
+.slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .md-principles div{
+  min-height:120px;
+  padding:20px 22px;
+}
+@media (max-height:780px){
+  .slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .content{
+    top:132px;
+    bottom:78px;
+  }
+  .slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] h2{
+    font-size:32px;
+    margin-bottom:14px;
+  }
+  .slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .folder-tree{
+    height:300px;
+  }
+  .slide[data-title="ChatGPT 결과는 어디에 남겨야 할까요?"] .md-principles div{
+    min-height:100px;
+    padding:16px 18px;
+  }
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 </head>
