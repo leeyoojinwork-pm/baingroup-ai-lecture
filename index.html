@@ -4727,6 +4727,33 @@ body *{
   border:none!important;background:none!important;box-shadow:none!important;padding:0!important;margin:0 0 12px!important;
   color:var(--accent)!important;font-size:15px!important;font-weight:900!important;letter-spacing:.1em!important;line-height:1!important;}
 .deliverables-grid>div>span::before,.deliverables-grid>div>span::after,.report-structure>div>span::before,.report-structure>div>span::after,.template-store>div>span::before,.template-store>div>span::after,.final-check>div>span::before,.final-check>div>span::after,.review-rubric>div>span::before,.review-rubric>div>span::after,.instruction-map>div>span::before,.instruction-map>div>span::after{content:none!important;display:none!important;border:none!important;background:none!important;}
+
+/* ===== CLASSDAY_ANIM_INSERT_20260623 ===== */
+.anim-split{display:grid!important;grid-template-columns:minmax(0,1fr) 390px!important;gap:28px!important;align-items:center!important;width:100%!important;max-width:1220px!important;margin:0 auto!important}
+.anim-copy-panel{display:grid!important;gap:18px!important;min-width:0!important}
+.anim-copy-panel h2{font-size:44px!important;line-height:1.12!important;margin:0!important}
+.anim-copy-panel p{font-size:18px!important;line-height:1.55!important;color:#4c5868!important;max-width:720px!important}
+.anim-points{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin-top:4px!important}
+.anim-points div{border:1px solid var(--line)!important;background:#fff!important;border-radius:6px!important;padding:16px 18px!important;box-shadow:var(--shadow-soft)!important}
+.anim-points b{display:block!important;font-size:17px!important;color:var(--ink)!important;margin-bottom:5px!important}
+.anim-points span{display:block!important;font-size:14px!important;color:#5b6675!important;font-weight:750!important;line-height:1.45!important}
+.anim-frame-wrap{height:500px!important;border:1px solid var(--line)!important;border-radius:10px!important;background:#fff!important;box-shadow:var(--shadow-soft)!important;overflow:hidden!important}
+.anim-frame{width:100%!important;height:100%!important;border:0!important;display:block!important;background:#f5f7fb!important}
+.slide[data-title="프롬프트는 질문이 아니라 업무 지시서입니다."] .anim-split{grid-template-columns:minmax(0,1fr) 400px!important}
+.survey-final-board{display:grid!important;grid-template-columns:1fr 420px!important;gap:34px!important;align-items:center!important;width:100%!important;max-width:1180px!important;margin:0 auto!important}
+.survey-final-copy h2{font-size:52px!important;line-height:1.12!important;margin:0 0 18px!important}
+.survey-final-copy p{font-size:20px!important;color:#4d5868!important;line-height:1.55!important;max-width:680px!important}
+.survey-final-list{display:grid!important;gap:12px!important;margin-top:24px!important}
+.survey-final-list div{display:grid!important;grid-template-columns:52px 1fr!important;gap:14px!important;align-items:center!important;border-top:1px solid var(--line)!important;padding:14px 0!important}
+.survey-final-list b{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;border-radius:999px!important;background:var(--accent)!important;color:#fff!important;font-size:15px!important}
+.survey-final-list span{font-size:18px!important;font-weight:900!important;color:var(--ink)!important}
+.survey-qr-card{background:#fff!important;border:1px solid var(--line)!important;border-radius:10px!important;box-shadow:var(--shadow-soft)!important;padding:28px!important;text-align:center!important}
+.survey-qr-placeholder{height:300px!important;border:2px dashed #9fb0c5!important;border-radius:8px!important;display:grid!important;place-items:center!important;background:#f7fafe!important;color:#536071!important;font-size:24px!important;font-weight:950!important;line-height:1.35!important}
+.survey-qr-card p{margin-top:18px!important;font-size:17px!important;font-weight:850!important;color:#3d4858!important}
+@media(max-height:780px){.anim-split{grid-template-columns:minmax(0,1fr) 330px!important;gap:20px!important}.anim-frame-wrap{height:420px!important}.anim-copy-panel h2{font-size:36px!important}.anim-copy-panel p{font-size:16px!important}.anim-points div{padding:12px 14px!important}.anim-points b{font-size:15px!important}.anim-points span{font-size:12.5px!important}.survey-final-board{grid-template-columns:1fr 360px!important}.survey-final-copy h2{font-size:42px!important}.survey-qr-placeholder{height:250px!important}}
+
+.survey-qr-image{width:300px!important;height:300px!important;object-fit:contain!important;display:block!important;margin:0 auto!important;border:1px solid var(--line)!important;border-radius:8px!important;background:#fff!important;padding:14px!important}.survey-qr-card a{color:var(--accent)!important;font-size:15px!important;font-weight:900!important;word-break:break-all!important}
+@media(max-height:780px){.survey-qr-image{width:250px!important;height:250px!important}}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
@@ -4908,32 +4935,14 @@ body *{
   <div class="slide-top"><span class="top-label">도구 구분</span><span class="slide-num">08 / 35</span></div>
   <div class="core-wording">AI에게 맡기기 전에, 자료가 어디 있는지부터 정리합니다.</div>
   <div class="content">
-  <div class="folder-pipeline-layout">
-    <div class="folder-tree dark-tree">
-      <p class="tree-title">폴더 구조</p>
-      <pre>bine-document-ai/
-├── 00_역할과_검수선/
-│   ├── 바인그룹_문서톤.md
-│   └── 공유전_체크리스트.md
-├── 01_실습자료/
-│   ├── 교육제안_요청서.md
-│   └── 기존교안.md
-├── 02_작성기준/
-│   ├── 제안서_구성기준.md
-│   └── 난이도별_재구성기준.md
-├── 03_작업순서/
-│   ├── Gemini_자료정리.md
-│   └── ChatGPT_제안서완성.md
-└── 04_결과물/
-    ├── 교육제안서_초안.md
-    └── Padlet_제출문.md</pre>
+  <div class="anim-split">
+    <div class="anim-copy-panel">
+      <p class="label">자료 정리 루틴</p>
+      <h2>자료가 정리되어야<br><span>AI가 제대로 일합니다</span></h2>
+      <p>AI에게 맡기기 전에 요청서, 교안, 운영 메일, 작성 기준을 한 번에 볼 수 있는 순서로 정리합니다.</p>
+      <div class="anim-points"><div><b>01 자료 모으기</b><span>요청서·교안·메일을 한곳에 모읍니다.</span></div><div><b>02 기준 정하기</b><span>문서 톤·목차·검토 기준을 따로 둡니다.</span></div><div><b>03 AI에 요청하기</b><span>Gemini와 GPT 요청문을 분리합니다.</span></div><div><b>04 결과 남기기</b><span>초안·템플릿·제출문을 저장합니다.</span></div></div>
     </div>
-    <div class="pipeline-steps">
-      <div><b>01 자료 모으기</b><p>요청서, 기존 교안, 운영 메일을 한곳에 둡니다.</p></div>
-      <div><b>02 기준 정하기</b><p>문서 톤, 목차, 검토 기준을 따로 둡니다.</p></div>
-      <div><b>03 AI에 요청하기</b><p>Gemini와 GPT 요청문을 따로 씁니다.</p></div>
-      <div><b>04 결과 남기기</b><p>초안, 템플릿, 제출문을 저장합니다.</p></div>
-    </div>
+    <div class="anim-frame-wrap"><iframe class="anim-frame" src="anim_08_pipeline.html" title="자료 정리 루틴 애니메이션"></iframe></div>
   </div>
 </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
@@ -4943,14 +4952,14 @@ body *{
   <div class="slide-top"><span class="top-label">도구 구분</span><span class="slide-num">09 / 35</span></div>
   <div class="core-wording">폴더는 업무 자료를 AI가 읽을 수 있는 순서로 바꾸는 장치입니다.</div>
   <div class="content">
-  <div class="howto-layout">
-    <div class="step-num">실습 단계 01 / 자료 폴더 준비</div>
-      <h2>Google Drive에 <br><span>[AI_실습_자료]</span> 폴더 만들기</h2>
-    <div class="three-col compact">
-      <div><b>00 문서 기준</b><p>바인그룹 문서 톤, 주의사항, 공유 전 체크리스트</p></div>
-      <div><b>01 실습 자료</b><p>교육 제안 요청서, 기존 교안, 운영 안내 메일</p></div>
-      <div><b>02 작성 기준</b><p>제안서 목차, 교안 난이도, 대상별 표현 기준</p></div>
+  <div class="anim-split">
+    <div class="anim-copy-panel">
+      <p class="label">실습 단계 01 · 폴더 준비</p>
+      <h2>Google Drive에<br><span>[AI_실습_자료]</span> 폴더 만들기</h2>
+      <p>새 폴더를 만들고, 자료·기준·작업순서·결과물을 나눠 담습니다. 이 구조가 오늘 실습의 출발점입니다.</p>
+      <div class="anim-points"><div><b>00 역할과 검수선</b><span>문서 톤과 공유 전 체크리스트</span></div><div><b>01 실습자료</b><span>요청서, 기존 교안, 운영 안내</span></div><div><b>02 작성기준</b><span>목차, 난이도, 대상별 표현 기준</span></div><div><b>04 결과물</b><span>초안, 제출문, 재사용 템플릿</span></div></div>
     </div>
+    <div class="anim-frame-wrap"><iframe class="anim-frame" src="anim_09_drive.html" title="Drive 폴더 만들기 애니메이션"></iframe></div>
   </div>
 </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
@@ -5002,35 +5011,14 @@ body *{
   <div class="slide-top"><span class="top-label">도구 구분</span><span class="slide-num">11 / 35</span></div>
   <div class="core-wording">말로만 요청하지 않고, 다시 쓸 수 있는 실행 파일로 남깁니다.</div>
   <div class="content">
-  <div class="workflow-hub">
-    <div class="workflow-title">
+  <div class="anim-split">
+    <div class="anim-copy-panel">
       <p class="label">핵심 워크플로우</p>
-      <h2>나만의 <span>AI 업무 워크플로우</span> 만들기</h2>
-      <p>자료 정리, 문서 완성, 제출까지 한 번에 다시 쓸 흐름으로 남깁니다.</p>
+      <h2>자료 정리에서<br><span>Padlet 제출</span>까지 한 번에</h2>
+      <p>말로만 요청하지 않고, Gemini 자료정리 파일과 ChatGPT 문서완성 파일, Padlet 제출문을 실행 파일처럼 남깁니다.</p>
+      <div class="anim-points"><div><b>Gemini</b><span>Drive와 Gmail 자료를 팩트시트로 정리</span></div><div><b>ChatGPT</b><span>정리된 내용을 문서 초안으로 완성</span></div><div><b>Padlet</b><span>결과물과 배운 점을 공유</span></div><div><b>.md 템플릿</b><span>다음 업무에 다시 쓰도록 저장</span></div></div>
     </div>
-    <div class="workflow-chain">
-      <div class="workflow-card">
-        <span class="workflow-step">01</span>
-        <h3>Gemini_자료정리.md</h3>
-        <p>Drive와 Gmail 자료를 읽고 보고서용 팩트시트로 정리합니다.</p>
-        <ul><li>자료 호출</li><li>중복 제거</li><li>성과, 이슈, 액션 분류</li></ul>
-      </div>
-      <div class="flow-chevron">&gt;</div>
-      <div class="workflow-card main">
-        <span class="workflow-step">02</span>
-        <h3>ChatGPT_보고서완성.md</h3>
-        <p>팩트시트를 문서 초안, 퇴고, 대상별 톤 변환으로 완성합니다.</p>
-        <ul><li>보고서 구조화</li><li>문장 퇴고</li><li>대상별 표현 변환</li></ul>
-      </div>
-      <div class="flow-chevron">&gt;</div>
-      <div class="workflow-card">
-        <span class="workflow-step">03</span>
-        <h3>Padlet_제출문.md</h3>
-        <p>결과물과 배운 점을 한 줄로 정리해 공유 가능한 산출물로 남깁니다.</p>
-        <ul><li>결과 요약</li><li>프롬프트 공유</li><li>다음 적용 선언</li></ul>
-      </div>
-    </div>
-    <div class="workflow-output"><b>완성 기준</b><span>자료 정리 &gt; 문서 완성 &gt; Padlet 제출까지 한 번에 반복할 수 있으면 성공입니다.</span></div>
+    <div class="anim-frame-wrap"><iframe class="anim-frame" src="anim_11_workflow.html" title="업무 워크플로우 애니메이션"></iframe></div>
   </div>
 </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
@@ -5072,21 +5060,14 @@ body *{
   <div class="slide-top"><span class="top-label">프롬프트 설계</span><span class="slide-num">14 / 35</span></div>
   <div class="core-wording">좋은 프롬프트는 AI에게 일의 기준과 완료 조건을 줍니다.</div>
   <div class="content">
-  <div class="prompt-ladder">
-    <div class="prompt-ladder-head">
-      <p class="label">프롬프트 작성 순서</p>
-      <h2>프롬프트는 <span>업무가 처리되는 순서</span>로 설계합니다.</h2>
+  <div class="anim-split">
+    <div class="anim-copy-panel">
+      <p class="label">프롬프트 설계 · 작성 순서</p>
+      <h2>프롬프트는<br><span>업무 처리 순서</span>로 설계합니다</h2>
+      <p>목표, 맥락, 입력자료, 작업 방식, 출력 형식, 검토 기준, 개선 요청을 차례로 채우면 바로 쓸 수 있는 업무 지시서가 됩니다.</p>
+      <div class="anim-points"><div><b>앞부분</b><span>목표·맥락·입력자료를 분명히 적기</span></div><div><b>중간</b><span>작업 방식과 출력 형식을 지정하기</span></div><div><b>마지막</b><span>검토 기준과 개선 요청까지 남기기</span></div><div><b>재사용</b><span>빈칸만 바꾸는 템플릿으로 저장</span></div></div>
     </div>
-    <div class="instruction-map arrow-map">
-      <div><span>Step 1</span><b>목표</b><p>무엇을 만들지</p></div>
-      <div><span>Step 2</span><b>맥락</b><p>누가, 왜, 어떤 상황에서</p></div>
-      <div><span>Step 3</span><b>입력자료</b><p>참고해야 할 자료</p></div>
-      <div><span>Step 4</span><b>작업 방식</b><p>어떤 관점으로 정리할지</p></div>
-      <div><span>Step 5</span><b>출력 형식</b><p>표, 보고서, 메일, 체크리스트</p></div>
-      <div><span>Step 6</span><b>검토 기준</b><p>바로 쓸 수 있는지 판단 기준</p></div>
-      <div><span>Step 7</span><b>개선 요청</b><p>초안을 보고 다시 다듬기</p></div>
-    </div>
-    <div class="action-strip"><span>실습 포인트</span><p>빈칸을 채우는 순간 “복붙용 질문”이 아니라 내 업무 지시서가 됩니다.</p></div>
+    <div class="anim-frame-wrap"><iframe class="anim-frame" src="anim_14_prompt.html" title="프롬프트 작성 순서 애니메이션"></iframe></div>
   </div>
 </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class="active"></span><span class=""></span><span class=""></span><span class=""></span></div>
@@ -5710,6 +5691,24 @@ body *{
   </div>
   <div class="section-bars"><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span></div>
   <div class="footer"><div class="progress"><span style="width:100%"></span></div><div class="loc-code">034 · 정리 · 제출 안내</div><div class="count">34 / 35</div></div>
+</section>
+
+<section class="slide" data-title="만족도 조사 안내" data-section="Wrap-up">
+  <div class="slide-top"><span class="top-label">정리</span><span class="slide-num">35 / 35</span></div>
+  <div class="core-wording">마지막으로 만족도 조사까지 응답하면 오늘 수업이 종료됩니다.</div>
+  <div class="content">
+    <div class="survey-final-board">
+      <div class="survey-final-copy">
+        <p class="label">마지막 안내</p>
+        <h2>만족도 조사 응답 후<br><span>오늘 수업을 마무리합니다</span></h2>
+        <p>Padlet 제출을 마친 뒤, 화면의 QR을 휴대폰으로 스캔하거나, 아래 링크로 만족도 조사에 응답해주세요. 응답 내용은 다음 교육 개선에 반영됩니다.</p>
+        <div class="survey-final-list"><div><b>1</b><span>Padlet 제출 완료 확인</span></div><div><b>2</b><span>만족도 조사 QR 또는 링크 접속</span></div><div><b>3</b><span>다음 업무에 쓸 템플릿명 저장</span></div></div>
+      </div>
+      <div class="survey-qr-card"><img class="survey-qr-image" src="images/satisfaction_qr.png" alt="만족도 조사 QR"><p><a href="https://forms.gle/GDHNMbDsjq5aRZKFA" target="_blank" rel="noopener">https://forms.gle/GDHNMbDsjq5aRZKFA</a></p></div>
+    </div>
+  </div>
+  <div class="section-bars"><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  <div class="footer"><div class="progress"><span style="width:100%"></span></div><div class="loc-code">035 · 정리 · 만족도 조사</div><div class="count">35 / 35</div></div>
 </section>
   </main>
   <script>
