@@ -4849,6 +4849,272 @@ body *{
   max-height:378px!important;
   overflow:hidden!important;
 }
+
+/* ===== CLASSDAY_SCREENSHOT_FIX_20260623 ===== */
+.slide[data-title="교안 링크 안내"] .content,
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .content{
+  left:clamp(72px,7vw,128px)!important;
+  right:clamp(72px,7vw,128px)!important;
+}
+.slide[data-title="교안 링크 안내"] .lecture-link-board{
+  max-width:1180px!important;
+  width:100%!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.22fr) minmax(280px,.78fr)!important;
+  gap:24px!important;
+  align-items:stretch!important;
+}
+.slide[data-title="교안 링크 안내"] .lecture-link-main,
+.slide[data-title="교안 링크 안내"] .lecture-link-side{
+  min-width:0!important;
+  padding:28px 30px!important;
+}
+.slide[data-title="교안 링크 안내"] .lecture-link-main h2{
+  font-size:42px!important;
+  line-height:1.15!important;
+  margin-bottom:18px!important;
+}
+.slide[data-title="교안 링크 안내"] .resource-url{
+  font-size:28px!important;
+  line-height:1.2!important;
+  word-break:break-all!important;
+  overflow-wrap:anywhere!important;
+}
+.slide[data-title="교안 링크 안내"] .lecture-actions,
+.slide[data-title="교안 링크 안내"] .wide-action{
+  max-width:1180px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-board{
+  max-width:1180px!important;
+  width:100%!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 260px minmax(0,1fr)!important;
+  gap:20px!important;
+  align-items:stretch!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-card{
+  min-width:0!important;
+  padding:28px 30px!important;
+  border:1px solid var(--line)!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-soft)!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-card h2{
+  width:auto!important;
+  font-size:38px!important;
+  line-height:1.18!important;
+  margin:14px 0 18px!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-card ul{
+  font-size:16px!important;
+  line-height:1.65!important;
+  margin-left:18px!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-middle{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  text-align:center!important;
+  border:1px solid var(--line)!important;
+  border-radius:8px!important;
+  background:#f7fbff!important;
+  padding:22px!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-middle b{
+  font-size:22px!important;
+  line-height:1.35!important;
+}
+.slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-middle span{
+  font-size:14px!important;
+  line-height:1.45!important;
+}
+
+.prompt-mini,.md-code,.review-prompt,.tone-prompt{
+  display:flex!important;
+  flex-direction:column!important;
+  position:relative!important;
+}
+.prompt-mini .copy-btn,.md-code .copy-btn,.review-prompt .copy-btn,.tone-prompt .copy-btn{
+  position:static!important;
+  align-self:flex-end!important;
+  margin:0 0 10px!important;
+  min-width:72px!important;
+  height:34px!important;
+  padding:6px 12px!important;
+}
+.prompt-mini pre,.md-code pre,.review-prompt pre,.tone-prompt pre{
+  clear:both!important;
+  padding-top:12px!important;
+}
+.slide[data-title="교육 제안서/기획서 작성 자동화"] .prompt-mini pre{
+  max-height:260px!important;
+  overflow:auto!important;
+}
+
+.slide[data-title="교육 운영 문서 자동화"] .review-onepage{
+  max-width:1220px!important;
+  width:100%!important;
+  margin:0 auto!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-onepage h2{
+  font-size:32px!important;
+  line-height:1.16!important;
+  margin-bottom:12px!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-layout{
+  display:grid!important;
+  grid-template-columns:.9fr .95fr 1.15fr!important;
+  gap:16px!important;
+  align-items:stretch!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-panel,
+.slide[data-title="교육 운영 문서 자동화"] .review-prompt{
+  min-width:0!important;
+  padding:16px!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-prompt{
+  grid-column:auto!important;
+  max-height:none!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-prompt pre{
+  max-height:300px!important;
+  overflow:auto!important;
+  font-size:12.5px!important;
+  line-height:1.42!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-criteria{
+  gap:8px!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .review-criteria div{
+  padding:10px!important;
+}
+.slide[data-title="교육 운영 문서 자동화"] .ops-folder-tree{
+  font-size:12.5px!important;
+  line-height:1.42!important;
+}
+
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .content{
+  left:clamp(72px,6vw,116px)!important;
+  right:clamp(72px,6vw,116px)!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-close-board{
+  max-width:1200px!important;
+  width:100%!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-card,
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-card{
+  min-width:0!important;
+  padding:24px!important;
+  overflow:hidden!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-card h2,
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-card h2{
+  font-size:34px!important;
+  line-height:1.12!important;
+  margin-bottom:14px!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item{
+  grid-template-columns:70px minmax(0,1fr)!important;
+  gap:12px!important;
+  padding:13px 0!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item span{
+  width:58px!important;
+  height:36px!important;
+  border-radius:999px!important;
+  font-size:11px!important;
+  white-space:nowrap!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item b{
+  font-size:21px!important;
+  line-height:1.22!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item p,
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-grid p,
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-padlet-format ol{
+  font-size:14px!important;
+  line-height:1.42!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-grid{
+  gap:10px!important;
+  margin-bottom:14px!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-grid div{
+  padding:12px!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-padlet-format{
+  padding:14px 16px!important;
+}
+.slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-closing-line{
+  font-size:14px!important;
+  padding:13px 16px!important;
+  margin-top:14px!important;
+}
+
+@media(max-width:1450px), (max-height:790px){
+  .slide[data-title="교안 링크 안내"] .content,
+  .slide[data-title="두 도구의 차이는 무엇인가요?"] .content,
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .content{
+    left:72px!important;
+    right:72px!important;
+  }
+  .slide[data-title="교안 링크 안내"] .lecture-link-main h2{font-size:36px!important}
+  .slide[data-title="교안 링크 안내"] .resource-url{font-size:24px!important}
+  .slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-board{
+    grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr)!important;
+  }
+  .slide[data-title="두 도구의 차이는 무엇인가요?"] .tool-compare-card h2{font-size:32px!important}
+  .slide[data-title="교육 운영 문서 자동화"] .review-onepage h2{font-size:27px!important}
+  .slide[data-title="교육 운영 문서 자동화"] .review-panel,
+  .slide[data-title="교육 운영 문서 자동화"] .review-prompt{padding:12px!important}
+  .slide[data-title="교육 운영 문서 자동화"] .review-prompt pre{
+    max-height:230px!important;
+    font-size:11.5px!important;
+  }
+  .slide[data-title="교육 운영 문서 자동화"] .review-criteria div{padding:8px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-close-board{
+    grid-template-columns:minmax(0,1fr) minmax(320px,.86fr)!important;
+    gap:16px!important;
+  }
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-card,
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-card{padding:18px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-card h2,
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-card h2{font-size:27px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item{
+    grid-template-columns:58px minmax(0,1fr)!important;
+    gap:9px!important;
+    padding:9px 0!important;
+  }
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item span{
+    width:48px!important;
+    height:30px!important;
+    font-size:10px!important;
+  }
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item b{font-size:17px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-flow-item p,
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-grid p,
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-padlet-format ol{
+    font-size:12px!important;
+  }
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-submit-grid div{padding:10px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-padlet-format{padding:11px 13px!important}
+  .slide[data-title="오늘 만든 루틴은 어떻게 이어지나요?"] .final-closing-line{
+    font-size:12px!important;
+    padding:10px 13px!important;
+  }
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
