@@ -81,6 +81,7 @@
     .arrow{font-size:36px;font-weight:950;color:var(--blue);text-align:center}
     .step{position:relative}
     .step:before{content:attr(data-step);display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:950;margin-bottom:12px}
+    .step-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--soft-blue);border:1px solid #c8daec;color:var(--blue);font-size:22px;font-weight:950;margin:0 0 12px 10px;vertical-align:top}
     .focus-red{border:3px solid var(--red);box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
     .focus-red:before{background:var(--red)}
     .timeline{display:grid;gap:8px}
@@ -233,7 +234,8 @@
     .section .check p{color:#465366}
     .section .check b{color:var(--ink)}
     .source-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .source-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:var(--shadow)}
+    .source-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;padding:52px 16px 16px;box-shadow:var(--shadow)}
+    .source-card .source-num{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:950}
     .source-card b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .source-card p{font-size:13px;line-height:1.4}
     .framework-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
@@ -272,10 +274,35 @@
     .roadmap-item h3{margin:0 0 5px;font-size:20px;line-height:1.18}
     .roadmap-item p{font-size:13px;line-height:1.38}
     .roadmap-item .output{background:var(--soft-blue);border:1px solid #cfe0f3;border-radius:10px;padding:10px;color:#26364a;font-size:12px;font-weight:900;line-height:1.35}
+    .journey-map{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:34px 28px 28px;min-height:410px;overflow:hidden}
+    .journey-map:before{content:"";position:absolute;left:11%;right:11%;top:172px;height:8px;border-radius:999px;background:linear-gradient(90deg,#a8cbe9 0%,#2f66ad 35%,#1f8a70 68%,#d9c383 100%)}
+    .map-route{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}
+    .map-stop{position:relative;display:grid;gap:14px;justify-items:center;text-align:center}
+    .map-pin{width:68px;height:68px;border-radius:50% 50% 50% 12px;transform:rotate(-45deg);background:#fff;border:4px solid var(--blue);box-shadow:0 10px 20px rgba(47,102,173,.14);display:flex;align-items:center;justify-content:center}
+    .map-pin span{transform:rotate(45deg);font-size:18px;font-weight:950;color:var(--blue)}
+    .map-stop.current .map-pin{border-color:var(--red);background:#fff8f6}
+    .map-stop.current .map-pin span{color:var(--red)}
+    .map-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;min-height:150px}
+    .map-card b{display:block;font-size:19px;line-height:1.18;color:var(--ink);margin-bottom:8px}
+    .map-card p{font-size:12.5px;line-height:1.38}
+    .map-card .map-output{display:block;margin-top:10px;border-top:1px solid var(--line);padding-top:9px;color:var(--blue);font-size:12px;font-weight:950}
+    .map-legend{display:flex;gap:10px;margin-top:22px;align-items:center;justify-content:center}
+    .map-legend span{display:inline-flex;align-items:center;gap:6px;border:1px solid #d3dfeb;border-radius:999px;background:#f8fbff;padding:7px 10px;font-size:12px;font-weight:950;color:#536274}
+    .map-legend span:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue)}
+    .map-legend .now:before{background:var(--red)}
     .story-note{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
     .story-note strong{font-size:17px;color:var(--blue)}
     .story-note p{font-size:13px;line-height:1.4}
-    .survey-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    .survey-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:stretch}
+    .survey-insight{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+    .survey-insight .headline{display:block;font-size:32px;line-height:1.17;color:var(--ink);font-weight:950;margin-bottom:14px}
+    .survey-insight p{font-size:15px;line-height:1.45;margin-bottom:14px}
+    .survey-tags{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+    .survey-tag{border:1px solid #d6e2ee;background:#f8fbff;border-radius:10px;padding:12px}
+    .survey-tag strong{display:block;color:var(--blue);font-size:12px;margin-bottom:5px}
+    .survey-tag span{color:#2d3b4e;font-size:14px;font-weight:900;line-height:1.25}
+    .survey-scoreboard{display:grid;gap:10px}
+    .survey-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .survey-stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
     .survey-stat .num{display:block;font-size:40px;line-height:1;color:var(--blue);font-weight:950;margin-bottom:10px}
     .survey-stat b{display:block;font-size:18px;line-height:1.22;color:var(--ink);margin-bottom:8px}
@@ -286,6 +313,9 @@
     .meter .track{height:9px;border-radius:999px;background:#dfe8f1;overflow:hidden}
     .meter .fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green))}
     .meter em{font-style:normal;font-size:12px;font-weight:950;color:#5f6e80;text-align:right}
+    .survey-bottom{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center;margin-top:16px;border-left:6px solid var(--blue);background:var(--soft-blue);border-radius:0 10px 10px 0;padding:15px 18px}
+    .survey-bottom strong{color:var(--blue);font-size:15px}
+    .survey-bottom p{font-size:15px;line-height:1.4;color:#253043;font-weight:900}
     .survey-map{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
     .survey-map .map-card{display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;box-shadow:var(--shadow)}
     .survey-map .map-card strong{font-size:15px;color:var(--blue)}
@@ -313,6 +343,33 @@
     .tree-node strong{font-size:14px;color:var(--blue)}
     .tree-node b{display:block;font-size:18px;color:var(--ink);margin-bottom:4px}
     .tree-node p{font-size:12.5px;line-height:1.35}
+    .data-bridge{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;align-items:stretch}
+    .bridge-panel{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow);min-height:250px}
+    .bridge-panel.soft{background:#f7fafc}
+    .bridge-panel.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
+    .bridge-panel .eyebrow{display:block;font-size:12px;font-weight:950;color:var(--blue);letter-spacing:.08em;margin-bottom:12px}
+    .bridge-panel b{display:block;font-size:27px;line-height:1.18;color:var(--ink);margin-bottom:12px}
+    .bridge-panel p{font-size:14px;line-height:1.42}
+    .question-stack{display:grid;gap:9px;margin-top:16px}
+    .question-chip{border:1px solid #d6e1ec;background:#fff;border-radius:9px;padding:10px 12px;color:#5e6b7a;font-size:13px;font-weight:900}
+    .data-stack{display:grid;gap:9px;margin-top:14px}
+    .data-row{display:grid;grid-template-columns:88px 1fr;gap:10px;align-items:center;border:1px solid #d8e3ef;background:#fff;border-radius:10px;padding:10px 12px}
+    .data-row strong{color:var(--blue);font-size:13px}
+    .data-row span{color:#354256;font-size:14px;font-weight:850}
+    .bridge-arrow{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--blue);color:#fff;font-size:28px;font-weight:950;margin:0 auto 16px}
+    .bridge-bottom{margin-top:18px;border-left:6px solid var(--green);background:var(--soft-green);border-radius:0 10px 10px 0;padding:15px 18px}
+    .bridge-bottom strong{display:block;color:#1b705d;font-size:14px;margin-bottom:5px}
+    .bridge-bottom p{color:#273648;font-size:18px;font-weight:950;line-height:1.35}
+    .voc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    .voc-card{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+    .voc-person{position:relative;width:48px;height:48px;border-radius:14px;background:var(--soft-blue);border:1px solid #c8daec;flex:0 0 auto}
+    .voc-person:before{content:"";position:absolute;left:15px;top:9px;width:16px;height:16px;border-radius:50%;background:var(--blue)}
+    .voc-person:after{content:"";position:absolute;left:10px;bottom:8px;width:26px;height:15px;border-radius:14px 14px 6px 6px;background:var(--blue)}
+    .voc-bubble{position:relative;border:1px solid #d8e3ef;background:#f8fbff;border-radius:12px;padding:13px 14px}
+    .voc-bubble:before{content:"";position:absolute;left:-8px;top:18px;width:14px;height:14px;background:#f8fbff;border-left:1px solid #d8e3ef;border-bottom:1px solid #d8e3ef;transform:rotate(45deg)}
+    .voc-bubble strong{display:block;color:var(--blue);font-size:13px;margin-bottom:7px}
+    .voc-bubble b{display:block;font-size:18px;line-height:1.2;color:var(--ink);margin-bottom:7px}
+    .voc-bubble p{font-size:12.5px;line-height:1.36}
     .profile-grid{display:grid;grid-template-columns:34% 1fr;gap:34px;align-items:center}
     .profile-photo{height:410px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
     .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
@@ -332,7 +389,7 @@
       .profile-photo{height:345px}.profile-grid{gap:24px}.profile-text h2{font-size:42px}.profile-text .lead{font-size:18px;margin-bottom:14px}.plain-panel{padding:16px}.plain-panel li{font-size:12px;line-height:1.42}
     }
     @media(max-width:1100px){
-      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
+      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split,.data-bridge,.survey-layout,.voc-grid,.map-route{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}.journey-map:before{display:none}
       .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}
     }
     @media(max-width:620px){
@@ -342,9 +399,11 @@
       h1{font-size:42px}h2{font-size:30px}h3{font-size:18px}p,li{font-size:13px}.grid4,.grid3,.grid2{grid-template-columns:1fr}.card{padding:16px}.cover .content,.section .content{inset:9% 8%;overflow:visible}.cover p{font-size:18px}.meta{display:block;font-size:14px}.side-nav{display:none}.section h2{font-size:42px}.section p{font-size:17px}.section-map span{font-size:12px}
       table{font-size:11px}th,td{padding:7px 8px}.code{max-height:none}
       .flow.wide .card{padding:12px}.flow.wide .card b{font-size:17px;margin-bottom:4px}.flow.wide .card p{font-size:12px;line-height:1.35}.step:before{width:28px;height:28px;margin-bottom:7px}
+      .step-icon{width:34px;height:34px;font-size:17px;margin-left:6px}
       .timeline{gap:4px}.row{padding:6px 0;gap:8px}.row strong{font-size:14px}.row p{font-size:11px;line-height:1.35}
       .notice{font-size:12px;line-height:1.4;padding:12px 14px}
       .mock-screen{min-height:0}.mock-body{min-height:0}.padlet-mock{grid-template-columns:1fr}.guide-steps li{font-size:13px}.mini-index{display:none}.toc-card{min-height:0}.safe-item{grid-template-columns:1fr}
+      .bridge-panel{min-height:0}.bridge-panel b{font-size:22px}.bridge-bottom p{font-size:15px}.data-row{grid-template-columns:1fr}.survey-tags,.survey-stats,.survey-bottom{grid-template-columns:1fr}.survey-insight .headline{font-size:24px}.meter{grid-template-columns:1fr}.meter em{text-align:left}.voc-card{grid-template-columns:44px 1fr}.voc-person{width:40px;height:40px}.voc-person:before{left:13px;top:8px;width:13px;height:13px}.voc-person:after{left:9px;bottom:7px;width:22px;height:13px}
       .ai-window{min-height:0}.ai-thread{min-height:0}.ai-msg{max-width:100%}.ui-caption{grid-template-columns:1fr}
     }
   </style>
@@ -363,7 +422,7 @@
     </div>
   </section>
 
-  <section class="slide" data-title="강사 소개">
+<section class="slide" data-title="강사 소개">
     <div class="top"><span>시작 안내</span><span>02 / 40</span></div>
     <div class="core">도구 설명보다 실무 산출물로 연결하는 강의입니다.</div>
     <div class="content">
@@ -399,42 +458,48 @@
     <div class="footer"><div class="progress"><span></span></div><span>02 / 40</span></div>
   </section>
 
-  <section class="slide" data-title="2주차 방향">
+<section class="slide" data-title="2주차 방향">
     <div class="top"><span>오늘 배울 내용</span><span>2주차</span></div>
     <div class="core">AI 모델을 고르는 것보다 먼저 해야 할 일은, AI가 읽을 수 있는 데이터를 확보하고 정리하는 것입니다.</div>
     <div class="content">
-      <h2>순서가 바뀌었습니다. 모델보다 <span class="accent">데이터</span>가 먼저입니다</h2>
-      <div class="decision-formula">
-        <div class="part"><span>Input</span><b>Right Data</b><p>흩어진 매출표, 상담 기록, 후기, 문의를 업무 질문에 맞게 모읍니다.</p></div>
-        <div class="part"><span>Process</span><b>AI + Sheet</b><p>ChatGPT·Gemini는 구조 파악과 정리 후보를 돕고, Excel/Sheets는 계산과 검산을 맡습니다.</p></div>
-        <div class="part"><span>Output</span><b>Work Decision</b><p>센터·과정·채널 중 무엇을 먼저 볼지 판단할 수 있는 표와 문장을 남깁니다.</p></div>
+      <h2>AI 성과를 가르는 질문이 <span class="accent">바뀌었습니다</span></h2>
+      <div class="data-bridge">
+        <div class="bridge-panel soft">
+          <span class="eyebrow">BEFORE</span>
+          <b>어떤 AI를 써야 할까?</b>
+          <p>많은 경우 출발점이 도구 선택이나 프롬프트 문장에 머뭅니다.</p>
+          <div class="question-stack">
+            <div class="question-chip">ChatGPT가 나을까, Gemini가 나을까?</div>
+            <div class="question-chip">프롬프트를 어떻게 써야 할까?</div>
+            <div class="question-chip">자동화 툴을 더 붙여야 할까?</div>
+          </div>
+        </div>
+        <div class="bridge-panel active">
+          <span class="eyebrow">TODAY'S SHIFT</span>
+          <div class="bridge-arrow">→</div>
+          <b>AI가 읽을 수 있는 재료가 먼저입니다</b>
+          <p>모델은 재료를 보고 답합니다. 업무 데이터가 흩어져 있거나 기준이 다르면 좋은 AI도 판단할 근거가 부족합니다.</p>
+        </div>
+        <div class="bridge-panel">
+          <span class="eyebrow">AFTER</span>
+          <b>내 데이터는 바로 분석 가능한가?</b>
+          <div class="data-stack">
+            <div class="data-row"><strong>확보</strong><span>매출표·상담·후기·문의가 어디 있는가</span></div>
+            <div class="data-row"><strong>취합</strong><span>센터·과정·채널·월 기준으로 모을 수 있는가</span></div>
+            <div class="data-row"><strong>정리</strong><span>빈칸·중복·단위·개인정보를 걸러냈는가</span></div>
+            <div class="data-row"><strong>활용</strong><span>표와 문장으로 의사결정에 연결되는가</span></div>
+          </div>
+        </div>
       </div>
-      <div class="grid3" style="margin-top:18px">
-        <div class="card focus-red">
-          <span class="label">오늘 생겨야 할 고민</span>
-          <b>데이터를 어떻게 확보하지?</b>
-          <p>내 업무의 숫자와 기록이 어디에 흩어져 있는지 먼저 떠올립니다.</p>
-        </div>
-        <div class="card">
-          <span class="label">2주차 핵심</span>
-          <b>어떻게 취합하지?</b>
-          <p>센터, 과정, 채널, 월처럼 서로 다른 자료가 만날 기준을 정합니다.</p>
-        </div>
-        <div class="card">
-          <span class="label">다음 차수 연결</span>
-          <b>어떻게 깔끔하게 만들지?</b>
-          <p>빈칸, 중복, 단위, 날짜, 개인정보를 정리해야 분석과 시각화가 가능합니다.</p>
-        </div>
-      </div>
-      <div class="story-note" style="margin-top:18px">
-        <strong>강의 연결 문장</strong>
-        <p>“오늘은 어떤 AI가 더 좋은지 비교하는 시간이 아닙니다. 내 업무 데이터를 AI가 읽을 수 있는 상태로 만드는 순서를 배우는 시간입니다.”</p>
+      <div class="bridge-bottom">
+        <strong>다음 페이지로 넘기는 질문</strong>
+        <p>그래서 오늘의 첫 질문은 “AI를 어떻게 쓰나?”가 아니라 “왜 데이터가 중요한가?”입니다.</p>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>2주차 방향</span></div>
   </section>
 
-  <section class="slide" data-title="왜 데이터인가">
+<section class="slide" data-title="왜 데이터인가">
     <div class="top"><span>인트로</span><span>03 / 40</span></div>
     <div class="core">AI를 잘 쓰는 사람은 질문만 잘하는 사람이 아니라, 쓸 재료를 빨리 모아 바로 업무에 넣는 사람입니다.</div>
     <div class="content">
@@ -443,49 +508,67 @@
         <p>영상이나 자료를 저장해두는 것만으로는 일이 바뀌지 않습니다. 업무 환경으로 옮기고, 정리하고, 바로 써봐야 내 역량이 됩니다.</p>
       </div>
       <div class="flow wide" style="margin-top:18px">
-        <div class="card step" data-step="1"><b>저장</b><p>좋은 사례, 링크, 영상, 파일을 그냥 흘려보내지 않습니다.</p></div>
-        <div class="card step" data-step="2"><b>옮기기</b><p>휴대폰·메신저에 있는 자료를 PC 업무 환경으로 가져옵니다.</p></div>
-        <div class="card step" data-step="3"><b>분류</b><p>AI 폴더, 실습 폴더, 데이터 표로 다시 찾을 수 있게 둡니다.</p></div>
-        <div class="card step" data-step="4"><b>바로 실행</b><p>미루지 않고 ChatGPT·Gemini에 넣어 결과를 확인합니다.</p></div>
-        <div class="card step focus-red" data-step="5"><b>남기기</b><p>프롬프트, 결과, 막힌 지점을 저장해 다음 업무 템플릿으로 씁니다.</p></div>
+        <div class="card step" data-step="1"><span class="step-icon">↓</span><b>저장</b><p>좋은 사례, 링크, 영상, 파일을 그냥 흘려보내지 않습니다.</p></div>
+        <div class="card step" data-step="2"><span class="step-icon">PC</span><b>옮기기</b><p>휴대폰·메신저에 있는 자료를 PC 업무 환경으로 가져옵니다.</p></div>
+        <div class="card step" data-step="3"><span class="step-icon">▦</span><b>분류</b><p>AI 폴더, 실습 폴더, 데이터 표로 다시 찾을 수 있게 둡니다.</p></div>
+        <div class="card step" data-step="4"><span class="step-icon">▶</span><b>바로 실행</b><p>미루지 않고 ChatGPT·Gemini에 넣어 결과를 확인합니다.</p></div>
+        <div class="card step focus-red" data-step="5"><span class="step-icon">✓</span><b>남기기</b><p>프롬프트, 결과, 막힌 지점을 저장해 다음 업무 템플릿으로 씁니다.</p></div>
       </div>
       <p class="source-note">참고: Notion 페이지 “다들 순서가 틀렸어요”와 원본 영상의 핵심 메시지를 바인그룹 데이터 수업용으로 재구성했습니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>03 / 40</span></div>
   </section>
 
-  <section class="slide" data-title="사전 설문 요약">
+<section class="slide" data-title="사전 설문 요약">
     <div class="top"><span>사전 설문</span><span>응답 기반</span></div>
     <div class="core">사전 설문에서 확인한 병목은 도구 부족보다 데이터 취합, 형식 통일, 비교와 보고의 반복입니다.</div>
     <div class="content">
       <h2>사전 설문에서 보인 오늘의 출발점</h2>
-      <div class="survey-stats">
-        <div class="survey-stat"><span class="num">9/9</span><b>엑셀·시트 사용</b><p>응답자 전원이 Excel 또는 Google Sheets를 업무 데이터의 기본 도구로 사용합니다.</p></div>
-        <div class="survey-stat"><span class="num">6명</span><b>정기 취합·보고 반복</b><p>정기 데이터 취합, 정기 보고서 작성, 파일 정리·병합이 가장 많이 반복됩니다.</p></div>
-        <div class="survey-stat"><span class="num">5명</span><b>비교·원인 분석이 병목</b><p>단순 집계보다 “왜 차이가 나는지” 비교하고 설명하는 과정에서 시간이 많이 듭니다.</p></div>
-        <div class="survey-stat"><span class="num">4명</span><b>보안·개인정보 우려</b><p>고객 정보와 사내 자료를 그대로 AI에 넣기 어렵다는 제약이 반복적으로 나왔습니다.</p></div>
+      <div class="survey-layout">
+        <div class="survey-insight">
+          <span class="headline">도구는 이미 쓰고 있습니다.<br>병목은 “정리된 데이터”입니다.</span>
+          <p>응답자 전원이 엑셀 또는 시트를 사용하고 있었지만, 반복 업무는 취합·비교·보고에 몰려 있었습니다.</p>
+          <p>따라서 오늘 수업은 새로운 도구 소개보다, 기존 업무 데이터를 AI가 읽을 수 있는 구조로 바꾸는 데 초점을 둡니다.</p>
+          <div class="survey-tags">
+            <div class="survey-tag"><strong>반복 업무</strong><span>정기 취합, 보고서, 파일 병합</span></div>
+            <div class="survey-tag"><strong>분석 병목</strong><span>비교, 원인 설명, 기준 통일</span></div>
+            <div class="survey-tag"><strong>운영 제약</strong><span>개인정보, 사내 자료 보안</span></div>
+            <div class="survey-tag"><strong>오늘 목표</strong><span>안전하게 정리하고 검산하기</span></div>
+          </div>
+        </div>
+        <div class="survey-scoreboard">
+          <div class="survey-stats">
+            <div class="survey-stat"><span class="num">9/9</span><b>엑셀·시트 사용</b><p>업무 데이터의 기본 도구는 이미 갖춰져 있습니다.</p></div>
+            <div class="survey-stat"><span class="num">6명</span><b>취합·보고 반복</b><p>정기 데이터 취합과 보고서 작성이 반복됩니다.</p></div>
+            <div class="survey-stat"><span class="num">5명</span><b>비교 분석 병목</b><p>차이의 원인을 설명하는 과정에서 시간이 듭니다.</p></div>
+            <div class="survey-stat"><span class="num">4명</span><b>보안 우려</b><p>고객 정보와 사내 자료를 그대로 올리기 어렵습니다.</p></div>
+          </div>
+          <div class="meter-list">
+            <div class="meter"><b>엑셀 기본 정리</b><div class="track"><span class="fill" style="width:73%"></span></div><em>3.67</em></div>
+            <div class="meter"><b>피벗·차트</b><div class="track"><span class="fill" style="width:36%"></span></div><em>1.78</em></div>
+            <div class="meter"><b>오류·누락 점검</b><div class="track"><span class="fill" style="width:49%"></span></div><em>2.44</em></div>
+            <div class="meter"><b>AI 분석·요약</b><div class="track"><span class="fill" style="width:56%"></span></div><em>2.78</em></div>
+          </div>
+        </div>
       </div>
-      <div class="meter-list">
-        <div class="meter"><b>엑셀 기본 정리</b><div class="track"><span class="fill" style="width:73%"></span></div><em>3.67/5</em></div>
-        <div class="meter"><b>피벗·차트</b><div class="track"><span class="fill" style="width:36%"></span></div><em>1.78/5</em></div>
-        <div class="meter"><b>오류·누락 점검</b><div class="track"><span class="fill" style="width:49%"></span></div><em>2.44/5</em></div>
-        <div class="meter"><b>AI 분석·요약</b><div class="track"><span class="fill" style="width:56%"></span></div><em>2.78/5</em></div>
+      <div class="survey-bottom">
+        <strong>강의 반영</strong>
+        <p>고급 분석보다 먼저, 흩어진 자료를 안전하게 정리하고 AI가 읽을 수 있게 만드는 방법에 집중합니다.</p>
       </div>
-      <p class="notice" style="margin-top:16px">그래서 오늘은 고급 분석보다 먼저, “흩어진 자료를 안전하게 정리하고 AI가 읽을 수 있게 만드는 방법”에 집중합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>사전 설문</span></div>
   </section>
 
-  <section class="slide" data-title="사전 질문 반영">
+<section class="slide" data-title="사전 질문 반영">
     <div class="top"><span>사전 설문</span><span>요구사항 분석</span></div>
     <div class="core">오늘 실습은 수강생이 사전 설문에 적어준 실제 고민을 하나씩 해결하도록 설계했습니다.</div>
     <div class="content">
       <h2>사전 질문을 오늘 실습으로 연결하면</h2>
-      <div class="survey-map">
-        <div class="map-card"><strong>요구 01</strong><div><b>여러 파일·시스템에서 자료를 모으기 어렵다</b><p>실습 1에서 출처, 열 의미, 기준 키를 먼저 정리합니다. 결과물은 열 설명표와 취합 기준입니다.</p></div></div>
-        <div class="map-card"><strong>요구 02</strong><div><b>매출·정산·회원 데이터를 비교해야 한다</b><p>실습 2에서 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다. 결과물은 계산 열과 피벗 기준입니다.</p></div></div>
-        <div class="map-card"><strong>요구 03</strong><div><b>보고서와 대시보드까지 자동화하고 싶다</b><p>실습 3에서 표를 보고 인사이트 문장과 보고서 초안을 만듭니다. 결과물은 5문장 보고 초안입니다.</p></div></div>
-        <div class="map-card"><strong>요구 04</strong><div><b>개인정보 때문에 실제 데이터를 올리기 어렵다</b><p>보안 파트에서 원본 보존, 익명화, 가짜 샘플 생성, 표본 검산 순서를 다룹니다.</p></div></div>
+      <div class="voc-grid">
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 01</strong><b>“여러 파일과 시스템에서 자료를 모으기 어렵습니다.”</b><p>실습 1에서 출처, 열 의미, 기준 키를 먼저 정리합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 02</strong><b>“매출·정산·회원 데이터를 비교해야 합니다.”</b><p>실습 2에서 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 03</strong><b>“보고서와 대시보드까지 자동화하고 싶습니다.”</b><p>실습 3에서 표를 보고 인사이트 문장과 보고서 초안을 만듭니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 04</strong><b>“개인정보 때문에 실제 데이터를 올리기 어렵습니다.”</b><p>보안 파트에서 원본 보존, 익명화, 가짜 샘플 생성 순서를 다룹니다.</p></div></div>
       </div>
       <div class="story-note" style="margin-top:16px">
         <strong>강의 연결 문장</strong>
@@ -495,71 +578,16 @@
     <div class="footer"><div class="progress"><span></span></div><span>요구사항 분석</span></div>
   </section>
 
-  <section class="slide" data-title="난이도 운영 방식">
-    <div class="top"><span>사전 설문</span><span>난이도 조절</span></div>
-    <div class="core">사전 설문은 중급 희망이 많지만 편차도 큽니다. 그래서 완성본보다 단계별 제출을 기준으로 둡니다.</div>
-    <div class="content">
-      <h2>난이도는 중급으로, 따라오는 방식은 단계형으로</h2>
-      <div class="level-route">
-        <div class="route"><span class="level">초급·기초</span><b>화면을 보며 따라오기</b><p>CSV를 복사하고, 프롬프트를 붙여 넣고, 결과 표를 보는 것까지가 1차 목표입니다.</p><div class="result">제출 가능: 막힌 단계 캡처</div></div>
-        <div class="route focus-red"><span class="level">중급</span><b>내 업무 기준으로 바꾸기</b><p>센터, 과정, 채널, 월 기준을 자신의 업무 데이터에 맞게 바꿔봅니다.</p><div class="result">제출 가능: 계산 열·피벗 기준</div></div>
-        <div class="route"><span class="level">응용</span><b>자동화 아이디어로 확장</b><p>반복 보고서, 월간 업데이트, 홈페이지 지표, 키워드 분석을 자동화 후보로 남깁니다.</p><div class="result">제출 가능: 다음 업무 적용안</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">온라인 수업 운영 기준: 한 번에 완성하지 못해도 정상입니다. 프롬프트, 캡처, 막힌 지점 중 하나만 남겨도 다음 단계로 이어갈 수 있습니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>난이도 조절</span></div>
-  </section>
-
-  <section class="slide" data-title="데이터가 AI의 재료">
-    <div class="top"><span>인트로</span><span>04 / 40</span></div>
-    <div class="core">AI는 똑똑하지만, 내 업무의 사실과 맥락은 내가 가진 데이터에서 나옵니다.</div>
-    <div class="content">
-      <h2>AI가 답하려면 먼저 재료가 있어야 합니다</h2>
-      <div class="visual-pipeline">
-        <div class="visual-node"><div class="icon">기록</div><b>흩어진 기록</b><p>상담 메모, 매출표, 후기, 문의, 일정, 운영 메일</p></div>
-        <div class="visual-node"><div class="icon green-bg">표</div><b>정리된 데이터</b><p>행·열·기간·센터·과정·채널 기준이 맞는 표</p></div>
-        <div class="visual-node"><div class="icon gold-bg">질문</div><b>업무 질문</b><p>어디가 늘었는가, 어디서 이탈하는가, 무엇을 개선할까</p></div>
-        <div class="visual-node"><div class="icon">AI</div><b>분석 보조</b><p>요약, 분류, 계산 후보, 차트 후보, 보고서 초안</p></div>
-        <div class="visual-node"><div class="icon green-bg">판단</div><b>업무 판단</b><p>사람이 검산하고 맥락을 붙여 실행안을 정합니다.</p></div>
-      </div>
-      <div class="notice" style="margin-top:18px">오늘 수업의 핵심: “AI에게 무슨 말을 할까?” 이전에 “AI가 읽을 수 있는 재료를 어떻게 준비할까?”를 먼저 잡습니다.</div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>04 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="데이터 리터러시">
-    <div class="top"><span>인트로</span><span>데이터 리터러시</span></div>
-    <div class="core">데이터 리터러시는 분석가처럼 코딩하는 능력이 아니라, 데이터를 읽고 판단에 연결하는 업무 능력입니다.</div>
-    <div class="content">
-      <h2>오늘의 기준: 읽기 → 해석 → 소통 → 판단</h2>
-      <div class="stage-map">
-        <div class="stage active"><span class="tag">1</span><b>읽기</b><p>이 표가 무엇을 기록했는지, 한 행이 무엇을 뜻하는지 확인합니다.</p></div>
-        <div class="stage"><span class="tag">2</span><b>해석</b><p>숫자의 단위, 기간, 기준이 맞는지 보고 의미를 붙입니다.</p></div>
-        <div class="stage"><span class="tag">3</span><b>소통</b><p>AI 결과를 팀장·동료가 이해할 문장과 표로 바꿉니다.</p></div>
-        <div class="stage"><span class="tag">4</span><b>판단</b><p>어떤 센터·과정·채널을 먼저 점검할지 정합니다.</p></div>
-        <div class="stage"><span class="tag">5</span><b>검산</b><p>AI가 만든 수식과 결론을 표본 3~4행으로 확인합니다.</p></div>
-        <div class="stage"><span class="tag">6</span><b>남기기</b><p>프롬프트와 결과를 다음 업무 템플릿으로 저장합니다.</p></div>
-      </div>
-      <div class="handoff">
-        <div class="boxy"><b>AI가 도와주는 것</b><p>구조 파악, 전처리 후보, 계산 열 제안, 피벗 기준, 보고서 초안</p></div>
-        <div class="go">→</div>
-        <div class="boxy"><b>사람이 책임지는 것</b><p>업무 맥락, 개인정보 제거, 수치 검산, 과장 표현 수정, 최종 판단</p></div>
-      </div>
-      <p class="source-note">참고: 첨부 강의안의 데이터 리터러시 정의와 “AI가 계산하고 사람이 판단한다”는 운영 원칙을 2차수용으로 재구성</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>데이터 리터러시</span></div>
-  </section>
-
-  <section class="slide" data-title="바인그룹 데이터">
+<section class="slide" data-title="바인그룹 데이터">
     <div class="top"><span>인트로</span><span>05 / 40</span></div>
     <div class="core">바인그룹의 데이터는 숫자표만이 아니라 상담, 등록, 후기, 문의, 운영 기록까지 포함합니다.</div>
     <div class="content">
       <h2>우리 업무에서 데이터는 어디에 있나</h2>
       <div class="source-strip">
-        <div class="source-card"><b>센터·과정 실적</b><p>월별 매출, 등록수, 환불, 정산, 과정별 신청 흐름을 봅니다.</p></div>
-        <div class="source-card"><b>상담·전환 기록</b><p>상담 신청, 상담 완료, 등록 전환, 이탈 사유를 연결합니다.</p></div>
-        <div class="source-card"><b>후기·문의 텍스트</b><p>만족/불만 키워드, 반복 문의, 과정 개선 신호를 찾습니다.</p></div>
-        <div class="source-card"><b>운영 자료</b><p>일정, 공지, 출결, 강사 섭외, 리마인드 메시지를 정리합니다.</p></div>
+        <div class="source-card"><span class="source-num">01</span><b>센터·과정 실적</b><p>월별 매출, 등록수, 환불, 정산, 과정별 신청 흐름을 봅니다.</p></div>
+        <div class="source-card"><span class="source-num">02</span><b>상담·전환 기록</b><p>상담 신청, 상담 완료, 등록 전환, 이탈 사유를 연결합니다.</p></div>
+        <div class="source-card"><span class="source-num">03</span><b>후기·문의 텍스트</b><p>만족/불만 키워드, 반복 문의, 과정 개선 신호를 찾습니다.</p></div>
+        <div class="source-card"><span class="source-num">04</span><b>운영 자료</b><p>일정, 공지, 출결, 강사 섭외, 리마인드 메시지를 정리합니다.</p></div>
       </div>
       <div class="grid2" style="margin-top:18px">
         <div class="card"><span class="label">흩어져 있을 때</span><b>AI 답변이 일반론이 됩니다</b><p>“매출을 올리는 방법”처럼 누구에게나 맞는 답만 나오기 쉽습니다.</p></div>
@@ -569,112 +597,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>05 / 40</span></div>
   </section>
 
-  <section class="slide" data-title="오늘의 데이터 루틴">
-    <div class="top"><span>인트로</span><span>06 / 40</span></div>
-    <div class="core">오늘은 자료를 모아두는 데서 끝내지 않고, AI가 바로 읽을 수 있는 표와 질문으로 바꿉니다.</div>
-    <div class="content">
-      <h2>오늘 만들 데이터 루틴</h2>
-      <div class="process7">
-        <div class="phase"><span class="tag">1</span><b>자료 확인</b><p>어떤 파일과 표가 있는지 먼저 봅니다.</p></div>
-        <div class="phase"><span class="tag">2</span><b>질문 정하기</b><p>무엇을 판단하려는지 한 문장으로 씁니다.</p></div>
-        <div class="phase today"><span class="tag">3</span><b>구조 읽기</b><p>센터, 과정, 채널, 월 같은 기준 열을 찾습니다.</p></div>
-        <div class="phase today"><span class="tag">4</span><b>전처리</b><p>빈칸, 중복, 단위, 날짜, 개인정보를 정리합니다.</p></div>
-        <div class="phase today"><span class="tag">5</span><b>AI 요청</b><p>ChatGPT·Gemini에 표와 기준을 설명합니다.</p></div>
-        <div class="phase"><span class="tag">6</span><b>검산</b><p>표본 2~3행을 사람이 확인합니다.</p></div>
-        <div class="phase"><span class="tag">7</span><b>남기기</b><p>결과와 프롬프트를 재사용 템플릿으로 둡니다.</p></div>
-      </div>
-      <div class="story-note" style="margin-top:16px"><strong>강의 연결 문장</strong><p>이제부터는 “AI가 신기하다”가 아니라 “내 업무 데이터를 AI가 읽을 수 있게 만드는 순서”를 따라갑니다.</p></div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>06 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="목차">
-    <div class="top"><span>목차</span><span>02 / 40</span></div>
-    <div class="core">오늘은 개념을 짧게 잡고, 도구를 확인한 뒤, 바인그룹형 데이터로 직접 따라 합니다.</div>
-    <div class="content">
-      <h2>오늘의 구성과 도구 선택</h2>
-      <div class="toc-grid">
-        <div class="toc-card">
-          <div class="toc-num">SECTION 01</div>
-          <div class="icon">개념</div>
-          <b>데이터 이해와 전처리</b>
-          <p>데이터 분석의 흐름, 데이터 종류, 전처리의 의미를 업무 언어로 정리합니다.</p>
-          <ol><li>전체 청사진</li><li>데이터 분석 프로세스</li><li>전처리와 보안 기준</li></ol>
-        </div>
-        <div class="toc-card">
-          <div class="toc-num">SECTION 02</div>
-          <div class="icon green-bg">도구</div>
-          <b>ChatGPT·Gemini·Excel</b>
-          <p>공식 자료 기준으로 각 도구가 할 수 있는 일과 한계를 구분합니다.</p>
-          <ol><li>ChatGPT 파일 분석</li><li>Google Sheets Gemini</li><li>Excel 검산·피벗</li></ol>
-        </div>
-        <div class="toc-card">
-          <div class="toc-num">SECTION 03</div>
-          <div class="icon gold-bg">실습</div>
-          <b>바인그룹형 PBL 실습</b>
-          <p>센터 매출, 상담 전환, 후기·문의 데이터를 기준으로 결과물을 만듭니다.</p>
-          <ol><li>샘플 데이터 복사</li><li>프롬프트 실행</li><li>Padlet 제출</li></ol>
-        </div>
-      </div>
-      <div class="tool-choice">
-        <div class="choice"><b>ChatGPT 웹 업로드</b><p>가장 빠른 입문. 샘플 CSV로 구조 파악, 전처리, 보고서 초안을 만듭니다.</p></div>
-        <div class="choice"><b>Excel / Sheets</b><p>AI가 제안한 수식, 피벗, 표 계산을 직접 검산하는 작업대입니다.</p></div>
-        <div class="choice"><b>Sheets + Gemini</b><p>구글 시트에서 셀 단위 분류, 요약, 감성분석을 반복할 때 씁니다.</p></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>02 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="오늘의 방식">
-    <div class="top"><span>운영 방식</span><span>03 / 40</span></div>
-    <div class="core">오늘은 짧게 보고, 바로 따라 하고, 마지막에 제출물로 정리합니다.</div>
-    <div class="content">
-      <h2>온라인 PBL 운영 방식</h2>
-      <div class="grid3">
-        <div class="card"><span class="label">먼저 보기</span><b>강사 시연 4분</b><p>화면을 보며 어떤 순서로 묻고, 무엇을 눌러야 하는지 확인합니다.</p></div>
-        <div class="card"><span class="label">바로 해보기</span><b>개별 실습 10분</b><p>같은 샘플 데이터로 ChatGPT 또는 Gemini에 요청하고 결과를 봅니다.</p></div>
-        <div class="card"><span class="label">같이 고치기</span><b>공유 3분</b><p>완성본, 캡처, 막힌 지점 중 하나만 남겨도 됩니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:18px">오늘은 완벽한 분석가가 되는 수업이 아니라, 내 업무 데이터를 AI와 함께 다룰 첫 순서를 익히는 수업입니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>03 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="난이도">
-    <div class="top"><span>실습 설계</span><span>04 / 40</span></div>
-    <div class="core">타이트하게 가되, 온라인 실습에서는 완성본보다 “따라온 흔적”을 먼저 남깁니다.</div>
-    <div class="content">
-      <h2>난이도와 실무 적용도</h2>
-      <div class="grid4">
-        <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>난이도 ★★☆☆☆<br>실무 적용도 ★★★★☆</p></div>
-        <div class="card"><span class="label">실습 2 · 10분</span><b>계산·피벗 설계</b><p>난이도 ★★★☆☆<br>실무 적용도 ★★★★★</p></div>
-        <div class="card"><span class="label">실습 3 · 10분</span><b>인사이트·보고서</b><p>난이도 ★★★★☆<br>실무 적용도 ★★★★★</p></div>
-        <div class="card"><span class="label">정리 · 5분</span><b>최종 제출</b><p>난이도 ★★☆☆☆<br>실무 적용도 ★★★★★</p></div>
-      </div>
-      <p class="notice" style="margin-top:18px">제출 기준: 완성본이 아니어도 괜찮습니다. 캡처, 프롬프트, 막힌 지점 중 하나라도 남기면 다음 차수에서 이어갈 수 있습니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>04 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="운영표">
-    <div class="top"><span>90분 운영</span><span>05 / 40</span></div>
-    <div class="core">온라인에서는 긴 설명보다 짧은 시연, 10분 실습, 짧은 공유를 반복합니다.</div>
-    <div class="content">
-      <h2>타임테이블</h2>
-      <div class="timeline">
-        <div class="row"><span>0-5</span><strong>세팅</strong><p>교안, 실습 데이터, 제출 위치 확인</p><em>채팅 확인</em></div>
-        <div class="row"><span>5-15</span><strong>왜 데이터인가</strong><p>저장·취합·구조화·실행 루틴과 2~4차수 로드맵 확인</p><em>불안 낮추기</em></div>
-        <div class="row"><span>15-30</span><strong>실습 1</strong><p>데이터 구조 읽기</p><em>시연 4 + 실습 10 + 공유 1</em></div>
-        <div class="row"><span>30-48</span><strong>실습 2</strong><p>전처리 기준, 계산 열, 피벗 설계</p><em>시연 6 + 실습 10 + 공유 2</em></div>
-        <div class="row"><span>48-68</span><strong>실습 3</strong><p>인사이트 질문, 차트 선택, 5문장 보고서</p><em>시연 7 + 실습 10 + 공유 3</em></div>
-        <div class="row"><span>68-82</span><strong>템플릿 정리</strong><p>내 업무용 재사용 프롬프트 만들기</p><em>개인화</em></div>
-        <div class="row"><span>82-90</span><strong>최종 제출</strong><p>오늘 결과물 업로드와 다음 차수 연결</p><em>마지막 8분</em></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>05 / 40</span></div>
-  </section>
-
-  <section class="slide" data-title="오늘의 목표">
+<section class="slide" data-title="오늘의 목표">
     <div class="top"><span>목표</span><span>03 / 26</span></div>
     <div class="core">만족도 문항에 “예, 할 수 있다”고 답할 수 있도록 결과물을 남깁니다.</div>
     <div class="content">
@@ -689,69 +612,71 @@
     <div class="footer"><div class="progress"><span style="width:12%"></span></div><span>03 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="전체 청사진">
+<section class="slide" data-title="전체 청사진">
     <div class="top"><span>과정 연결</span><span>04 / 26</span></div>
     <div class="core">2차수는 “정리”, 3차수는 “분석과 시각화”, 4차수는 “외부 리서치”입니다.</div>
     <div class="content">
-      <h2>2~4차수 로드맵</h2>
-      <div class="roadmap">
-        <div class="roadmap-hero">
-          <div>
-            <span class="label">BAIN GROUP AI CLASS</span>
-            <b>정리<br>분석<br>리서치</b>
-            <p>오늘은 분석 전에 필요한 정리 단계입니다. 정리된 표가 있어야 다음 시간의 차트와 리서치가 살아납니다.</p>
+      <h2>2~4차수 전체 지도</h2>
+      <div class="journey-map">
+        <div class="map-route">
+          <div class="map-stop">
+            <div class="map-pin"><span>0</span></div>
+            <div class="map-card"><b>업무 질문</b><p>센터·과정·채널 중 무엇을 먼저 판단할지 정합니다.</p><span class="map-output">출발점: 질문 1개</span></div>
           </div>
-          <div class="notice" style="background:rgba(255,255,255,.14);border-color:#cfe4ff;color:#fff">오늘은 2차수: 내부 데이터 정리와 전처리</div>
-        </div>
-        <div class="roadmap-list">
-          <div class="roadmap-item">
-            <div class="week">2차수<span class="keyword">정리</span></div>
-            <div><h3>엉킨 내부 데이터를 분석 가능한 표로 만듭니다</h3><p>센터·과정·채널·월별 데이터를 하나의 기준으로 맞추고, 빈칸·중복·단위·개인정보를 확인합니다.</p></div>
-            <div class="output">오늘 결과물<br>마스터 표 기준<br>전처리 체크리스트</div>
+          <div class="map-stop current">
+            <div class="map-pin"><span>2</span></div>
+            <div class="map-card"><b>2차수 · 데이터 정리</b><p>내부 데이터를 한 기준으로 맞추고, 빈칸·중복·단위·개인정보를 확인합니다.</p><span class="map-output">오늘 결과물: 마스터 표 기준</span></div>
           </div>
-          <div class="roadmap-item">
-            <div class="week">3차수<span class="keyword">분석<br>시각화</span></div>
-            <div><h3>정리된 내부 데이터에서 의미를 찾습니다</h3><p>매출, 상담, 등록, 환불 흐름을 비교하고 어떤 센터·채널을 먼저 봐야 하는지 차트로 보여줍니다.</p></div>
-            <div class="output">다음 결과물<br>인사이트 3개<br>차트·대시보드</div>
+          <div class="map-stop">
+            <div class="map-pin"><span>3</span></div>
+            <div class="map-card"><b>3차수 · 분석/시각화</b><p>정리된 표에서 매출, 상담, 등록, 환불 흐름을 비교하고 차트로 보여줍니다.</p><span class="map-output">다음 결과물: 인사이트 3개</span></div>
           </div>
-          <div class="roadmap-item">
-            <div class="week">4차수<span class="keyword">외부<br>리서치</span></div>
-            <div><h3>외부 자료를 붙여 전략 판단으로 확장합니다</h3><p>시장 트렌드, 경쟁사, 지역 수요 정보를 조사해 내부 데이터와 비교하고 다음 실행안을 정리합니다.</p></div>
-            <div class="output">확장 결과물<br>시장 비교표<br>전략 시사점</div>
+          <div class="map-stop">
+            <div class="map-pin"><span>4</span></div>
+            <div class="map-card"><b>4차수 · 외부 리서치</b><p>시장 트렌드와 경쟁사 정보를 내부 데이터와 붙여 전략 판단으로 확장합니다.</p><span class="map-output">확장 결과물: 전략 시사점</span></div>
           </div>
         </div>
+        <div class="map-legend"><span class="now">오늘 위치</span><span>다음 차수</span><span>최종 활용</span></div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span style="width:15%"></span></div><span>04 / 26</span></div>
   </section>
 
-  <section class="slide section" data-title="섹션 1" data-sec="1">
+<section class="slide" data-title="1차수 복습" data-sec="3">
+    <div class="top"><span>복습</span><span>1차수 연결</span></div>
+    <div class="core">1차수에서 만든 폴더 구조와 템플릿이 있어야 2차수 데이터도 흩어지지 않습니다.</div>
     <div class="content">
-      <span class="section-kicker">SECTION 01</span>
-      <h2>데이터 이해와 전처리</h2>
-      <p>이제 오늘 실습의 재료를 봅니다. AI에게 파일을 올리기 전에 먼저 알아야 할 것은 “이 데이터가 어떤 형태이고, 어떤 상태로 정리되어야 분석 가능한가”입니다.</p>
-      <div class="section-map"><span>바인그룹 실습 예시</span><span>데이터 유형 구분</span><span>전처리 개념</span><span>실습 전 안전 기준</span></div>
-    </div>
-  </section>
+      <h2>1차수 복습: 폴더 구조화와 템플릿</h2>
+      <div class="grid2">
+        <div class="card">
+          <b>폴더 구조 다시 잡기</b>
+          <div class="code" style="margin-top:12px"><pre>00_원본자료
+  ├─ 센터별_매출
+  ├─ 상담_문의
+  ├─ 후기_피드백
+  └─ 운영_공지
 
-  <section class="slide" data-title="30초 체크 1">
-    <div class="top"><span>환기 체크</span><span>30초</span></div>
-    <div class="core">설명만 듣고 넘어가지 않기 위해, 지금 내 업무가 어디에 걸리는지 먼저 찍고 갑니다.</div>
-    <div class="content">
-      <h2>30초 체크: 내 업무 데이터는 어디에 있나요?</h2>
-      <div class="stage-strip"><span class="on">내 업무 떠올리기</span><span>자료 위치</span><span>데이터 형태</span><span>질문 1개</span><span>채팅 공유</span></div>
-      <div class="grid4">
-        <div class="card step" data-step="1"><b>숫자표</b><p>매출, 등록수, 상담신청수, 환불건수처럼 이미 행과 열이 있는 자료</p></div>
-        <div class="card step" data-step="2"><b>문장 기록</b><p>상담 메모, 후기, 문의, 회의록처럼 먼저 분류가 필요한 자료</p></div>
-        <div class="card step" data-step="3"><b>여러 채널</b><p>홈페이지, 광고, 블로그, 소개처럼 기준을 맞춰 모아야 하는 자료</p></div>
-        <div class="card step focus-red" data-step="4"><b>보안 필요</b><p>이름, 연락처, 계약번호, 상세 매출처럼 그대로 올리면 안 되는 자료</p></div>
+01_AI정리결과
+  ├─ 전처리_후보
+  ├─ 피벗_설계안
+  └─ 보고서_초안</pre></div>
+        </div>
+        <div class="card">
+          <b>템플릿으로 남길 것</b>
+          <ul>
+            <li>데이터 설명: 출처, 기간, 담당자, 보안 수준</li>
+            <li>정리 기준: 열 이름, 날짜 형식, 센터명 표기</li>
+            <li>분석 질문: 무엇을 비교하고 판단할지</li>
+            <li>검수 기준: 수식, 단위, 개인정보, 단정 표현</li>
+          </ul>
+          <p class="notice" style="margin-top:16px">오늘 실습은 1차수 템플릿에 “데이터 기준”을 채워 넣는 과정입니다.</p>
+        </div>
       </div>
-      <p class="notice" style="margin-top:18px">채팅 멘트: “저는 숫자표 / 문장 기록 / 여러 채널 / 보안 필요 중 어디에 가까운지만 하나 적어주세요.”</p>
     </div>
-    <div class="footer"><div class="progress"><span></span></div><span>30초 체크</span></div>
+    <div class="footer"><div class="progress"><span></span></div><span>1차수 복습</span></div>
   </section>
 
-  <section class="slide" data-title="자료 기반 설계">
+<section class="slide" data-title="자료 기반 설계">
     <div class="top"><span>수강생 맥락</span><span>05 / 26</span></div>
     <div class="core">오늘 실습은 세 가지 예시만 씁니다. 숫자는 실습 1·2·3과 바로 연결됩니다.</div>
     <div class="content">
@@ -766,46 +691,7 @@
     <div class="footer"><div class="progress"><span style="width:19%"></span></div><span>05 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="실습 예시 가이드">
-    <div class="top"><span>실습 예시</span><span>가이드</span></div>
-    <div class="core">이 장은 실습 전에 “데이터를 왜 정리하는지”를 정하는 장입니다.</div>
-    <div class="content">
-      <h2>오늘 데이터로 할 판단 질문</h2>
-      <div class="grid3">
-        <div class="card"><div class="icon">01</div><b>센터별 매출·정산</b><p>어느 센터와 과정의 매출은 크지만 등록 전환이 낮은가?</p><div class="result">판단: 상담 스크립트 점검, 과정별 운영 개선</div></div>
-        <div class="card"><div class="icon green-bg">02</div><b>홈페이지·상담 전환</b><p>어느 유입 채널이 상담은 많지만 등록까지 이어지지 않는가?</p><div class="result">판단: 광고/블로그/소개 채널 운영 우선순위</div></div>
-        <div class="card"><div class="icon gold-bg">03</div><b>후기·문의 텍스트</b><p>고객이 반복해서 묻거나 불편해하는 주제는 무엇인가?</p><div class="result">판단: FAQ 보완, 안내문 수정, 상담 품질 개선</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">운영 멘트: “오늘은 데이터를 예쁘게 만드는 수업이 아니라, 다음 달에 무엇을 바꿀지 판단하기 위한 표를 만드는 수업입니다.”</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>가이드</span></div>
-  </section>
-
-  <section class="slide" data-title="실습 예시 자료">
-    <div class="top"><span>실습 예시</span><span>자료 이미지</span></div>
-    <div class="core">이 화면들은 뒤의 실습 1, 2, 3에서 계속 다시 씁니다.</div>
-    <div class="content">
-      <h2>실습에서 사용할 샘플 화면</h2>
-      <div class="grid3">
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">센터별 매출·정산 CSV</span></div>
-          <div class="mock-body"><table class="sheet"><thead><tr><th>센터</th><th>매출</th><th>등록</th><th>환불</th></tr></thead><tbody><tr><td>강남</td><td>21.1M</td><td>10</td><td>3</td></tr><tr><td>분당</td><td>24.6M</td><td>14</td><td>0</td></tr></tbody></table><div class="formula">질문: 매출은 높은데 전환이 낮은 센터는?</div></div>
-        </div>
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">상담 전환 데이터</span></div>
-          <div class="mock-body"><table class="sheet"><thead><tr><th>채널</th><th>상담</th><th>등록</th><th>전환율</th></tr></thead><tbody><tr><td>광고</td><td>45</td><td>10</td><td>22%</td></tr><tr><td>소개</td><td>18</td><td>14</td><td>78%</td></tr></tbody></table><div class="formula">질문: 어떤 채널에 집중할까?</div></div>
-        </div>
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">후기·문의 텍스트</span></div>
-          <div class="mock-body"><div class="bubble">수업은 좋았는데 환불 규정이 헷갈렸어요.</div><table class="sheet" style="margin-top:12px"><thead><tr><th>주제</th><th>감성</th><th>액션</th></tr></thead><tbody><tr><td>환불 안내</td><td>중립</td><td>FAQ 보완</td></tr></tbody></table></div>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:18px">읽는 순서: 원본 표 확인 → AI에게 열 의미와 이슈 확인 → 엑셀/시트에서 계산과 피벗 검산 → 보고서 초안 작성</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>자료 이미지</span></div>
-  </section>
-
-  <section class="slide" data-title="미니 실습 0">
+<section class="slide" data-title="미니 실습 0">
     <div class="top"><span>바로 따라하기</span><span>2분</span></div>
     <div class="core">실습 예시를 봤다면, 바로 오늘 내가 볼 질문 하나를 고릅니다.</div>
     <div class="content">
@@ -838,7 +724,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>미니 실습 0</span></div>
   </section>
 
-  <section class="slide" data-title="데이터 종류">
+<section class="slide" data-title="데이터 종류">
     <div class="top"><span>데이터 이해</span><span>10 / 40</span></div>
     <div class="core">실습 전에 먼저 구분합니다. 이 자료는 바로 계산할 표인가, 먼저 표로 바꿔야 할 문장인가?</div>
     <div class="content">
@@ -853,27 +739,67 @@
     <div class="footer"><div class="progress"><span></span></div><span>10 / 40</span></div>
   </section>
 
-  <section class="slide" data-title="분석 프로세스">
-    <div class="top"><span>핵심 개념</span><span>분석 흐름</span></div>
-    <div class="core">AI 데이터 분석도 순서는 같습니다. 달라지는 건 중간 작업을 AI가 더 빠르게 도와준다는 점입니다.</div>
+<section class="slide" data-title="정형 비정형 판단법">
+    <div class="top"><span>데이터 이해</span><span>판단 기준</span></div>
+    <div class="core">정형과 비정형을 구분하는 이유는 AI에게 처음 시킬 일이 달라지기 때문입니다.</div>
     <div class="content">
-      <h2>데이터 분석은 이렇게 흘러갑니다</h2>
-      <div class="process7">
-        <div class="phase"><span class="tag">1</span><b>문제 정의</b><p>무엇을 알고 싶은지, 어떤 결정을 도울지 정합니다.</p></div>
-        <div class="phase"><span class="tag">2</span><b>자료 수집</b><p>센터, 월, 채널, 후기처럼 필요한 자료를 모읍니다.</p></div>
-        <div class="phase today"><span class="tag">3</span><b>데이터 설명</b><p>열 의미, 단위, 주의사항을 AI에게 알려줍니다.</p></div>
-        <div class="phase today"><span class="tag">4</span><b>전처리</b><p>누락, 중복, 형식, 개인정보를 정리합니다.</p></div>
-        <div class="phase"><span class="tag">5</span><b>탐색 분석</b><p>분포, 비교, 이상값, 패턴을 먼저 살핍니다.</p></div>
-        <div class="phase"><span class="tag">6</span><b>시각화</b><p>피벗과 차트로 의미를 보여줍니다.</p></div>
-        <div class="phase"><span class="tag">7</span><b>보고·결정</b><p>근거, 리스크, 다음 액션으로 정리합니다.</p></div>
+      <h2>정형/비정형은 “파일 형식”보다 <span class="accent">작업 순서</span>의 문제입니다</h2>
+      <div class="grid2">
+        <div class="card focus-red">
+          <span class="label">정형 데이터</span>
+          <b>바로 계산·피벗으로 갈 수 있는 표</b>
+          <p>센터별 매출, 월별 상담수, 등록자 명단처럼 행과 열이 이미 정리되어 있으면 먼저 열 의미와 단위를 확인합니다.</p>
+          <div class="result">첫 요청: “각 열의 의미와 확인 필요 항목을 표로 정리해줘.”</div>
+        </div>
+        <div class="card">
+          <span class="label">비정형 데이터</span>
+          <b>먼저 표로 바꿔야 하는 문장 자료</b>
+          <p>상담 메모, 학부모 문의, 후기처럼 문장으로 된 자료는 주제·감성·확인 필요 항목을 추출해 표로 바꿉니다.</p>
+          <div class="result">첫 요청: “이 문장을 주제/감성/액션 항목으로 분류해줘.”</div>
+        </div>
       </div>
-      <p class="notice" style="margin-top:16px">오늘 2차수의 범위는 3~4단계입니다. 분석과 시각화는 3차수에서 더 깊게 다룹니다.</p>
-      <p class="source-note">참고: <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE AI Data Management</a>, AI 데이터 분석 프로세스 참고 이미지 기반 재구성</p>
+      <div class="decision-formula" style="margin-top:18px">
+        <div class="part"><span>1</span><b>행과 열이 있나?</b><p>있으면 정형 가능성이 높습니다.</p></div>
+        <div class="part"><span>2</span><b>바로 합계가 가능한가?</b><p>가능하면 계산·피벗으로 갑니다.</p></div>
+        <div class="part"><span>3</span><b>문장을 읽어야 하나?</b><p>그렇다면 먼저 분류·요약합니다.</p></div>
+        <div class="part"><span>4</span><b>개인정보가 있나?</b><p>있으면 삭제·가명처리 후 진행합니다.</p></div>
+      </div>
+      <p class="notice" style="margin-top:18px">이 판단을 끝내고 바로 실습 1로 넘어갑니다. 실습 1은 정형 데이터인 센터별 매출·정산표의 구조를 읽는 작업입니다.</p>
     </div>
-    <div class="footer"><div class="progress"><span></span></div><span>분석 흐름</span></div>
+    <div class="footer"><div class="progress"><span></span></div><span>데이터 유형 판단</span></div>
   </section>
 
-  <section class="slide" data-title="분석 프레임워크">
+<section class="slide" data-title="데이터 유형 질문">
+    <div class="top"><span>데이터 이해</span><span>질문으로 판단</span></div>
+    <div class="core">정형과 비정형을 구분한 뒤에는 내 자료에 바로 질문을 붙입니다.</div>
+    <div class="content">
+      <h2>내 자료는 어디서 시작해야 할까요?</h2>
+      <div class="grid2">
+        <div class="card focus-red">
+          <span class="label">정형 데이터</span>
+          <b>센터별 매출·정산표처럼 행과 열이 있다면</b>
+          <p>먼저 열 의미, 단위, 누락값, 중복 후보를 확인합니다. 그 다음 계산 열과 피벗으로 넘어갑니다.</p>
+          <div class="result">첫 요청: “각 열의 의미와 확인 필요 항목을 표로 정리해줘.”</div>
+        </div>
+        <div class="card">
+          <span class="label">비정형 데이터</span>
+          <b>문의·후기·상담 메모처럼 문장이라면</b>
+          <p>먼저 개인정보를 제거하고, 주제·감성·액션 항목으로 표를 만든 뒤 분석합니다.</p>
+          <div class="result">첫 요청: “이 문장을 주제/감성/액션 항목으로 분류해줘.”</div>
+        </div>
+      </div>
+      <div class="grid4" style="margin-top:18px">
+        <div class="card"><span class="label">질문 1</span><b>행과 열이 있나요?</b><p>있으면 정형 데이터로 보고 구조 읽기부터 시작합니다.</p></div>
+        <div class="card"><span class="label">질문 2</span><b>바로 합계가 가능한가요?</b><p>가능하면 계산·피벗 실습으로 이어집니다.</p></div>
+        <div class="card"><span class="label">질문 3</span><b>문장을 읽어야 하나요?</b><p>그렇다면 먼저 분류·요약 표를 만듭니다.</p></div>
+        <div class="card"><span class="label">질문 4</span><b>개인정보가 있나요?</b><p>있으면 삭제·가명처리 후 AI에 넣습니다.</p></div>
+      </div>
+      <p class="notice" style="margin-top:18px">채팅에 남길 말: “내 업무 데이터는 정형/비정형 중 무엇에 가까운지, 먼저 해야 할 작업은 무엇인지 적어주세요.”</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>데이터 유형 질문</span></div>
+  </section>
+
+<section class="slide" data-title="분석 프레임워크">
     <div class="top"><span>핵심 프레임워크</span><span>데이터 업무 운영법</span></div>
     <div class="core">오늘 실습은 “AI에게 분석해줘”가 아니라, 데이터 업무를 5단계로 나누어 AI와 사람이 함께 처리하는 방식입니다.</div>
     <div class="content">
@@ -910,90 +836,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>분석 프레임워크</span></div>
   </section>
 
-  <section class="slide" data-title="해외 표준 CRISP-DM">
-    <div class="top"><span>해외 표준</span><span>CRISP-DM</span></div>
-    <div class="core">해외 데이터 분석 교육과 현업에서 오래 쓰인 CRISP-DM은 “업무 이해 → 데이터 이해 → 준비 → 모델링 → 평가 → 배포” 흐름으로 봅니다.</div>
-    <div class="content">
-      <h2>CRISP-DM을 바인그룹 수업에 맞추면</h2>
-      <table class="rule-table">
-        <thead><tr><th>CRISP-DM 단계</th><th>원문 핵심 의미</th><th>바인그룹 강의 적용</th><th>오늘 할 일</th></tr></thead>
-        <tbody>
-          <tr><td><b>Business Understanding</b></td><td>업무 목표와 제약을 먼저 이해</td><td>센터·과정·채널 중 어떤 판단을 할지 정하기</td><td>내 업무 질문 1개</td></tr>
-          <tr><td><b>Data Understanding</b></td><td>데이터의 의미, 구조, 품질을 파악</td><td>열 의미, 단위, 누락·중복 후보 확인</td><td>열 설명표</td></tr>
-          <tr><td><b>Data Preparation</b></td><td>분석 가능한 데이터셋으로 준비</td><td>마스터 표, 표준값, 계산 열, 개인정보 제거</td><td>전처리 기준표</td></tr>
-          <tr><td><b>Modeling</b></td><td>패턴을 찾는 분석 방법 적용</td><td>피벗, 전환율, 환불률, 채널별 비교</td><td>피벗 설계안</td></tr>
-          <tr><td><b>Evaluation</b></td><td>결과가 업무 목표에 맞는지 평가</td><td>수치 검산, 과장 표현 제거, 추가 확인 항목 정리</td><td>검산 체크</td></tr>
-          <tr><td><b>Deployment</b></td><td>결과를 실제 업무에 쓰게 배포</td><td>보고서 5문장, 다음 액션, 다음 차수 차트 재료</td><td>최종 제출물</td></tr>
-        </tbody>
-      </table>
-      <p class="notice" style="margin-top:14px">오늘 2차수는 특히 Data Understanding과 Data Preparation을 깊게 잡습니다. 여기서 표가 흔들리면 3차수 차트도 흔들립니다.</p>
-      <p class="source-note">참고: <a href="https://www.ibm.com/docs/en/spss-modeler/18.6.0?topic=overview-crisp-dm-in-spss-modeler">IBM SPSS Modeler CRISP-DM</a>의 6단계 프로세스를 강의 흐름에 맞게 재구성</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>CRISP-DM</span></div>
-  </section>
-
-  <section class="slide" data-title="해외 공식 가이드 매핑">
-    <div class="top"><span>해외 원문 기반</span><span>공식 가이드 매핑</span></div>
-    <div class="core">OpenAI, Google, HPE, NIST 자료를 한 문장으로 줄이면 “AI에게 맡기기 전에 데이터 구조·품질·위험 기준을 먼저 정하라”입니다.</div>
-    <div class="content">
-      <h2>공식 자료를 수업 기준으로 바꾸기</h2>
-      <div class="source-strip">
-        <div class="source-card"><b>OpenAI</b><p>명확한 열 이름, 한 행=한 기록, 원하는 계산·그룹·차트 유형을 알려주는 방식이 좋습니다.</p><div class="formula">수업 적용: 데이터 설명서 + 분석 질문</div></div>
-        <div class="source-card"><b>Google Sheets</b><p>Gemini는 수식, 분석, 차트, 피벗, 필터, 서식 같은 시트 작업을 자연어로 도울 수 있습니다.</p><div class="formula">수업 적용: 시트 안 검산과 반복 분류</div></div>
-        <div class="source-card"><b>HPE</b><p>AI가 의미 있는 인사이트를 내려면 고품질·안전·정리된 데이터 관리가 먼저 필요합니다.</p><div class="formula">수업 적용: 전처리 품질 6대 기준</div></div>
-        <div class="source-card"><b>NIST AI RMF</b><p>AI 위험 관리는 Govern, Map, Measure, Manage 기능으로 계속 점검합니다.</p><div class="formula">수업 적용: 보안·검산·관리 규칙</div></div>
-      </div>
-      <div class="decision-formula">
-        <div class="part"><span>구조</span><b>열 이름과 기록 단위</b><p>무엇이 한 행인지 정합니다.</p></div>
-        <div class="part"><span>품질</span><b>누락·중복·이상값</b><p>AI가 후보를 찾고 사람이 확인합니다.</p></div>
-        <div class="part"><span>도구</span><b>GPT/Gemini/Sheet</b><p>파일 이해, 반복 작업, 검산을 나눕니다.</p></div>
-        <div class="part"><span>위험</span><b>개인정보와 단정 표현</b><p>공유 전에 반드시 줄입니다.</p></div>
-      </div>
-      <p class="source-note">출처: <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt">OpenAI Help Center</a>, <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr">Google Docs Editors Help</a>, <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE</a>, <a href="https://www.nist.gov/itl/ai-risk-management-framework/nist-ai-rmf-playbook">NIST AI RMF Playbook</a></p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>공식 가이드 매핑</span></div>
-  </section>
-
-  <section class="slide" data-title="해외 사례 Telco Churn">
-    <div class="top"><span>해외 사례</span><span>Telco Customer Churn</span></div>
-    <div class="core">해외 데이터 분석 예제로 자주 쓰이는 Telco Churn은 “누가 이탈할 가능성이 높은가”를 보는 사례입니다. 바인그룹에서는 “누가 등록·유지로 이어지는가”로 바꿔 씁니다.</div>
-    <div class="content">
-      <h2>고객 이탈 분석을 교육 운영 분석으로 바꾸기</h2>
-      <div class="grid2">
-        <div class="card">
-          <span class="label">해외 원문 사례의 구조</span>
-          <table class="sheet" style="margin-top:8px">
-            <thead><tr><th>Telco 열</th><th>의미</th></tr></thead>
-            <tbody>
-              <tr><td>customerID</td><td>고객 식별자</td></tr>
-              <tr><td>tenure</td><td>이용 기간</td></tr>
-              <tr><td>MonthlyCharges</td><td>월 요금</td></tr>
-              <tr><td>Contract</td><td>계약 형태</td></tr>
-              <tr><td>Churn</td><td>이탈 여부</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card focus-red">
-          <span class="label">바인그룹 적용 구조</span>
-          <table class="sheet" style="margin-top:8px">
-            <thead><tr><th>바인그룹 열</th><th>업무 질문</th></tr></thead>
-            <tbody>
-              <tr><td>상담ID/익명ID</td><td>개인정보 없이 흐름 추적</td></tr>
-              <tr><td>상담 후 경과일</td><td>언제 등록이 끊기는가?</td></tr>
-              <tr><td>과정 금액/매출</td><td>금액대별 전환 차이가 있는가?</td></tr>
-              <tr><td>과정/채널</td><td>어떤 과정·채널의 전환이 낮은가?</td></tr>
-              <tr><td>등록/환불 여부</td><td>어떤 조건에서 이탈·환불이 생기는가?</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:14px">수업에서는 예측 모델까지 가지 않습니다. 대신 “이탈/환불을 보기 위한 열 구조와 질문 설계”를 만들어 3차수 분석·시각화로 넘깁니다.</p>
-      <p class="source-note">참고: <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn">Kaggle Telco Customer Churn</a> 데이터셋과 고객 유지 분석 흐름을 교육 운영 데이터로 변환</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>해외 사례 변환</span></div>
-  </section>
-
-  <section class="slide" data-title="질문 설계 프레임워크">
+<section class="slide" data-title="질문 설계 프레임워크">
     <div class="top"><span>프레임워크 1</span><span>질문 설계</span></div>
     <div class="core">좋은 데이터 분석은 좋은 질문에서 시작합니다. 질문이 흐리면 AI는 그럴듯한 요약만 만들고, 업무 판단은 남지 않습니다.</div>
     <div class="content">
@@ -1021,7 +864,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>질문 설계</span></div>
   </section>
 
-  <section class="slide" data-title="취합 설계 프레임워크">
+<section class="slide" data-title="취합 설계 프레임워크">
     <div class="top"><span>프레임워크 2</span><span>데이터 취합</span></div>
     <div class="core">여러 채널의 데이터를 모을 때 핵심은 “다 붙이기”가 아니라, 서로 다른 자료가 한 표에서 만날 규칙을 먼저 정하는 것입니다.</div>
     <div class="content">
@@ -1056,7 +899,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>취합 설계</span></div>
   </section>
 
-  <section class="slide" data-title="전처리 품질 프레임워크">
+<section class="slide" data-title="전처리 품질 프레임워크">
     <div class="top"><span>프레임워크 3</span><span>전처리 품질</span></div>
     <div class="core">전처리는 “깨끗한 표 만들기”가 아니라, 나중에 틀린 숫자를 보고하지 않기 위한 품질 관리입니다.</div>
     <div class="content">
@@ -1074,46 +917,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>전처리 품질</span></div>
   </section>
 
-  <section class="slide" data-title="분석 유형 프레임워크">
-    <div class="top"><span>프레임워크 4</span><span>분석 유형</span></div>
-    <div class="core">AI에게 “인사이트 뽑아줘”라고만 하면 결과가 흐려집니다. 어떤 종류의 질문인지 먼저 골라야 합니다.</div>
-    <div class="content">
-      <h2>업무 질문을 5가지 분석 유형으로 나누기</h2>
-      <table class="rule-table">
-        <thead><tr><th>분석 유형</th><th>보고 싶은 것</th><th>바인그룹 예시 질문</th><th>추천 결과물</th></tr></thead>
-        <tbody>
-          <tr><td><b>비교</b></td><td>센터·과정·채널 차이</td><td>어느 센터가 상담 대비 등록 전환이 낮은가?</td><td>피벗 요약표, 막대 차트</td></tr>
-          <tr><td><b>변화</b></td><td>월별 추세</td><td>문의는 늘었는데 등록이 같이 늘었는가?</td><td>월별 선형 차트</td></tr>
-          <tr><td><b>분포</b></td><td>값의 쏠림과 이상값</td><td>환불률이 유독 높은 과정이 있는가?</td><td>상위/하위 표, 이상값 목록</td></tr>
-          <tr><td><b>관계</b></td><td>숫자 간 함께 움직임</td><td>상담신청수와 매출은 같이 움직이는가?</td><td>상관 후보, 산점도 후보</td></tr>
-          <tr><td><b>텍스트</b></td><td>문의·후기의 반복 주제</td><td>학부모 문의에서 자주 나오는 불편은 무엇인가?</td><td>주제 분류표, 빈도 표</td></tr>
-        </tbody>
-      </table>
-      <p class="notice" style="margin-top:16px">오늘은 비교·변화·분포를 맛보고, 3차수에서 차트와 대시보드로 더 깊게 들어갑니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>분석 유형</span></div>
-  </section>
-
-  <section class="slide" data-title="검증 보고 프레임워크">
-    <div class="top"><span>프레임워크 5</span><span>검증과 보고</span></div>
-    <div class="core">AI가 만든 결과는 초안입니다. 강의에서 끝까지 가져갈 습관은 “수치 검산 → 해석 제한 → 액션 연결”입니다.</div>
-    <div class="content">
-      <h2>AI 결과 검증 4단계</h2>
-      <div class="deep-list">
-        <div class="item"><strong>1. 수치 검산</strong><p>전환율, 환불률, 정산률은 첫 3~4행을 손으로 계산해 맞는지 확인합니다.</p></div>
-        <div class="item"><strong>2. 단위 확인</strong><p>원/만원, 건수/비율, 월/분기 기준이 보고서 문장 안에서 섞이지 않았는지 봅니다.</p></div>
-        <div class="item"><strong>3. 단정 제한</strong><p>데이터가 보여주는 것은 “원인”이 아니라 “원인 후보”일 수 있습니다. AI 문장에서 과장 표현을 줄입니다.</p></div>
-        <div class="item"><strong>4. 액션 연결</strong><p>결론마다 “운영자가 다음에 확인할 것”을 붙입니다. 예: 광고 채널 전환율 낮음 → 상담 스크립트/랜딩페이지 확인.</p></div>
-      </div>
-      <div class="grid2" style="margin-top:16px">
-        <div class="card"><span class="label">나쁜 보고</span><b>“광고 채널이 실패했습니다.”</b><p>원인을 단정했고, 어떤 데이터 기준인지 보이지 않습니다.</p></div>
-        <div class="card focus-red"><span class="label">좋은 보고</span><b>“광고 채널은 상담신청수는 높지만 등록 전환율이 낮아 상담 이후 이탈 구간 확인이 필요합니다.”</b><p>숫자 패턴, 해석 범위, 다음 액션이 함께 있습니다.</p></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>검증과 보고</span></div>
-  </section>
-
-  <section class="slide" data-title="데이터 설명서">
+<section class="slide" data-title="데이터 설명서">
     <div class="top"><span>핵심 개념</span><span>데이터 설명</span></div>
     <div class="core">AI에게 파일만 던지면 “그럴듯한 해석”을 할 수 있습니다. 그래서 먼저 데이터 설명서를 붙입니다.</div>
     <div class="content">
@@ -1144,129 +948,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>데이터 설명</span></div>
   </section>
 
-  <section class="slide" data-title="전처리 위치">
-    <div class="top"><span>핵심 개념</span><span>전처리</span></div>
-    <div class="core">전처리는 분석 전에 하는 청소가 아니라, 같은 기준으로 비교하기 위한 준비 작업입니다.</div>
-    <div class="content">
-      <h2>전처리에서 맞춰야 할 4가지</h2>
-      <div class="grid4">
-        <div class="card focus-red"><div class="icon">1</div><b>형식 통일</b><p>날짜, 센터명, 과정명, 채널명을 같은 규칙으로 맞춥니다.</p><div class="formula">강남 / 강남센터 → 강남센터</div></div>
-        <div class="card focus-red"><div class="icon green-bg">2</div><b>누락·중복 확인</b><p>빈칸과 같은 행이 여러 번 들어간 부분을 표시합니다.</p><div class="formula">환불건수 공란 → 확인필요</div></div>
-        <div class="card focus-red"><div class="icon gold-bg">3</div><b>계산 기준 생성</b><p>전환율, 환불률처럼 뒤에서 피벗할 계산 열을 만듭니다.</p><div class="formula">등록수 / 상담신청수</div></div>
-        <div class="card focus-red"><div class="icon">4</div><b>개인정보 제거</b><p>이름, 연락처, 계약번호, 상세 주소는 삭제하거나 가짜 값으로 바꿉니다.</p><div class="formula">김OO / 010-0000-0000</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px;border-left-color:var(--red);background:#fff1ee">실습에서는 AI가 전처리 후보를 찾고, 우리는 표본 3~4행을 직접 확인해 전체 적용 여부를 결정합니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>전처리</span></div>
-  </section>
-
-  <section class="slide" data-title="전처리 이유">
-    <div class="top"><span>핵심 개념</span><span>전처리 이유</span></div>
-    <div class="core">전처리를 하는 이유는 단순합니다. AI와 엑셀이 같은 데이터를 같은 기준으로 읽게 만들기 위해서입니다.</div>
-    <div class="content">
-      <h2>왜 전처리를 먼저 해야 하나?</h2>
-      <div class="grid4">
-        <div class="card">
-          <div class="icon">1</div>
-          <b>AI의 오해를 줄입니다</b>
-          <p>센터명, 과정명, 채널명이 제각각이면 AI가 서로 다른 항목으로 해석할 수 있습니다.</p>
-          <div class="result">예: 강남 / 강남센터 / 강남점 → 강남센터</div>
-        </div>
-        <div class="card">
-          <div class="icon green-bg">2</div>
-          <b>비교 기준을 맞춥니다</b>
-          <p>월별, 센터별, 과정별 기준이 섞이면 어느 쪽이 좋은지 비교할 수 없습니다.</p>
-          <div class="result">예: 2026-07-01 → 2026-07</div>
-        </div>
-        <div class="card">
-          <div class="icon gold-bg">3</div>
-          <b>계산 오류를 막습니다</b>
-          <p>빈칸, 중복, 단위 혼합이 있으면 전환율과 피벗 결과가 바로 틀어집니다.</p>
-          <div class="result">예: 18백만 / 18,000,000 → 18000000</div>
-        </div>
-        <div class="card focus-red">
-          <div class="icon">4</div>
-          <b>보안 리스크를 줄입니다</b>
-          <p>이름, 연락처, 계약번호가 섞인 파일은 AI에 올리기 전에 반드시 제거해야 합니다.</p>
-          <div class="result">예: 실명·연락처 → 익명 샘플</div>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:18px">한 줄로 말하면, 전처리는 “예쁜 표 만들기”가 아니라 “나중에 믿고 말할 수 있는 결론을 만드는 일”입니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>전처리 이유</span></div>
-  </section>
-
-  <section class="slide" data-title="30초 체크 2">
-    <div class="top"><span>환기 체크</span><span>30초</span></div>
-    <div class="core">전처리를 이해했는지 확인하는 가장 빠른 방법은 “AI에게 올리기 전에 지울 것”을 직접 찍어보는 것입니다.</div>
-    <div class="content">
-      <h2>30초 체크: 이 표에서 먼저 손볼 것은?</h2>
-      <div class="stage-strip"><span>원본 보기</span><span class="warn">보안 찾기</span><span class="on">형식 찾기</span><span>계산 가능 여부</span><span>채팅 공유</span></div>
-      <div class="grid2">
-        <div class="card">
-          <b>샘플 원본</b>
-          <table class="sheet" style="margin-top:12px">
-            <thead><tr><th>수강생</th><th>날짜</th><th>센터</th><th>매출</th><th>메모</th></tr></thead>
-            <tbody>
-              <tr><td>김OO</td><td>7/1</td><td>강남</td><td>18백만</td><td>전화번호 포함</td></tr>
-              <tr><td>박OO</td><td>2026-07-01</td><td>강남센터</td><td>18000000</td><td>등록 완료</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card focus-red">
-          <b>찾아야 할 것 4개</b>
-          <ol class="guide-steps">
-            <li>직접 식별자: 수강생 이름, 연락처</li>
-            <li>날짜 형식: 7/1과 2026-07-01 혼재</li>
-            <li>센터명 표기: 강남과 강남센터 혼재</li>
-            <li>금액 단위: 18백만과 18000000 혼재</li>
-          </ol>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:18px">강사용 멘트: “지금 하나라도 찾으셨으면 전처리를 이해한 겁니다. AI에게도 바로 이 후보를 찾게 시킬 거예요.”</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>30초 체크</span></div>
-  </section>
-
-  <section class="slide" data-title="미니 실습 2">
-    <div class="top"><span>바로 따라하기</span><span>3분</span></div>
-    <div class="core">전처리를 배웠다면, 지금 바로 표에서 무엇을 고쳐야 하는지 표시합니다.</div>
-    <div class="content">
-      <h2>미니 실습 2. 전처리 후보 체크하기</h2>
-      <div class="stage-strip"><span>읽기</span><span class="on">보안·전처리</span><span>계산</span><span>인사이트</span><span>제출</span></div>
-      <div class="guide">
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">전처리 전 샘플 표</span></div>
-          <div class="mock-body">
-            <table class="sheet">
-              <thead><tr><th>센터</th><th>날짜</th><th>매출</th><th>문의메모</th></tr></thead>
-              <tbody>
-                <tr><td>강남</td><td>26.7.1</td><td>18백만</td><td>김OO 연락처 포함</td></tr>
-                <tr><td>강남센터</td><td>2026-07-01</td><td>18,000,000</td><td>중복 가능</td></tr>
-                <tr><td>분당</td><td>7/2</td><td>-</td><td>환불 규정 문의</td></tr>
-              </tbody>
-            </table>
-            <div class="formula">찾을 것: 표기 차이 / 날짜 형식 / 금액 단위 / 개인정보 / 누락</div>
-          </div>
-        </div>
-        <div class="guide-panel">
-          <span class="time-chip"><strong>3분</strong> 손으로 먼저 보기</span>
-          <h3>하나씩 따라 하기</h3>
-          <ol class="guide-steps">
-            <li>센터명이 같은 의미인데 다르게 적힌 곳을 찾습니다.</li>
-            <li>날짜 형식과 금액 단위가 섞인 곳을 찾습니다.</li>
-            <li>개인정보처럼 지워야 할 내용을 찾습니다.</li>
-            <li>누락값이 0인지 미입력인지 확인할 항목을 표시합니다.</li>
-            <li>AI에게 맡길 전처리 요청을 한 줄로 만듭니다.</li>
-          </ol>
-          <div class="prompt-mini">이 표에서 전처리 후보를 찾아줘. 센터명 표기 차이, 날짜 형식, 금액 단위, 누락값, 개인정보 포함 여부를 표로 정리해줘.</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>미니 실습 2</span></div>
-  </section>
-
-  <section class="slide" data-title="AI와 사람의 역할">
+<section class="slide" data-title="AI와 사람의 역할">
     <div class="top"><span>핵심 개념</span><span>역할 분담</span></div>
     <div class="core">AI는 정리 속도를 높여주지만, 숫자가 맞는지와 결론이 타당한지는 사람이 확인합니다.</div>
     <div class="content">
@@ -1296,106 +978,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>역할 분담</span></div>
   </section>
 
-  <section class="slide" data-title="데이터 유형 퀴즈">
-    <div class="top"><span>퀴즈</span><span>데이터 유형</span></div>
-    <div class="core">바로 맞히기보다, “AI에게 먼저 시킬 일”을 떠올리면 됩니다.</div>
-    <div class="content">
-      <h2>정형? 비정형? 먼저 생각해보기</h2>
-      <div class="grid3">
-        <div class="card"><div class="icon">A</div><b>센터별 매출표</b><p>월, 센터, 과정, 매출, 상담신청수, 등록수로 정리된 엑셀 표</p><div class="formula">정답: ?</div></div>
-        <div class="card"><div class="icon green-bg">B</div><b>학부모 문의 메모</b><p>“수업 시간 변경 가능한가요? 환불 규정도 궁금합니다.” 같은 문장</p><div class="formula">정답: ?</div></div>
-        <div class="card"><div class="icon gold-bg">C</div><b>홈페이지 접속 로그</b><p>날짜, 페이지, 유입 채널, 체류시간이 줄 단위로 기록된 로그 파일</p><div class="formula">정답: ?</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">질문: “바로 피벗이 가능한가?” 가능하면 정형 데이터, 먼저 문장 추출·분류가 필요하면 비정형 데이터입니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>데이터 유형</span></div>
-  </section>
-
-  <section class="slide" data-title="데이터 유형 정답">
-    <div class="top"><span>정답</span><span>데이터 유형</span></div>
-    <div class="core">데이터 유형을 알면, AI에게 “분석해줘” 전에 무엇부터 요청할지 정할 수 있습니다.</div>
-    <div class="content">
-      <h2>정답과 첫 작업</h2>
-      <div class="grid3">
-        <div class="card"><div class="icon">정형</div><b>A. 센터별 매출표</b><p>이미 행과 열이 있으므로 필터, 피벗, 계산 열을 만들 수 있습니다.</p><div class="result">첫 작업: 열 이름·단위·누락값 확인</div></div>
-        <div class="card"><div class="icon gold-bg">비정형</div><b>B. 학부모 문의 메모</b><p>문장이므로 주제, 감성, 확인 필요 항목으로 표로 바꿔야 합니다.</p><div class="result">첫 작업: 개인정보 제거 후 분류</div></div>
-        <div class="card"><div class="icon green-bg">반정형</div><b>C. 홈페이지 로그</b><p>규칙은 있지만 업무 보고용 표로 정리하는 과정이 필요합니다.</p><div class="result">첫 작업: 날짜·채널·페이지 기준 추출</div></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>데이터 유형</span></div>
-  </section>
-
-  <section class="slide" data-title="미니 실습 1">
-    <div class="top"><span>바로 따라하기</span><span>2분</span></div>
-    <div class="core">데이터 유형을 이해했다면, 내 업무 자료 3개를 바로 분류해봅니다.</div>
-    <div class="content">
-      <h2>미니 실습 1. 내 업무 데이터 유형 표시하기</h2>
-      <div class="stage-strip"><span class="on">읽기</span><span>해석</span><span>전처리</span><span>분석</span><span>제출</span></div>
-      <div class="grid3">
-        <div class="card"><div class="icon">표</div><span class="label">정형</span><b>바로 계산할 수 있는 표</b><p>센터별 매출표, 상담 신청 건수, 등록자 명단, 월별 정산표</p><div class="result">첫 요청: 열 의미와 누락값 확인</div></div>
-        <div class="card"><div class="icon green-bg">{ }</div><span class="label">반정형</span><b>규칙은 있으나 정리 필요</b><p>홈페이지 로그, 광고 클릭 기록, 설문 원본 다운로드 파일</p><div class="result">첫 요청: 업무 표로 펼치기</div></div>
-        <div class="card"><div class="icon gold-bg">TXT</div><span class="label">비정형</span><b>문장을 표로 바꿔야 함</b><p>상담 메모, 학부모 문의, 수강 후기, 만족도 서술형 답변</p><div class="result">첫 요청: 주제·감성·확인 필요 항목 분류</div></div>
-      </div>
-      <div class="guide-panel" style="margin-top:18px">
-        <h3>하나씩 따라 하기</h3>
-        <ol class="guide-steps">
-          <li>내가 자주 다루는 자료 3개를 떠올립니다.</li>
-          <li>각 자료 옆에 정형 / 반정형 / 비정형 중 하나를 붙입니다.</li>
-          <li>정형이면 “계산·피벗”, 비정형이면 “분류·요약”부터 시킨다고 기억합니다.</li>
-          <li>채팅에는 “정형 1개, 비정형 1개”만 남깁니다.</li>
-        </ol>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>미니 실습 1</span></div>
-  </section>
-
-  <section class="slide" data-title="텍스트 데이터">
-    <div class="top"><span>확장 개념</span><span>텍스트 데이터</span></div>
-    <div class="core">후기와 문의도 분석할 수 있습니다. 단, 먼저 문장을 표의 행과 열로 바꿔야 합니다.</div>
-    <div class="content">
-      <h2>텍스트 데이터는 이렇게 표로 바꿉니다</h2>
-      <div class="guide">
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">학부모 문의 메모</span></div>
-          <div class="mock-body">
-            <div class="chat-row"><div class="avatar">문</div><div class="bubble">수업 시간 변경 가능한가요? 아이가 숙제를 따라가기 어려워해요.</div></div>
-            <div class="chat-row"><div class="avatar">문</div><div class="bubble">상담은 좋았는데 등록비와 환불 규정이 궁금합니다.</div></div>
-            <table class="sheet"><thead><tr><th>주제</th><th>감성</th><th>확인 필요</th></tr></thead><tbody><tr><td>시간 변경</td><td>중립</td><td>운영 일정</td></tr><tr><td>결제/환불</td><td>중립</td><td>규정 안내</td></tr></tbody></table>
-          </div>
-        </div>
-        <div class="guide-panel">
-          <h3>분석 방법</h3>
-          <ol class="guide-steps">
-            <li>문의/후기 원문에서 개인정보를 제거합니다.</li>
-            <li>AI에게 주제, 감성, 확인 필요 항목으로 분류하게 합니다.</li>
-            <li>분류 결과를 표로 받아 엑셀에 붙여 넣습니다.</li>
-            <li>자주 나오는 주제와 개선 항목을 피벗으로 확인합니다.</li>
-          </ol>
-          <div class="prompt-mini">프롬프트: 아래 문의를 주제/감성/확인 필요 항목으로 표로 분류해줘. 주제는 상담, 수업, 결제, 환불, 일정, 기타 중 하나로 해줘.</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>텍스트 데이터</span></div>
-  </section>
-
-  <section class="slide" data-title="데이터 분석 과정">
-    <div class="top"><span>핵심 개념</span><span>06 / 26</span></div>
-    <div class="core">AI 데이터 분석도 기본 순서는 같습니다. AI는 중간 작업을 빠르게 도와주는 도구입니다.</div>
-    <div class="content">
-      <h2>AI 데이터 분석 프로세스</h2>
-      <div class="flow wide">
-        <div class="card step" data-step="1"><b>문제 정의</b><p>무엇을 판단할지 정합니다.</p></div>
-        <div class="card step" data-step="2"><b>데이터 수집</b><p>필요한 표와 파일을 모읍니다.</p></div>
-        <div class="card step focus-red" data-step="3"><b>전처리</b><p>열 이름, 누락, 중복을 정리합니다.</p></div>
-        <div class="card step" data-step="4"><b>분석·시각화</b><p>패턴과 차트를 만듭니다.</p></div>
-        <div class="card step" data-step="5"><b>보고·결정</b><p>근거와 액션을 정리합니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:18px;border-left-color:var(--red);background:#fff1ee">오늘 실습의 핵심은 전처리입니다. 같은 데이터라도 전처리가 안 되어 있으면 AI도 엑셀도 잘못된 결론을 냅니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:23%"></span></div><span>06 / 26</span></div>
-  </section>
-
-  <section class="slide" data-title="전처리 정의">
+<section class="slide" data-title="전처리 정의">
     <div class="top"><span>핵심 개념</span><span>전처리</span></div>
     <div class="core">전처리는 보기 좋게 꾸미는 일이 아니라, 계산과 비교가 틀리지 않게 기준을 맞추는 일입니다.</div>
     <div class="content">
@@ -1446,7 +1029,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>전처리</span></div>
   </section>
 
-  <section class="slide" data-title="사전 설문 자동화 아이디어">
+<section class="slide" data-title="사전 설문 자동화 아이디어">
     <div class="top"><span>요구사항 분석</span><span>자동화 아이디어</span></div>
     <div class="core">자동화 아이디어는 추상적으로 만들지 않고, 사전 설문에서 나온 반복 업무를 유형으로 묶어 설계합니다.</div>
     <div class="content">
@@ -1468,7 +1051,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>자동화 아이디어</span></div>
   </section>
 
-  <section class="slide" data-title="도구 역할">
+<section class="slide" data-title="도구 역할">
     <div class="top"><span>도구 선택</span><span>07 / 26</span></div>
     <div class="core">도구를 하나만 고르는 것이 아니라, 역할을 나눠 쓰면 실수가 줄어듭니다.</div>
     <div class="content">
@@ -1500,7 +1083,7 @@
     <div class="footer"><div class="progress"><span style="width:27%"></span></div><span>07 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="AI 분석 주의사항">
+<section class="slide" data-title="AI 분석 주의사항">
     <div class="top"><span>주의사항</span><span>08 / 32</span></div>
     <div class="core">실습으로 넘어가기 전에, 업무 데이터에서 절대 놓치면 안 되는 안전 기준을 먼저 확인합니다.</div>
     <div class="content">
@@ -1513,21 +1096,12 @@
         <div class="check"><div class="box"></div><div><b>단정 표현 수정</b><p>“원인이다” 대신 “가능성이 있다/확인 필요”로 표현했는가?</p></div></div>
         <div class="check"><div class="box"></div><div><b>원본 보존</b><p>원본 파일과 AI가 정리한 파일을 분리해 저장했는가?</p></div></div>
       </div>
-      <p class="notice" style="margin-top:18px">강사용 멘트: “오늘은 AI에게 맡기는 법보다, AI가 만든 결과를 업무 기준으로 검수하는 법까지 같이 봅니다.”</p>
+      <p class="notice" style="margin-top:18px">핵심: AI에게 정리를 맡기되, 업무 기준과 수치는 반드시 사람이 검수합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span style="width:29%"></span></div><span>08 / 32</span></div>
   </section>
 
-  <section class="slide section goldish" data-title="섹션 2" data-sec="2">
-    <div class="content">
-      <span class="section-kicker">SECTION 02</span>
-      <h2>도구 선택과 엑셀 AI</h2>
-      <p>ChatGPT, Gemini, Excel/Sheets는 경쟁 도구가 아니라 단계별로 역할이 다릅니다. 오늘은 가장 안전한 샘플 데이터로 각 도구의 쓰임을 구분합니다.</p>
-      <div class="section-map"><span>ChatGPT 웹 업로드</span><span>Excel 검산·피벗</span><span>Sheets + Gemini</span><span>보안 기준</span></div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="GPT Gemini 선택">
+<section class="slide" data-title="GPT Gemini 선택">
     <div class="top"><span>도구 선택</span><span>ChatGPT vs Gemini</span></div>
     <div class="core">어떤 AI가 더 좋은지가 아니라, 지금 작업이 “파일 전체를 읽는 일”인지 “시트 안에서 반복하는 일”인지 먼저 봅니다.</div>
     <div class="content">
@@ -1564,59 +1138,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>도구 선택</span></div>
   </section>
 
-  <section class="slide" data-title="30초 체크 3">
-    <div class="top"><span>환기 체크</span><span>30초</span></div>
-    <div class="core">도구는 많이 쓰는 것이 아니라, 지금 해야 할 일에 맞게 하나만 고르는 것이 더 중요합니다.</div>
-    <div class="content">
-      <h2>30초 체크: 지금은 어떤 도구를 열까요?</h2>
-      <div class="stage-strip"><span>파일 전체</span><span>시트 반복</span><span>숫자 검산</span><span class="on">도구 선택</span><span>실행</span></div>
-      <div class="grid3">
-        <div class="card"><div class="icon">GPT</div><b>ChatGPT</b><p>CSV나 엑셀 파일 전체를 읽고 구조, 전처리 기준, 보고서 초안을 잡을 때 엽니다.</p><div class="result">오늘: 실습 1, 실습 3</div></div>
-        <div class="card"><div class="icon green-bg">Gemini</div><b>Gemini</b><p>Google Sheets 안에서 여러 행을 요약·분류·감성분석처럼 반복 처리할 때 엽니다.</p><div class="result">오늘: 텍스트 분류 예시</div></div>
-        <div class="card focus-red"><div class="icon gold-bg">Sheet</div><b>Excel / Sheets</b><p>AI가 만든 수식이 맞는지 표본 검산하고, 피벗으로 기준을 바꿔 볼 때 엽니다.</p><div class="result">오늘: 실습 2</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">채팅 멘트: “오늘 나는 ChatGPT / Gemini / Excel·Sheets 중 무엇부터 열지 하나만 적어주세요.”</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>30초 체크</span></div>
-  </section>
-
-  <section class="slide" data-title="미니 실습 3">
-    <div class="top"><span>바로 따라하기</span><span>2분</span></div>
-    <div class="core">도구 선택을 들었다면, 지금 바로 오늘 쓸 창을 하나 엽니다.</div>
-    <div class="content">
-      <h2>미니 실습 3. 오늘 쓸 AI 창 열기</h2>
-      <div class="stage-strip"><span>읽기</span><span>보안·전처리</span><span class="on">도구 선택</span><span>실행</span><span>제출</span></div>
-      <div class="guide">
-        <div class="ai-window">
-          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">AI</span>오늘 쓸 도구 선택</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-layout">
-            <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
-            <div class="ai-thread">
-              <div class="ai-msg user"><b>선택 1</b>파일 전체를 올려 구조를 읽을 거면 ChatGPT를 엽니다.</div>
-              <div class="ai-msg user"><b>선택 2</b>Google Sheets 안에서 여러 행을 분류할 거면 Gemini를 엽니다.</div>
-              <div class="ai-msg ai"><b>오늘 기준</b>막히면 ChatGPT 웹으로 따라오면 됩니다. 숫자 검산은 Excel/Sheets에서 합니다.</div>
-              <div class="ai-input">새 대화 화면을 열어둡니다 <span class="ai-send"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="guide-panel">
-          <span class="time-chip"><strong>2분</strong> 창 열기</span>
-          <h3>하나씩 따라 하기</h3>
-          <ol class="guide-steps">
-            <li>브라우저에서 ChatGPT 또는 Gemini를 엽니다.</li>
-            <li>새 대화 화면을 엽니다.</li>
-            <li>입력창이 보이는지 확인합니다.</li>
-            <li>로그인이 안 되면 강사 화면을 보며 프롬프트만 가져갑니다.</li>
-            <li>채팅에 “GPT 준비” 또는 “Gemini 준비”라고 남깁니다.</li>
-          </ol>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:18px">여기서 도구를 정해두면 뒤의 실습 1, 2, 3에서 헤매는 시간이 줄어듭니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>미니 실습 3</span></div>
-  </section>
-
-  <section class="slide" data-title="AI UI 역할">
+<section class="slide" data-title="AI UI 역할">
     <div class="top"><span>도구 화면</span><span>ChatGPT / Gemini</span></div>
     <div class="core">수강생이 헷갈리는 지점은 기능명이 아니라 “어디에 넣고, 어디서 결과를 보는지”입니다.</div>
     <div class="content">
@@ -1655,101 +1177,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>도구 화면</span></div>
   </section>
 
-  <section class="slide" data-title="공식 자료 기반">
-    <div class="top"><span>출처</span><span>공식 자료</span></div>
-    <div class="core">도구 기능은 계속 바뀌므로, 강의안에서는 공식 자료 기준으로 표현합니다.</div>
-    <div class="content">
-      <h2>공식 자료로 확인한 기준</h2>
-      <div class="source-strip">
-        <div class="source-card"><b>OpenAI</b><p>ChatGPT는 파일 업로드 후 데이터 분석, 차트, 요약을 도와줄 수 있습니다.</p></div>
-        <div class="source-card"><b>Google Sheets</b><p>Gemini 측면 패널과 <span class="kbd">=AI()</span> 함수는 시트 안에서 생성·분류·요약을 지원합니다.</p></div>
-        <div class="source-card"><b>Excel / Sheets</b><p>AI가 제안한 수식과 피벗 구성은 최종적으로 스프레드시트에서 표본 검산합니다.</p></div>
-        <div class="source-card"><b>데이터 관리</b><p>AI 데이터 관리의 핵심은 데이터 품질, 보안, 거버넌스, 활용 가능한 구조입니다.</p></div>
-      </div>
-      <p class="source-note">공식 참고: <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr" target="_blank">Google Docs Editors Help</a> · <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html" target="_blank">HPE AI Data Management</a> · OpenAI Help Center</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>공식 자료</span></div>
-  </section>
-
-  <section class="slide" data-title="엑셀 AI 분석">
-    <div class="top"><span>엑셀 자동화</span><span>12 / 32</span></div>
-    <div class="core">엑셀 업무는 함수, 피벗, 그래프, 보고서 순서가 반복됩니다. AI는 이 반복을 줄여줍니다.</div>
-    <div class="content">
-      <h2>엑셀 AI 분석 자동화란?</h2>
-      <div class="visual-pipeline">
-        <div class="visual-node"><div class="icon">파일</div><b>파일 준비</b><p>엑셀 또는 CSV를 준비</p></div>
-        <div class="visual-node"><div class="icon green-bg">읽기</div><b>구조 파악</b><p>열 타입과 의미 확인</p></div>
-        <div class="visual-node focus-red"><div class="icon" style="background:#fff1ee;color:var(--red)">정리</div><b>전처리</b><p>결측치·중복·형식 정리</p></div>
-        <div class="visual-node"><div class="icon gold-bg">차트</div><b>시각화</b><p>피벗·차트 설계</p></div>
-        <div class="visual-node"><div class="icon">보고</div><b>보고서</b><p>요약과 액션 작성</p></div>
-      </div>
-      <div class="grid4" style="margin-top:16px">
-        <div class="card"><span class="label">01</span><b>형식</b><p>날짜, 금액, 퍼센트 단위를 하나로 맞춥니다.</p></div>
-        <div class="card"><span class="label">02</span><b>이름</b><p>강남, 강남센터처럼 같은 값을 하나의 표기로 통일합니다.</p></div>
-        <div class="card"><span class="label">03</span><b>오류</b><p>빈칸, 중복, 이상하게 큰 값, 숫자 아닌 값을 표시합니다.</p></div>
-        <div class="card"><span class="label">04</span><b>보안</b><p>이름, 연락처, 계약번호는 삭제하거나 익명화합니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:14px">전처리란, 원본 데이터를 분석 가능한 상태로 만드는 준비 작업입니다. 오늘은 AI에게 후보를 찾게 하고, 사람은 표본 검산으로 확인합니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:41%"></span></div><span>12 / 32</span></div>
-  </section>
-
-  <section class="slide" data-title="엑셀 AI 도구">
-    <div class="top"><span>도구 선택</span><span>13 / 32</span></div>
-    <div class="core">회사 환경과 보안 정책에 따라 쓸 수 있는 방법이 달라집니다.</div>
-    <div class="content">
-      <h2>실무에서 쓰는 3가지 방식</h2>
-      <div class="grid3">
-        <div class="card"><div class="icon">GPT</div><span class="label">가장 빠른 입문</span><b>ChatGPT 웹 업로드</b><p>파일을 올리고 구조 파악, 전처리, 차트 설계, 보고서 초안을 한 번에 요청합니다.</p><div class="result">추천: 빠르게 감 잡기, 샘플 데이터 실습</div></div>
-        <div class="card"><div class="icon gold-bg">XLS</div><span class="label">엑셀 중심 업무</span><b>Excel / Google Sheets</b><p>AI가 제안한 수식, 피벗, 표 계산을 실제 시트에서 확인하고 검산합니다.</p><div class="result">추천: 숫자 확인, 피벗 구성, 최종 검산</div></div>
-        <div class="card"><div class="icon green-bg">AI()</div><span class="label">셀 단위 자동화</span><b>Sheets + Gemini</b><p>시트 안에서 셀별 요약, 분류, 감성분석을 함수처럼 반복합니다.</p><div class="result">추천: 구글 시트 협업, 문의/후기 분류</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">오늘 실습은 보안 부담이 낮은 샘플 CSV로 진행합니다. 실제 업무 파일은 회사 정책 확인 후 익명화해서 사용합니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:44%"></span></div><span>13 / 32</span></div>
-  </section>
-
-  <section class="slide" data-title="왜 엑셀 AI인가">
-    <div class="top"><span>엑셀 AI</span><span>14 / 37</span></div>
-    <div class="core">엑셀 AI의 핵심은 “함수를 외우는 사람”에서 “원하는 결과를 설명하는 사람”으로 바뀌는 것입니다.</div>
-    <div class="content">
-      <h2>왜 지금 <span class="accent">엑셀 AI</span>인가</h2>
-      <div class="grid3">
-        <div class="card"><span class="label">반복 업무</span><b>함수 → 피벗 → 차트 → 보고서</b><p>매주 반복되는 정리 작업을 AI가 먼저 초안으로 만들어 줍니다.</p></div>
-        <div class="card"><span class="label">낮은 진입장벽</span><b>함수와 코딩을 몰라도 시작</b><p>“월별 매출 추이를 요약해줘”처럼 자연어로 먼저 요청할 수 있습니다.</p></div>
-        <div class="card"><span class="label">검수 중심</span><b>사람은 기준과 판단을 담당</b><p>AI가 만든 수식, 표, 차트는 원본과 대조해 확인한 뒤 적용합니다.</p></div>
-      </div>
-      <div class="story-note" style="margin-top:16px">
-        <strong>도구 선택 다시 정리</strong>
-        <p>ChatGPT는 파일 전체를 읽고 구조·전처리·보고 흐름을 잡을 때, Gemini는 Google Sheets 안에서 여러 행에 요약·분류를 반복할 때, Excel/Sheets는 최종 계산과 피벗 검산을 할 때 씁니다.</p>
-      </div>
-      <p class="notice" style="margin-top:14px">강사용 멘트: “오늘은 엑셀을 대체하는 수업이 아니라, 엑셀 앞단의 정리와 뒷단의 보고를 AI로 빠르게 만드는 수업입니다.”</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:38%"></span></div><span>14 / 37</span></div>
-  </section>
-
-  <section class="slide" data-title="엑셀용 ChatGPT">
-    <div class="top"><span>엑셀 AI</span><span>15 / 37</span></div>
-    <div class="core">엑셀용 ChatGPT는 빠르게 체감되지만, 원본 파일이 자동으로 수정되는 방식은 아닙니다.</div>
-    <div class="content">
-      <h2>엑셀용 ChatGPT: 두 가지 방식</h2>
-      <div class="grid2">
-        <div class="card">
-          <span class="label">방식 1</span><b>ChatGPT 웹/앱에 파일 업로드</b>
-          <p>엑셀 파일을 올리고 “월별 매출 추이 요약”, “이상치 표시”, “보고서 초안 작성”을 요청합니다.</p>
-          <ul><li>입문자에게 가장 빠름</li><li>표, 차트, 해석 초안까지 확인 가능</li><li>결과를 다시 엑셀에 붙여 넣어야 함</li></ul>
-        </div>
-        <div class="card">
-          <span class="label">방식 2</span><b>엑셀 안 애드인/회사 AI</b>
-          <p>시트 화면을 떠나지 않고 수식, 표 생성, 분류, 모델링 요청을 이어갑니다.</p>
-          <ul><li>엑셀 중심 업무에 적합</li><li>회사 보안 정책 확인 필요</li><li>사용 가능 여부는 조직 환경에 따라 다름</li></ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:41%"></span></div><span>15 / 37</span></div>
-  </section>
-
-  <section class="slide" data-title="Google Sheets Gemini">
+<section class="slide" data-title="Google Sheets Gemini">
     <div class="top"><span>구글 시트</span><span>16 / 37</span></div>
     <div class="core">구글 시트 Gemini는 측면 패널과 셀 함수 방식으로 나눠 이해하면 쉽습니다.</div>
     <div class="content">
@@ -1771,23 +1199,7 @@
     <div class="footer"><div class="progress"><span style="width:43%"></span></div><span>16 / 37</span></div>
   </section>
 
-  <section class="slide" data-title="AI 함수 한계">
-    <div class="top"><span>구글 시트</span><span>17 / 37</span></div>
-    <div class="core">`=AI()`는 강력하지만 만능 함수가 아닙니다. 범위와 한도를 알고 써야 합니다.</div>
-    <div class="content">
-      <h2><span class="kbd">=AI()</span> 사용할 때 주의할 점</h2>
-      <div class="grid4">
-        <div class="card"><b>요금제 필요</b><p>사용 가능한 Workspace 또는 Google AI 요금제가 필요할 수 있습니다.</p></div>
-        <div class="card"><b>텍스트 중심</b><p>생성, 요약, 분류, 감성분석처럼 텍스트 결과에 강합니다.</p></div>
-        <div class="card"><b>범위 지정</b><p>전체 파일을 다 아는 것이 아니라, 함수에 넣은 셀과 범위를 기준으로 답합니다.</p></div>
-        <div class="card"><b>대량 실행 제한</b><p>여러 셀에 한 번에 적용할 때 생성 한도와 새로고침 이슈가 있을 수 있습니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:18px">수업 운영 팁: `=AI()`가 안 보이는 수강생은 ChatGPT 웹 업로드 방식으로 같은 실습을 진행하게 하면 됩니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:46%"></span></div><span>17 / 37</span></div>
-  </section>
-
-  <section class="slide" data-title="실무 프롬프트">
+<section class="slide" data-title="실무 프롬프트">
     <div class="top"><span>프롬프트</span><span>18 / 37</span></div>
     <div class="core">엑셀 업무에서는 복잡한 문장보다 바로 복붙 가능한 요청문이 더 효과적입니다.</div>
     <div class="content">
@@ -1810,7 +1222,7 @@
     <div class="footer"><div class="progress"><span style="width:49%"></span></div><span>18 / 37</span></div>
   </section>
 
-  <section class="slide" data-title="보안 체크리스트">
+<section class="slide" data-title="보안 체크리스트">
     <div class="top"><span>보안</span><span>19 / 37</span></div>
     <div class="core">개인 계정에 회사 원본 파일을 통째로 올리는 방식은 피하고, 샘플과 익명화부터 시작합니다.</div>
     <div class="content">
@@ -1839,7 +1251,7 @@
     <div class="footer"><div class="progress"><span style="width:51%"></span></div><span>19 / 37</span></div>
   </section>
 
-  <section class="slide" data-title="보안 데이터 How-to">
+<section class="slide" data-title="보안 데이터 How-to">
     <div class="top"><span>보안</span><span>실무 적용</span></div>
     <div class="core">보안 데이터는 쓰지 말라는 말로 끝내지 않고, 구조만 남긴 샘플로 바꿔 AI에게 질문하는 절차를 사용합니다.</div>
     <div class="content">
@@ -1876,11 +1288,11 @@
     <div class="footer"><div class="progress"><span></span></div><span>보안 How-to</span></div>
   </section>
 
-  <section class="slide" data-title="미니 실습 4">
+<section class="slide" data-title="1분 환기">
     <div class="top"><span>바로 따라하기</span><span>3분</span></div>
     <div class="core">보안 기준을 확인했다면, 실제 데이터 대신 안전한 샘플로 바꾸는 문장을 먼저 만듭니다.</div>
     <div class="content">
-      <h2>미니 실습 4. 안전한 샘플로 바꾸기</h2>
+      <h2>1분 환기. 안전한 샘플로 바꾸기</h2>
       <div class="stage-strip"><span>읽기</span><span class="warn">보안 처리</span><span>전처리</span><span>분석</span><span>제출</span></div>
       <div class="grid2">
         <div class="card focus-red">
@@ -1913,53 +1325,10 @@
         <div class="prompt-mini">실제 고객 정보는 제외하고 구조가 같은 샘플 데이터로 연습하려고 해. 아래 표를 기준으로 어떤 열을 익명화해야 하는지 체크리스트로 알려줘.</div>
       </div>
     </div>
-    <div class="footer"><div class="progress"><span></span></div><span>미니 실습 4</span></div>
+    <div class="footer"><div class="progress"><span></span></div><span>1분 환기</span></div>
   </section>
 
-  <section class="slide" data-title="1차수 복습" data-sec="3">
-    <div class="top"><span>복습</span><span>1차수 연결</span></div>
-    <div class="core">1차수에서 만든 폴더 구조와 템플릿이 있어야 2차수 데이터도 흩어지지 않습니다.</div>
-    <div class="content">
-      <h2>1차수 복습: 폴더 구조화와 템플릿</h2>
-      <div class="grid2">
-        <div class="card">
-          <b>폴더 구조 다시 잡기</b>
-          <div class="code" style="margin-top:12px"><pre>00_원본자료
-  ├─ 센터별_매출
-  ├─ 상담_문의
-  ├─ 후기_피드백
-  └─ 운영_공지
-
-01_AI정리결과
-  ├─ 전처리_후보
-  ├─ 피벗_설계안
-  └─ 보고서_초안</pre></div>
-        </div>
-        <div class="card">
-          <b>템플릿으로 남길 것</b>
-          <ul>
-            <li>데이터 설명: 출처, 기간, 담당자, 보안 수준</li>
-            <li>정리 기준: 열 이름, 날짜 형식, 센터명 표기</li>
-            <li>분석 질문: 무엇을 비교하고 판단할지</li>
-            <li>검수 기준: 수식, 단위, 개인정보, 단정 표현</li>
-          </ul>
-          <p class="notice" style="margin-top:16px">오늘 실습은 1차수 템플릿에 “데이터 기준”을 채워 넣는 과정입니다.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>1차수 복습</span></div>
-  </section>
-
-  <section class="slide section greenish" data-title="섹션 3" data-sec="3">
-    <div class="content">
-      <span class="section-kicker">SECTION 03</span>
-      <h2>최종 산출물 완성</h2>
-      <p>앞에서 배운 데이터 기준, 전처리, 도구 선택을 한 번에 묶어 제출물로 남깁니다. 새로운 파트가 아니라 지금까지 만든 흐름을 실제 업무 산출물로 닫는 시간입니다.</p>
-      <div class="section-map"><span>구조 읽기 결과 정리</span><span>계산·피벗 기준 적용</span><span>인사이트·보고서 제출</span></div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="실습 전체 지도">
+<section class="slide" data-title="실습 전체 지도">
     <div class="top"><span>실습 안내</span><span>전체 지도</span></div>
     <div class="core">실습은 세 번이지만 흐름은 하나입니다. 질문을 정하고, 안전하게 정리하고, 계산한 뒤, 인사이트로 말합니다.</div>
     <div class="content">
@@ -1974,49 +1343,15 @@
       </div>
       <div class="grid3" style="margin-top:18px">
         <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>1단계와 3단계의 재료를 만듭니다.</p><div class="result">질문 1개 + 열 설명표</div></div>
-        <div class="card"><span class="label">실습 2 · 10분</span><b>계산 열·피벗 설계</b><p>3단계와 4단계를 실제 표 기준으로 만듭니다.</p><div class="result">수식 1개 + 피벗 기준</div></div>
-        <div class="card"><span class="label">실습 3 · 10분</span><b>인사이트·보고서</b><p>5단계와 6단계를 보고 문장으로 마무리합니다.</p><div class="result">인사이트 1개 + 5문장 초안</div></div>
+        <div class="card"><span class="label">실습 2 · 15분</span><b>계산 열·피벗 설계</b><p>3단계와 4단계를 실제 표 기준으로 만듭니다.</p><div class="result">수식 1개 + 피벗 기준</div></div>
+        <div class="card"><span class="label">실습 3 · 12분</span><b>인사이트·보고서</b><p>5단계와 6단계를 보고 문장으로 마무리합니다.</p><div class="result">인사이트 1개 + 5문장 초안</div></div>
       </div>
-      <p class="notice" style="margin-top:18px">강사용 멘트: “지금 우리가 어디에 있는지 계속 확인하면서 갑니다. 완성본보다 현재 단계가 보이는 제출이 중요합니다.”</p>
+      <p class="notice" style="margin-top:18px">90분 운영: 오프닝 10분 · 개념/도구 28분 · 실습 37분 · 전환/질의 10분 · 최종 제출 5분. 막혔다면 완성본 대신 현재 단계까지 남깁니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>실습 전체 지도</span></div>
   </section>
 
-  <section class="slide" data-title="진행표 읽는 법">
-    <div class="top"><span>실습 안내</span><span>현재 위치</span></div>
-    <div class="core">각 실습 장표 상단의 진행표를 보면, 지금 하는 일이 보안 처리인지, 전처리인지, 인사이트 도출인지 바로 알 수 있습니다.</div>
-    <div class="content">
-      <h2>진행하면서 계속 확인할 5단계</h2>
-      <div class="stage-strip"><span class="on">1 문제 정의</span><span class="warn">2 보안 처리</span><span class="on">3 전처리</span><span>4 계산·피벗</span><span>5 인사이트·제출</span></div>
-      <div class="grid3">
-        <div class="card">
-          <span class="label">초반</span>
-          <b>질문과 데이터 구조를 잡는 구간</b>
-          <p>CSV를 열고, 열 의미를 확인하고, 오늘 보고 싶은 업무 질문을 하나 고릅니다.</p>
-          <div class="result">나올 것: 열 설명표, 분석 질문 1개</div>
-        </div>
-        <div class="card focus-red">
-          <span class="label">중반</span>
-          <b>보안·전처리·검산 구간</b>
-          <p>개인정보를 제거하고, 날짜·단위·중복·누락을 맞춘 뒤 계산 열을 표본으로 확인합니다.</p>
-          <div class="result">나올 것: 전처리 체크, 계산식, 피벗 기준</div>
-        </div>
-        <div class="card">
-          <span class="label">후반</span>
-          <b>인사이트와 제출 구간</b>
-          <p>피벗 결과를 보고 판단 문장을 만들고, 과장 표현을 줄여 제출 가능한 형태로 남깁니다.</p>
-          <div class="result">나올 것: 차트 후보, 5문장 보고서, 막힌 지점</div>
-        </div>
-      </div>
-      <div class="story-note" style="margin-top:18px">
-        <strong>강사용 멘트</strong>
-        <p>“지금은 정답을 맞히는 시간이 아니라 현재 단계를 놓치지 않는 시간이예요. 보안 처리에서 막혔으면 보안 처리까지, 계산에서 막혔으면 계산식까지 남기면 됩니다.”</p>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>현재 위치</span></div>
-  </section>
-
-  <section class="slide" data-title="예상 결과물">
+<section class="slide" data-title="예상 결과물">
     <div class="top"><span>실습 안내</span><span>예상 결과물</span></div>
     <div class="core">오늘 실습의 결과물은 하나의 완성 보고서가 아니라, 다음 업무에 다시 붙여 쓸 수 있는 작은 작업 패키지입니다.</div>
     <div class="content">
@@ -2028,23 +1363,21 @@
         </thead>
         <tbody>
           <tr><td><b>실습 1</b></td><td>열 설명표</td><td>센터, 매출, 정산금액, 상담신청수, 등록수의 의미와 확인 필요 항목</td><td>AI 결과 표 캡처 또는 질문 1개</td><td>분석 질문 정하기</td></tr>
-          <tr><td><b>실습 2</b></td><td>계산 열 기준</td><td>전환율, 환불률, 정산률 공식과 첫 2~3행 표본 검산 결과</td><td>수식 1개 + 검산한 행 1개</td><td>피벗·차트의 기준 지표</td></tr>
-          <tr><td><b>실습 2</b></td><td>피벗 설계안</td><td>행, 열, 값, 필터에 넣을 항목과 그 이유</td><td>내가 보고 싶은 피벗 기준 1개</td><td>3차수 분석·시각화 재료</td></tr>
+          <tr><td><b>실습 2</b></td><td>계산·피벗 기준</td><td>전환율 공식, 표본 검산 결과, 행·열·값·필터의 피벗 설계</td><td>수식 1개 + 피벗 기준 1개</td><td>3차수 분석·차트의 기준</td></tr>
           <tr><td><b>실습 3</b></td><td>5문장 보고서</td><td>결론, 숫자 근거, 리스크, 추가 확인, 다음 액션</td><td>보고서 초안 또는 막힌 지점</td><td>팀장 공유용 업무 문장</td></tr>
         </tbody>
       </table>
-      <div class="grid4" style="margin-top:16px">
+      <div class="grid3" style="margin-top:16px">
         <div class="card"><span class="label">최소 제출</span><b>하나만 올려도 됨</b><p>완성본이 아니어도 캡처, 표 일부, 프롬프트 중 하나면 됩니다.</p></div>
         <div class="card"><span class="label">막혔을 때</span><b>막힌 단계 제출</b><p>“CSV 붙여넣기에서 막힘”, “수식 검산에서 막힘”처럼 남깁니다.</p></div>
-        <div class="card"><span class="label">좋은 제출</span><b>질문 + 근거</b><p>내가 보고 싶은 질문과 그 질문을 고른 이유를 한 줄로 남깁니다.</p></div>
-        <div class="card"><span class="label">다음 연결</span><b>3차수 재료</b><p>오늘 만든 지표와 피벗 기준이 다음 차트·대시보드 재료가 됩니다.</p></div>
+        <div class="card"><span class="label">좋은 제출</span><b>질문 + 근거</b><p>질문과 고른 이유를 남기면 다음 차수의 차트·대시보드 재료가 됩니다.</p></div>
       </div>
-      <p class="notice" style="margin-top:16px">강사용 멘트: “오늘 결과물은 정답지가 아니라 다음 업무에 다시 쓸 작업 기준입니다.”</p>
+      <p class="notice" style="margin-top:16px">오늘 결과물은 정답지가 아니라 다음 업무에 다시 쓸 작업 기준입니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>예상 결과물</span></div>
   </section>
 
-  <section class="slide" data-title="실습 시작 체크">
+<section class="slide" data-title="실습 시작 체크">
     <div class="top"><span>실습 안내</span><span>시작 전 체크</span></div>
     <div class="core">시작 전에 네 가지만 확인하면 온라인에서도 따라올 수 있습니다.</div>
     <div class="content">
@@ -2056,12 +1389,56 @@
         <div class="check"><div class="box"></div><div><b>원본 보존</b><p>원본 표와 실습용 표를 분리하고, 수정본 이름을 따로 둡니다.</p></div></div>
         <div class="check"><div class="box"></div><div><b>제출 기준 확인</b><p>완성본이 아니어도 캡처, 프롬프트, 막힌 지점을 제출할 수 있습니다.</p></div></div>
       </div>
-      <p class="notice" style="margin-top:18px">강사용 멘트: “지금은 완성도가 아니라, 따라온 흔적을 남기는 시간이 중요합니다.”</p>
+      <p class="notice" style="margin-top:18px">지금은 완성도보다 따라온 흔적을 남기는 시간이 중요합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>시작 전 체크</span></div>
   </section>
 
-  <section class="slide" data-title="ChatGPT 따라하기">
+<section class="slide" data-title="샘플 데이터">
+    <div class="top"><span>실습 자료</span><span>10 / 26</span></div>
+    <div class="core">오늘 사용할 샘플은 실제 업무와 비슷하지만 개인정보가 없는 데이터입니다.</div>
+    <div class="content">
+      <h2>샘플 데이터 구조</h2>
+      <table>
+        <thead><tr><th>월</th><th>센터</th><th>과정</th><th>채널</th><th>신규/기존</th><th>매출</th><th>상담신청</th><th>등록수</th><th>메모</th></tr></thead>
+        <tbody>
+          <tr><td>1월</td><td>강남센터</td><td>초등 코칭</td><td>홈페이지</td><td>신규</td><td>18,200,000</td><td>37</td><td>12</td><td>상담은 늘었지만 등록 전환 낮음</td></tr>
+          <tr><td>2월</td><td>분당센터</td><td>중등 코칭</td><td>소개</td><td>기존</td><td>24,600,000</td><td>18</td><td>14</td><td>기존 회원 추천 유입 강함</td></tr>
+          <tr><td>3월</td><td>부산센터</td><td>입시 컨설팅</td><td>블로그</td><td>신규</td><td>15,700,000</td><td>29</td><td>8</td><td>문의 대비 등록 낮음</td></tr>
+          <tr><td>4월</td><td>강남센터</td><td>초등 코칭</td><td>광고</td><td>신규</td><td>21,100,000</td><td>45</td><td>10</td><td>광고 문의 증가, 상담 품질 확인 필요</td></tr>
+        </tbody>
+      </table>
+      <div class="pillbar">
+        <span class="pill"><strong>정형 데이터</strong> 엑셀·시트</span>
+        <span class="pill"><strong>비정형 데이터</strong> 메모·후기</span>
+        <span class="pill"><strong>1차 데이터</strong> 직접 수집</span>
+        <span class="pill"><strong>2차 데이터</strong> 이미 쌓인 내부 자료</span>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span style="width:38%"></span></div><span>10 / 26</span></div>
+  </section>
+
+<section class="slide" data-title="CSV 복사">
+    <div class="top"><span>실습 데이터</span><span>11 / 26</span></div>
+    <div class="core">복사해서 ChatGPT 또는 Gemini에 붙여넣고 실습합니다.</div>
+    <div class="content">
+      <h2>실습용 CSV</h2>
+      <div class="code"><button class="copy">복사</button><pre>월,센터,과정,채널,신규/기존,매출,정산금액,상담신청수,등록수,환불건수,메모
+1월,강남센터,초등 코칭,홈페이지,신규,18200000,12740000,37,12,1,상담은 늘었지만 등록 전환 낮음
+1월,분당센터,중등 코칭,소개,기존,24600000,17220000,18,14,0,기존 회원 추천 유입 강함
+2월,부산센터,입시 컨설팅,블로그,신규,15700000,10990000,29,8,2,문의 대비 등록 낮음
+2월,강남센터,초등 코칭,광고,신규,21100000,14770000,45,10,3,광고 문의 증가 상담 품질 확인 필요
+3월,대구센터,중등 코칭,홈페이지,신규,13200000,9240000,22,7,1,문의 수 감소
+3월,분당센터,입시 컨설팅,소개,기존,28600000,20020000,15,12,0,고액 과정 재등록 발생
+4월,부산센터,초등 코칭,블로그,신규,9800000,6860000,31,6,2,콘텐츠 유입은 좋지만 상담 후 이탈
+4월,강남센터,중등 코칭,홈페이지,기존,26500000,18550000,21,16,1,기존 고객 업셀링 성공
+5월,대구센터,입시 컨설팅,광고,신규,17600000,12320000,39,9,4,환불 문의 증가 원인 확인 필요
+5월,분당센터,초등 코칭,소개,기존,22100000,15470000,17,13,0,추천 채널 안정적</pre></div>
+    </div>
+    <div class="footer"><div class="progress"><span style="width:42%"></span></div><span>11 / 26</span></div>
+  </section>
+
+<section class="slide" data-title="ChatGPT 따라하기">
     <div class="top"><span>실습 준비</span><span>ChatGPT</span></div>
     <div class="core">처음 따라오는 분은 이 순서만 보면 됩니다. 복잡한 기능을 찾지 말고 “열고, 붙이고, 전송”만 합니다.</div>
     <div class="content">
@@ -2099,7 +1476,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>ChatGPT 따라하기</span></div>
   </section>
 
-  <section class="slide" data-title="Gemini 따라하기">
+<section class="slide" data-title="Gemini 따라하기">
     <div class="top"><span>실습 준비</span><span>Gemini</span></div>
     <div class="core">Gemini를 쓸 때도 순서는 같습니다. 데이터를 넣고, 프롬프트를 넣고, 결과를 확인합니다.</div>
     <div class="content">
@@ -2134,69 +1511,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>Gemini 따라하기</span></div>
   </section>
 
-  <section class="slide" data-title="만족도 역설계">
-    <div class="top"><span>운영 기준</span><span>사후 만족도 역설계</span></div>
-    <div class="core">사후 만족도 문항이 5점으로 이어지려면, 수업 중에 “내가 할 수 있겠다”는 증거가 남아야 합니다.</div>
-    <div class="content">
-      <h2>오늘 수업이 담아야 할 5점 조건</h2>
-      <div class="checklist">
-        <div class="check"><div class="box"></div><div><b>실무 적용 가능성</b><p>바인그룹형 센터·과정·채널 데이터로 연습하고, 내 업무 질문 1개를 남깁니다.</p></div></div>
-        <div class="check"><div class="box"></div><div><b>난이도 적절성</b><p>완성본 대신 설계안·캡처·막힌 지점 제출도 인정해 온라인 실습 부담을 낮춥니다.</p></div></div>
-        <div class="check"><div class="box"></div><div><b>강사 소통</b><p>각 실습마다 “지금 어디까지 됐는지” 채팅 체크를 넣고, 막힌 유형을 바로 분류합니다.</p></div></div>
-        <div class="check"><div class="box"></div><div><b>자료 도움도</b><p>이미지, 프롬프트, 클릭 순서, 결과 예시를 한 장씩 제공해 복습 가능한 자료로 남깁니다.</p></div></div>
-        <div class="check"><div class="box"></div><div><b>AI 활용 역량</b><p>ChatGPT·Gemini·Excel 역할을 나누고, 결과를 표본 검산하는 기준까지 연습합니다.</p></div></div>
-        <div class="check"><div class="box"></div><div><b>추천 의향</b><p>수업 끝에 바로 가져갈 결과물: 마스터 표 기준, 피벗 설계, 보고서 5문장 초안.</p></div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">강사용 멘트: “오늘은 완성보다 재사용 가능한 기준을 만드는 수업입니다. 막힌 지점도 다음 차수의 재료라 제출해주시면 됩니다.”</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>만족도 역설계</span></div>
-  </section>
-
-  <section class="slide" data-title="샘플 데이터">
-    <div class="top"><span>실습 자료</span><span>10 / 26</span></div>
-    <div class="core">오늘 사용할 샘플은 실제 업무와 비슷하지만 개인정보가 없는 데이터입니다.</div>
-    <div class="content">
-      <h2>샘플 데이터 구조</h2>
-      <table>
-        <thead><tr><th>월</th><th>센터</th><th>과정</th><th>채널</th><th>신규/기존</th><th>매출</th><th>상담신청</th><th>등록수</th><th>메모</th></tr></thead>
-        <tbody>
-          <tr><td>1월</td><td>강남센터</td><td>초등 코칭</td><td>홈페이지</td><td>신규</td><td>18,200,000</td><td>37</td><td>12</td><td>상담은 늘었지만 등록 전환 낮음</td></tr>
-          <tr><td>2월</td><td>분당센터</td><td>중등 코칭</td><td>소개</td><td>기존</td><td>24,600,000</td><td>18</td><td>14</td><td>기존 회원 추천 유입 강함</td></tr>
-          <tr><td>3월</td><td>부산센터</td><td>입시 컨설팅</td><td>블로그</td><td>신규</td><td>15,700,000</td><td>29</td><td>8</td><td>문의 대비 등록 낮음</td></tr>
-          <tr><td>4월</td><td>강남센터</td><td>초등 코칭</td><td>광고</td><td>신규</td><td>21,100,000</td><td>45</td><td>10</td><td>광고 문의 증가, 상담 품질 확인 필요</td></tr>
-        </tbody>
-      </table>
-      <div class="pillbar">
-        <span class="pill"><strong>정형 데이터</strong> 엑셀·시트</span>
-        <span class="pill"><strong>비정형 데이터</strong> 메모·후기</span>
-        <span class="pill"><strong>1차 데이터</strong> 직접 수집</span>
-        <span class="pill"><strong>2차 데이터</strong> 이미 쌓인 내부 자료</span>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:38%"></span></div><span>10 / 26</span></div>
-  </section>
-
-  <section class="slide" data-title="CSV 복사">
-    <div class="top"><span>실습 데이터</span><span>11 / 26</span></div>
-    <div class="core">복사해서 ChatGPT 또는 Gemini에 붙여넣고 실습합니다.</div>
-    <div class="content">
-      <h2>실습용 CSV</h2>
-      <div class="code"><button class="copy">복사</button><pre>월,센터,과정,채널,신규/기존,매출,정산금액,상담신청수,등록수,환불건수,메모
-1월,강남센터,초등 코칭,홈페이지,신규,18200000,12740000,37,12,1,상담은 늘었지만 등록 전환 낮음
-1월,분당센터,중등 코칭,소개,기존,24600000,17220000,18,14,0,기존 회원 추천 유입 강함
-2월,부산센터,입시 컨설팅,블로그,신규,15700000,10990000,29,8,2,문의 대비 등록 낮음
-2월,강남센터,초등 코칭,광고,신규,21100000,14770000,45,10,3,광고 문의 증가 상담 품질 확인 필요
-3월,대구센터,중등 코칭,홈페이지,신규,13200000,9240000,22,7,1,문의 수 감소
-3월,분당센터,입시 컨설팅,소개,기존,28600000,20020000,15,12,0,고액 과정 재등록 발생
-4월,부산센터,초등 코칭,블로그,신규,9800000,6860000,31,6,2,콘텐츠 유입은 좋지만 상담 후 이탈
-4월,강남센터,중등 코칭,홈페이지,기존,26500000,18550000,21,16,1,기존 고객 업셀링 성공
-5월,대구센터,입시 컨설팅,광고,신규,17600000,12320000,39,9,4,환불 문의 증가 원인 확인 필요
-5월,분당센터,초등 코칭,소개,기존,22100000,15470000,17,13,0,추천 채널 안정적</pre></div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:42%"></span></div><span>11 / 26</span></div>
-  </section>
-
-  <section class="slide section" data-title="실습 1 간지" data-sec="3">
+<section class="slide section" data-title="실습 1 간지" data-sec="1">
     <div class="content">
       <span class="section-kicker">PRACTICE 01</span>
       <h2>데이터 구조 읽기</h2>
@@ -2206,7 +1521,7 @@
     </div>
   </section>
 
-  <section class="slide" data-title="실습 1 해야 할 일">
+<section class="slide" data-title="실습 1 해야 할 일">
     <div class="top"><span>실습 1</span><span>해야 할 일</span></div>
     <div class="core">실습 1의 목표는 분석을 시작하기 전에 “이 데이터가 무엇이고, 어디를 확인해야 하는지”를 알아내는 것입니다.</div>
     <div class="content">
@@ -2226,7 +1541,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 1 할 일</span></div>
   </section>
 
-  <section class="slide" data-title="실습 1 UI">
+<section class="slide" data-title="실습 1 UI">
     <div class="top"><span>실습 1</span><span>화면 따라하기</span></div>
     <div class="core">실습 1은 ChatGPT나 Gemini의 새 대화창에 데이터를 넣고, “이 데이터가 무엇인지”를 먼저 묻는 단계입니다.</div>
     <div class="content">
@@ -2260,7 +1575,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 1 UI</span></div>
   </section>
 
-  <section class="slide" data-title="실습 1 가이드">
+<section class="slide" data-title="실습 1 가이드">
     <div class="top"><span>실습 1</span><span>가이드</span></div>
     <div class="core">먼저 원본 데이터를 AI에게 읽히고 “이 데이터로 무엇을 판단할 수 있는지”를 확인합니다.</div>
     <div class="content">
@@ -2290,7 +1605,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>가이드</span></div>
   </section>
 
-  <section class="slide" data-title="실습 1 프롬프트">
+<section class="slide" data-title="실습 1 프롬프트">
     <div class="top"><span>실습 1</span><span>12 / 26</span></div>
     <div class="core">첫 요청은 “데이터를 이해하고 정리 기준을 제안해 달라”입니다.</div>
     <div class="content">
@@ -2314,7 +1629,7 @@
     <div class="footer"><div class="progress"><span style="width:46%"></span></div><span>12 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="실습 1 결과">
+<section class="slide" data-title="실습 1 결과">
     <div class="top"><span>실습 1</span><span>13 / 26</span></div>
     <div class="core">실습 1이 끝나면 “이 데이터가 무엇인지”를 설명하는 표와, 이어서 볼 분석 질문이 남습니다.</div>
     <div class="content">
@@ -2347,17 +1662,26 @@
     <div class="footer"><div class="progress"><span style="width:50%"></span></div><span>13 / 26</span></div>
   </section>
 
-  <section class="slide section goldish" data-title="실습 2 간지" data-sec="3">
+<section class="slide section greenish" data-title="계산과 보고로 이어가기" data-sec="3">
+    <div class="content">
+      <span class="section-kicker">NEXT PRACTICE</span>
+      <h2>계산과 보고로 이어가기</h2>
+      <p>데이터 구조를 읽었다면 이제 계산 열과 피벗을 만들고, 근거가 보이는 보고 문장으로 연결합니다.</p>
+      <div class="section-map"><span>계산 열 검산</span><span>피벗 기준 적용</span><span>인사이트·보고서 제출</span></div>
+    </div>
+  </section>
+
+<section class="slide section goldish" data-title="실습 2 간지" data-sec="3">
     <div class="content">
       <span class="section-kicker">PRACTICE 02</span>
       <h2>계산 열과 피벗 설계</h2>
-      <div class="time-chip"><strong>실습 시간</strong> 10분 · 검산 2분</div>
+      <div class="time-chip"><strong>실습 시간</strong> 15분 · 검산 포함</div>
       <p>센터별·채널별 성과를 비교하려면 전환율, 환불률 같은 계산 열을 만들고 피벗으로 기준을 바꿔 봐야 합니다.</p>
       <div class="section-map"><span>계산 열 정의</span><span>피벗 기준 설계</span><span>엑셀에서 확인</span><span>판단 질문 연결</span></div>
     </div>
   </section>
 
-  <section class="slide" data-title="실습 2 해야 할 일">
+<section class="slide" data-title="실습 2 해야 할 일">
     <div class="top"><span>실습 2</span><span>해야 할 일</span></div>
     <div class="core">실습 2의 목표는 센터·과정·채널을 비교할 수 있도록 계산 기준과 요약 기준을 만드는 것입니다.</div>
     <div class="content">
@@ -2377,7 +1701,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 2 할 일</span></div>
   </section>
 
-  <section class="slide" data-title="실습 2 UI">
+<section class="slide" data-title="실습 2 UI">
     <div class="top"><span>실습 2</span><span>화면 따라하기</span></div>
     <div class="core">실습 2는 AI에게 공식을 “만들어 달라”가 아니라, 왜 그 공식이 맞는지 설명하게 한 뒤 시트에서 검산하는 단계입니다.</div>
     <div class="content">
@@ -2412,7 +1736,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 2 UI</span></div>
   </section>
 
-  <section class="slide" data-title="시트 검산 따라하기">
+<section class="slide" data-title="시트 검산 따라하기">
     <div class="top"><span>실습 2</span><span>엑셀/시트</span></div>
     <div class="core">AI가 준 공식은 바로 전체 적용하지 않습니다. 먼저 첫 줄에 넣고, 손으로 맞는지 확인합니다.</div>
     <div class="content">
@@ -2452,7 +1776,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>시트 검산</span></div>
   </section>
 
-  <section class="slide" data-title="실습 2 왜 하는가">
+<section class="slide" data-title="실습 2 왜 하는가">
     <div class="top"><span>실습 2</span><span>판단 목적</span></div>
     <div class="core">피벗과 계산은 예쁜 표를 만들기 위한 것이 아니라, 운영 판단을 빠르게 하기 위한 도구입니다.</div>
     <div class="content">
@@ -2469,7 +1793,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>판단 목적</span></div>
   </section>
 
-  <section class="slide" data-title="실습 2 프롬프트">
+<section class="slide" data-title="실습 2 프롬프트">
     <div class="top"><span>실습 2</span><span>14 / 26</span></div>
     <div class="core">여러 파일을 취합하려면 열 이름만 맞추는 것이 아니라, 기준 키·표준값·품질 점검 규칙까지 함께 설계해야 합니다.</div>
     <div class="content">
@@ -2496,7 +1820,7 @@
     <div class="footer"><div class="progress"><span style="width:54%"></span></div><span>14 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="실습 2 실행 가이드">
+<section class="slide" data-title="실습 2 실행 가이드">
     <div class="top"><span>실습 2</span><span>실행</span></div>
     <div class="core">AI가 만든 설계안을 엑셀이나 구글 시트에서 그대로 확인합니다.</div>
     <div class="content">
@@ -2525,7 +1849,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실행</span></div>
   </section>
 
-  <section class="slide" data-title="취합 방법">
+<section class="slide" data-title="취합 방법">
     <div class="top"><span>데이터 취합</span><span>15 / 26</span></div>
     <div class="core">여러 채널 데이터를 취합할 때는 “붙이기”보다 “규칙화”가 먼저입니다.</div>
     <div class="content">
@@ -2542,7 +1866,7 @@
     <div class="footer"><div class="progress"><span style="width:58%"></span></div><span>15 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="피벗 실행 가이드">
+<section class="slide" data-title="피벗 실행 가이드">
     <div class="top"><span>실습 2</span><span>피벗 만들기</span></div>
     <div class="core">피벗은 “복잡한 함수”가 아니라 같은 표를 다른 기준으로 접어 보는 요약표입니다.</div>
     <div class="content">
@@ -2581,7 +1905,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>피벗 실행</span></div>
   </section>
 
-  <section class="slide" data-title="실습 2 결과">
+<section class="slide" data-title="실습 2 결과">
     <div class="top"><span>실습 2</span><span>16 / 26</span></div>
     <div class="core">실습 2가 끝나면 계산 열과 피벗 기준이 남습니다. 이것이 다음 차수 분석·시각화의 재료입니다.</div>
     <div class="content">
@@ -2619,17 +1943,17 @@
     <div class="footer"><div class="progress"><span style="width:62%"></span></div><span>16 / 26</span></div>
   </section>
 
-  <section class="slide section" data-title="실습 3 간지" data-sec="3">
+<section class="slide section" data-title="실습 3 간지" data-sec="3">
     <div class="content">
       <span class="section-kicker">PRACTICE 03</span>
       <h2>인사이트와 보고서 초안</h2>
-      <div class="time-chip"><strong>실습 시간</strong> 10분 · 공유 3분</div>
+      <div class="time-chip"><strong>실습 시간</strong> 12분 · 공유 포함</div>
       <p>정리된 표를 보고 “무슨 판단을 할 수 있는지”를 뽑습니다. 차트는 꾸미는 도구가 아니라, 판단을 빨리 하게 만드는 도구입니다.</p>
       <div class="section-map"><span>분석 질문 만들기</span><span>차트 선택</span><span>5문장 보고서</span></div>
     </div>
   </section>
 
-  <section class="slide" data-title="실습 3 해야 할 일">
+<section class="slide" data-title="실습 3 해야 할 일">
     <div class="top"><span>실습 3</span><span>해야 할 일</span></div>
     <div class="core">실습 3의 목표는 차트를 많이 만드는 것이 아니라, 보고할 판단 1개를 고르는 것입니다.</div>
     <div class="content">
@@ -2649,7 +1973,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 3 할 일</span></div>
   </section>
 
-  <section class="slide" data-title="실습 3 UI">
+<section class="slide" data-title="실습 3 UI">
     <div class="top"><span>실습 3</span><span>화면 따라하기</span></div>
     <div class="core">실습 3은 AI가 낸 숫자 설명을 그대로 믿는 시간이 아니라, 보고할 문장으로 바꾸며 검수하는 시간입니다.</div>
     <div class="content">
@@ -2688,7 +2012,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 3 UI</span></div>
   </section>
 
-  <section class="slide" data-title="실습 3 실행 가이드">
+<section class="slide" data-title="실습 3 실행 가이드">
     <div class="top"><span>실습 3</span><span>실행 순서</span></div>
     <div class="core">실습 3은 “차트 만들기”보다 “보고할 판단을 고르는 것”이 핵심입니다.</div>
     <div class="content">
@@ -2719,7 +2043,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 3 실행</span></div>
   </section>
 
-  <section class="slide" data-title="실습 3 질문">
+<section class="slide" data-title="실습 3 질문">
     <div class="top"><span>실습 3</span><span>17 / 26</span></div>
     <div class="core">분석은 차트를 많이 만드는 일이 아니라, 답해야 할 질문을 좁히는 일입니다.</div>
     <div class="content">
@@ -2737,7 +2061,7 @@
     <div class="footer"><div class="progress"><span style="width:65%"></span></div><span>17 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="실습 3 프롬프트">
+<section class="slide" data-title="실습 3 프롬프트">
     <div class="top"><span>실습 3</span><span>18 / 26</span></div>
     <div class="core">차트는 “보여주기”가 아니라 “판단하기” 위해 선택합니다.</div>
     <div class="content">
@@ -2761,7 +2085,7 @@
     <div class="footer"><div class="progress"><span style="width:69%"></span></div><span>18 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="차트 선택">
+<section class="slide" data-title="차트 선택">
     <div class="top"><span>시각화</span><span>19 / 26</span></div>
     <div class="core">3차수에서 차트를 더 깊게 다루지만, 오늘은 선택 기준만 익힙니다.</div>
     <div class="content">
@@ -2780,7 +2104,7 @@
     <div class="footer"><div class="progress"><span style="width:73%"></span></div><span>19 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="보고서">
+<section class="slide" data-title="보고서">
     <div class="top"><span>보고서</span><span>20 / 26</span></div>
     <div class="core">실습 3이 끝나면 차트 후보와 팀장 공유용 5문장 보고서 초안이 남습니다.</div>
     <div class="content">
@@ -2809,7 +2133,7 @@
     <div class="footer"><div class="progress"><span style="width:77%"></span></div><span>20 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="보고서 프롬프트">
+<section class="slide" data-title="보고서 프롬프트">
     <div class="top"><span>실습 3</span><span>21 / 26</span></div>
     <div class="core">AI가 만든 보고서는 반드시 사람이 수치와 표현을 한 번 더 확인합니다.</div>
     <div class="content">
@@ -2832,7 +2156,7 @@
     <div class="footer"><div class="progress"><span style="width:81%"></span></div><span>21 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="리스크">
+<section class="slide" data-title="리스크">
     <div class="top"><span>주의사항</span><span>22 / 26</span></div>
     <div class="core">AI 분석의 마지막 책임은 사람에게 있습니다. 그래서 검수 기준이 필요합니다.</div>
     <div class="content">
@@ -2844,12 +2168,12 @@
         <div class="card"><b>단정 금지</b><p>상관관계를 원인처럼 표현하지 않습니다.</p></div>
         <div class="card"><b>원본 보존</b><p>AI가 바꾼 파일과 원본 파일을 반드시 분리합니다.</p></div>
       </div>
-      <p class="notice" style="margin-top:18px">멘트: “AI가 빠르게 도와주지만, 결정권자는 우리입니다. 오늘은 AI 결과를 그대로 믿는 법이 아니라 검수하며 쓰는 법을 연습합니다.”</p>
+      <p class="notice" style="margin-top:18px">AI가 빠르게 도와주지만 결정권자는 사람입니다. AI 결과를 그대로 믿지 말고 검수하며 사용합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span style="width:85%"></span></div><span>22 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="개인정보 익명화">
+<section class="slide" data-title="개인정보 익명화">
     <div class="top"><span>주의사항</span><span>개인정보</span></div>
     <div class="core">AI에게 데이터를 주기 전에는 “필요한 정보만 남기는 익명화”가 먼저입니다.</div>
     <div class="content">
@@ -2887,7 +2211,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>개인정보</span></div>
   </section>
 
-  <section class="slide" data-title="템플릿">
+<section class="slide" data-title="템플릿">
     <div class="top"><span>실습 4</span><span>23 / 26</span></div>
     <div class="core">다음 업무에 다시 쓰려면 프롬프트를 템플릿으로 남겨야 합니다.</div>
     <div class="content">
@@ -2919,7 +2243,7 @@ AI에게 요청할 일:
     <div class="footer"><div class="progress"><span style="width:88%"></span></div><span>23 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="제출 따라하기">
+<section class="slide" data-title="제출 따라하기">
     <div class="top"><span>제출 안내</span><span>하나씩 따라하기</span></div>
     <div class="core">제출은 평가용 완성본이 아니라, 다음 실습을 이어가기 위한 작업 로그입니다. 하나만 골라 올립니다.</div>
     <div class="content">
@@ -2952,7 +2276,7 @@ AI에게 요청할 일:
     <div class="footer"><div class="progress"><span></span></div><span>제출 따라하기</span></div>
   </section>
 
-  <section class="slide" data-title="Padlet">
+<section class="slide" data-title="Padlet">
     <div class="top"><span>제출</span><span>24 / 26</span></div>
     <div class="core">Padlet은 평가가 아니라 다음 실습을 이어가기 위한 작업 로그입니다.</div>
     <div class="content">
@@ -2968,7 +2292,7 @@ AI에게 요청할 일:
     <div class="footer"><div class="progress"><span style="width:92%"></span></div><span>24 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="다음 차수 연결">
+<section class="slide" data-title="다음 차수 연결">
     <div class="top"><span>연결</span><span>25 / 26</span></div>
     <div class="core">오늘 만든 정리표가 있어야 다음 차수의 분석과 시각화가 쉬워집니다.</div>
     <div class="content">
@@ -2984,7 +2308,7 @@ AI에게 요청할 일:
     <div class="footer"><div class="progress"><span style="width:96%"></span></div><span>25 / 26</span></div>
   </section>
 
-  <section class="slide" data-title="마무리">
+<section class="slide" data-title="마무리">
     <div class="top"><span>마무리</span><span>26 / 26</span></div>
     <div class="core">마지막 5분은 최종 제출 시간입니다. 완성본이 아니어도 오늘의 흔적을 올립니다.</div>
     <div class="content">
