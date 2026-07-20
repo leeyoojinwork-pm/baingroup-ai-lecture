@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>바인그룹 2차 강사용 운영 플로우</title>
+  <style>
+    @page { size: A4; margin: 14mm 13mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #202733;
+      background: #ffffff;
+      font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+    .page {
+      min-height: 269mm;
+      page-break-after: always;
+      position: relative;
+      padding: 8mm 5mm 11mm;
+    }
+    .page:last-child { page-break-after: auto; }
+    .cover {
+      background: linear-gradient(135deg, #20304b 0%, #315d86 58%, #1f8a70 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 22mm 18mm;
+      min-height: 248mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover h1 {
+      font-size: 38pt;
+      line-height: 1.12;
+      margin: 0 0 10mm;
+      font-weight: 950;
+    }
+    .cover p { color: #e7eff8; font-size: 14pt; line-height: 1.55; margin: 0; }
+    .cover .meta {
+      display: inline-block;
+      width: max-content;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 10pt;
+      font-weight: 900;
+      margin-bottom: 12mm;
+      background: rgba(255,255,255,.12);
+    }
+    .cover .bottom { display: flex; justify-content: space-between; gap: 10mm; align-items: flex-end; }
+    .cover .box {
+      border: 1px solid rgba(255,255,255,.32);
+      background: rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 6mm;
+      width: 48%;
+    }
+    .cover .box b { display: block; color: #fff; font-size: 12pt; margin-bottom: 2mm; }
+    .cover .box span { color: #e4edf6; font-size: 10pt; line-height: 1.45; }
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px solid #d5e0eb;
+      padding-bottom: 4mm;
+      margin-bottom: 7mm;
+    }
+    .kicker {
+      color: #2f66ad;
+      font-size: 9pt;
+      font-weight: 950;
+      letter-spacing: .08em;
+      margin-bottom: 2mm;
+    }
+    h2 { font-size: 25pt; line-height: 1.18; margin: 0; font-weight: 950; }
+    h3 { font-size: 14pt; line-height: 1.25; margin: 0 0 3mm; font-weight: 950; }
+    p, li, td, th { font-size: 10.3pt; line-height: 1.48; color: #566373; font-weight: 650; }
+    p { margin: 0; }
+    ul, ol { margin: 0; padding-left: 5mm; }
+    li { margin: 1.3mm 0; }
+    .page-num { color: #6c798a; font-size: 9pt; font-weight: 900; white-space: nowrap; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+    .card {
+      border: 1px solid #d5e0eb;
+      border-radius: 10px;
+      background: #fff;
+      padding: 5mm;
+      min-height: 35mm;
+    }
+    .card.blue { background: #eaf3ff; border-color: #c7d9ed; }
+    .card.green { background: #eaf8f3; border-color: #c5dfd5; }
+    .card.gold { background: #fff6df; border-color: #ead8a6; }
+    .card.red { background: #fff2ef; border-color: #e3b8af; }
+    .label {
+      display: inline-block;
+      color: #2f66ad;
+      font-size: 8.8pt;
+      font-weight: 950;
+      margin-bottom: 2mm;
+    }
+    .note {
+      border-left: 5px solid #2f66ad;
+      background: #eaf3ff;
+      padding: 4mm 5mm;
+      border-radius: 0 8px 8px 0;
+      margin-top: 5mm;
+    }
+    .note p { color: #26364a; font-weight: 900; }
+    .warning { border-left-color: #c84c3a; background: #fff2ef; }
+    .warning p { color: #3a2930; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d5e0eb;
+      margin-top: 4mm;
+    }
+    th, td {
+      border-bottom: 1px solid #d5e0eb;
+      padding: 2.6mm 3mm;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: #eaf3ff; color: #263242; font-weight: 950; }
+    td strong { color: #202733; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; margin: 6mm 0; }
+    .flow .step {
+      border: 1px solid #d5e0eb;
+      border-radius: 10px;
+      padding: 4mm;
+      background: #fff;
+      min-height: 32mm;
+    }
+    .flow .num {
+      display: inline-flex;
+      width: 8mm;
+      height: 8mm;
+      border-radius: 50%;
+      background: #2f66ad;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      font-size: 9pt;
+      font-weight: 950;
+      margin-bottom: 2mm;
+    }
+    .script {
+      border: 1px solid #d5e0eb;
+      background: #fbfdff;
+      border-radius: 10px;
+      padding: 4mm 5mm;
+      margin-top: 4mm;
+    }
+    .script b { color: #2f66ad; }
+    .script p { color: #2e3d51; font-weight: 850; }
+    .checklist { display: grid; gap: 3mm; margin-top: 4mm; }
+    .check {
+      display: grid;
+      grid-template-columns: 8mm 1fr;
+      gap: 3mm;
+      border: 1px solid #d5e0eb;
+      border-radius: 9px;
+      padding: 3.5mm 4mm;
+      align-items: start;
+    }
+    .box {
+      width: 6mm;
+      height: 6mm;
+      border: 2px solid #2f66ad;
+      border-radius: 3px;
+      margin-top: 1mm;
+    }
+    .small { font-size: 9pt; line-height: 1.42; }
+    .tight td, .tight th { padding: 2.1mm 2.5mm; font-size: 9.3pt; }
+    .footer {
+      position: absolute;
+      left: 5mm;
+      right: 5mm;
+      bottom: 0;
+      border-top: 1px solid #d5e0eb;
+      padding-top: 2.5mm;
+      display: flex;
+      justify-content: space-between;
+      color: #7b8796;
+      font-size: 8.5pt;
+      font-weight: 850;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="cover">
+      <div>
+        <div class="meta">바인그룹 2차 · AI 데이터 처리와 분석</div>
+        <h1>강사용<br>운영 플로우</h1>
+        <p>수업 전에 무엇을 열고, 어떤 화면을 보여주고, 언제 실습을 시키고, 어떤 결과물을 제출받을지 한 번에 보는 진행 가이드입니다.</p>
+      </div>
+      <div class="bottom">
+        <div class="box"><b>강사</b><span>이유진<br>AX Consultant / AI 서비스 기획 강사</span></div>
+        <div class="box"><b>핵심 운영 원칙</b><span>설명 30% · 시연 30% · 실습 30% · 제출 10%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">BEFORE CLASS</div><h2>수업 시작 전 열어둘 것</h2></div><div class="page-num">01</div></header>
+    <div class="grid2">
+      <div class="card blue">
+        <span class="label">화면공유용 탭</span>
+        <h3>1. 강의안</h3>
+        <p>처음에는 강의안만 공유합니다. 학생들이 따라올 기준 화면입니다.</p>
+        <ul>
+          <li>공개 링크: https://baingroup-ai-lecture.vercel.app/</li>
+          <li>로컬 예비 링크: 현재 열려 있는 127.0.0.1 페이지</li>
+          <li>시작 위치: 1페이지 표지</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <span class="label">실습용 탭</span>
+        <h3>2. ChatGPT / Gemini</h3>
+        <p>Copilot은 사용하지 않습니다. 수강생은 ChatGPT 또는 Gemini 중 가능한 도구 하나만 선택합니다.</p>
+        <ul>
+          <li>ChatGPT: 파일 업로드 또는 CSV 붙여넣기</li>
+          <li>Gemini: CSV 붙여넣기 또는 Sheets 연동</li>
+          <li>로그인 이슈가 있으면 강사 화면을 보고 따라오기</li>
+        </ul>
+      </div>
+      <div class="card gold">
+        <span class="label">검산용 탭</span>
+        <h3>3. Excel 또는 Google Sheets</h3>
+        <p>AI 결과를 믿는 것이 아니라, 표본 2~3행을 손으로 확인하는 장면을 보여줍니다.</p>
+        <ul>
+          <li>전환율 = 등록수 / 상담신청수</li>
+          <li>환불률 = 환불건수 / 등록수</li>
+          <li>정산률 = 정산금액 / 매출</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <span class="label">제출용 탭</span>
+        <h3>4. Padlet 또는 제출 링크</h3>
+        <p>제출은 평가가 아니라 다음 차수로 이어갈 작업 로그입니다.</p>
+        <ul>
+          <li>분석 질문 1개</li>
+          <li>피벗 기준 1개</li>
+          <li>인사이트 또는 막힌 지점 1개</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note warning"><p>개인정보가 든 실제 고객 파일은 화면 공유나 개인 AI 계정에 올리지 않습니다. 수업에서는 샘플 데이터와 가짜 식별자를 사용합니다.</p></div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>01</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">90 MINUTE FLOW</div><h2>전체 운영 타임테이블</h2></div><div class="page-num">02</div></header>
+    <table>
+      <thead><tr><th>시간</th><th>열 장표</th><th>강사가 보여줄 것</th><th>수강생이 할 것</th><th>채팅/제출 체크</th></tr></thead>
+      <tbody>
+        <tr><td>0-5분</td><td>1-2p</td><td>표지, 강사 소개</td><td>오늘 흐름 확인</td><td>“접속 완료”</td></tr>
+        <tr><td>5-15분</td><td>3-12p</td><td>왜 데이터가 중요한가, 목차, 운영 방식, 목표, 로드맵</td><td>오늘 만들 결과물 이해</td><td>“오늘 만들 결과물 1개 선택”</td></tr>
+        <tr><td>15-25분</td><td>13-38p</td><td>자료 기반 설계, 데이터 종류, 분석 흐름, 전처리 이유</td><td>데이터를 보기 전 질문 만들기</td><td>질문 1개 생각</td></tr>
+        <tr><td>25-32분</td><td>39-50p</td><td>ChatGPT·Gemini·Excel 역할과 보안 체크</td><td>오늘 쓸 도구 선택</td><td>선택 도구 채팅</td></tr>
+        <tr><td>32-46분</td><td>55-66p</td><td>실습 1 시연 후 10분 실습</td><td>데이터 구조 읽기</td><td>분석 질문 1개</td></tr>
+        <tr><td>46-62분</td><td>67-76p</td><td>실습 2 시연 후 10분 실습</td><td>계산 열, 검산, 피벗 기준 잡기</td><td>피벗 기준 1개</td></tr>
+        <tr><td>62-78분</td><td>77-85p</td><td>실습 3 시연 후 10분 실습</td><td>인사이트와 5문장 보고서 만들기</td><td>보고서 초안 1개</td></tr>
+        <tr><td>78-85분</td><td>86-88p</td><td>리스크, 개인정보, 템플릿 저장</td><td>내 업무용 프롬프트 템플릿 정리</td><td>막힌 지점도 허용</td></tr>
+        <tr><td>85-90분</td><td>89-92p</td><td>제출 방법, 다음 차수 연결, 마무리</td><td>Padlet 제출</td><td>최종 제출 완료</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><p>운영 감각: 설명이 길어질 때마다 “이제 화면으로 한 번 보여드릴게요”로 전환합니다. 온라인에서는 이해보다 따라오는 경험이 먼저입니다.</p></div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>02</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">OPENING SCRIPT</div><h2>오프닝 15분 진행 순서</h2></div><div class="page-num">03</div></header>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><h3>표지·강사</h3><p>수업명과 실무 산출물 중심 강의라고 짧게 말합니다.</p></div>
+      <div class="step"><div class="num">2</div><h3>왜 데이터인가</h3><p>저장한 자료를 업무 환경으로 옮겨 바로 쓰는 루틴을 보여줍니다.</p></div>
+      <div class="step"><div class="num">3</div><h3>목차·운영</h3><p>개념, 도구, 실습 3단 구조와 10분 실습 리듬을 보여줍니다.</p></div>
+      <div class="step"><div class="num">4</div><h3>목표</h3><p>사후 만족도 문항에 답할 수 있게 결과물을 남긴다고 말합니다.</p></div>
+      <div class="step"><div class="num">5</div><h3>청사진</h3><p>2차 정리, 3차 분석·시각화, 4차 외부 리서치 연결을 설명합니다.</p></div>
+    </div>
+    <div class="script">
+      <p><b>멘트 예시</b><br>“AI를 잘 쓰는 사람은 질문만 잘하는 사람이 아니라, 쓸 재료를 빨리 모아 바로 업무에 넣는 사람입니다. 오늘은 저장해둔 자료를 업무 데이터로 바꾸고, AI가 읽을 수 있는 표와 질문으로 만드는 시간입니다.”</p>
+    </div>
+    <div class="script">
+      <p><b>수강생에게 바로 말할 것</b><br>“완성본이 아니어도 됩니다. 캡처, 프롬프트, 막힌 지점 중 하나만 제출해도 됩니다. 오늘 중요한 건 결과보다 다음 업무에 다시 쓸 기준을 남기는 것입니다.”</p>
+    </div>
+    <div class="note warning"><p>초반에 너무 많은 이론을 설명하지 않습니다. 10분 안에 “오늘 뭘 만들지”가 보여야 온라인 집중도가 유지됩니다.</p></div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>03</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">CONCEPT PART</div><h2>개념 파트는 이렇게 보여주기</h2></div><div class="page-num">04</div></header>
+    <div class="grid3">
+      <div class="card">
+        <span class="label">13-22p</span>
+        <h3>데이터 분석 흐름</h3>
+        <p>데이터 분석을 “문제 정의 - 데이터 이해 - 전처리 - 분석 - 보고”로 보여줍니다.</p>
+        <ul><li>오늘 범위는 데이터 이해와 전처리</li><li>3차수는 분석과 시각화</li><li>4차수는 외부 리서치</li></ul>
+      </div>
+      <div class="card blue">
+        <span class="label">23-27p</span>
+        <h3>5단계 프레임워크</h3>
+        <p>수강생이 프롬프트를 외우는 것이 아니라, 업무 질문을 먼저 만들게 합니다.</p>
+        <ul><li>질문 설계</li><li>취합 설계</li><li>전처리</li><li>분석 구조화</li><li>검증·보고</li></ul>
+      </div>
+      <div class="card green">
+        <span class="label">28-38p</span>
+        <h3>전처리와 보안</h3>
+        <p>전처리는 예쁘게 정리하는 일이 아니라 AI가 틀리지 않게 만드는 일이라고 설명합니다.</p>
+        <ul><li>누락</li><li>중복</li><li>형식</li><li>단위</li><li>개인정보</li></ul>
+      </div>
+    </div>
+    <div class="script">
+      <p><b>핵심 문장</b><br>“전처리는 분석 전 청소가 아니라, AI가 같은 기준으로 숫자를 읽게 만드는 작업입니다. 여기서 기준이 흔들리면 뒤의 차트와 보고서도 전부 흔들립니다.”</p>
+    </div>
+    <div class="note"><p>질문이 나오면 이렇게 답합니다: “오늘은 예측 모델까지 가지 않습니다. 오늘은 3차수 분석과 시각화를 위해 표 구조와 계산 기준을 안정화하는 수업입니다.”</p></div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>04</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">TOOL PART</div><h2>도구 선택은 이렇게 안내하기</h2></div><div class="page-num">05</div></header>
+    <div class="grid3">
+      <div class="card blue">
+        <span class="label">ChatGPT</span>
+        <h3>파일 이해와 보고서 초안</h3>
+        <p>CSV를 올리거나 붙여넣고, 열 의미·전처리 후보·보고서 초안을 빠르게 받습니다.</p>
+        <ul><li>실습 1 구조 읽기</li><li>실습 3 보고서 초안</li><li>막힌 사람에게 가장 쉬운 선택지</li></ul>
+      </div>
+      <div class="card green">
+        <span class="label">Gemini</span>
+        <h3>구글 시트와 반복 분류</h3>
+        <p>Google Sheets를 쓰는 수강생에게 적합합니다. 셀 단위 분류와 반복 작업을 보여줍니다.</p>
+        <ul><li>문의/후기 텍스트 분류</li><li>수식 설명</li><li>시트 안에서 확인</li></ul>
+      </div>
+      <div class="card gold">
+        <span class="label">Excel / Sheets</span>
+        <h3>검산과 피벗의 작업대</h3>
+        <p>AI가 만든 수식이 맞는지 손으로 확인하고, 피벗 기준을 직접 봅니다.</p>
+        <ul><li>표본 2~3행 검산</li><li>전환율/환불률 확인</li><li>피벗 기준 선정</li></ul>
+      </div>
+    </div>
+    <table class="tight">
+      <thead><tr><th>수강생 상황</th><th>추천 도구</th><th>강사 안내 멘트</th></tr></thead>
+      <tbody>
+        <tr><td>로그인이 불안정함</td><td>강사 화면 따라오기</td><td>“같이 보면서 프롬프트만 가져가셔도 됩니다.”</td></tr>
+        <tr><td>엑셀은 익숙하지만 AI는 처음</td><td>ChatGPT + Excel</td><td>“AI가 먼저 정리하고, 엑셀에서 확인합니다.”</td></tr>
+        <tr><td>구글 시트 업무가 많음</td><td>Gemini + Sheets</td><td>“시트 안에서 반복 분류를 체감해보겠습니다.”</td></tr>
+      </tbody>
+    </table>
+    <div class="note warning"><p>수업 중 Copilot은 사용하지 않습니다. 선택지가 많아지면 온라인 실습이 흔들리므로 ChatGPT, Gemini, Excel/Sheets 세 가지만 유지합니다.</p></div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>05</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">PRACTICE 1</div><h2>실습 1 · 데이터 구조 읽기</h2></div><div class="page-num">06</div></header>
+    <table>
+      <thead><tr><th>구간</th><th>강사가 열 장표</th><th>보여줄 화면</th><th>수강생 행동</th><th>결과물</th></tr></thead>
+      <tbody>
+        <tr><td>시작 1분</td><td>61-62p</td><td>실습 1 목표</td><td>내가 볼 데이터 질문 생각</td><td>질문 후보</td></tr>
+        <tr><td>시연 4분</td><td>63-65p</td><td>ChatGPT/Gemini 새 대화창</td><td>데이터와 프롬프트가 어디 들어가는지 보기</td><td>따라할 순서 이해</td></tr>
+        <tr><td>실습 10분</td><td>59-60p, 65p</td><td>CSV 복사 후 프롬프트 실행</td><td>열 설명표와 확인 필요 항목 생성</td><td>열 설명표 캡처</td></tr>
+        <tr><td>공유 1분</td><td>66p</td><td>예상 결과물</td><td>Padlet에 분석 질문 1개 남기기</td><td>질문 1개</td></tr>
+      </tbody>
+    </table>
+    <div class="script">
+      <p><b>클릭 안내 멘트</b><br>“1. ChatGPT 또는 Gemini를 엽니다. 2. 새 대화를 만듭니다. 3. 샘플 CSV를 붙여넣습니다. 4. 프롬프트를 이어서 붙여넣습니다. 5. 결과에서 ‘확인 필요 항목’과 ‘추천 분석 질문’을 봅니다.”</p>
+    </div>
+    <div class="script">
+      <p><b>수강생에게 줄 기준</b><br>“오늘은 분석 결과보다 질문이 중요합니다. ‘센터별로 무엇을 비교할지’, ‘과정별로 어떤 전환을 볼지’처럼 다음 단계로 이어지는 질문 하나만 남겨주세요.”</p>
+    </div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>06</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">PRACTICE 2</div><h2>실습 2 · 계산 열과 피벗 설계</h2></div><div class="page-num">07</div></header>
+    <table>
+      <thead><tr><th>구간</th><th>강사가 열 장표</th><th>보여줄 화면</th><th>수강생 행동</th><th>결과물</th></tr></thead>
+      <tbody>
+        <tr><td>시작 1분</td><td>67-68p</td><td>실습 2 목표</td><td>어떤 지표를 볼지 선택</td><td>지표 후보</td></tr>
+        <tr><td>시연 6분</td><td>69-73p</td><td>AI 대화창 + 시트 검산</td><td>공식 설명을 보고 표본 2~3행 검산</td><td>검산 기준</td></tr>
+        <tr><td>실습 10분</td><td>72-75p</td><td>프롬프트 실행, 피벗 설계</td><td>행/열/값/필터 기준 만들기</td><td>피벗 기준 1개</td></tr>
+        <tr><td>공유 2분</td><td>76p</td><td>예상 결과물</td><td>Padlet에 보고 싶은 피벗 기준 남기기</td><td>피벗 설계안</td></tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="card blue">
+        <span class="label">꼭 보여줄 검산</span>
+        <h3>AI 숫자를 바로 믿지 않기</h3>
+        <ul>
+          <li>전환율 = 등록수 / 상담신청수</li>
+          <li>환불률 = 환불건수 / 등록수</li>
+          <li>정산률 = 정산금액 / 매출</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <span class="label">피벗 설명</span>
+        <h3>피벗은 질문을 표로 바꾸는 도구</h3>
+        <ul>
+          <li>행: 비교 대상</li>
+          <li>값: 판단 지표</li>
+          <li>필터: 기간·과정·채널</li>
+        </ul>
+      </div>
+    </div>
+    <div class="script">
+      <p><b>핵심 멘트</b><br>“실습 2는 AI에게 계산을 맡기는 시간이 아니라, AI가 제안한 계산 기준을 사람이 검산하고 피벗으로 바꿔보는 시간입니다.”</p>
+    </div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>07</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">PRACTICE 3</div><h2>실습 3 · 인사이트와 보고서</h2></div><div class="page-num">08</div></header>
+    <table>
+      <thead><tr><th>구간</th><th>강사가 열 장표</th><th>보여줄 화면</th><th>수강생 행동</th><th>결과물</th></tr></thead>
+      <tbody>
+        <tr><td>시작 1분</td><td>77-78p</td><td>실습 3 목표</td><td>보고할 판단 1개 고르기</td><td>판단 후보</td></tr>
+        <tr><td>시연 7분</td><td>79-82p</td><td>AI 대화창</td><td>인사이트 질문과 프롬프트 구조 보기</td><td>프롬프트 이해</td></tr>
+        <tr><td>실습 10분</td><td>83-85p</td><td>차트 선택, 보고서 초안</td><td>5문장 보고서 만들기</td><td>보고서 초안</td></tr>
+        <tr><td>공유 3분</td><td>84-85p</td><td>보고서 예시</td><td>결론·근거·리스크·다음 액션 확인</td><td>인사이트 1개</td></tr>
+      </tbody>
+    </table>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><h3>결론</h3><p>무엇이 보였는가?</p></div>
+      <div class="step"><div class="num">2</div><h3>근거</h3><p>어떤 숫자가 말해주는가?</p></div>
+      <div class="step"><div class="num">3</div><h3>리스크</h3><p>데이터 한계는 무엇인가?</p></div>
+      <div class="step"><div class="num">4</div><h3>추가 확인</h3><p>무엇을 더 봐야 하나?</p></div>
+      <div class="step"><div class="num">5</div><h3>다음 액션</h3><p>업무에서 무엇을 바꿀까?</p></div>
+    </div>
+    <div class="script">
+      <p><b>핵심 멘트</b><br>“차트를 많이 만드는 것보다 중요한 건 보고할 판단을 하나 고르는 것입니다. 오늘은 팀장에게 말할 수 있는 5문장으로 끝내겠습니다.”</p>
+    </div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>08</span></div>
+  </section>
+
+  <section class="page">
+    <header><div><div class="kicker">FINAL 10 MINUTES</div><h2>마지막 제출과 마무리</h2></div><div class="page-num">09</div></header>
+    <div class="grid2">
+      <div class="card blue">
+        <span class="label">89-90p</span>
+        <h3>제출 안내</h3>
+        <p>Padlet 또는 제출 링크를 열고, 완성본이 아니어도 올릴 수 있다고 다시 말합니다.</p>
+        <ul>
+          <li>분석 질문 1개</li>
+          <li>피벗 기준 1개</li>
+          <li>보고서 초안 또는 막힌 지점</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <span class="label">91-92p</span>
+        <h3>다음 차수 연결</h3>
+        <p>오늘 만든 표 구조와 피벗 기준이 3차수 차트와 대시보드 재료가 된다고 연결합니다.</p>
+        <ul>
+          <li>2차수: 정리</li>
+          <li>3차수: 분석과 시각화</li>
+          <li>4차수: 외부 리서치</li>
+        </ul>
+      </div>
+    </div>
+    <div class="script">
+      <p><b>마지막 멘트</b><br>“오늘 제출물은 평가용 완성본이 아니라 다음 차수에서 이어갈 작업 로그입니다. 결과가 미완성이어도 괜찮습니다. 대신 내가 어떤 질문을 했고 어디서 막혔는지만 남겨주세요.”</p>
+    </div>
+    <div class="script">
+      <p><b>Zoom 채팅 멘트</b><br>오늘 실습 제출은 완성본이 아니어도 됩니다. 1) 분석 질문 1개 2) 피벗 기준 1개 3) 보고서 초안 또는 막힌 지점 중 하나를 Padlet/제출 링크에 남겨주세요.</p>
+    </div>
+    <div class="checklist">
+      <div class="check"><div class="box"></div><div><h3>최종 제출 확인</h3><p>한 명이라도 막힌 상태로 끝나지 않게 “캡처만 올려도 된다”고 말합니다.</p></div></div>
+      <div class="check"><div class="box"></div><div><h3>만족도 연결</h3><p>“오늘 만든 프롬프트와 기준표를 다음 업무에 바로 복붙할 수 있습니다”라고 정리합니다.</p></div></div>
+      <div class="check"><div class="box"></div><div><h3>다음 차수 예고</h3><p>“다음 시간에는 오늘 정리한 표로 어떤 채널/센터/과정이 효율적인지 차트로 보겠습니다.”</p></div></div>
+    </div>
+    <div class="footer"><span>바인그룹 2차 강사용 운영 플로우</span><span>09</span></div>
+  </section>
+</body>
+</html>
