@@ -511,6 +511,42 @@
     <div class="footer"><div class="progress"><span></span></div><span>전처리</span></div>
   </section>
 
+  <section class="slide" data-title="전처리 이유">
+    <div class="top"><span>핵심 개념</span><span>전처리 이유</span></div>
+    <div class="core">전처리를 하는 이유는 단순합니다. AI와 엑셀이 같은 데이터를 같은 기준으로 읽게 만들기 위해서입니다.</div>
+    <div class="content">
+      <h2>왜 전처리를 먼저 해야 하나?</h2>
+      <div class="grid4">
+        <div class="card">
+          <div class="icon">1</div>
+          <b>AI의 오해를 줄입니다</b>
+          <p>센터명, 과정명, 채널명이 제각각이면 AI가 서로 다른 항목으로 해석할 수 있습니다.</p>
+          <div class="result">예: 강남 / 강남센터 / 강남점 → 강남센터</div>
+        </div>
+        <div class="card">
+          <div class="icon green-bg">2</div>
+          <b>비교 기준을 맞춥니다</b>
+          <p>월별, 센터별, 과정별 기준이 섞이면 어느 쪽이 좋은지 비교할 수 없습니다.</p>
+          <div class="result">예: 2026-07-01 → 2026-07</div>
+        </div>
+        <div class="card">
+          <div class="icon gold-bg">3</div>
+          <b>계산 오류를 막습니다</b>
+          <p>빈칸, 중복, 단위 혼합이 있으면 전환율과 피벗 결과가 바로 틀어집니다.</p>
+          <div class="result">예: 18백만 / 18,000,000 → 18000000</div>
+        </div>
+        <div class="card focus-red">
+          <div class="icon">4</div>
+          <b>보안 리스크를 줄입니다</b>
+          <p>이름, 연락처, 계약번호가 섞인 파일은 AI에 올리기 전에 반드시 제거해야 합니다.</p>
+          <div class="result">예: 실명·연락처 → 익명 샘플</div>
+        </div>
+      </div>
+      <p class="notice" style="margin-top:18px">한 줄로 말하면, 전처리는 “예쁜 표 만들기”가 아니라 “나중에 믿고 말할 수 있는 결론을 만드는 일”입니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>전처리 이유</span></div>
+  </section>
+
   <section class="slide" data-title="AI와 사람의 역할">
     <div class="top"><span>핵심 개념</span><span>역할 분담</span></div>
     <div class="core">AI는 정리 속도를 높여주지만, 숫자가 맞는지와 결론이 타당한지는 사람이 확인합니다.</div>
