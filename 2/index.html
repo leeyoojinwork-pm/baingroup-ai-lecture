@@ -253,16 +253,27 @@
     .story-note{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
     .story-note strong{font-size:17px;color:var(--blue)}
     .story-note p{font-size:13px;line-height:1.4}
+    .profile-grid{display:grid;grid-template-columns:34% 1fr;gap:34px;align-items:center}
+    .profile-photo{height:410px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .profile-text .eyebrow{font-size:13px;font-weight:950;color:var(--blue);letter-spacing:.08em;margin-bottom:12px}
+    .profile-text h2{font-size:58px;margin-bottom:10px}
+    .profile-text .lead{font-size:23px;line-height:1.35;color:#4f5d6f;font-weight:900;margin-bottom:22px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .plain-panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow)}
+    .plain-panel h3{font-size:23px;margin-bottom:10px}
+    .plain-panel li{font-size:15px;line-height:1.48}
     .side-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:62px;border:1px solid #b9c5d3;background:rgba(255,255,255,.92);color:#546273;border-radius:8px;font-size:28px;font-weight:950;cursor:pointer}
     .prev{left:12px}.next{right:12px}
     .side-nav:disabled{opacity:.25}
     @media(max-height:760px){
       .slide{padding-bottom:64px}.top{top:18px}.core{top:62px;font-size:20px}.content{top:118px;bottom:62px}.footer{display:none}
       h1{font-size:56px}h2{font-size:36px;margin-bottom:14px}h3{font-size:19px}p,li{font-size:14px}.card{padding:16px}.code{max-height:300px}pre{font-size:12px}.row{padding:7px 0}.row strong{font-size:15px}.row em{font-size:12px}.section h2{font-size:52px}.section p{font-size:19px}.mock-screen{min-height:285px}.mock-body{min-height:246px}.guide-steps li{font-size:13px}.prompt-mini{max-height:105px}
+      .profile-photo{height:345px}.profile-grid{gap:24px}.profile-text h2{font-size:42px}.profile-text .lead{font-size:18px;margin-bottom:14px}.plain-panel{padding:16px}.plain-panel li{font-size:12px;line-height:1.42}
     }
     @media(max-width:1100px){
       .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
-      .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}
+      .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}
     }
     @media(max-width:620px){
       html,body{overflow:auto}.deck{height:auto;min-height:100vh}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
@@ -289,6 +300,43 @@
       <p>흩어진 업무 데이터를 정리하고, 차트와 보고서 초안까지 만드는 온라인 PBL 실습</p>
       <div class="instructor">강사: 이유진</div>
     </div>
+  </section>
+
+  <section class="slide" data-title="강사 소개">
+    <div class="top"><span>시작 안내</span><span>02 / 40</span></div>
+    <div class="core">도구 설명보다 실무 산출물로 연결하는 강의입니다.</div>
+    <div class="content">
+      <div class="profile-grid">
+        <div class="profile-photo"><img src="images/instructor_yujin.jpg" alt="이유진 강사 프로필 사진"></div>
+        <div class="profile-text">
+          <p class="eyebrow">강사 소개</p>
+          <h2>이유진</h2>
+          <p class="lead">AX Consultant / AI 서비스 기획 강사</p>
+          <div class="two-col">
+            <div class="plain-panel">
+              <h3>주요 경력</h3>
+              <ul>
+                <li>팀스파르타 AX 튜터</li>
+                <li>카카오뱅크 X FIN:NECT AI 트랙 강사</li>
+                <li>기업 임직원 대상 생성형 AI 실무 교육</li>
+                <li>업무 생산성 향상 워크숍 설계 및 진행</li>
+              </ul>
+            </div>
+            <div class="plain-panel">
+              <h3>전문 분야</h3>
+              <ul>
+                <li>AI 실무 자동화</li>
+                <li>업무 문서 자동화</li>
+                <li>GPT와 Gemini 실무 활용</li>
+                <li>데이터 정리·보고서 자동화</li>
+                <li>실습형 커리큘럼 설계</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>02 / 40</span></div>
   </section>
 
   <section class="slide" data-title="목차">
@@ -561,6 +609,88 @@
       <p class="source-note">참고: HPE AI Data Management의 데이터 품질·보안·거버넌스 관점, Google Sheets Gemini 기능 안내, OpenAI 데이터 분석 가이드 흐름을 수업용으로 재구성</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>분석 프레임워크</span></div>
+  </section>
+
+  <section class="slide" data-title="해외 표준 CRISP-DM">
+    <div class="top"><span>해외 표준</span><span>CRISP-DM</span></div>
+    <div class="core">해외 데이터 분석 교육과 현업에서 오래 쓰인 CRISP-DM은 “업무 이해 → 데이터 이해 → 준비 → 모델링 → 평가 → 배포” 흐름으로 봅니다.</div>
+    <div class="content">
+      <h2>CRISP-DM을 바인그룹 수업에 맞추면</h2>
+      <table class="rule-table">
+        <thead><tr><th>CRISP-DM 단계</th><th>원문 핵심 의미</th><th>바인그룹 강의 적용</th><th>오늘 할 일</th></tr></thead>
+        <tbody>
+          <tr><td><b>Business Understanding</b></td><td>업무 목표와 제약을 먼저 이해</td><td>센터·과정·채널 중 어떤 판단을 할지 정하기</td><td>내 업무 질문 1개</td></tr>
+          <tr><td><b>Data Understanding</b></td><td>데이터의 의미, 구조, 품질을 파악</td><td>열 의미, 단위, 누락·중복 후보 확인</td><td>열 설명표</td></tr>
+          <tr><td><b>Data Preparation</b></td><td>분석 가능한 데이터셋으로 준비</td><td>마스터 표, 표준값, 계산 열, 개인정보 제거</td><td>전처리 기준표</td></tr>
+          <tr><td><b>Modeling</b></td><td>패턴을 찾는 분석 방법 적용</td><td>피벗, 전환율, 환불률, 채널별 비교</td><td>피벗 설계안</td></tr>
+          <tr><td><b>Evaluation</b></td><td>결과가 업무 목표에 맞는지 평가</td><td>수치 검산, 과장 표현 제거, 추가 확인 항목 정리</td><td>검산 체크</td></tr>
+          <tr><td><b>Deployment</b></td><td>결과를 실제 업무에 쓰게 배포</td><td>보고서 5문장, 다음 액션, 다음 차수 차트 재료</td><td>최종 제출물</td></tr>
+        </tbody>
+      </table>
+      <p class="notice" style="margin-top:14px">오늘 2차수는 특히 Data Understanding과 Data Preparation을 깊게 잡습니다. 여기서 표가 흔들리면 3차수 차트도 흔들립니다.</p>
+      <p class="source-note">참고: IBM SPSS Modeler CRISP-DM Guide의 6단계 프로세스를 강의 흐름에 맞게 재구성</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>CRISP-DM</span></div>
+  </section>
+
+  <section class="slide" data-title="해외 공식 가이드 매핑">
+    <div class="top"><span>해외 원문 기반</span><span>공식 가이드 매핑</span></div>
+    <div class="core">OpenAI, Google, HPE, NIST 자료를 한 문장으로 줄이면 “AI에게 맡기기 전에 데이터 구조·품질·위험 기준을 먼저 정하라”입니다.</div>
+    <div class="content">
+      <h2>공식 자료를 수업 기준으로 바꾸기</h2>
+      <div class="source-strip">
+        <div class="source-card"><b>OpenAI</b><p>명확한 열 이름, 한 행=한 기록, 원하는 계산·그룹·차트 유형을 알려주는 방식이 좋습니다.</p><div class="formula">수업 적용: 데이터 설명서 + 분석 질문</div></div>
+        <div class="source-card"><b>Google Sheets</b><p>Gemini는 수식, 분석, 차트, 피벗, 필터, 서식 같은 시트 작업을 자연어로 도울 수 있습니다.</p><div class="formula">수업 적용: 시트 안 검산과 반복 분류</div></div>
+        <div class="source-card"><b>HPE</b><p>AI가 의미 있는 인사이트를 내려면 고품질·안전·정리된 데이터 관리가 먼저 필요합니다.</p><div class="formula">수업 적용: 전처리 품질 6대 기준</div></div>
+        <div class="source-card"><b>NIST AI RMF</b><p>AI 위험 관리는 Govern, Map, Measure, Manage 기능으로 계속 점검합니다.</p><div class="formula">수업 적용: 보안·검산·관리 규칙</div></div>
+      </div>
+      <div class="decision-formula">
+        <div class="part"><span>구조</span><b>열 이름과 기록 단위</b><p>무엇이 한 행인지 정합니다.</p></div>
+        <div class="part"><span>품질</span><b>누락·중복·이상값</b><p>AI가 후보를 찾고 사람이 확인합니다.</p></div>
+        <div class="part"><span>도구</span><b>GPT/Gemini/Sheet</b><p>파일 이해, 반복 작업, 검산을 나눕니다.</p></div>
+        <div class="part"><span>위험</span><b>개인정보와 단정 표현</b><p>공유 전에 반드시 줄입니다.</p></div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>공식 가이드 매핑</span></div>
+  </section>
+
+  <section class="slide" data-title="해외 사례 Telco Churn">
+    <div class="top"><span>해외 사례</span><span>Telco Customer Churn</span></div>
+    <div class="core">해외 데이터 분석 예제로 자주 쓰이는 Telco Churn은 “누가 이탈할 가능성이 높은가”를 보는 사례입니다. 바인그룹에서는 “누가 등록·유지로 이어지는가”로 바꿔 씁니다.</div>
+    <div class="content">
+      <h2>고객 이탈 분석을 교육 운영 분석으로 바꾸기</h2>
+      <div class="grid2">
+        <div class="card">
+          <span class="label">해외 원문 사례의 구조</span>
+          <table class="sheet" style="margin-top:8px">
+            <thead><tr><th>Telco 열</th><th>의미</th></tr></thead>
+            <tbody>
+              <tr><td>customerID</td><td>고객 식별자</td></tr>
+              <tr><td>tenure</td><td>이용 기간</td></tr>
+              <tr><td>MonthlyCharges</td><td>월 요금</td></tr>
+              <tr><td>Contract</td><td>계약 형태</td></tr>
+              <tr><td>Churn</td><td>이탈 여부</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card focus-red">
+          <span class="label">바인그룹 적용 구조</span>
+          <table class="sheet" style="margin-top:8px">
+            <thead><tr><th>바인그룹 열</th><th>업무 질문</th></tr></thead>
+            <tbody>
+              <tr><td>상담ID/익명ID</td><td>개인정보 없이 흐름 추적</td></tr>
+              <tr><td>상담 후 경과일</td><td>언제 등록이 끊기는가?</td></tr>
+              <tr><td>과정 금액/매출</td><td>금액대별 전환 차이가 있는가?</td></tr>
+              <tr><td>과정/채널</td><td>어떤 과정·채널의 전환이 낮은가?</td></tr>
+              <tr><td>등록/환불 여부</td><td>어떤 조건에서 이탈·환불이 생기는가?</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="notice" style="margin-top:14px">수업에서는 예측 모델까지 가지 않습니다. 대신 “이탈/환불을 보기 위한 열 구조와 질문 설계”를 만들어 3차수 분석·시각화로 넘깁니다.</p>
+      <p class="source-note">참고: Kaggle Telco Customer Churn 데이터셋과 고객 유지 분석 흐름을 교육 운영 데이터로 변환</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>해외 사례 변환</span></div>
   </section>
 
   <section class="slide" data-title="질문 설계 프레임워크">
