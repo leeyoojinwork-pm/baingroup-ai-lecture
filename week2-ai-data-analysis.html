@@ -147,6 +147,18 @@
     .visual-node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow);text-align:center}
     .visual-node b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .visual-node p{font-size:12px;line-height:1.35}
+    .process7{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:stretch}
+    .phase{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 10px;box-shadow:var(--shadow);min-height:130px}
+    .phase .tag{display:inline-flex;width:28px;height:28px;border-radius:50%;align-items:center;justify-content:center;background:var(--soft-blue);color:var(--blue);font-size:12px;font-weight:950;margin-bottom:10px}
+    .phase b{display:block;font-size:15px;line-height:1.2;color:var(--ink);margin-bottom:7px}
+    .phase p{font-size:11px;line-height:1.35}
+    .phase.today{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 5px rgba(200,76,58,.12),var(--shadow)}
+    .concept-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+    .concept-list{display:grid;gap:10px}
+    .concept-list .item{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
+    .concept-list .item span{width:42px;height:42px;border-radius:12px;background:var(--soft-blue);color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:950}
+    .concept-list .item b{display:block;font-size:18px;color:var(--ink);margin-bottom:4px}
+    .concept-list .item p{font-size:13px;line-height:1.38}
     .number-badge{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:950;margin-right:10px}
     .example-card{position:relative;overflow:hidden}
     .example-card:after{content:attr(data-num);position:absolute;right:18px;top:12px;font-size:54px;font-weight:950;color:#eef4fb}
@@ -189,7 +201,7 @@
       h1{font-size:56px}h2{font-size:36px;margin-bottom:14px}h3{font-size:19px}p,li{font-size:14px}.card{padding:16px}.code{max-height:300px}pre{font-size:12px}.row{padding:7px 0}.row strong{font-size:15px}.row em{font-size:12px}.section h2{font-size:52px}.section p{font-size:19px}.mock-screen{min-height:285px}.mock-body{min-height:246px}.guide-steps li{font-size:13px}.prompt-mini{max-height:105px}
     }
     @media(max-width:1100px){
-      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
+      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
     }
     @media(max-width:620px){
       html,body{overflow:auto}.deck{height:auto;min-height:100vh}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
@@ -430,6 +442,103 @@
       <p class="notice" style="margin-top:18px">오늘 2차수는 정형 데이터 중심으로 정리합니다. 문장 데이터는 “표로 바꾼 뒤” 다음 분석 단계로 넘깁니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>10 / 40</span></div>
+  </section>
+
+  <section class="slide" data-title="분석 프로세스">
+    <div class="top"><span>핵심 개념</span><span>분석 흐름</span></div>
+    <div class="core">AI 데이터 분석도 순서는 같습니다. 달라지는 건 중간 작업을 AI가 더 빠르게 도와준다는 점입니다.</div>
+    <div class="content">
+      <h2>데이터 분석은 이렇게 흘러갑니다</h2>
+      <div class="process7">
+        <div class="phase"><span class="tag">1</span><b>문제 정의</b><p>무엇을 알고 싶은지, 어떤 결정을 도울지 정합니다.</p></div>
+        <div class="phase"><span class="tag">2</span><b>자료 수집</b><p>센터, 월, 채널, 후기처럼 필요한 자료를 모읍니다.</p></div>
+        <div class="phase today"><span class="tag">3</span><b>데이터 설명</b><p>열 의미, 단위, 주의사항을 AI에게 알려줍니다.</p></div>
+        <div class="phase today"><span class="tag">4</span><b>전처리</b><p>누락, 중복, 형식, 개인정보를 정리합니다.</p></div>
+        <div class="phase"><span class="tag">5</span><b>탐색 분석</b><p>분포, 비교, 이상값, 패턴을 먼저 살핍니다.</p></div>
+        <div class="phase"><span class="tag">6</span><b>시각화</b><p>피벗과 차트로 의미를 보여줍니다.</p></div>
+        <div class="phase"><span class="tag">7</span><b>보고·결정</b><p>근거, 리스크, 다음 액션으로 정리합니다.</p></div>
+      </div>
+      <p class="notice" style="margin-top:16px">오늘 2차수의 범위는 3~4단계입니다. 분석과 시각화는 3차수에서 더 깊게 다룹니다.</p>
+      <p class="source-note">참고: HPE AI Data Management 개념 자료, AI 데이터 분석 프로세스 참고 이미지 기반 재구성</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>분석 흐름</span></div>
+  </section>
+
+  <section class="slide" data-title="데이터 설명서">
+    <div class="top"><span>핵심 개념</span><span>데이터 설명</span></div>
+    <div class="core">AI에게 파일만 던지면 “그럴듯한 해석”을 할 수 있습니다. 그래서 먼저 데이터 설명서를 붙입니다.</div>
+    <div class="content">
+      <h2>AI에게 먼저 알려줘야 하는 것</h2>
+      <div class="concept-split">
+        <div class="mock-screen">
+          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">센터별_월간운영.csv</span></div>
+          <div class="mock-body">
+            <table class="sheet">
+              <thead><tr><th>열 이름</th><th>의미</th><th>확인 기준</th></tr></thead>
+              <tbody>
+                <tr><td>center</td><td>센터명</td><td>강남센터처럼 통일</td></tr>
+                <tr><td>lead</td><td>상담신청수</td><td>숫자만 입력</td></tr>
+                <tr><td>paid</td><td>등록수</td><td>등록 완료 기준</td></tr>
+                <tr><td>refund</td><td>환불건수</td><td>월 기준 집계</td></tr>
+              </tbody>
+            </table>
+            <div class="formula">데이터 설명서 = 열 의미 + 단위 + 주의사항 + 판단 질문</div>
+          </div>
+        </div>
+        <div class="concept-list">
+          <div class="item"><span>열</span><div><b>각 열이 뜻하는 바</b><p>매출, 상담, 등록, 환불이 어떤 기준으로 집계됐는지 알려줍니다.</p></div></div>
+          <div class="item"><span>단위</span><div><b>숫자의 단위</b><p>원, 만원, 건수, 퍼센트가 섞이면 AI와 엑셀 모두 계산을 틀릴 수 있습니다.</p></div></div>
+          <div class="item"><span>질문</span><div><b>보고 싶은 판단</b><p>“어느 센터가 문제인가”보다 “매출은 높은데 전환이 낮은 센터는?”처럼 묻습니다.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>데이터 설명</span></div>
+  </section>
+
+  <section class="slide" data-title="전처리 위치">
+    <div class="top"><span>핵심 개념</span><span>전처리</span></div>
+    <div class="core">전처리는 분석 전에 하는 청소가 아니라, 같은 기준으로 비교하기 위한 준비 작업입니다.</div>
+    <div class="content">
+      <h2>전처리에서 맞춰야 할 4가지</h2>
+      <div class="grid4">
+        <div class="card focus-red"><div class="icon">1</div><b>형식 통일</b><p>날짜, 센터명, 과정명, 채널명을 같은 규칙으로 맞춥니다.</p><div class="formula">강남 / 강남센터 → 강남센터</div></div>
+        <div class="card focus-red"><div class="icon green-bg">2</div><b>누락·중복 확인</b><p>빈칸과 같은 행이 여러 번 들어간 부분을 표시합니다.</p><div class="formula">환불건수 공란 → 확인필요</div></div>
+        <div class="card focus-red"><div class="icon gold-bg">3</div><b>계산 기준 생성</b><p>전환율, 환불률처럼 뒤에서 피벗할 계산 열을 만듭니다.</p><div class="formula">등록수 / 상담신청수</div></div>
+        <div class="card focus-red"><div class="icon">4</div><b>개인정보 제거</b><p>이름, 연락처, 계약번호, 상세 주소는 삭제하거나 가짜 값으로 바꿉니다.</p><div class="formula">김OO / 010-0000-0000</div></div>
+      </div>
+      <p class="notice" style="margin-top:18px;border-left-color:var(--red);background:#fff1ee">실습에서는 AI가 전처리 후보를 찾고, 우리는 표본 3~4행을 직접 확인해 전체 적용 여부를 결정합니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>전처리</span></div>
+  </section>
+
+  <section class="slide" data-title="AI와 사람의 역할">
+    <div class="top"><span>핵심 개념</span><span>역할 분담</span></div>
+    <div class="core">AI는 정리 속도를 높여주지만, 숫자가 맞는지와 결론이 타당한지는 사람이 확인합니다.</div>
+    <div class="content">
+      <h2>AI에게 맡길 일과 사람이 볼 일</h2>
+      <div class="grid2">
+        <div class="card">
+          <span class="label">AI에게 맡길 일</span>
+          <ul>
+            <li>열 이름과 데이터 의미 추정</li>
+            <li>누락값, 중복값, 이상값 후보 찾기</li>
+            <li>전환율·환불률 같은 계산 열 제안</li>
+            <li>피벗 기준과 보고서 문장 초안 만들기</li>
+          </ul>
+        </div>
+        <div class="card focus-red">
+          <span class="label">사람이 반드시 확인할 일</span>
+          <ul>
+            <li>실제 업무 기준과 열 의미가 맞는지</li>
+            <li>표본 3~4행을 손으로 계산했을 때 수식이 맞는지</li>
+            <li>개인정보와 사내 기밀이 빠졌는지</li>
+            <li>결론이 데이터 범위를 넘어 과장되지 않았는지</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source-note">참고: Google Sheets Gemini 기능 안내, HPE AI 데이터 관리 자료, AI 분석 주의사항 캡처 기반 수업용 재구성</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>역할 분담</span></div>
   </section>
 
   <section class="slide" data-title="데이터 유형 퀴즈">
