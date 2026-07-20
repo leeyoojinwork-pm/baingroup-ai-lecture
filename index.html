@@ -560,23 +560,15 @@
     .shift-card.center{background:linear-gradient(180deg,#f8fbff,#eef6ff);border-color:#bdd4ec}
     .shift-card.center .shift-icon{background:var(--blue);color:#fff}
     .shift-arrow{position:absolute;right:-27px;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #bfd3e7;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:950;z-index:2}
-    .survey-orbit{position:relative;min-height:520px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;padding:34px 38px}
-    .survey-orbit:before{content:"";position:absolute;left:50%;top:46px;width:212px;height:212px;border-radius:50%;background:linear-gradient(135deg,#2f66ad,#1f8a70);transform:translateX(-50%);box-shadow:0 18px 36px rgba(47,102,173,.18)}
-    .survey-orbit .orbit-core{position:absolute;left:50%;top:78px;width:170px;transform:translateX(-50%);text-align:center;color:#fff;z-index:1}
-    .survey-orbit .orbit-core span{display:block;font-size:13px;font-weight:950;letter-spacing:.12em;margin-bottom:12px}
-    .survey-orbit .orbit-core b{display:block;font-size:28px;line-height:1.16}
-    .orbit-row{position:absolute;left:38px;right:38px;top:265px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d9e3ed;border-radius:14px;overflow:hidden}
-    .orbit-cell{position:relative;min-height:142px;background:#f7fbff;padding:28px 18px 18px;text-align:center;border-right:1px solid #d9e3ed}
-    .orbit-cell:last-child{border-right:0}
-    .orbit-cell:nth-child(2){background:#f3faf7}.orbit-cell:nth-child(3){background:#f7f8ff}.orbit-cell:nth-child(4){background:#fff9ee}
-    .orbit-cell .dot{position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:16px;height:16px;border:4px solid #fff;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px #b8cee6}
-    .orbit-cell .num{display:block;color:var(--blue);font-size:24px;font-weight:950;margin-bottom:14px}
-    .orbit-cell b{display:block;font-size:18px;line-height:1.25;color:var(--ink);margin-bottom:8px}
-    .orbit-cell p{font-size:12.5px;line-height:1.38}
-    .orbit-strategy{position:absolute;left:50%;top:432px;transform:translateX(-50%);border:2px dashed #b9c9dc;background:#fff;border-radius:999px;padding:10px 24px;color:#6d86a5;font-weight:950}
-    .orbit-mission{position:absolute;left:38px;right:38px;bottom:24px;border-radius:16px;background:#edf5ff;border:1px solid #c9dcf1;padding:15px 24px;display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
-    .orbit-mission span{display:flex;align-items:center;justify-content:center;height:36px;border-radius:999px;background:#fff;border:1px solid #c8d7e9;color:#637083;font-weight:950}
-    .orbit-mission b{font-size:23px;color:var(--blue)}
+    .survey-board{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .survey-card{position:relative;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;border:1px solid #d7e3f0;border-radius:14px;background:#f8fbff;padding:18px 18px 18px 16px;min-height:132px}
+    .survey-card:nth-child(2){background:#f5fbf7}.survey-card:nth-child(3){background:#f7f8ff}.survey-card:nth-child(4){background:#fffaf0}
+    .survey-card .num{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;background:#fff;border:1px solid #c9d9eb;color:var(--blue);font-size:20px;font-weight:950}
+    .survey-card b{display:block;font-size:21px;line-height:1.18;color:var(--ink);margin-bottom:8px}
+    .survey-card p{font-size:13.5px;line-height:1.42;color:#526174;font-weight:800}
+    .survey-mission{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;margin-top:2px;border-left:6px solid var(--blue);background:#edf5ff;border-radius:0 14px 14px 0;padding:18px 22px}
+    .survey-mission span{display:flex;align-items:center;justify-content:center;height:38px;border-radius:999px;background:#fff;border:1px solid #c8d7e9;color:#637083;font-weight:950}
+    .survey-mission b{font-size:24px;line-height:1.25;color:var(--blue)}
     .pdca-board{background:#eef5ff;border:1px solid #c8daee;border-radius:18px;box-shadow:var(--shadow);padding:30px;display:grid;grid-template-columns:1fr 360px 1fr;gap:22px;align-items:center}
     .pdca-center{position:relative;width:330px;height:330px;margin:auto;border:3px solid #93b4dc;border-radius:50%;display:grid;place-items:center;color:#6f91bb;font-weight:950}
     .pdca-center:before,.pdca-center:after{content:"";position:absolute;inset:50px;border:2px solid #aec6e2;border-radius:50%}
@@ -873,16 +865,12 @@
     <div class="core">사전 설문에서 확인한 병목은 도구 부족보다 데이터 취합, 형식 통일, 비교와 보고의 반복입니다.</div>
     <div class="content">
       <h2>사전 설문에서 보인 오늘의 출발점</h2>
-      <div class="survey-orbit">
-        <div class="orbit-core"><span>VOICE OF CLASS</span><b>데이터 기준을 먼저 세우는 수업</b></div>
-        <div class="orbit-row">
-          <div class="orbit-cell"><span class="dot"></span><span class="num">01</span><b>엑셀·시트는 이미 씁니다</b><p>문제는 도구 사용 여부가 아니라 자료가 서로 다른 기준으로 쌓이는 것입니다.</p></div>
-          <div class="orbit-cell"><span class="dot"></span><span class="num">02</span><b>취합·보고가 반복됩니다</b><p>월별, 센터별, 채널별 자료를 매번 다시 붙이는 시간이 큽니다.</p></div>
-          <div class="orbit-cell"><span class="dot"></span><span class="num">03</span><b>비교와 원인 설명이 어렵습니다</b><p>수치가 있어도 무엇이 좋아졌고 나빠졌는지 말로 정리하기 어렵습니다.</p></div>
-          <div class="orbit-cell"><span class="dot"></span><span class="num">04</span><b>보안 때문에 그대로 못 올립니다</b><p>개인정보와 사내 자료는 샘플화, 익명화, 원본 분리가 먼저입니다.</p></div>
-        </div>
-        <div class="orbit-strategy">STRATEGY</div>
-        <div class="orbit-mission"><span>MISSION</span><b>안전하게 모으고, 같은 기준으로 정리하고, 사람이 검산할 수 있게 만든다</b></div>
+      <div class="survey-board">
+        <div class="survey-card"><span class="num">01</span><div><b>엑셀·시트는 이미 씁니다</b><p>다만 자료가 월별·센터별·채널별로 흩어져 있어 같은 기준으로 보기 어렵습니다.</p></div></div>
+        <div class="survey-card"><span class="num">02</span><div><b>취합·보고가 반복됩니다</b><p>여러 파일을 붙이고 합계를 내고 보고 문장으로 바꾸는 작업이 매번 반복됩니다.</p></div></div>
+        <div class="survey-card"><span class="num">03</span><div><b>비교와 원인 설명이 어렵습니다</b><p>수치는 있지만 무엇이 좋아졌고 나빠졌는지 말로 정리하는 데 시간이 걸립니다.</p></div></div>
+        <div class="survey-card"><span class="num">04</span><div><b>보안 때문에 그대로 못 올립니다</b><p>개인정보와 사내 자료는 샘플화, 익명화, 원본 분리 후 다뤄야 합니다.</p></div></div>
+        <div class="survey-mission"><span>오늘 방향</span><b>데이터를 안전하게 모으고, 같은 기준으로 정리한 뒤, 사람이 검산할 수 있는 보고 흐름을 만듭니다.</b></div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>사전 설문</span></div>
