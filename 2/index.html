@@ -214,6 +214,30 @@
     .source-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:var(--shadow)}
     .source-card b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .source-card p{font-size:13px;line-height:1.4}
+    .framework-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
+    .framework-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);min-height:260px}
+    .framework-card .num{display:inline-flex;width:32px;height:32px;border-radius:50%;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:950;font-size:13px;margin-bottom:13px}
+    .framework-card b{display:block;font-size:20px;line-height:1.2;color:var(--ink);margin-bottom:9px}
+    .framework-card p{font-size:13px;line-height:1.42;margin-bottom:10px}
+    .framework-card .rule{border-top:1px solid var(--line);padding-top:10px;font-size:12px;line-height:1.38;color:#2d3b4e;font-weight:900}
+    .framework-card.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 5px rgba(200,76,58,.12),var(--shadow)}
+    .matrix{display:grid;grid-template-columns:1.05fr 1.05fr .9fr;gap:14px;align-items:stretch}
+    .matrix .card{padding:18px}
+    .matrix .card b{font-size:20px}
+    .matrix .card p,.matrix .card li{font-size:13px;line-height:1.38}
+    .rule-table th,.rule-table td{font-size:13px;padding:8px 9px}
+    .decision-formula{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch;margin-top:16px}
+    .decision-formula .part{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
+    .decision-formula .part span{display:block;color:var(--blue);font-size:12px;font-weight:950;margin-bottom:8px}
+    .decision-formula .part b{font-size:18px;line-height:1.22}
+    .deep-list{display:grid;gap:9px}
+    .deep-list .item{display:grid;grid-template-columns:92px 1fr;gap:10px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px 12px}
+    .deep-list .item strong{font-size:14px;color:var(--blue)}
+    .deep-list .item p{font-size:13px;line-height:1.35}
+    .rubric{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .rubric .card{padding:18px}
+    .rubric .card b{font-size:20px}
+    .rubric .card p,.rubric .card li{font-size:13px;line-height:1.38}
     .roadmap{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:stretch}
     .roadmap-hero{background:linear-gradient(135deg,#24314a 0%,#2f66ad 62%,#1f8a70 100%);border-radius:18px;padding:24px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
     .roadmap-hero .label{color:#cfe4ff}
@@ -500,6 +524,163 @@
       <p class="source-note">참고: HPE AI Data Management 개념 자료, AI 데이터 분석 프로세스 참고 이미지 기반 재구성</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>분석 흐름</span></div>
+  </section>
+
+  <section class="slide" data-title="분석 프레임워크">
+    <div class="top"><span>핵심 프레임워크</span><span>데이터 업무 운영법</span></div>
+    <div class="core">오늘 실습은 “AI에게 분석해줘”가 아니라, 데이터 업무를 5단계로 나누어 AI와 사람이 함께 처리하는 방식입니다.</div>
+    <div class="content">
+      <h2>BAIN 데이터 업무 프레임워크</h2>
+      <div class="framework-grid">
+        <div class="framework-card">
+          <span class="num">1</span><b>질문 설계</b>
+          <p>먼저 어떤 판단을 도와야 하는지 정합니다.</p>
+          <div class="rule">판단 질문 = 비교 대상 + 지표 + 기준 기간 + 액션</div>
+        </div>
+        <div class="framework-card">
+          <span class="num">2</span><b>취합 설계</b>
+          <p>센터·과정·채널별 자료를 하나의 마스터 표로 모읍니다.</p>
+          <div class="rule">원본은 보존하고, 마스터 표에는 표준 열만 남깁니다.</div>
+        </div>
+        <div class="framework-card active">
+          <span class="num">3</span><b>전처리</b>
+          <p>누락, 중복, 단위, 개인정보, 표기 차이를 분석 가능한 상태로 맞춥니다.</p>
+          <div class="rule">AI가 후보를 찾고, 사람은 표본 3~4행을 검산합니다.</div>
+        </div>
+        <div class="framework-card">
+          <span class="num">4</span><b>분석 구조화</b>
+          <p>계산 열과 피벗 기준을 만들어 비교·변화·리스크를 봅니다.</p>
+          <div class="rule">지표 없이는 차트도 보고서도 설득력이 약합니다.</div>
+        </div>
+        <div class="framework-card">
+          <span class="num">5</span><b>검증·보고</b>
+          <p>수치, 단위, 보안, 표현을 검수하고 다음 액션으로 씁니다.</p>
+          <div class="rule">결론은 데이터 범위 안에서만 말합니다.</div>
+        </div>
+      </div>
+      <p class="source-note">참고: HPE AI Data Management의 데이터 품질·보안·거버넌스 관점, Google Sheets Gemini 기능 안내, OpenAI 데이터 분석 가이드 흐름을 수업용으로 재구성</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>분석 프레임워크</span></div>
+  </section>
+
+  <section class="slide" data-title="질문 설계 프레임워크">
+    <div class="top"><span>프레임워크 1</span><span>질문 설계</span></div>
+    <div class="core">좋은 데이터 분석은 좋은 질문에서 시작합니다. 질문이 흐리면 AI는 그럴듯한 요약만 만들고, 업무 판단은 남지 않습니다.</div>
+    <div class="content">
+      <h2>판단 질문을 만드는 공식</h2>
+      <div class="decision-formula">
+        <div class="part"><span>비교 대상</span><b>무엇과 무엇을 비교하나?</b><p>센터, 과정, 채널, 월, 신규/기존</p></div>
+        <div class="part"><span>지표</span><b>무슨 숫자로 판단하나?</b><p>매출, 상담신청수, 등록수, 전환율, 환불률</p></div>
+        <div class="part"><span>기준 기간</span><b>언제 기준인가?</b><p>월별, 분기별, 교육 회차별</p></div>
+        <div class="part"><span>액션</span><b>그래서 무엇을 바꾸나?</b><p>광고, 상담, 커리큘럼, 운영 안내</p></div>
+      </div>
+      <div class="grid2" style="margin-top:18px">
+        <div class="card">
+          <span class="label">질문 전</span>
+          <b>“매출 데이터를 분석해줘.”</b>
+          <p>범위가 넓어서 AI가 평균, 합계, 상위 항목만 나열할 가능성이 큽니다.</p>
+        </div>
+        <div class="card focus-red">
+          <span class="label">질문 후</span>
+          <b>“센터별로 매출은 높지만 등록 전환율이 낮은 곳을 찾아줘.”</b>
+          <p>바로 운영 판단으로 이어집니다. 상담 스크립트, 유입 채널, 과정 소개를 점검할 수 있습니다.</p>
+        </div>
+      </div>
+      <p class="notice" style="margin-top:16px">오늘 실습 제출물 중 하나는 “내 업무 질문 1개”입니다. 완성된 분석보다 이 질문이 먼저입니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>질문 설계</span></div>
+  </section>
+
+  <section class="slide" data-title="취합 설계 프레임워크">
+    <div class="top"><span>프레임워크 2</span><span>데이터 취합</span></div>
+    <div class="core">여러 채널의 데이터를 모을 때 핵심은 “다 붙이기”가 아니라, 서로 다른 자료가 한 표에서 만날 규칙을 먼저 정하는 것입니다.</div>
+    <div class="content">
+      <h2>마스터 표를 만들 때 정할 5가지</h2>
+      <div class="matrix">
+        <div class="card">
+          <span class="label">1. 출처</span><b>어디서 온 데이터인가</b>
+          <p>홈페이지, 블로그, 광고, 소개, 센터별 엑셀, 설문 응답처럼 출처를 남겨야 나중에 오류를 추적할 수 있습니다.</p>
+          <div class="formula">source_file / source_channel</div>
+        </div>
+        <div class="card">
+          <span class="label">2. 기준 키</span><b>무엇으로 연결할 것인가</b>
+          <p>월, 센터, 과정, 채널이 같아야 서로 다른 표를 붙였을 때 같은 항목으로 묶입니다.</p>
+          <div class="formula">month + center + course + channel</div>
+        </div>
+        <div class="card">
+          <span class="label">3. 표준값</span><b>표기를 어떻게 통일할 것인가</b>
+          <p>강남/강남센터, HP/홈페이지, 신규/신입처럼 같은 의미의 다른 표기를 하나로 맞춥니다.</p>
+          <div class="formula">standard_value_dictionary</div>
+        </div>
+      </div>
+      <table class="rule-table" style="margin-top:16px">
+        <thead><tr><th>취합 규칙</th><th>실무 의미</th><th>AI에게 요청할 말</th></tr></thead>
+        <tbody>
+          <tr><td>원본 보존</td><td>실수해도 되돌아갈 수 있게 원본 파일은 수정하지 않음</td><td>원본 열과 마스터 열을 분리해서 설계해줘</td></tr>
+          <tr><td>열 매핑</td><td>각 파일의 다른 열 이름을 표준 열로 연결</td><td>열 매핑표를 만들어줘</td></tr>
+          <tr><td>품질 플래그</td><td>누락, 중복, 이상값을 삭제하기 전에 표시</td><td>확인 필요 플래그 열을 제안해줘</td></tr>
+        </tbody>
+      </table>
+      <p class="notice" style="margin-top:14px">오늘 실습 2는 이 취합 설계를 프롬프트로 만들고, 계산 열과 피벗 기준까지 이어가는 단계입니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>취합 설계</span></div>
+  </section>
+
+  <section class="slide" data-title="전처리 품질 프레임워크">
+    <div class="top"><span>프레임워크 3</span><span>전처리 품질</span></div>
+    <div class="core">전처리는 “깨끗한 표 만들기”가 아니라, 나중에 틀린 숫자를 보고하지 않기 위한 품질 관리입니다.</div>
+    <div class="content">
+      <h2>전처리 6대 점검 기준</h2>
+      <div class="rubric">
+        <div class="card"><b>형식</b><p>날짜, 금액, 퍼센트, 텍스트가 한 열 안에서 섞이지 않았는지 확인합니다.</p><div class="formula">26.7.1 / 2026-07-01 → 2026-07-01</div></div>
+        <div class="card"><b>누락</b><p>빈칸이 0인지, 미입력인지, 해당 없음인지 구분합니다.</p><div class="formula">환불건수 공란 → 확인필요</div></div>
+        <div class="card"><b>중복</b><p>같은 센터·월·과정이 두 번 들어갔는지 확인합니다.</p><div class="formula">month+center+course 중복 체크</div></div>
+        <div class="card"><b>이상값</b><p>매출이 갑자기 크거나 음수인 경우 원인을 확인합니다.</p><div class="formula">전월 대비 ±50% 이상 → 확인</div></div>
+        <div class="card"><b>단위</b><p>원/만원, 건수/비율이 섞이면 계산이 틀어집니다.</p><div class="formula">18백만 → 18000000</div></div>
+        <div class="card focus-red"><b>보안</b><p>이름, 전화번호, 계약번호, 상세 상담메모는 제거하거나 익명화합니다.</p><div class="formula">김민수 → 수강생A</div></div>
+      </div>
+      <p class="notice" style="margin-top:14px;border-left-color:var(--red);background:#fff1ee">AI에게는 “삭제해줘”보다 “확인 필요 플래그를 먼저 만들어줘”라고 시키는 편이 안전합니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>전처리 품질</span></div>
+  </section>
+
+  <section class="slide" data-title="분석 유형 프레임워크">
+    <div class="top"><span>프레임워크 4</span><span>분석 유형</span></div>
+    <div class="core">AI에게 “인사이트 뽑아줘”라고만 하면 결과가 흐려집니다. 어떤 종류의 질문인지 먼저 골라야 합니다.</div>
+    <div class="content">
+      <h2>업무 질문을 5가지 분석 유형으로 나누기</h2>
+      <table class="rule-table">
+        <thead><tr><th>분석 유형</th><th>보고 싶은 것</th><th>바인그룹 예시 질문</th><th>추천 결과물</th></tr></thead>
+        <tbody>
+          <tr><td><b>비교</b></td><td>센터·과정·채널 차이</td><td>어느 센터가 상담 대비 등록 전환이 낮은가?</td><td>피벗 요약표, 막대 차트</td></tr>
+          <tr><td><b>변화</b></td><td>월별 추세</td><td>문의는 늘었는데 등록이 같이 늘었는가?</td><td>월별 선형 차트</td></tr>
+          <tr><td><b>분포</b></td><td>값의 쏠림과 이상값</td><td>환불률이 유독 높은 과정이 있는가?</td><td>상위/하위 표, 이상값 목록</td></tr>
+          <tr><td><b>관계</b></td><td>숫자 간 함께 움직임</td><td>상담신청수와 매출은 같이 움직이는가?</td><td>상관 후보, 산점도 후보</td></tr>
+          <tr><td><b>텍스트</b></td><td>문의·후기의 반복 주제</td><td>학부모 문의에서 자주 나오는 불편은 무엇인가?</td><td>주제 분류표, 빈도 표</td></tr>
+        </tbody>
+      </table>
+      <p class="notice" style="margin-top:16px">오늘은 비교·변화·분포를 맛보고, 3차수에서 차트와 대시보드로 더 깊게 들어갑니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>분석 유형</span></div>
+  </section>
+
+  <section class="slide" data-title="검증 보고 프레임워크">
+    <div class="top"><span>프레임워크 5</span><span>검증과 보고</span></div>
+    <div class="core">AI가 만든 결과는 초안입니다. 강의에서 끝까지 가져갈 습관은 “수치 검산 → 해석 제한 → 액션 연결”입니다.</div>
+    <div class="content">
+      <h2>AI 결과 검증 4단계</h2>
+      <div class="deep-list">
+        <div class="item"><strong>1. 수치 검산</strong><p>전환율, 환불률, 정산률은 첫 3~4행을 손으로 계산해 맞는지 확인합니다.</p></div>
+        <div class="item"><strong>2. 단위 확인</strong><p>원/만원, 건수/비율, 월/분기 기준이 보고서 문장 안에서 섞이지 않았는지 봅니다.</p></div>
+        <div class="item"><strong>3. 단정 제한</strong><p>데이터가 보여주는 것은 “원인”이 아니라 “원인 후보”일 수 있습니다. AI 문장에서 과장 표현을 줄입니다.</p></div>
+        <div class="item"><strong>4. 액션 연결</strong><p>결론마다 “운영자가 다음에 확인할 것”을 붙입니다. 예: 광고 채널 전환율 낮음 → 상담 스크립트/랜딩페이지 확인.</p></div>
+      </div>
+      <div class="grid2" style="margin-top:16px">
+        <div class="card"><span class="label">나쁜 보고</span><b>“광고 채널이 실패했습니다.”</b><p>원인을 단정했고, 어떤 데이터 기준인지 보이지 않습니다.</p></div>
+        <div class="card focus-red"><span class="label">좋은 보고</span><b>“광고 채널은 상담신청수는 높지만 등록 전환율이 낮아 상담 이후 이탈 구간 확인이 필요합니다.”</b><p>숫자 패턴, 해석 범위, 다음 액션이 함께 있습니다.</p></div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>검증과 보고</span></div>
   </section>
 
   <section class="slide" data-title="데이터 설명서">
@@ -1535,24 +1716,26 @@
 
   <section class="slide" data-title="실습 2 프롬프트">
     <div class="top"><span>실습 2</span><span>14 / 26</span></div>
-    <div class="core">여러 파일을 취합하려면 열 이름과 기준값을 먼저 통일해야 합니다.</div>
+    <div class="core">여러 파일을 취합하려면 열 이름만 맞추는 것이 아니라, 기준 키·표준값·품질 점검 규칙까지 함께 설계해야 합니다.</div>
     <div class="content">
-      <h2>마스터 표 설계 프롬프트</h2>
-      <div class="code"><button class="copy">복사</button><pre>이 데이터를 여러 센터와 여러 채널에서 매월 취합한다고 가정하겠습니다.
-엑셀 또는 구글 스프레드시트에서 관리하기 좋은 마스터 표 구조를 설계해줘.
+      <h2>마스터 표 프레임워크 프롬프트</h2>
+      <div class="code"><button class="copy">복사</button><pre>아래 데이터는 바인그룹 교육/코칭센터의 월별 운영 데이터 샘플입니다.
+여러 센터·채널 데이터를 매월 취합할 수 있는 “마스터 표 운영 기준”을 설계해줘.
 
 요청:
-1. 유지해야 할 열 이름을 표준화
-2. 추가하면 좋은 계산 열 제안
-3. 피벗테이블에서 행, 열, 값, 필터로 둘 항목 추천
-4. 전환율, 환불률, 정산률 계산식 제안
-5. 담당자가 매월 업데이트할 때 지켜야 할 입력 규칙 7개 작성
+1. 원본 열 이름 → 표준 열 이름으로 바꾸는 열 매핑표
+2. 중복을 막기 위한 마스터 키: 월+센터+과정+채널 기준
+3. 센터명·과정명·채널명 표준값 사전 예시
+4. 전처리 품질 점검 규칙 6개: 형식, 누락, 중복, 이상값, 단위, 개인정보
+5. 계산 열 3개와 공식: 전환율, 환불률, 정산률
+6. 피벗테이블 설계: 행, 열, 값, 필터에 둘 항목과 이유
+7. 매월 업데이트할 때 지켜야 할 입력 규칙 7개
+8. 사람이 표본 검산할 항목 3개
 
 출력 형식:
-- 표준 열 이름 표
-- 계산 열과 공식
-- 피벗테이블 설계안
-- 월간 입력 규칙</pre></div>
+- 열 매핑표 / 마스터 키 / 표준값 사전
+- 전처리 품질 점검표 / 계산 열 공식 / 피벗 설계안
+- 표본 검산 체크리스트 / 월간 입력 규칙</pre></div>
     </div>
     <div class="footer"><div class="progress"><span style="width:54%"></span></div><span>14 / 26</span></div>
   </section>
