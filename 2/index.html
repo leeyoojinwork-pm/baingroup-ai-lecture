@@ -166,18 +166,18 @@
     .source-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:var(--shadow)}
     .source-card b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .source-card p{font-size:13px;line-height:1.4}
-    .roadmap{display:grid;grid-template-columns:.9fr 1.35fr;gap:28px;align-items:stretch}
-    .roadmap-hero{background:linear-gradient(135deg,#24314a 0%,#2f66ad 62%,#1f8a70 100%);border-radius:18px;padding:30px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:430px}
+    .roadmap{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:stretch}
+    .roadmap-hero{background:linear-gradient(135deg,#24314a 0%,#2f66ad 62%,#1f8a70 100%);border-radius:18px;padding:24px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
     .roadmap-hero .label{color:#cfe4ff}
-    .roadmap-hero b{font-size:44px;line-height:1.12;color:#fff}
-    .roadmap-hero p{font-size:17px;color:#eaf3ff;margin-top:18px}
-    .roadmap-list{display:grid;grid-template-rows:repeat(3,1fr);gap:14px}
-    .roadmap-item{display:grid;grid-template-columns:110px 1fr 220px;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
-    .roadmap-item .week{font-size:22px;font-weight:950;color:var(--blue)}
-    .roadmap-item .keyword{display:block;margin-top:4px;font-size:28px;line-height:1.05;color:var(--ink)}
-    .roadmap-item h3{margin:0 0 6px;font-size:24px}
-    .roadmap-item p{font-size:14px;line-height:1.4}
-    .roadmap-item .output{background:var(--soft-blue);border:1px solid #cfe0f3;border-radius:10px;padding:12px;color:#26364a;font-size:13px;font-weight:900}
+    .roadmap-hero b{font-size:34px;line-height:1.14;color:#fff}
+    .roadmap-hero p{font-size:15px;color:#eaf3ff;margin-top:16px}
+    .roadmap-list{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}
+    .roadmap-item{display:grid;grid-template-columns:94px minmax(0,1fr) 184px;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+    .roadmap-item .week{font-size:18px;font-weight:950;color:var(--blue);white-space:nowrap}
+    .roadmap-item .keyword{display:block;margin-top:4px;font-size:23px;line-height:1.02;color:var(--ink);white-space:normal}
+    .roadmap-item h3{margin:0 0 5px;font-size:20px;line-height:1.18}
+    .roadmap-item p{font-size:13px;line-height:1.38}
+    .roadmap-item .output{background:var(--soft-blue);border:1px solid #cfe0f3;border-radius:10px;padding:10px;color:#26364a;font-size:12px;font-weight:900;line-height:1.35}
     .story-note{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
     .story-note strong{font-size:17px;color:var(--blue)}
     .story-note p{font-size:13px;line-height:1.4}
@@ -327,7 +327,7 @@
         <div class="roadmap-hero">
           <div>
             <span class="label">BAIN GROUP AI CLASS</span>
-            <b>데이터가<br>판단으로<br>바뀌는 순서</b>
+            <b>정리<br>분석<br>리서치</b>
             <p>오늘은 분석 전에 필요한 정리 단계입니다. 정리된 표가 있어야 다음 시간의 차트와 리서치가 살아납니다.</p>
           </div>
           <div class="notice" style="background:rgba(255,255,255,.14);border-color:#cfe4ff;color:#fff">오늘은 2차수: 내부 데이터 정리와 전처리</div>
@@ -1441,7 +1441,11 @@ AI에게 요청할 일:
       }
     }
   });
-  function show(index){
+  function readHashIndex(){
+    const value = Number((location.hash || '').replace('#',''));
+    return Number.isFinite(value) && value > 0 ? value - 1 : 0;
+  }
+  function show(index, updateHash = true){
     current = Math.max(0, Math.min(slides.length - 1, index));
     slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
     prev.disabled = current === 0;
@@ -1457,8 +1461,11 @@ AI에게 요청할 일:
     slides[current].querySelectorAll('.mini-index span').forEach((item) => {
       item.classList.toggle('active-sec', item.dataset.sec === sec);
     });
-    location.hash = String(current + 1).padStart(2, '0');
+    const nextHash = `#${String(current + 1).padStart(2, '0')}`;
+    if(updateHash && location.hash !== nextHash) location.hash = nextHash;
   }
+  window.show = show;
+  window.addEventListener('hashchange', () => show(readHashIndex(), false));
   prev.addEventListener('click', () => show(current - 1));
   next.addEventListener('click', () => show(current + 1));
   window.addEventListener('keydown', (event) => {
@@ -1474,8 +1481,7 @@ AI에게 요청할 일:
       setTimeout(() => { button.textContent = before; }, 1200);
     });
   });
-  const initial = Number((location.hash || '').replace('#',''));
-  show(Number.isFinite(initial) && initial > 0 ? initial - 1 : 0);
+  show(readHashIndex(), false);
 </script>
 </body>
 </html>
