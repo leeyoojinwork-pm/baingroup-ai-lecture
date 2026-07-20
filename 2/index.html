@@ -82,7 +82,7 @@
     .step{position:relative}
     .step:before{content:attr(data-step);display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:950;margin-bottom:12px}
     .step-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--soft-blue);border:1px solid #c8daec;color:var(--blue);font-size:22px;font-weight:950;margin:0 0 12px 10px;vertical-align:top}
-    .focus-red{border:3px solid var(--red);box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
+    .focus-red{border:2px solid #e3a297;box-shadow:0 10px 24px rgba(200,76,58,.08),var(--shadow)}
     .focus-red:before{background:var(--red)}
     .timeline{display:grid;gap:8px}
     .row{display:grid;grid-template-columns:90px 1.15fr 1.6fr 180px;gap:14px;align-items:center;border-top:1px solid var(--line);padding:10px 0}
@@ -157,6 +157,55 @@
     .ai-input{margin-top:auto;border:1px solid #cfd9e5;border-radius:18px;padding:10px 12px;display:flex;align-items:center;gap:10px;background:#fff;color:#7a8798;font-size:12px;font-weight:850}
     .ai-send{margin-left:auto;width:24px;height:24px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(47,102,173,.32);animation:pulseSend 1.8s infinite}
     .gemini-ui .ai-send{background:linear-gradient(135deg,#4285f4,#a855f7)}
+    .real-ui-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+    .real-chatgpt,.real-gemini{position:relative;min-height:410px;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;color:#f7f7f7}
+    .real-chatgpt{background:radial-gradient(circle at 50% 52%,#2d2d2d 0%,#1f1f1f 42%,#171717 100%)}
+    .real-top{position:absolute;left:24px;right:24px;top:20px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+    .real-brand{display:flex;align-items:center;gap:12px;color:#d8d8d8;font-size:15px;font-weight:950}
+    .real-icon-btn{width:24px;height:24px;border-radius:7px;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;color:#bfc4cc;font-size:12px}
+    .real-avatar{width:32px;height:32px;border-radius:50%;background:#6c6ff2;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:950}
+    .real-center{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:78%;text-align:center}
+    .real-center h3{font-size:30px;color:#f8f8f8;margin-bottom:28px}
+    .real-input-dark{position:relative;width:min(760px,100%);min-height:110px;margin:0 auto;border-radius:24px;background:#2b2b2b;border:1px solid rgba(255,255,255,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);padding:18px;text-align:left}
+    .real-placeholder{color:#969696;font-size:14px;font-weight:850}
+    .real-input-actions{position:absolute;left:18px;bottom:17px;display:flex;gap:8px}
+    .real-chip-dark{display:inline-flex;align-items:center;justify-content:center;height:31px;border-radius:999px;border:1px solid rgba(255,255,255,.12);padding:0 12px;color:#c5c5c5;font-size:12px;font-weight:850;background:rgba(255,255,255,.04)}
+    .real-send-dark{position:absolute;right:16px;bottom:15px;width:38px;height:38px;border-radius:50%;background:#f4f4f4;color:#161616;display:grid;place-items:center;font-weight:950}
+    .real-bottom-pills{position:absolute;left:50%;top:70%;transform:translateX(-50%);display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:80%}
+    .real-bottom-pills span{height:34px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(255,255,255,.12);padding:0 14px;color:#bfc4cc;font-size:12px;font-weight:850;background:rgba(255,255,255,.03)}
+    .real-footer-note{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#9a9a9a;font-size:11px;font-weight:750}
+    .real-callout{position:absolute;border:4px solid #f59e0b;border-radius:8px;box-shadow:0 0 0 2px rgba(245,158,11,.22);z-index:4}
+    .real-callout:before{content:attr(data-num);position:absolute;right:-18px;top:-38px;width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:950;font-size:16px}
+    .callout-input{left:50%;top:41%;width:min(790px,80%);height:118px;transform:translateX(-50%)}
+    .callout-new{left:16px;top:92px;width:180px;height:54px}
+    .real-gemini{display:grid;grid-template-columns:250px 1fr;background:#000}
+    .gemini-sidebar-real{background:#202020;border-right:1px solid #343434;padding:24px 18px;display:flex;flex-direction:column;gap:20px}
+    .gemini-side-top{display:flex;align-items:center;justify-content:space-between;color:#c9c9c9}
+    .gemini-side-item{display:flex;align-items:center;gap:14px;color:#b7b7b7;font-size:14px;font-weight:850;padding:10px 8px;border-radius:10px}
+    .gemini-side-item.active{background:#2a2a2a;color:#fff}
+    .gemini-history{margin-top:10px;display:grid;gap:12px}
+    .gemini-history b{font-size:13px;color:#9c9c9c;margin-bottom:4px}
+    .gemini-history span{font-size:12px;color:#9a9a9a;line-height:1.35}
+    .gemini-help{margin-top:auto;height:78px;border-radius:6px;background:#2c2c2c;display:flex;align-items:center;gap:12px;padding:0 16px;color:#cfcfcf;font-size:14px;font-weight:850}
+    .gemini-main-real{position:relative;background:#000}
+    .gemini-word{position:absolute;left:26px;top:20px;color:#d8d8d8;font-size:23px;font-weight:850}
+    .gemini-upgrade{position:absolute;right:80px;top:22px;height:42px;border-radius:999px;background:#235f9d;color:#d9ecff;display:flex;align-items:center;padding:0 20px;font-size:13px;font-weight:950}
+    .gemini-profile{position:absolute;right:28px;top:22px;width:38px;height:38px;border-radius:50%;background:#222;border:1px solid #555}
+    .gemini-center{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:min(780px,75%);text-align:left}
+    .gemini-center h3{font-size:38px;color:#e8e8e8;margin:0 0 26px;text-align:left;font-weight:800}
+    .gemini-center h3 span{background:linear-gradient(90deg,#7c9cf6,#f37ca6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .gemini-input-real{position:relative;border-radius:30px;background:#232323;border:1px solid #303030;min-height:112px;padding:24px 28px;color:#bcbcbc;font-size:17px;font-weight:850}
+    .gemini-input-real .gemini-actions{position:absolute;left:28px;bottom:22px;display:flex;gap:16px;color:#bfbfbf;font-size:14px}
+    .gemini-input-real .gemini-mode{position:absolute;right:76px;bottom:22px;color:#bfbfbf;font-size:13px;font-weight:950}
+    .gemini-input-real .gemini-mic{position:absolute;right:28px;bottom:21px;font-size:20px;color:#d4d4d4}
+    .gemini-suggestions{display:flex;gap:12px;justify-content:center;margin-top:22px}
+    .gemini-suggestions span{height:34px;border-radius:999px;background:#151515;border:1px solid #2a2a2a;color:#c8c8c8;padding:0 14px;display:flex;align-items:center;font-size:12px;font-weight:850}
+    .gemini-bottom-card{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:min(760px,74%);background:#222;border:1px solid #2f2f2f;border-radius:18px;padding:20px 22px;color:#d7d7d7}
+    .gemini-bottom-card b{display:block;color:#ececec;font-size:18px;margin-bottom:10px}
+    .gemini-bottom-card p{font-size:12px;line-height:1.45;color:#b6b6b6}
+    .real-result-box{position:absolute;left:34px;right:34px;bottom:34px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.06);padding:16px;text-align:left}
+    .real-result-box b{display:block;color:#9ed0ff;font-size:14px;margin-bottom:8px}
+    .real-result-box p{font-size:13px;line-height:1.42;color:#d5dce6}
     .type-line{display:block;height:8px;border-radius:999px;background:linear-gradient(90deg,#cad7e7,#eaf1f8,#cad7e7);background-size:220% 100%;animation:typeShimmer 2.2s infinite;margin:7px 0}
     .type-line.short{width:62%}
     .type-line.mid{width:80%}
@@ -249,38 +298,105 @@
     .source-card .source-num{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:950}
     .source-card b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .source-card p{font-size:13px;line-height:1.4}
-    .asis-tobe{display:grid;grid-template-columns:minmax(0,1fr) 138px minmax(0,1fr);gap:22px;align-items:center;margin-top:18px}
-    .state-panel{position:relative;background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;min-width:0}
-    .state-panel strong{display:inline-flex;align-items:center;height:27px;border-radius:999px;padding:0 12px;font-size:11px;font-weight:950;letter-spacing:.08em;margin-bottom:9px}
-    .state-panel.asis{text-align:right}
-    .state-panel.asis strong{background:#ffebe8;color:#bd4539}
+    .data-source-template{position:relative;min-height:500px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;padding:34px 38px}
+    .data-source-template:before{content:"";position:absolute;left:10%;right:10%;top:270px;height:1px;background:#cdd9e6}
+    .data-core-circle{position:absolute;left:50%;top:28px;transform:translateX(-50%);width:210px;height:210px;border-radius:50%;background:#80a1d9;color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 18px 34px rgba(47,102,173,.16)}
+    .data-core-circle span{display:block;font-size:15px;font-weight:950;letter-spacing:.06em;margin-bottom:8px}
+    .data-core-circle b{display:block;font-size:25px;line-height:1.18}
+    .data-source-row{position:absolute;left:38px;right:38px;top:252px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d6e2ee;background:#fff}
+    .data-source-cell{position:relative;min-height:150px;padding:26px 18px 18px;text-align:center;border-right:1px solid #d6e2ee}
+    .data-source-cell:last-child{border-right:0}
+    .data-source-cell:before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;border:4px solid #fff;background:var(--blue);box-shadow:0 0 0 2px #b8cee6}
+    .data-source-cell:nth-child(1){background:#f2fbf9}.data-source-cell:nth-child(2){background:#f5faff}.data-source-cell:nth-child(3){background:#f8f7ff}.data-source-cell:nth-child(4){background:#fffaf1}
+    .data-source-cell .num{display:block;color:var(--blue);font-size:23px;font-weight:950;margin-bottom:11px}
+    .data-source-cell b{display:block;font-size:18px;line-height:1.22;color:var(--ink);margin-bottom:8px}
+    .data-source-cell p{font-size:12px;line-height:1.38}
+    .data-source-mission{position:absolute;left:38px;right:38px;bottom:30px;border-radius:16px;background:#edf5ff;border:1px solid #c9dcf1;padding:16px 22px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+    .data-source-mission span{height:38px;border-radius:999px;background:#fff;border:1px solid #c8d7e9;color:#637083;font-weight:950;display:flex;align-items:center;justify-content:center}
+    .data-source-mission b{font-size:21px;line-height:1.25;color:var(--blue)}
+    .idea-ring{position:relative;min-height:500px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:34px 42px;overflow:hidden}
+    .idea-ring:before{content:"";position:absolute;left:50%;top:72px;width:250px;height:250px;border-radius:50%;background:linear-gradient(135deg,#eef6ff,#eaf8f3);border:1px solid #d5e3f0;transform:translateX(-50%)}
+    .idea-center{position:absolute;left:50%;top:126px;transform:translateX(-50%);width:190px;text-align:center}
+    .idea-center span{display:block;color:var(--blue);font-size:13px;font-weight:950;letter-spacing:.08em;margin-bottom:10px}
+    .idea-center b{display:block;font-size:26px;line-height:1.15;color:var(--ink)}
+    .idea-center p{font-size:12px;line-height:1.35;margin-top:10px}
+    .idea-row{position:absolute;left:42px;right:42px;top:292px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid #d7e2ee}
+    .idea-cell{position:relative;min-height:130px;padding:23px 16px 16px;text-align:center;border-right:1px solid #d7e2ee;background:#fff}
+    .idea-cell:last-child{border-right:0}
+    .idea-cell:nth-child(1){background:#effaf7}.idea-cell:nth-child(2){background:#f7fbff}.idea-cell:nth-child(3){background:#f8f7ff}.idea-cell:nth-child(4){background:#fff9ee}.idea-cell:nth-child(5){background:#f6fbf7}
+    .idea-cell:before{content:attr(data-num);position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid currentColor;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:950}
+    .idea-cell b{display:block;font-size:17px;line-height:1.2;color:var(--ink);margin-bottom:8px}
+    .idea-cell p{font-size:12px;line-height:1.35}
+    .idea-mission{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:min(780px,calc(100% - 84px));display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;background:#eef4fb;border:1px solid #d7e2ee;border-radius:16px;padding:15px 20px}
+    .idea-mission span{height:36px;border-radius:999px;background:#fff;border:1px solid #cbd8e6;color:#637083;font-weight:950;display:flex;align-items:center;justify-content:center}
+    .idea-mission b{font-size:20px;line-height:1.25;color:var(--blue)}
+    .asis-tobe{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr);gap:10px;align-items:stretch;margin-top:18px}
+    .state-panel{position:relative;display:flex;flex-direction:column;background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;min-width:0}
+    .state-panel strong{align-self:center;display:inline-flex;align-items:center;justify-content:center;min-width:112px;height:28px;border:1px solid currentColor;border-radius:3px;padding:0 12px;font-size:11px;font-weight:950;letter-spacing:.06em;margin-bottom:9px;background:#fff}
+    .state-panel.asis strong{color:#c45845}
     .state-panel.tobe{border:0;background:transparent;box-shadow:none}
-    .state-panel.tobe strong{background:#e1f5f8;color:#087b9b}
-    .state-panel b{display:block;font-size:21px;line-height:1.18;color:var(--ink);margin-bottom:7px}
-    .state-panel p{font-size:13px;line-height:1.38}
-    .state-list{display:grid;gap:9px;margin-top:12px;counter-reset:state-item}
-    .state-list span{counter-increment:state-item;position:relative;display:flex;align-items:center;min-height:44px;border:0;color:#fff;font-size:12px;font-weight:900;line-height:1.28;box-shadow:0 7px 16px rgba(31,42,57,.08)}
-    .state-panel.asis .state-list span{justify-content:flex-end;text-align:right;padding:9px 59px 9px 16px;border-radius:999px 8px 8px 999px;background:linear-gradient(90deg,#df554d 0 calc(100% - 48px),#5d3133 calc(100% - 48px))}
-    .state-panel.asis .state-list span:after{content:"0" counter(state-item);position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:950;color:#fff}
-    .state-panel.tobe .state-list span{justify-content:flex-start;text-align:left;padding:9px 16px 9px 59px;border-radius:8px 999px 999px 8px;background:linear-gradient(90deg,#15556d 0 48px,#0988ab 48px)}
-    .state-panel.tobe .state-list span:before{content:"0" counter(state-item);position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:950;color:#fff}
-    .change-arrow{position:relative;z-index:1;width:118px;height:118px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:950;background:conic-gradient(#0988ab 0 50%,#df554d 50% 100%);box-shadow:0 10px 28px rgba(31,42,57,.13)}
-    .change-arrow:before{content:"";position:absolute;inset:12px;border-radius:50%;background:#fff;border:1px solid var(--line)}
-    .change-arrow:after{content:"";position:absolute;z-index:-2;left:-30px;right:-30px;top:50%;height:1px;background:#b9c5d1}
-    .change-arrow .arrow-line{display:none}
-    .change-arrow span{position:relative;z-index:2;max-width:80px;font-size:13px;text-align:center;line-height:1.25;color:var(--ink)}
+    .state-panel.tobe strong{color:#1685a6}
+    .state-panel b{display:block;font-size:20px;line-height:1.18;color:var(--ink);margin-bottom:7px;text-align:center}
+    .state-panel p{font-size:12.5px;line-height:1.36;text-align:center;min-height:34px}
+    .state-list{display:grid;gap:9px;margin-top:auto;padding-top:12px;counter-reset:state-item}
+    .state-list span{counter-increment:state-item;position:relative;display:flex;align-items:center;min-height:46px;font-size:12px;font-weight:900;line-height:1.28;box-shadow:0 7px 16px rgba(31,42,57,.07)}
+    .state-panel.asis .state-list span{padding:9px 15px 9px 53px;border:2px solid #d9785b;border-radius:5px;background:#fff;color:#3a4657}
+    .state-panel.asis .state-list span:before{content:"0" counter(state-item);position:absolute;left:0;top:0;bottom:0;width:40px;display:flex;align-items:center;justify-content:center;background:#fff2ec;color:#c45845;font-size:14px;font-weight:950}
+    .state-panel.tobe .state-list span{padding:9px 15px 9px 53px;border:2px solid #1685a6;border-radius:5px;background:#1685a6;color:#fff}
+    .state-panel.tobe .state-list span:before{content:"0" counter(state-item);position:absolute;left:0;top:0;bottom:0;width:40px;display:flex;align-items:center;justify-content:center;background:#0d5d78;color:#fff;font-size:14px;font-weight:950}
+    .change-arrow{align-self:end;display:grid;grid-template-rows:repeat(3,46px);gap:9px;width:42px;padding-top:12px}
+    .change-arrow .pair-arrow{display:block;width:36px;height:46px;margin:auto;background:#d47b2e;clip-path:polygon(0 0,70% 0,100% 50%,70% 100%,0 100%,28% 50%)}
     .framework-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
     .framework-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);min-height:260px}
     .framework-card .num{display:inline-flex;width:32px;height:32px;border-radius:50%;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:950;font-size:13px;margin-bottom:13px}
     .framework-card b{display:block;font-size:20px;line-height:1.2;color:var(--ink);margin-bottom:9px}
     .framework-card p{font-size:13px;line-height:1.42;margin-bottom:10px}
     .framework-card .rule{border-top:1px solid var(--line);padding-top:10px;font-size:12px;line-height:1.38;color:#2d3b4e;font-weight:900}
-    .framework-card.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 5px rgba(200,76,58,.12),var(--shadow)}
+    .framework-card.active{border:2px solid #9fc0e4;background:#f7fbff;box-shadow:var(--shadow)}
     .matrix{display:grid;grid-template-columns:1.05fr 1.05fr .9fr;gap:14px;align-items:stretch}
     .matrix .card{padding:18px}
     .matrix .card b{font-size:20px}
     .matrix .card p,.matrix .card li{font-size:13px;line-height:1.38}
     .rule-table th,.rule-table td{font-size:13px;padding:8px 9px}
+    /* QA overrides: keep borrowed template ideas, but make them lecture-safe. */
+    .mini-index{position:absolute;left:54px;right:54px;bottom:62px;display:flex;gap:0;justify-content:center;align-items:center;pointer-events:none}
+    .mini-index span{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;width:104px;color:#788597;font-size:10px;font-weight:950;text-align:center;line-height:1.15}
+    .mini-index span:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #bccbdd;box-shadow:0 0 0 4px var(--bg);z-index:2}
+    .mini-index span:after{content:"";position:absolute;top:6px;left:50%;right:-50%;height:2px;background:#cad6e3;z-index:1}
+    .mini-index span:last-child:after{display:none}
+    .mini-index span.active-sec{color:var(--blue)}
+    .mini-index span.active-sec:before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 4px #e8f1fb}
+    .voc-bubble b{font-size:15.5px;line-height:1.2}
+    .voc-bubble p{font-size:11.2px;line-height:1.34}
+    .keyword-chain{background:linear-gradient(135deg,#f8fbff 0%,#edf5ff 58%,#e9f0f8 100%);border:1px solid var(--line);color:var(--ink)}
+    .keyword-chain .chain-title span{color:var(--blue)}
+    .keyword-chain .chain-title b{color:var(--ink)}
+    .keyword-chain .chain-sub{color:#657284}
+    .chain-row:before{background:#cbd9e8;height:3px}
+    .chain-node{background:#eef5ff;border:2px solid #c5d8ee;color:var(--blue);box-shadow:0 14px 26px rgba(47,102,173,.12)}
+    .chain-node:nth-child(2n){background:#f7fbff}
+    .chain-node.current{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 0 0 8px #e8f1fb,0 18px 34px rgba(47,102,173,.18)}
+    .chain-node b{color:inherit}
+    .chain-node span{color:#5f6c7d}
+    .chain-note{background:#fff;border:1px solid #d6e1ec}
+    .chain-note strong{color:var(--blue)}
+    .chain-note p{color:#39475a}
+    .role-orbit{min-height:500px;border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:34px 42px;color:var(--ink)}
+    .role-capsule{position:relative;width:100%;height:430px;display:grid;grid-template-columns:1.05fr 280px 1fr;gap:22px;align-items:center;padding:56px 0 72px;background:transparent;border-radius:0}
+    .role-capsule .brand{position:absolute;left:50%;top:0;transform:translateX(-50%);font-size:13px;font-weight:950;letter-spacing:.1em;color:var(--blue);background:#edf5ff;border:1px solid #c9dcf1;border-radius:999px;padding:8px 16px}
+    .role-lens{position:relative;height:auto;min-height:235px;border:1px solid #d5e1ed;border-radius:22px;background:#f8fbff;display:flex;flex-direction:column;justify-content:center;text-align:left;padding:26px}
+    .role-lens:before{content:"AI";position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:14px;background:#eef5ff;border:1px solid #c7daef;color:var(--blue);display:grid;place-items:center;font-size:13px;font-weight:950}
+    .role-lens b{font-size:34px;line-height:1.08;color:var(--ink);margin-bottom:14px}
+    .role-lens p{position:static;transform:none;width:auto;color:#5b6878;font-size:15px;line-height:1.46;font-weight:850}
+    .role-lens p:before{display:none}
+    .role-middle{position:relative;left:auto;top:auto;transform:none;display:grid;place-items:center;width:240px;height:240px;border-radius:50%;background:#fff8e8;border:2px solid #e4ca8d;text-align:center;margin:auto;box-shadow:0 18px 34px rgba(184,135,43,.1)}
+    .role-middle:before,.role-middle:after{content:"";position:absolute;left:-38px;right:-38px;height:2px;background:#d7e0eb;z-index:-1}
+    .role-middle b{font-size:28px;line-height:1.12;color:#7b5a17}
+    .role-middle span{font-size:12px;color:#9a6d19;font-weight:950;margin-bottom:7px;letter-spacing:.08em}
+    .role-bottom{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(860px,100%);text-align:center;color:#354256;font-size:15px;font-weight:900;line-height:1.45;background:#edf5ff;border-left:5px solid var(--blue);border-radius:0 12px 12px 0;padding:14px 18px}
+    .idea-ring{padding:30px 34px}
+    .idea-cell b{font-size:16px}
+    .idea-cell p{font-size:11.2px}
     .decision-formula{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch;margin-top:16px}
     .decision-formula .part{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
     .decision-formula .part span{display:block;color:var(--blue);font-size:12px;font-weight:950;margin-bottom:8px}
@@ -301,8 +417,8 @@
     .signature-step .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:950;margin-bottom:11px}
     .signature-step b{display:block;font-size:20px;line-height:1.18;color:var(--ink);margin-bottom:8px}
     .signature-step p{font-size:13px;line-height:1.38}
-    .signature-step.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 5px rgba(200,76,58,.1)}
-    .signature-step.active .num{background:var(--red)}
+    .signature-step.active{border:2px solid #9fc0e4;background:#f7fbff;box-shadow:var(--shadow)}
+    .signature-step.active .num{background:var(--blue)}
     .signature-bottom{position:relative;z-index:1;display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-top:16px;border-left:5px solid var(--green);background:var(--soft-green);border-radius:0 10px 10px 0;padding:13px 16px}
     .signature-bottom strong{color:var(--green);font-size:14px}
     .signature-bottom p{font-size:15px;line-height:1.38;color:#253043;font-weight:900}
@@ -328,13 +444,34 @@
     .roadmap-item .output{background:var(--soft-blue);border:1px solid #cfe0f3;border-radius:10px;padding:10px;color:#26364a;font-size:12px;font-weight:900;line-height:1.35}
     .journey-map{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:34px 28px 28px;min-height:410px;overflow:hidden}
     .journey-map:before{content:"";position:absolute;left:11%;right:11%;top:172px;height:8px;border-radius:999px;background:linear-gradient(90deg,#a8cbe9 0%,#2f66ad 35%,#1f8a70 68%,#d9c383 100%)}
+    .journey-map.mapline{min-height:510px;padding:52px 24px 32px;background:#fff}
+    .journey-map.mapline:before{left:6%;right:6%;top:198px;height:2px;background:#283241;border-radius:0}
+    .journey-map.mapline:after{content:"";position:absolute;inset:34px 70px auto;height:360px;background:
+      radial-gradient(ellipse at 24% 36%,rgba(31,42,57,.055) 0 13%,transparent 14%),
+      radial-gradient(ellipse at 48% 34%,rgba(31,42,57,.05) 0 18%,transparent 19%),
+      radial-gradient(ellipse at 70% 39%,rgba(31,42,57,.055) 0 16%,transparent 17%),
+      radial-gradient(ellipse at 83% 52%,rgba(31,42,57,.04) 0 10%,transparent 11%);
+      pointer-events:none}
     .map-route{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}
+    .mapline .map-route{grid-template-columns:repeat(6,1fr);gap:10px;align-items:start}
     .map-stop{position:relative;display:grid;gap:14px;justify-items:center;text-align:center}
     .map-pin{width:68px;height:68px;border-radius:50% 50% 50% 12px;transform:rotate(-45deg);background:#fff;border:4px solid var(--blue);box-shadow:0 10px 20px rgba(47,102,173,.14);display:flex;align-items:center;justify-content:center}
     .map-pin span{transform:rotate(45deg);font-size:18px;font-weight:950;color:var(--blue)}
     .map-stop.current .map-pin{border-color:var(--red);background:#fff8f6}
     .map-stop.current .map-pin span{color:var(--red)}
     .map-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;min-height:150px}
+    .mapline .map-card{border:0;box-shadow:none;background:transparent;padding:0;min-height:0;margin-top:6px}
+    .mapline .map-pin{width:64px;height:64px;border-width:8px;background:#fff}
+    .mapline .map-stop:after{content:"";position:absolute;top:91px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #2f3541;z-index:2}
+    .mapline .map-card b{font-size:17px;color:var(--blue);text-transform:uppercase}
+    .mapline .map-card p{font-size:11.5px;line-height:1.35;max-width:150px;margin:auto}
+    .mapline .map-card .map-output{border-top:0;margin-top:10px;color:#667384;font-size:12px}
+    .mapline .map-stop:nth-child(1) .map-pin{border-color:#f05a28}.mapline .map-stop:nth-child(1) .map-card b{color:#f05a28}
+    .mapline .map-stop:nth-child(2) .map-pin{border-color:#f0b82f}.mapline .map-stop:nth-child(2) .map-card b{color:#d69b17}
+    .mapline .map-stop:nth-child(3) .map-pin{border-color:#1fbd74}.mapline .map-stop:nth-child(3) .map-card b{color:#1f8a70}
+    .mapline .map-stop:nth-child(4) .map-pin{border-color:#183f45}.mapline .map-stop:nth-child(4) .map-card b{color:#183f45}
+    .mapline .map-stop:nth-child(5) .map-pin{border-color:#2f66df}.mapline .map-stop:nth-child(5) .map-card b{color:#2f66ad}
+    .mapline .map-stop:nth-child(6) .map-pin{border-color:#23b7d9}.mapline .map-stop:nth-child(6) .map-card b{color:#1594b4}
     .map-card b{display:block;font-size:19px;line-height:1.18;color:var(--ink);margin-bottom:8px}
     .map-card p{font-size:12.5px;line-height:1.38}
     .map-card .map-output{display:block;margin-top:10px;border-top:1px solid var(--line);padding-top:9px;color:var(--blue);font-size:12px;font-weight:950}
@@ -399,7 +536,7 @@
     .data-bridge{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;align-items:stretch}
     .bridge-panel{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow);min-height:250px}
     .bridge-panel.soft{background:#f7fafc}
-    .bridge-panel.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
+    .bridge-panel.active{border:1px solid #b9d2ec;background:#f7fbff;box-shadow:var(--shadow)}
     .bridge-panel .eyebrow{display:block;font-size:12px;font-weight:950;color:var(--blue);letter-spacing:.08em;margin-bottom:12px}
     .bridge-panel b{display:block;font-size:27px;line-height:1.18;color:var(--ink);margin-bottom:12px}
     .bridge-panel p{font-size:14px;line-height:1.42}
@@ -413,6 +550,109 @@
     .bridge-bottom{margin-top:18px;border-left:6px solid var(--green);background:var(--soft-green);border-radius:0 10px 10px 0;padding:15px 18px}
     .bridge-bottom strong{display:block;color:#1b705d;font-size:14px;margin-bottom:5px}
     .bridge-bottom p{color:#273648;font-size:18px;font-weight:950;line-height:1.35}
+    .data-shift-simple{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:stretch}
+    .shift-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow);min-height:270px}
+    .shift-card .shift-icon{width:54px;height:54px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#eef5ff;color:var(--blue);font-size:25px;font-weight:950;margin-bottom:18px}
+    .shift-card b{display:block;font-size:28px;line-height:1.16;color:var(--ink);margin-bottom:12px}
+    .shift-card p{font-size:15px;line-height:1.48}
+    .shift-card ul{margin-top:14px}
+    .shift-card li{font-size:13px;line-height:1.42}
+    .shift-card.center{background:linear-gradient(180deg,#f8fbff,#eef6ff);border-color:#bdd4ec}
+    .shift-card.center .shift-icon{background:var(--blue);color:#fff}
+    .shift-arrow{position:absolute;right:-27px;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #bfd3e7;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:950;z-index:2}
+    .survey-orbit{position:relative;min-height:520px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;padding:34px 38px}
+    .survey-orbit:before{content:"";position:absolute;left:50%;top:46px;width:212px;height:212px;border-radius:50%;background:linear-gradient(135deg,#2f66ad,#1f8a70);transform:translateX(-50%);box-shadow:0 18px 36px rgba(47,102,173,.18)}
+    .survey-orbit .orbit-core{position:absolute;left:50%;top:78px;width:170px;transform:translateX(-50%);text-align:center;color:#fff;z-index:1}
+    .survey-orbit .orbit-core span{display:block;font-size:13px;font-weight:950;letter-spacing:.12em;margin-bottom:12px}
+    .survey-orbit .orbit-core b{display:block;font-size:28px;line-height:1.16}
+    .orbit-row{position:absolute;left:38px;right:38px;top:265px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d9e3ed;border-radius:14px;overflow:hidden}
+    .orbit-cell{position:relative;min-height:142px;background:#f7fbff;padding:28px 18px 18px;text-align:center;border-right:1px solid #d9e3ed}
+    .orbit-cell:last-child{border-right:0}
+    .orbit-cell:nth-child(2){background:#f3faf7}.orbit-cell:nth-child(3){background:#f7f8ff}.orbit-cell:nth-child(4){background:#fff9ee}
+    .orbit-cell .dot{position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:16px;height:16px;border:4px solid #fff;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px #b8cee6}
+    .orbit-cell .num{display:block;color:var(--blue);font-size:24px;font-weight:950;margin-bottom:14px}
+    .orbit-cell b{display:block;font-size:18px;line-height:1.25;color:var(--ink);margin-bottom:8px}
+    .orbit-cell p{font-size:12.5px;line-height:1.38}
+    .orbit-strategy{position:absolute;left:50%;top:432px;transform:translateX(-50%);border:2px dashed #b9c9dc;background:#fff;border-radius:999px;padding:10px 24px;color:#6d86a5;font-weight:950}
+    .orbit-mission{position:absolute;left:38px;right:38px;bottom:24px;border-radius:16px;background:#edf5ff;border:1px solid #c9dcf1;padding:15px 24px;display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+    .orbit-mission span{display:flex;align-items:center;justify-content:center;height:36px;border-radius:999px;background:#fff;border:1px solid #c8d7e9;color:#637083;font-weight:950}
+    .orbit-mission b{font-size:23px;color:var(--blue)}
+    .pdca-board{background:#eef5ff;border:1px solid #c8daee;border-radius:18px;box-shadow:var(--shadow);padding:30px;display:grid;grid-template-columns:1fr 360px 1fr;gap:22px;align-items:center}
+    .pdca-center{position:relative;width:330px;height:330px;margin:auto;border:3px solid #93b4dc;border-radius:50%;display:grid;place-items:center;color:#6f91bb;font-weight:950}
+    .pdca-center:before,.pdca-center:after{content:"";position:absolute;inset:50px;border:2px solid #aec6e2;border-radius:50%}
+    .pdca-center:after{inset:86px;background:rgba(255,255,255,.34)}
+    .pdca-loop{position:absolute;width:138px;height:138px;border:2px solid #9ebce0;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.24);z-index:1;font-size:20px}
+    .pdca-loop.plan{top:40px;left:96px}.pdca-loop.do{top:96px;right:40px}.pdca-loop.check{bottom:40px;left:96px}.pdca-loop.act{top:96px;left:40px}
+    .pdca-note{display:grid;gap:22px}
+    .pdca-note .note{background:rgba(255,255,255,.72);border:1px solid #cbd9eb;border-radius:12px;padding:16px}
+    .pdca-note .note b{display:block;color:var(--blue);font-size:18px;margin-bottom:8px}
+    .pdca-note .note p{font-size:13px;line-height:1.42}
+    .value-prop{position:relative;min-height:500px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:42px 44px;overflow:hidden}
+    .value-prop:before{content:"";position:absolute;left:50%;top:130px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,244,222,.92),rgba(255,244,222,0) 68%);transform:translateX(-50%)}
+    .value-intro{max-width:820px}
+    .value-intro .eyebrow{display:block;color:#6b7480;font-size:12px;font-weight:950;letter-spacing:.08em;margin-bottom:12px}
+    .value-intro b{display:block;font-size:34px;line-height:1.18;color:var(--ink);margin-bottom:16px}
+    .value-intro p{font-size:15px;line-height:1.48}
+    .value-center{position:absolute;left:50%;top:192px;transform:translateX(-50%);text-align:center;width:760px}
+    .value-center span{display:block;color:var(--gold);font-size:14px;font-weight:950;margin-bottom:14px}
+    .value-center b{display:block;font-size:28px;line-height:1.25;color:var(--ink)}
+    .value-center p{font-size:13px;line-height:1.42;margin-top:12px;color:#6e7784}
+    .value-cards{position:absolute;left:44px;right:44px;bottom:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .value-card{position:relative;background:#f7f9fc;border:1px solid #e0e7ef;border-radius:24px;padding:23px 24px;text-align:center}
+    .value-card:before{content:"";position:absolute;left:50%;top:-46px;width:1px;height:46px;border-left:1px dashed #c7d2df}
+    .value-cards{counter-reset:value-step}
+    .value-card{counter-increment:value-step}
+    .value-card:after{content:"0" counter(value-step);position:absolute;left:18px;top:14px;color:var(--blue);font-size:13px;font-weight:950}
+    .value-card b{display:block;font-size:18px;line-height:1.26;color:var(--ink);margin-bottom:8px}
+    .value-card p{font-size:12.5px;line-height:1.38}
+    .keyword-chain{position:relative;min-height:490px;border-radius:24px;background:linear-gradient(135deg,#66c52e 0%,#38aa40 58%,#248d3e 100%);box-shadow:var(--shadow);padding:52px 46px;color:#fff;overflow:hidden}
+    .keyword-chain:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 32%,rgba(255,255,255,.18),transparent 34%)}
+    .keyword-chain .chain-title{position:relative;z-index:1;text-align:center;margin-bottom:12px}
+    .keyword-chain .chain-title span{display:block;font-size:17px;font-weight:950;letter-spacing:.04em;color:#eaffdf;margin-bottom:10px}
+    .keyword-chain .chain-title b{display:block;font-size:36px;line-height:1.16;color:#fff}
+    .keyword-chain .chain-sub{position:relative;z-index:1;text-align:center;color:rgba(255,255,255,.78);font-size:15px;font-weight:850;margin-bottom:72px}
+    .chain-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:0;align-items:center;margin:0 auto;max-width:1040px}
+    .chain-row:before{content:"";position:absolute;left:7%;right:7%;top:50%;height:4px;background:rgba(25,109,41,.45);transform:translateY(-50%)}
+    .chain-node{position:relative;display:grid;place-items:center;margin:0 auto;width:118px;height:118px;border-radius:50%;background:#229919;color:#fff;text-align:center;box-shadow:0 14px 26px rgba(18,94,34,.2)}
+    .chain-node:nth-child(2n){background:#1a8f19}.chain-node.current{background:#0d7f24;box-shadow:0 0 0 8px rgba(255,255,255,.14),0 18px 34px rgba(18,94,34,.24)}
+    .chain-node b{display:block;font-size:18px;line-height:1.18;color:#fff}
+    .chain-node span{position:absolute;left:50%;top:132px;transform:translateX(-50%);width:150px;color:#eaffdf;font-size:12px;line-height:1.35;font-weight:850}
+    .chain-note{position:absolute;left:46px;right:46px;bottom:34px;display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:center;border-radius:16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);padding:16px 20px}
+    .chain-note strong{font-size:15px;color:#fff}
+    .chain-note p{font-size:15px;line-height:1.38;color:#efffe8;font-weight:850}
+    .role-orbit{min-height:500px;border-radius:28px;background:#070707;box-shadow:var(--shadow);padding:46px 48px;display:flex;align-items:center;justify-content:center;color:#fff}
+    .role-capsule{position:relative;width:min(1040px,100%);height:410px;border-radius:205px;background:#242424;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:76px 108px;gap:80px}
+    .role-capsule .brand{position:absolute;left:50%;top:30px;transform:translateX(-50%);font-size:22px;font-weight:950;letter-spacing:.05em;color:#fff}
+    .role-lens{position:relative;height:250px;border:2px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;text-align:center}
+    .role-lens b{font-size:42px;line-height:1.08;color:#fff}
+    .role-lens p{position:absolute;left:50%;bottom:-82px;transform:translateX(-50%);width:210px;color:#fff;font-size:15px;line-height:1.38;font-weight:850}
+    .role-lens p:before{content:"";display:block;width:14px;height:14px;border-radius:50%;background:#e1333b;margin:0 auto 10px}
+    .role-middle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:154px;height:154px;border-radius:50%;background:#151515;border:1px solid rgba(255,255,255,.2);text-align:center}
+    .role-middle b{font-size:26px;line-height:1.12;color:#fff}
+    .role-middle span{font-size:12px;color:#bdd7ff;font-weight:950;margin-bottom:4px}
+    .role-bottom{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:560px;text-align:center;color:#d8dee7;font-size:14px;font-weight:850;line-height:1.4}
+    .current-future{position:relative;min-height:520px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:26px 42px;overflow:hidden}
+    .cf-title{text-align:center;margin-bottom:16px}
+    .cf-title b{display:block;font-size:34px;line-height:1.08;color:var(--ink)}
+    .cf-title span{display:block;font-size:22px;color:#8994a3;font-weight:750;margin-top:4px}
+    .cf-venn{position:absolute;left:50%;top:155px;transform:translateX(-50%);width:520px;height:270px}
+    .cf-circle{position:absolute;top:0;width:270px;height:270px;border-radius:50%;display:grid;place-items:center;text-align:center}
+    .cf-circle b{display:block;font-size:30px;color:var(--ink);line-height:1.1}
+    .cf-circle span{display:block;font-size:22px;color:#445064;font-weight:700;margin-top:4px}
+    .cf-circle.left{left:0;background:rgba(129,145,236,.48)}
+    .cf-circle.right{right:0;background:rgba(95,207,218,.52)}
+    .cf-overlap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:150px;clip-path:polygon(0 0,100% 50%,0 100%);background:rgba(49,128,180,.18)}
+    .cf-side{position:absolute;top:118px;width:295px;display:grid;gap:16px}
+    .cf-side.left{left:36px}.cf-side.right{right:36px}
+    .cf-item{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:center}
+    .cf-side.right .cf-item{grid-template-columns:1fr 54px;text-align:left}
+    .cf-side.right .cf-item .cf-icon{grid-column:2}.cf-side.right .cf-item div:not(.cf-icon){grid-column:1;grid-row:1}
+    .cf-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#dfe4ff;color:#5464c8;font-size:20px;font-weight:950;box-shadow:0 8px 18px rgba(70,93,150,.14)}
+    .cf-side.right .cf-icon{background:#d8f6f8;color:#118c96}
+    .cf-item b{display:block;font-size:15px;line-height:1.2;color:var(--ink);margin-bottom:4px}
+    .cf-item p{font-size:11.5px;line-height:1.32;color:#6a7583}
+    .cf-footer{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:760px;text-align:center;border-top:1px solid #e1e8f0;padding-top:14px}
+    .cf-footer p{font-size:15px;line-height:1.4;color:#3d4a5c;font-weight:900}
     .voc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
     .voc-card{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
     .voc-person{position:relative;width:48px;height:48px;border-radius:14px;background:var(--soft-blue);border:1px solid #c8daec;flex:0 0 auto}
@@ -436,14 +676,43 @@
     .side-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:62px;border:1px solid #b9c5d3;background:rgba(255,255,255,.92);color:#546273;border-radius:8px;font-size:28px;font-weight:950;cursor:pointer}
     .prev{left:12px}.next{right:12px}
     .side-nav:disabled{opacity:.25}
+    /* Final visual corrections after template imports. */
+    .role-orbit{min-height:500px;border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:34px 42px;color:var(--ink);display:block}
+    .role-capsule{position:relative;width:100%;height:430px;display:grid;grid-template-columns:1.05fr 280px 1fr;gap:22px;align-items:center;padding:56px 0 72px;background:transparent;border-radius:0}
+    .role-capsule .brand{position:absolute;left:50%;top:0;transform:translateX(-50%);font-size:13px;font-weight:950;letter-spacing:.1em;color:var(--blue);background:#edf5ff;border:1px solid #c9dcf1;border-radius:999px;padding:8px 16px}
+    .role-lens{position:relative;height:auto;min-height:235px;border:1px solid #d5e1ed;border-radius:22px;background:#f8fbff;display:flex;flex-direction:column;justify-content:center;text-align:left;padding:26px}
+    .role-lens:before{content:"AI";position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:14px;background:#eef5ff;border:1px solid #c7daef;color:var(--blue);display:grid;place-items:center;font-size:13px;font-weight:950}
+    .role-lens b{font-size:34px;line-height:1.08;color:var(--ink);margin-bottom:14px}
+    .role-lens p{position:static;left:auto;bottom:auto;transform:none;width:auto;color:#5b6878;font-size:15px;line-height:1.46;font-weight:850}
+    .role-lens p:before{display:none}
+    .role-middle{position:relative;left:auto;top:auto;transform:none;display:grid;place-items:center;width:240px;height:240px;border-radius:50%;background:#fff8e8;border:2px solid #e4ca8d;text-align:center;margin:auto;box-shadow:0 18px 34px rgba(184,135,43,.1)}
+    .role-middle:before,.role-middle:after{content:"";position:absolute;left:-38px;right:-38px;height:2px;background:#d7e0eb;z-index:-1}
+    .role-middle b{font-size:28px;line-height:1.12;color:#7b5a17}
+    .role-middle span{font-size:12px;color:#9a6d19;font-weight:950;margin-bottom:7px;letter-spacing:.08em}
+    .role-bottom{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(860px,100%);text-align:center;color:#354256;font-size:15px;font-weight:900;line-height:1.45;background:#edf5ff;border-left:5px solid var(--blue);border-radius:0 12px 12px 0;padding:14px 18px}
+    .keyword-chain{background:linear-gradient(135deg,#f8fbff 0%,#edf5ff 58%,#e9f0f8 100%);border:1px solid var(--line);color:var(--ink)}
+    .keyword-chain .chain-title span{color:var(--blue)}
+    .keyword-chain .chain-title b{color:var(--ink)}
+    .keyword-chain .chain-sub{color:#657284}
+    .chain-row:before{background:#cbd9e8;height:3px}
+    .chain-node{background:#eef5ff;border:2px solid #c5d8ee;color:var(--blue);box-shadow:0 14px 26px rgba(47,102,173,.12)}
+    .chain-node:nth-child(2n){background:#f7fbff}
+    .chain-node.current{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 0 0 8px #e8f1fb,0 18px 34px rgba(47,102,173,.18)}
+    .chain-node b{color:inherit}
+    .chain-node span{color:#5f6c7d}
+    .chain-note{background:#fff;border:1px solid #d6e1ec}
+    .chain-note strong{color:var(--blue)}
+    .chain-note p{color:#39475a}
     @media(max-height:760px){
       .slide{padding-bottom:64px}.top{top:18px}.content{top:72px;bottom:62px}.footer{display:none}
       h1{font-size:56px}h2{font-size:36px;margin-bottom:14px}h3{font-size:19px}p,li{font-size:14px}.card{padding:16px}.code{max-height:300px}pre{font-size:12px}.row{padding:7px 0}.row strong{font-size:15px}.row em{font-size:12px}.section h2{font-size:52px}.section p{font-size:19px}.mock-screen{min-height:285px}.mock-body{min-height:246px}.guide-steps li{font-size:13px}.prompt-mini{max-height:105px}
       .profile-photo{height:345px}.profile-grid{gap:24px}.profile-text h2{font-size:42px}.profile-text .lead{font-size:18px;margin-bottom:14px}.plain-panel{padding:16px}.plain-panel li{font-size:12px;line-height:1.42}
+      .real-chatgpt,.real-gemini{min-height:320px}.real-center h3{font-size:23px;margin-bottom:18px}.real-input-dark{min-height:86px}.real-bottom-pills{display:none}.real-footer-note{display:none}.gemini-center h3{font-size:26px}.gemini-input-real{min-height:88px}.gemini-bottom-card{display:none}
     }
     @media(max-width:1100px){
-      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split,.data-bridge,.survey-layout,.voc-grid,.map-route,.asis-tobe,.ox-grid,.signature-head,.signature-steps,.signature-bottom{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}.journey-map:before{display:none}.change-arrow .arrow-line{transform:rotate(90deg)}
-      .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}
+      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split,.data-bridge,.survey-layout,.voc-grid,.map-route,.asis-tobe,.ox-grid,.signature-head,.signature-steps,.signature-bottom{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}.journey-map:before{display:none}
+      .change-arrow{grid-template-columns:repeat(3,46px);grid-template-rows:46px;width:auto;justify-content:center;align-self:center;padding:0}.change-arrow .pair-arrow{transform:rotate(90deg)}
+      .ai-duo,.real-ui-grid{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}.real-gemini{grid-template-columns:1fr}.gemini-sidebar-real{display:none}
     }
     @media(max-width:620px){
       html,body{overflow:auto}.deck{height:auto;min-height:100vh}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
@@ -517,97 +786,64 @@
     <div class="core">AI 모델을 고르는 것보다 먼저 해야 할 일은, AI가 읽을 수 있는 데이터를 확보하고 정리하는 것입니다.</div>
     <div class="content">
       <h2>AI 성과를 가르는 질문이 <span class="accent">바뀌었습니다</span></h2>
-      <div class="data-bridge">
-        <div class="bridge-panel soft">
-          <span class="eyebrow">BEFORE</span>
-          <b>어떤 AI를 써야 할까?</b>
-          <p>많은 경우 출발점이 도구 선택이나 프롬프트 문장에 머뭅니다.</p>
-          <div class="question-stack">
-            <div class="question-chip">ChatGPT가 나을까, Gemini가 나을까?</div>
-            <div class="question-chip">프롬프트를 어떻게 써야 할까?</div>
-            <div class="question-chip">자동화 툴을 더 붙여야 할까?</div>
-          </div>
+      <div class="data-shift-simple">
+        <div class="shift-card">
+          <div class="shift-icon">?</div>
+          <b>질문이 도구에서 시작하면</b>
+          <p>ChatGPT와 Gemini 중 무엇을 쓸지부터 고민하게 됩니다. 하지만 데이터 기준이 없으면 어떤 도구를 써도 결과는 일반론에 머뭅니다.</p>
+          <ul>
+            <li>프롬프트만 바꿔보는 상태</li>
+            <li>파일마다 기준이 다른 상태</li>
+            <li>결과를 검산하기 어려운 상태</li>
+          </ul>
+          <div class="shift-arrow">›</div>
         </div>
-        <div class="bridge-panel active">
-          <span class="eyebrow">TODAY'S SHIFT</span>
-          <div class="bridge-arrow">→</div>
-          <b>AI가 읽을 수 있는 재료가 먼저입니다</b>
-          <p>모델은 재료를 보고 답합니다. 업무 데이터가 흩어져 있거나 기준이 다르면 좋은 AI도 판단할 근거가 부족합니다.</p>
+        <div class="shift-card center">
+          <div class="shift-icon">DATA</div>
+          <b>먼저 볼 것은 데이터입니다</b>
+          <p>AI 모델보다 중요한 것은 “분석 가능한 재료”입니다. 어떤 자료를 모을지, 어떤 기준으로 붙일지, 무엇을 지울지부터 정해야 합니다.</p>
+          <ul>
+            <li>확보: 자료가 어디 있는가</li>
+            <li>취합: 무엇을 기준으로 붙일 것인가</li>
+            <li>정리: 어떤 오류와 민감 정보를 뺄 것인가</li>
+          </ul>
+          <div class="shift-arrow">›</div>
         </div>
-        <div class="bridge-panel">
-          <span class="eyebrow">AFTER</span>
-          <b>내 데이터는 바로 분석 가능한가?</b>
-          <div class="data-stack">
-            <div class="data-row"><strong>확보</strong><span>매출표·상담·후기·문의가 어디 있는가</span></div>
-            <div class="data-row"><strong>취합</strong><span>센터·과정·채널·월 기준으로 모을 수 있는가</span></div>
-            <div class="data-row"><strong>정리</strong><span>빈칸·중복·단위·개인정보를 걸러냈는가</span></div>
-            <div class="data-row"><strong>활용</strong><span>표와 문장으로 의사결정에 연결되는가</span></div>
-          </div>
+        <div class="shift-card">
+          <div class="shift-icon">✓</div>
+          <b>오늘의 목표는 기준 만들기</b>
+          <p>오늘은 “AI가 알아서 분석”이 아니라, 바인그룹 업무 데이터를 AI가 읽고 사람이 검산할 수 있는 기준으로 바꾸는 수업입니다.</p>
+          <ul>
+            <li>마스터 표 기준</li>
+            <li>전처리 체크리스트</li>
+            <li>계산·피벗·보고서 연결</li>
+          </ul>
         </div>
       </div>
       <div class="bridge-bottom">
         <strong>다음 페이지로 넘기는 질문</strong>
-        <p>그래서 오늘의 첫 질문은 “AI를 어떻게 쓰나?”가 아니라 “왜 데이터가 중요한가?”입니다.</p>
+        <p>어느 순간부터 “AI를 뭘 쓰지?”보다 “내 데이터를 어떻게 모으고 깔끔하게 만들지?”라는 질문이 떠오르면 오늘 수업의 방향이 잡힌 것입니다.</p>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>2주차 방향</span></div>
   </section>
 
-<section class="slide" data-title="왜 데이터인가">
-    <div class="top"><span>인트로</span><span>03 / 40</span></div>
-    <div class="core">AI를 잘 쓰는 사람은 질문만 잘하는 사람이 아니라, 쓸 재료를 빨리 모아 바로 업무에 넣는 사람입니다.</div>
-    <div class="content">
-      <h2>왜 데이터가 중요한가?</h2>
-      <div class="quote">
-        <p>영상이나 자료를 저장해두는 것만으로는 일이 바뀌지 않습니다. 업무 환경으로 옮기고, 정리하고, 바로 써봐야 내 역량이 됩니다.</p>
-      </div>
-      <div class="flow wide" style="margin-top:18px">
-        <div class="card step" data-step="1"><span class="step-icon">↓</span><b>저장</b><p>좋은 사례, 링크, 영상, 파일을 그냥 흘려보내지 않습니다.</p></div>
-        <div class="card step" data-step="2"><span class="step-icon">PC</span><b>옮기기</b><p>휴대폰·메신저에 있는 자료를 PC 업무 환경으로 가져옵니다.</p></div>
-        <div class="card step" data-step="3"><span class="step-icon">▦</span><b>분류</b><p>AI 폴더, 실습 폴더, 데이터 표로 다시 찾을 수 있게 둡니다.</p></div>
-        <div class="card step" data-step="4"><span class="step-icon">▶</span><b>바로 실행</b><p>미루지 않고 ChatGPT·Gemini에 넣어 결과를 확인합니다.</p></div>
-        <div class="card step focus-red" data-step="5"><span class="step-icon">✓</span><b>남기기</b><p>프롬프트, 결과, 막힌 지점을 저장해 다음 업무 템플릿으로 씁니다.</p></div>
-      </div>
-      <p class="source-note">참고: Notion 페이지 “다들 순서가 틀렸어요”와 원본 영상의 핵심 메시지를 바인그룹 데이터 수업용으로 재구성했습니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>03 / 40</span></div>
-  </section>
 
 <section class="slide" data-title="사전 설문 요약">
     <div class="top"><span>사전 설문</span><span>응답 기반</span></div>
     <div class="core">사전 설문에서 확인한 병목은 도구 부족보다 데이터 취합, 형식 통일, 비교와 보고의 반복입니다.</div>
     <div class="content">
       <h2>사전 설문에서 보인 오늘의 출발점</h2>
-      <div class="survey-layout">
-        <div class="survey-insight">
-          <span class="headline">도구보다 먼저 정리할 것은 업무 데이터의 기준입니다.</span>
-          <p>응답자 전원이 엑셀 또는 시트를 사용하고 있었습니다. 다만 반복 업무는 파일 취합, 기준 통일, 비교 설명, 보고서 작성에 몰려 있었습니다.</p>
-          <p>오늘 수업은 새 기능을 많이 소개하기보다, 기존 데이터를 AI가 읽고 사람이 검산할 수 있는 형태로 바꾸는 데 초점을 둡니다.</p>
-          <div class="survey-tags">
-            <div class="survey-tag"><strong>반복 업무</strong><span>정기 취합, 보고서, 파일 병합</span></div>
-            <div class="survey-tag"><strong>분석 병목</strong><span>비교, 원인 설명, 기준 통일</span></div>
-            <div class="survey-tag"><strong>운영 제약</strong><span>개인정보, 사내 자료 보안</span></div>
-            <div class="survey-tag"><strong>오늘 목표</strong><span>안전하게 정리하고 검산하기</span></div>
-          </div>
+      <div class="survey-orbit">
+        <div class="orbit-core"><span>VOICE OF CLASS</span><b>데이터 기준을 먼저 세우는 수업</b></div>
+        <div class="orbit-row">
+          <div class="orbit-cell"><span class="dot"></span><span class="num">01</span><b>엑셀·시트는 이미 씁니다</b><p>문제는 도구 사용 여부가 아니라 자료가 서로 다른 기준으로 쌓이는 것입니다.</p></div>
+          <div class="orbit-cell"><span class="dot"></span><span class="num">02</span><b>취합·보고가 반복됩니다</b><p>월별, 센터별, 채널별 자료를 매번 다시 붙이는 시간이 큽니다.</p></div>
+          <div class="orbit-cell"><span class="dot"></span><span class="num">03</span><b>비교와 원인 설명이 어렵습니다</b><p>수치가 있어도 무엇이 좋아졌고 나빠졌는지 말로 정리하기 어렵습니다.</p></div>
+          <div class="orbit-cell"><span class="dot"></span><span class="num">04</span><b>보안 때문에 그대로 못 올립니다</b><p>개인정보와 사내 자료는 샘플화, 익명화, 원본 분리가 먼저입니다.</p></div>
         </div>
-        <div class="survey-scoreboard">
-          <div class="survey-stats">
-            <div class="survey-stat"><span class="num">9/9</span><div><b>엑셀·시트 사용</b><p>업무 데이터의 기본 도구는 이미 갖춰져 있습니다.</p></div></div>
-            <div class="survey-stat"><span class="num">6명</span><div><b>취합·보고 반복</b><p>정기 데이터 취합과 보고서 작성이 반복됩니다.</p></div></div>
-            <div class="survey-stat"><span class="num">5명</span><div><b>비교 분석 병목</b><p>차이의 원인을 설명하는 과정에서 시간이 듭니다.</p></div></div>
-            <div class="survey-stat"><span class="num">4명</span><div><b>보안 우려</b><p>고객 정보와 사내 자료를 그대로 올리기 어렵습니다.</p></div></div>
-          </div>
-          <div class="meter-list">
-            <div class="meter"><b>엑셀 기본 정리</b><div class="track"><span class="fill" style="width:73%"></span></div><em>3.67</em></div>
-            <div class="meter"><b>피벗·차트</b><div class="track"><span class="fill" style="width:36%"></span></div><em>1.78</em></div>
-            <div class="meter"><b>오류·누락 점검</b><div class="track"><span class="fill" style="width:49%"></span></div><em>2.44</em></div>
-            <div class="meter"><b>AI 분석·요약</b><div class="track"><span class="fill" style="width:56%"></span></div><em>2.78</em></div>
-          </div>
-        </div>
-      </div>
-      <div class="survey-bottom">
-        <strong>강의 반영</strong>
-        <p>고급 분석보다 먼저, 흩어진 자료를 안전하게 정리하고 AI가 읽을 수 있게 만드는 방법에 집중합니다.</p>
+        <div class="orbit-strategy">STRATEGY</div>
+        <div class="orbit-mission"><span>MISSION</span><b>안전하게 모으고, 같은 기준으로 정리하고, 사람이 검산할 수 있게 만든다</b></div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>사전 설문</span></div>
@@ -619,17 +855,68 @@
     <div class="content">
       <h2>사전 질문을 오늘 실습으로 연결하면</h2>
       <div class="voc-grid">
-        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 01</strong><b>“여러 파일과 시스템에서 자료를 모으기 어렵습니다.”</b><p>실습 1에서 출처, 열 의미, 기준 키를 먼저 정리합니다.</p></div></div>
-        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 02</strong><b>“매출·정산·회원 데이터를 비교해야 합니다.”</b><p>실습 2에서 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다.</p></div></div>
-        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 03</strong><b>“보고서와 대시보드까지 자동화하고 싶습니다.”</b><p>실습 3에서 표를 보고 인사이트 문장과 보고서 초안을 만듭니다.</p></div></div>
-        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 04</strong><b>“사내 보안 정책, 개인정보 포함 여부, 데이터 반출 제한이 걱정됩니다.”</b><p>모든 실습 전에 원본을 올리지 않고 AI를 쓰는 안전한 샘플 전환 방법을 먼저 다룹니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 01</strong><b>“여러 파일·시스템 자료를 모으기 어렵습니다.”</b><p>실습 1: 출처, 열 의미, 기준 키를 먼저 정리합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 02</strong><b>“매출·정산·회원 데이터를 비교해야 합니다.”</b><p>실습 2: 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 03</strong><b>“보고서와 대시보드까지 자동화하고 싶습니다.”</b><p>실습 3: 표를 보고 인사이트와 보고 문장 초안을 만듭니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 04</strong><b>“보안 때문에 원본 데이터를 AI에 넣기 어렵습니다.”</b><p>공통 준비: 원본을 올리지 않는 샘플 전환 방법을 다룹니다.</p></div></div>
       </div>
       <div class="story-note" style="margin-top:16px">
         <strong>보안 실습 예고</strong>
-        <p>원본 분리, 민감 열 삭제, 값 치환, 구조 설명, 로컬 적용 순서로 안전한 샘플을 먼저 만든 뒤 실습 1로 넘어갑니다.</p>
+          <p>원본 분리, 민감 열 삭제, 값 치환, 구조 설명 순서로 안전한 샘플을 만든 뒤 실습 1로 넘어갑니다.</p>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>요구사항 분석</span></div>
+  </section>
+
+<section class="slide" data-title="실습 전체 지도">
+    <div class="top"><span>실습 안내</span><span>전체 지도</span></div>
+    <div class="core">세 번의 실습은 하나의 흐름으로 이어집니다. 질문을 정하고, 안전하게 정리하고, 계산한 뒤, 보고와 템플릿으로 남깁니다.</div>
+    <div class="content">
+      <h2>오늘 실습 진행판</h2>
+      <div class="stage-map">
+        <div class="stage active"><span class="tag">1</span><b>문제 정의</b><p>센터·과정·채널 중 무엇을 비교할지 질문 1개를 고릅니다.</p></div>
+        <div class="stage"><span class="tag">2</span><b>보안 처리</b><p>실명, 연락처, 계약번호, 민감 메모를 지우거나 샘플로 바꿉니다.</p></div>
+        <div class="stage"><span class="tag">3</span><b>전처리</b><p>날짜, 단위, 센터명, 누락·중복 후보를 표로 정리합니다.</p></div>
+        <div class="stage"><span class="tag">4</span><b>계산·피벗</b><p>전환율, 환불률, 정산률을 만들고 센터·채널 기준으로 접어봅니다.</p></div>
+        <div class="stage"><span class="tag">5</span><b>인사이트</b><p>비교, 변화, 리스크, 다음 액션 중 보고할 판단 1개를 고릅니다.</p></div>
+        <div class="stage"><span class="tag">6</span><b>제출</b><p>완성본, 캡처, 프롬프트, 막힌 지점 중 하나를 남깁니다.</p></div>
+      </div>
+      <div class="grid4" style="margin-top:18px">
+        <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>1단계와 3단계의 재료를 만듭니다.</p><div class="result">질문 1개 + 열 설명표</div></div>
+        <div class="card"><span class="label">실습 2 · 15분</span><b>계산 열·피벗 설계</b><p>3단계와 4단계를 실제 표 기준으로 만듭니다.</p><div class="result">수식 1개 + 피벗 기준</div></div>
+        <div class="card"><span class="label">실습 3 · 12분</span><b>인사이트·보고서</b><p>5단계와 6단계를 보고 문장으로 마무리합니다.</p><div class="result">인사이트 1개 + 5문장 초안</div></div>
+        <div class="card"><span class="label">공통 준비 · 3분</span><b>보안 샘플 만들기</b><p>실습 전에 원본을 올리지 않고 안전한 샘플로 바꾸는 기준을 적용합니다.</p><div class="result">익명화 기준 + 샘플 1개</div></div>
+      </div>
+      <p class="notice" style="margin-top:18px">90분 운영: 오프닝 10분 · 핵심 개념 20분 · 실습 45분 · 전환/질의 10분 · 최종 제출 5분. 막혔다면 완성본 대신 현재 단계까지 남깁니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>실습 전체 지도</span></div>
+  </section>
+
+<section class="slide" data-title="예상 결과물">
+    <div class="top"><span>실습 안내</span><span>예상 결과물</span></div>
+    <div class="core">오늘 실습의 결과물은 하나의 완성 보고서가 아니라, 다음 업무에 다시 붙여 쓸 수 있는 작은 작업 패키지입니다.</div>
+    <div class="content">
+      <h2>실습 후 결과물 패키지</h2>
+      <div class="stage-strip"><span>질문</span><span>전처리</span><span>계산·피벗</span><span class="on">결과물</span><span>제출</span></div>
+      <table>
+        <thead>
+          <tr><th>언제</th><th>결과물</th><th>무엇을 담나</th><th>제출 형태</th><th>다음에 쓰는 곳</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>실습 1</b></td><td>열 설명표</td><td>센터, 매출, 정산금액, 상담신청수, 등록수의 의미와 확인 필요 항목</td><td>AI 결과 표 캡처 또는 질문 1개</td><td>분석 질문 정하기</td></tr>
+          <tr><td><b>실습 2</b></td><td>계산·피벗 기준</td><td>전환율 공식, 표본 검산 결과, 행·열·값·필터의 피벗 설계</td><td>수식 1개 + 피벗 기준 1개</td><td>3차수 분석·차트의 기준</td></tr>
+          <tr><td><b>실습 3</b></td><td>5문장 보고서</td><td>결론, 숫자 근거, 리스크, 추가 확인, 다음 액션</td><td>보고서 초안 또는 막힌 지점</td><td>팀장 공유용 업무 문장</td></tr>
+          <tr><td><b>공통 준비</b></td><td>보안 샘플·템플릿</td><td>원본 분리, 민감 열 삭제, 값 치환, 재사용 프롬프트</td><td>익명화 예시 또는 템플릿</td><td>실제 업무 적용 기준</td></tr>
+        </tbody>
+      </table>
+      <div class="grid3" style="margin-top:16px">
+        <div class="card"><span class="label">최소 제출</span><b>하나만 올려도 됨</b><p>완성본이 아니어도 캡처, 표 일부, 프롬프트 중 하나면 됩니다.</p></div>
+        <div class="card"><span class="label">막혔을 때</span><b>막힌 단계 제출</b><p>“CSV 붙여넣기에서 막힘”, “수식 검산에서 막힘”처럼 남깁니다.</p></div>
+        <div class="card"><span class="label">좋은 제출</span><b>질문 + 근거</b><p>질문과 고른 이유를 남기면 다음 차수의 차트·대시보드 재료가 됩니다.</p></div>
+      </div>
+      <p class="notice" style="margin-top:16px">오늘 결과물은 정답지가 아니라 다음 업무에 다시 쓸 작업 기준입니다.</p>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>예상 결과물</span></div>
   </section>
 
 <section class="slide" data-title="바인그룹 데이터">
@@ -637,37 +924,15 @@
     <div class="core">바인그룹의 데이터는 숫자표만이 아니라 상담, 등록, 후기, 문의, 운영 기록까지 포함합니다.</div>
     <div class="content">
       <h2>우리 업무에서 데이터는 어디에 있나</h2>
-      <div class="source-strip">
-        <div class="source-card"><span class="source-num">01</span><b>센터·과정 실적</b><p>월별 매출, 등록수, 환불, 정산, 과정별 신청 흐름을 봅니다.</p></div>
-        <div class="source-card"><span class="source-num">02</span><b>상담·전환 기록</b><p>상담 신청, 상담 완료, 등록 전환, 이탈 사유를 연결합니다.</p></div>
-        <div class="source-card"><span class="source-num">03</span><b>후기·문의 텍스트</b><p>만족/불만 키워드, 반복 문의, 과정 개선 신호를 찾습니다.</p></div>
-        <div class="source-card"><span class="source-num">04</span><b>운영 자료</b><p>일정, 공지, 출결, 강사 섭외, 리마인드 메시지를 정리합니다.</p></div>
-      </div>
-      <div class="asis-tobe">
-        <div class="state-panel asis">
-          <strong>BEFORE</strong>
-          <b>자료는 있지만 판단 기준이 흩어져 있음</b>
-          <p>센터, 과정, 상담, 후기, 운영 자료가 각각 따로 있어 AI에게 물어도 일반론에 머물기 쉽습니다.</p>
-          <div class="state-list">
-            <span>파일마다 기간·센터명·과정명이 다름</span>
-            <span>상담수, 등록수, 매출이 한 표에서 연결되지 않음</span>
-            <span>개인정보와 내부 자료 때문에 그대로 업로드하기 어려움</span>
-          </div>
+      <div class="data-source-template">
+        <div class="data-core-circle"><div><span>DATA SOURCE</span><b>한 표에서 만나야 하는<br>업무 재료</b></div></div>
+        <div class="data-source-row">
+          <div class="data-source-cell"><span class="num">01</span><b>센터·과정 실적</b><p>월별 매출, 등록수, 환불, 정산, 과정별 신청 흐름</p></div>
+          <div class="data-source-cell"><span class="num">02</span><b>상담·전환 기록</b><p>상담 신청, 상담 완료, 등록 전환, 이탈 사유</p></div>
+          <div class="data-source-cell"><span class="num">03</span><b>후기·문의 텍스트</b><p>만족/불만 키워드, 반복 문의, 과정 개선 신호</p></div>
+          <div class="data-source-cell"><span class="num">04</span><b>운영 자료</b><p>일정, 공지, 출결, 강사 섭외, 리마인드 메시지</p></div>
         </div>
-        <div class="change-arrow">
-          <div class="arrow-line">→</div>
-          <span>오늘<br>바꾸는 것</span>
-        </div>
-        <div class="state-panel tobe">
-          <strong>AFTER</strong>
-          <b>AI가 읽고 사람이 검산할 수 있는 업무 데이터</b>
-          <p>같은 기준으로 정리한 표를 만들면 “어디를 먼저 개선할지”처럼 실행 가능한 질문으로 바뀝니다.</p>
-          <div class="state-list">
-            <span>월·센터·과정·채널 기준으로 열 이름 통일</span>
-            <span>상담 → 등록 → 매출 흐름을 한 표에서 비교</span>
-            <span>민감 정보는 제거하고 샘플·요약·집계 형태로 활용</span>
-          </div>
-        </div>
+        <div class="data-source-mission"><span>핵심</span><b>자료를 많이 모으는 것보다, 월·센터·과정·채널 기준으로 서로 붙을 수 있게 만드는 것이 먼저입니다.</b></div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>05 / 40</span></div>
@@ -678,36 +943,19 @@
     <div class="core">자동화 아이디어는 추상적으로 만들지 않고, 사전 설문에서 나온 반복 업무를 유형으로 묶어 설계합니다.</div>
     <div class="content">
       <h2>바인그룹 업무에 맞는 자동화 아이디어 유형</h2>
-      <div class="grid3">
-        <div class="card"><span class="label">01 매출·정산</span><b>센터별 매출 취합</b><p>일매출, 수수료 검증, 월간 정산을 월+센터+과정 기준의 마스터 표로 모읍니다.</p><div class="result">오늘: 전처리 기준 + 계산 열 + 피벗</div></div>
-        <div class="card"><span class="label">02 회원·고객</span><b>현황과 유지 요인</b><p>회원정보, 상담 신청, 코치·회원 유지 요인을 개인정보 제거 후 상태·기간 기준으로 봅니다.</p><div class="result">오늘: 보안 처리 + 전환율 + 유지율</div></div>
-        <div class="card"><span class="label">03 홈페이지</span><b>성과 보고 자동화</b><p>방문자 수, 상담신청, 전환율, 신규 매출을 채널+월+지표 기준으로 정리합니다.</p><div class="result">오늘: 비교·변화 질문 + 차트 후보</div></div>
-      </div>
-      <div class="grid2" style="margin-top:14px">
-        <div class="card"><span class="label">04 문의·후기</span><b>텍스트 분류</b><p>학부모 문의, 만족도 서술형, 키워드 분석을 주제·감성·확인 필요 항목으로 바꿉니다.</p><div class="result">오늘: Gemini/ChatGPT 분류 + 보고 문장</div></div>
-        <div class="card"><span class="label">05 운영 업데이트</span><b>반복 알림·보고</b><p>월간 업데이트, 렌탈, 일정 알림, 반복 메일은 입력/출력과 담당자 기준을 먼저 정합니다.</p><div class="result">오늘: 프롬프트 템플릿 + 다음 자동화 후보</div></div>
-      </div>
-      <div class="story-note" style="margin-top:16px">
-        <strong>오늘의 선택</strong>
-        <p>실습에서는 전부 자동화하지 않습니다. 먼저 “마스터 표 기준정의서”를 만들고, 그 기준 위에서 계산·피벗·보고서 자동화로 확장합니다.</p>
+      <div class="idea-ring">
+        <div class="idea-center"><span>AUTOMATION IDEA</span><b>사전 설문 기반<br>5개 후보</b><p>오늘은 이 중 “취합·계산·보고” 흐름을 먼저 만듭니다.</p></div>
+        <div class="idea-row">
+          <div class="idea-cell" data-num="01"><b>매출·정산</b><p>센터별 매출, 수수료 검증, 월간 정산 취합</p></div>
+          <div class="idea-cell" data-num="02"><b>회원·고객</b><p>상담 신청, 등록 전환, 유지 요인 정리</p></div>
+          <div class="idea-cell" data-num="03"><b>홈페이지</b><p>방문, 상담신청, 전환율, 신규 매출 비교</p></div>
+          <div class="idea-cell" data-num="04"><b>문의·후기</b><p>서술형 문의와 후기의 주제·감성 분류</p></div>
+          <div class="idea-cell" data-num="05"><b>운영 업데이트</b><p>월간 업데이트, 반복 알림, 보고 초안</p></div>
+        </div>
+        <div class="idea-mission"><span>오늘 선택</span><b>전부 자동화하지 않고, 먼저 “마스터 표 기준정의서”를 만든 뒤 계산·피벗·보고서로 확장합니다.</b></div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>자동화 아이디어</span></div>
-  </section>
-
-<section class="slide" data-title="오늘의 목표">
-    <div class="top"><span>목표</span><span>03 / 26</span></div>
-    <div class="core">만족도 문항에 “예, 할 수 있다”고 답할 수 있도록 결과물을 남깁니다.</div>
-    <div class="content">
-      <h2>오늘의 학습목표</h2>
-      <div class="grid4">
-        <div class="card"><span class="label">01</span><b>데이터 질문 만들기</b><p>무엇을 보고 결정할지 먼저 정합니다.</p></div>
-        <div class="card"><span class="label">02</span><b>AI 역할 나누기</b><p>Gemini는 자료 맥락 읽기, ChatGPT는 정리와 보고 초안, 엑셀은 계산과 검산을 맡깁니다.</p></div>
-        <div class="card"><span class="label">03</span><b>표 구조 정리하기</b><p>행, 열, 기준값을 분석 가능한 형태로 바꿉니다.</p></div>
-        <div class="card"><span class="label">04</span><b>보고서 초안 만들기</b><p>결론, 근거, 리스크, 다음 액션을 5문장으로 정리합니다.</p></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:12%"></span></div><span>03 / 26</span></div>
   </section>
 
 <section class="slide" data-title="전체 청사진">
@@ -715,23 +963,31 @@
     <div class="core">2차수는 “정리”, 3차수는 “분석과 시각화”, 4차수는 “외부 리서치”입니다.</div>
     <div class="content">
       <h2>2~4차수 전체 지도</h2>
-      <div class="journey-map">
+      <div class="journey-map mapline">
         <div class="map-route">
           <div class="map-stop">
-            <div class="map-pin"><span>0</span></div>
-            <div class="map-card"><b>업무 질문</b><p>센터·과정·채널 중 무엇을 먼저 판단할지 정합니다.</p><span class="map-output">출발점: 질문 1개</span></div>
+            <div class="map-pin"><span>01</span></div>
+            <div class="map-card"><b>Step 01</b><p>업무 질문을 정합니다.</p><span class="map-output">센터·과정·채널 중 무엇을 볼까?</span></div>
           </div>
           <div class="map-stop current">
-            <div class="map-pin"><span>2</span></div>
-            <div class="map-card"><b>2차수 · 데이터 정리</b><p>내부 데이터를 한 기준으로 맞추고, 빈칸·중복·단위·개인정보를 확인합니다.</p><span class="map-output">오늘 결과물: 마스터 표 기준</span></div>
+            <div class="map-pin"><span>02</span></div>
+            <div class="map-card"><b>Step 02</b><p>보안 샘플로 바꿉니다.</p><span class="map-output">원본 분리·개인정보 제거</span></div>
           </div>
           <div class="map-stop">
-            <div class="map-pin"><span>3</span></div>
-            <div class="map-card"><b>3차수 · 분석/시각화</b><p>정리된 표에서 매출, 상담, 등록, 환불 흐름을 비교하고 차트로 보여줍니다.</p><span class="map-output">다음 결과물: 인사이트 3개</span></div>
+            <div class="map-pin"><span>03</span></div>
+            <div class="map-card"><b>Step 03</b><p>마스터 표 기준을 만듭니다.</p><span class="map-output">2차수 핵심 산출물</span></div>
           </div>
           <div class="map-stop">
-            <div class="map-pin"><span>4</span></div>
-            <div class="map-card"><b>4차수 · 외부 리서치</b><p>시장 트렌드와 경쟁사 정보를 내부 데이터와 붙여 전략 판단으로 확장합니다.</p><span class="map-output">확장 결과물: 전략 시사점</span></div>
+            <div class="map-pin"><span>04</span></div>
+            <div class="map-card"><b>Step 04</b><p>계산 열과 피벗을 만듭니다.</p><span class="map-output">전환율·환불률·정산률</span></div>
+          </div>
+          <div class="map-stop">
+            <div class="map-pin"><span>05</span></div>
+            <div class="map-card"><b>Step 05</b><p>분석과 시각화로 확장합니다.</p><span class="map-output">3차수: 차트·대시보드</span></div>
+          </div>
+          <div class="map-stop">
+            <div class="map-pin"><span>06</span></div>
+            <div class="map-card"><b>Step 06</b><p>외부 리서치와 전략으로 연결합니다.</p><span class="map-output">4차수: 시장 비교·시사점</span></div>
           </div>
         </div>
         <div class="map-legend"><span class="now">오늘 위치</span><span>다음 차수</span><span>최종 활용</span></div>
@@ -739,6 +995,22 @@
     </div>
     <div class="footer"><div class="progress"><span style="width:15%"></span></div><span>04 / 26</span></div>
   </section>
+
+<section class="slide" data-title="오늘의 목표">
+    <div class="top"><span>목표</span><span>03 / 26</span></div>
+    <div class="core">만족도 문항에 “예, 할 수 있다”고 답할 수 있도록 결과물을 남깁니다.</div>
+    <div class="content">
+      <h2>오늘 끝나면 손에 남는 것</h2>
+      <div class="grid4">
+        <div class="card"><span class="label">01</span><b>업무 질문 1개</b><p>센터·과정·채널 중 무엇을 비교할지 정합니다.</p></div>
+        <div class="card"><span class="label">02</span><b>마스터 표 기준</b><p>여러 파일을 붙일 때 필요한 출처, 키, 표준값을 정합니다.</p></div>
+        <div class="card"><span class="label">03</span><b>계산·피벗 설계</b><p>전환율·환불률을 만들고 센터·채널 기준으로 봅니다.</p></div>
+        <div class="card"><span class="label">04</span><b>5문장 보고 초안</b><p>결론, 숫자 근거, 리스크, 다음 액션을 짧게 남깁니다.</p></div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span style="width:12%"></span></div><span>03 / 26</span></div>
+  </section>
+
 
 <section class="slide" data-title="1차수 복습" data-sec="3">
     <div class="top"><span>복습</span><span>1차수 연결</span></div>
@@ -793,7 +1065,7 @@
     <div class="top"><span>핵심 프레임워크</span><span>데이터 업무 운영법</span></div>
     <div class="core">오늘 실습은 “AI에게 분석해줘”가 아니라, 데이터 업무를 5단계로 나누어 AI와 사람이 함께 처리하는 방식입니다.</div>
     <div class="content">
-      <h2>BAIN 데이터 업무 프레임워크</h2>
+      <h2>바인그룹 데이터 업무 운영 프레임워크</h2>
       <div class="framework-grid">
         <div class="framework-card">
           <span class="num">1</span><b>질문 설계</b>
@@ -821,7 +1093,7 @@
           <div class="rule">결론은 데이터 범위 안에서만 말합니다.</div>
         </div>
       </div>
-      <p class="source-note">참고: <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE AI Data Management</a>, <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr">Google Sheets Gemini 도움말</a>, <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt">OpenAI Data Analysis with ChatGPT</a> 흐름을 수업용으로 재구성</p>
+      <p class="source-note">공식 참고 자료: <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE AI Data Management</a> · <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr">Google Sheets Gemini 도움말</a> · <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt">OpenAI Data Analysis with ChatGPT</a></p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>분석 프레임워크</span></div>
   </section>
@@ -831,40 +1103,25 @@
     <div class="core">AI 데이터 분석은 질문, 맥락, 처리, 검산이 한 번에 맞아야 업무 결과로 이어집니다.</div>
     <div class="content">
       <div class="camera-cue"><span class="cam"></span><span>이 장은 찍어가기</span></div>
-      <h2>이유진 강사의 <span class="accent">Q-Context-Clean-A</span> 프레임워크</h2>
-      <div class="signature-frame">
-        <div class="signature-head">
-          <div class="signature-badge"><span>AI DATA WORKFLOW</span><b>Q-C-C-A</b></div>
-          <p>HPE의 데이터 관리 흐름, Google Sheets/Gemini의 시트 활용 방식, ChatGPT 데이터 분석 흐름을 수업용으로 합친 실무형 프레임워크입니다.</p>
+      <h2>AI 데이터 업무는 <span class="accent">한 번 묻고 끝나는 작업이 아닙니다</span></h2>
+      <div class="pdca-board">
+        <div class="pdca-note">
+          <div class="note"><b>Question 질문</b><p>무엇을 비교해 어떤 결정을 할지 먼저 정합니다. 질문이 없으면 분석 결과도 방향을 잃습니다.</p></div>
+          <div class="note"><b>Context 맥락</b><p>열 의미, 단위, 기간, 출처, 보안 수준을 설명합니다. AI는 이 맥락을 기준으로 표를 읽습니다.</p></div>
         </div>
-        <div class="signature-steps">
-          <div class="signature-step">
-            <span class="num">Q</span>
-            <b>Question</b>
-            <p>“무엇을 비교해서 어떤 결정을 할 것인가”를 먼저 씁니다.</p>
-          </div>
-          <div class="signature-step">
-            <span class="num">C</span>
-            <b>Context</b>
-            <p>열 의미, 단위, 기간, 출처, 보안 수준을 AI에게 설명합니다.</p>
-          </div>
-          <div class="signature-step active">
-            <span class="num">C</span>
-            <b>Clean</b>
-            <p>누락, 중복, 표기 차이, 개인정보를 정리하고 확인 필요 항목을 표시합니다.</p>
-          </div>
-          <div class="signature-step">
-            <span class="num">A</span>
-            <b>Answer</b>
-            <p>계산·피벗·요약 뒤 결론, 근거, 리스크, 다음 액션으로 말합니다.</p>
-          </div>
+        <div class="pdca-center">
+          <div class="pdca-loop plan">QUESTION</div>
+          <div class="pdca-loop do">CONTEXT</div>
+          <div class="pdca-loop check">CLEAN</div>
+          <div class="pdca-loop act">ANSWER</div>
+          <span>Q-C-C-A</span>
         </div>
-        <div class="signature-bottom">
-          <strong>한 줄 공식</strong>
-          <p>좋은 AI 분석 = 판단 질문 1개 + 데이터 설명서 + 전처리 기준 + 사람이 검산한 답변</p>
+        <div class="pdca-note">
+          <div class="note"><b>Clean 정리</b><p>누락, 중복, 표기 차이, 개인정보를 확인하고 분석 가능한 표로 맞춥니다.</p></div>
+          <div class="note"><b>Answer 답변</b><p>계산·피벗·요약 뒤 결론, 근거, 리스크, 다음 액션으로 정리합니다.</p></div>
         </div>
       </div>
-      <p class="source-note">참고 자료: HPE AI Data Management, Google Sheets Gemini 도움말, OpenAI ChatGPT 데이터 분석 도움말을 강의 흐름에 맞춰 재구성</p>
+      <p class="source-note">공식 참고: <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE AI Data Management</a>, <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr">Google Sheets Gemini 도움말</a>, <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt">OpenAI Data Analysis with ChatGPT</a></p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>Q-C-C-A</span></div>
   </section>
@@ -951,40 +1208,24 @@
     <div class="top"><span>핵심 개념</span><span>전처리</span></div>
     <div class="core">전처리는 보기 좋게 꾸미는 일이 아니라, 계산과 비교가 틀리지 않게 기준을 맞추는 일입니다.</div>
     <div class="content">
-      <h2>전처리란 무엇인가: <span class="accent">AI가 헷갈리지 않게 만드는 일</span></h2>
-      <div class="asis-tobe">
-        <div class="state-panel asis">
-          <strong>BEFORE</strong>
-          <b>표는 있지만 기준이 제각각인 상태</b>
-          <p>AI에게 파일을 넣어도 열 의미, 단위, 표기, 개인정보가 섞여 있으면 그럴듯하지만 틀린 분석이 나올 수 있습니다.</p>
-          <div class="state-list">
-            <span>강남 / 강남센터 / Gangnam처럼 표기가 다름</span>
-            <span>원, 만원, 백만원 단위가 한 표에 섞임</span>
-            <span>빈칸, 중복, 실명, 연락처가 그대로 남아 있음</span>
-          </div>
+      <h2>전처리란 무엇인가: <span class="accent">분석이 틀리지 않게 만드는 기준 작업</span></h2>
+      <div class="value-prop">
+        <div class="value-intro">
+          <span class="eyebrow">DATA PREPROCESSING PURPOSE & VALUE</span>
+          <b>표가 있어도 기준이 다르면 AI와 사람이 서로 다른 숫자를 보게 됩니다.</b>
+          <p>전처리는 데이터를 예쁘게 꾸미는 일이 아닙니다. 같은 의미는 같은 이름으로, 같은 숫자는 같은 단위로, 민감 정보는 안전하게 가린 뒤 계산과 비교가 가능한 상태로 만드는 일입니다.</p>
         </div>
-        <div class="change-arrow">
-          <div class="arrow-line">→</div>
-          <span>전처리</span>
+        <div class="value-center">
+          <span>핵심가치</span>
+          <b>AI가 헷갈리지 않고, 사람이 검산할 수 있는 데이터 환경을 만듭니다.</b>
+          <p>정리된 표는 실습 1의 구조 읽기, 실습 2의 계산·피벗, 실습 3의 보고서 초안으로 그대로 이어집니다.</p>
         </div>
-        <div class="state-panel tobe">
-          <strong>AFTER</strong>
-          <b>같은 기준으로 계산·비교 가능한 상태</b>
-          <p>열 이름과 단위를 맞추고 확인 필요 항목을 표시하면, AI는 분석 후보를 만들고 사람은 표본으로 검산할 수 있습니다.</p>
-          <div class="state-list">
-            <span>센터명, 날짜, 과정명, 채널명을 표준값으로 통일</span>
-            <span>전환율, 환불률, 증감률 계산 기준을 명확히 둠</span>
-            <span>개인정보는 제거하고 확인 필요 플래그를 남김</span>
-          </div>
+        <div class="value-cards">
+          <div class="value-card"><b>표기 기준을 맞춥니다</b><p>강남, 강남센터, Gangnam처럼 같은 값을 하나의 표준값으로 통일합니다.</p></div>
+          <div class="value-card"><b>계산 오류를 줄입니다</b><p>원/만원, 건수/비율, 날짜 형식이 섞이지 않도록 확인합니다.</p></div>
+          <div class="value-card"><b>보안 위험을 낮춥니다</b><p>이름, 연락처, 계약번호, 민감 메모는 제거하거나 익명화합니다.</p></div>
         </div>
       </div>
-      <div class="pillbar">
-        <span class="pill"><strong>형식 통일</strong> 날짜·금액·센터명</span>
-        <span class="pill"><strong>오류 확인</strong> 누락·중복·이상치</span>
-        <span class="pill"><strong>보안 처리</strong> 개인정보 제거</span>
-        <span class="pill"><strong>기준 생성</strong> 계산 열·분류값</span>
-      </div>
-      <p class="notice" style="margin-top:18px;border-left-color:var(--red);background:#fff1ee">한 줄 정의: 전처리는 같은 의미는 같은 이름으로, 같은 숫자는 같은 단위로, 민감 정보는 지운 뒤 분석할 수 있게 만드는 준비 작업입니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>전처리</span></div>
   </section>
@@ -993,16 +1234,26 @@
     <div class="top"><span>프레임워크 3</span><span>전처리 품질</span></div>
     <div class="core">전처리는 “깨끗한 표 만들기”가 아니라, 나중에 틀린 숫자를 보고하지 않기 위한 품질 관리입니다.</div>
     <div class="content">
-      <h2>전처리 6대 점검 기준</h2>
-      <div class="rubric">
-        <div class="card"><b>형식</b><p>날짜, 금액, 퍼센트, 텍스트가 한 열 안에서 섞이지 않았는지 확인합니다.</p><div class="formula">26.7.1 / 2026-07-01 → 2026-07-01</div></div>
-        <div class="card"><b>누락</b><p>빈칸이 0인지, 미입력인지, 해당 없음인지 구분합니다.</p><div class="formula">환불건수 공란 → 확인필요</div></div>
-        <div class="card"><b>중복</b><p>같은 센터·월·과정이 두 번 들어갔는지 확인합니다.</p><div class="formula">month+center+course 중복 체크</div></div>
-        <div class="card"><b>이상값</b><p>매출이 갑자기 크거나 음수인 경우 원인을 확인합니다.</p><div class="formula">전월 대비 ±50% 이상 → 확인</div></div>
-        <div class="card"><b>단위</b><p>원/만원, 건수/비율이 섞이면 계산이 틀어집니다.</p><div class="formula">18백만 → 18000000</div></div>
-        <div class="card focus-red"><b>보안</b><p>이름, 전화번호, 계약번호, 상세 상담메모는 제거하거나 익명화합니다.</p><div class="formula">김민수 → 수강생A</div></div>
+      <h2>전처리 품질은 6개 키워드로 확인합니다</h2>
+      <div class="keyword-chain">
+        <div class="chain-title">
+          <span>DATA PREPROCESSING QUALITY</span>
+          <b>AI가 읽기 전에 사람이 확인할 기준</b>
+        </div>
+        <p class="chain-sub">형식이 맞고, 빠진 값이 보이고, 중복과 이상값을 잡고, 단위와 보안을 맞춰야 계산이 흔들리지 않습니다.</p>
+        <div class="chain-row">
+          <div class="chain-node"><b>형식</b><span>날짜·금액·퍼센트 표기 통일</span></div>
+          <div class="chain-node"><b>누락</b><span>빈칸이 0인지 미입력인지 구분</span></div>
+          <div class="chain-node current"><b>중복</b><span>월+센터+과정 기준 중복 확인</span></div>
+          <div class="chain-node"><b>이상값</b><span>갑자기 크거나 작은 값 표시</span></div>
+          <div class="chain-node"><b>단위</b><span>원·만원, 건수·비율 혼용 방지</span></div>
+          <div class="chain-node"><b>보안</b><span>개인정보 제거 또는 익명화</span></div>
+        </div>
+        <div class="chain-note">
+          <strong>실습 기준</strong>
+          <p>AI에게는 삭제부터 시키지 않고, 먼저 “확인 필요 항목을 표로 표시해줘”라고 요청합니다. 사람이 검산한 뒤 전체 표에 적용합니다.</p>
+        </div>
       </div>
-      <p class="notice" style="margin-top:14px;border-left-color:var(--red);background:#fff1ee">AI에게는 “삭제해줘”보다 “확인 필요 플래그를 먼저 만들어줘”라고 시키는 편이 안전합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>전처리 품질</span></div>
   </section>
@@ -1063,7 +1314,7 @@
           </ul>
         </div>
       </div>
-      <p class="source-note">참고: Google Sheets Gemini 기능 안내, HPE AI 데이터 관리 자료, AI 분석 주의사항 캡처 기반 수업용 재구성</p>
+      <p class="source-note">공식 참고: <a href="https://www.hpe.com/kr/ko/what-is/ai-data-management.html">HPE AI Data Management</a>, <a href="https://support.google.com/docs/answer/14356410?hl=ko-kr">Google Sheets Gemini 도움말</a>, <a href="https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt">OpenAI Data Analysis with ChatGPT</a></p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>역할 분담</span></div>
   </section>
@@ -1072,28 +1323,20 @@
     <div class="top"><span>도구 선택</span><span>07 / 26</span></div>
     <div class="core">도구를 하나만 고르는 것이 아니라, 역할을 나눠 쓰면 실수가 줄어듭니다.</div>
     <div class="content">
-      <h2>도구는 대등하게 쓰지 않습니다. 역할의 위계가 있습니다</h2>
-      <div class="tool-hierarchy">
-        <div class="tool-main">
-          <div class="big-tool">
-            <div class="icon">GPT</div>
-            <div><b>ChatGPT: 구조 설계자</b><p>파일 전체를 읽고 열 의미, 전처리 후보, 계산 열, 피벗 기준, 보고서 문장 초안을 설계합니다.</p><div class="result">질문: “이 데이터로 무엇을 판단할 수 있나?”</div></div>
+      <h2>도구는 대등하지 않습니다. 역할의 위계가 있습니다</h2>
+      <div class="role-orbit">
+        <div class="role-capsule">
+          <div class="brand">AI DESIGN LAYER</div>
+          <div class="role-lens">
+            <b>ChatGPT</b>
+            <p>파일 전체 구조를 읽고 열 의미, 전처리 후보, 계산 열, 피벗 기준, 보고서 문장 초안을 설계합니다.</p>
           </div>
-          <div class="big-tool">
-            <div class="icon green-bg">Gemini</div>
-            <div><b>Gemini: 시트 안 반복 처리자</b><p>Google Sheets 안에서 문의·후기 같은 여러 행을 주제, 감성, 확인 필요 항목으로 반복 분류합니다.</p><div class="result">질문: “이 행들을 같은 기준으로 분류해줘.”</div></div>
+          <div class="role-lens">
+            <b>Gemini</b>
+            <p>Google Sheets 안에서 문의·후기 같은 여러 행을 같은 기준으로 반복 분류하고 요약합니다.</p>
           </div>
-        </div>
-        <div class="tool-sub">
-          <div class="icon gold-bg">Sheet</div>
-          <b>Excel / Sheets는 실행·검산 레이어</b>
-          <p>AI가 제안한 것을 실제 표에 적용하고 맞는지 확인하는 하위 실행 도구입니다.</p>
-          <ul>
-            <li>수식 적용: 전환율, 환불률, 증감률</li>
-            <li>피벗 확인: 월별, 센터별, 채널별 비교</li>
-            <li>표본 검산: 3~4행 직접 계산 후 전체 적용</li>
-          </ul>
-          <p class="notice" style="margin-top:14px">순서: AI로 설계 → Excel/Sheets로 계산 → 사람이 검산 → 보고서로 정리</p>
+          <div class="role-middle"><span>EXECUTION</span><b>Excel<br>/ Sheets</b></div>
+          <div class="role-bottom">Excel과 Sheets는 AI가 제안한 수식과 피벗을 실제 표에 적용하고, 표본 3~4행을 검산하는 실행·검증 레이어입니다.</div>
         </div>
       </div>
     </div>
@@ -1104,34 +1347,26 @@
     <div class="top"><span>도구 선택</span><span>ChatGPT vs Gemini</span></div>
     <div class="core">어떤 AI가 더 좋은지가 아니라, 지금 작업이 “파일 전체를 읽는 일”인지 “시트 안에서 반복하는 일”인지 먼저 봅니다.</div>
     <div class="content">
-      <h2>ChatGPT와 Gemini, 이렇게 고릅니다</h2>
-      <div class="grid2">
-        <div class="card">
-          <div class="icon">GPT</div>
-          <span class="label">파일 전체를 이해해야 할 때</span>
-          <b>ChatGPT</b>
-          <ul>
-            <li>CSV/엑셀 파일을 올려 구조를 먼저 파악할 때</li>
-            <li>전처리 기준, 계산 열, 피벗 질문을 설계할 때</li>
-            <li>분석 결과를 보고서 문장으로 정리할 때</li>
-          </ul>
-          <div class="result">오늘 추천: 실습 1 구조 읽기, 실습 3 보고서 초안</div>
+      <div class="current-future">
+        <div class="cf-title"><b>ChatGPT vs Gemini</b><span>파일 전체 설계와 시트 반복 처리의 차이</span></div>
+        <div class="cf-side left">
+          <div class="cf-item"><div class="cf-icon">①</div><div><b>파일 전체 읽기</b><p>CSV/엑셀 파일을 한 번에 보고 열 의미와 데이터 구조를 파악합니다.</p></div></div>
+          <div class="cf-item"><div class="cf-icon">②</div><div><b>전처리 기준 설계</b><p>누락, 중복, 단위, 개인정보 확인 항목을 표로 정리합니다.</p></div></div>
+          <div class="cf-item"><div class="cf-icon">③</div><div><b>보고서 문장 초안</b><p>결론, 근거, 리스크, 다음 액션을 업무 문장으로 바꿉니다.</p></div></div>
         </div>
-        <div class="card">
-          <div class="icon green-bg">Gemini</div>
-          <span class="label">구글 시트 안에서 반복할 때</span>
-          <b>Gemini</b>
-          <ul>
-            <li>Google Sheets 안에서 셀별 요약·분류를 반복할 때</li>
-            <li>문의/후기 텍스트를 주제·감성으로 나눌 때</li>
-            <li>Drive 문서나 시트 맥락을 함께 참고할 때</li>
-          </ul>
-          <div class="result">오늘 추천: 후기·문의 텍스트 분류, 셀 단위 자동화</div>
+        <div class="cf-venn">
+          <div class="cf-circle left"><div><b>ChatGPT</b><span>구조 설계</span></div></div>
+          <div class="cf-circle right"><div><b>Gemini</b><span>반복 처리</span></div></div>
+          <div class="cf-overlap"></div>
         </div>
-      </div>
-      <div class="story-note" style="margin-top:16px">
-        <strong>선택 기준</strong>
-        <p>파일을 한 번에 읽고 흐름을 잡아야 하면 ChatGPT, 이미 시트에 있는 값을 여러 행에 반복 적용해야 하면 Gemini를 씁니다. 숫자 계산과 최종 검산은 Excel/Sheets에서 확인합니다.</p>
+        <div class="cf-side right">
+          <div class="cf-item"><div><b>시트 안에서 실행</b><p>Google Sheets에서 셀 단위로 요약, 분류, 추출을 반복합니다.</p></div><div class="cf-icon">A1</div></div>
+          <div class="cf-item"><div><b>문의·후기 분류</b><p>여러 행의 텍스트를 주제, 감성, 확인 필요 항목으로 나눕니다.</p></div><div class="cf-icon">TXT</div></div>
+          <div class="cf-item"><div><b>Drive 맥락 활용</b><p>구글 시트와 문서 맥락을 연결해 작업할 때 유리합니다.</p></div><div class="cf-icon">G</div></div>
+        </div>
+        <div class="cf-footer">
+          <p>공통 기준은 같습니다. 먼저 질문을 정하고, 데이터 설명을 붙이고, 전처리 기준을 만든 뒤, Excel/Sheets에서 계산과 검산을 완료합니다.</p>
+        </div>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>도구 선택</span></div>
@@ -1360,56 +1595,7 @@
     <div class="footer"><div class="progress"><span></span></div><span>공통 준비 · 개인정보</span></div>
   </section>
 
-<section class="slide" data-title="실습 전체 지도">
-    <div class="top"><span>실습 안내</span><span>전체 지도</span></div>
-    <div class="core">세 번의 실습은 하나의 흐름으로 이어집니다. 질문을 정하고, 안전하게 정리하고, 계산한 뒤, 보고와 템플릿으로 남깁니다.</div>
-    <div class="content">
-      <h2>오늘 실습 진행판</h2>
-      <div class="stage-map">
-        <div class="stage active"><span class="tag">1</span><b>문제 정의</b><p>센터·과정·채널 중 무엇을 비교할지 질문 1개를 고릅니다.</p></div>
-        <div class="stage"><span class="tag">2</span><b>보안 처리</b><p>실명, 연락처, 계약번호, 민감 메모를 지우거나 샘플로 바꿉니다.</p></div>
-        <div class="stage"><span class="tag">3</span><b>전처리</b><p>날짜, 단위, 센터명, 누락·중복 후보를 표로 정리합니다.</p></div>
-        <div class="stage"><span class="tag">4</span><b>계산·피벗</b><p>전환율, 환불률, 정산률을 만들고 센터·채널 기준으로 접어봅니다.</p></div>
-        <div class="stage"><span class="tag">5</span><b>인사이트</b><p>비교, 변화, 리스크, 다음 액션 중 보고할 판단 1개를 고릅니다.</p></div>
-        <div class="stage"><span class="tag">6</span><b>제출</b><p>완성본, 캡처, 프롬프트, 막힌 지점 중 하나를 남깁니다.</p></div>
-      </div>
-      <div class="grid4" style="margin-top:18px">
-        <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>1단계와 3단계의 재료를 만듭니다.</p><div class="result">질문 1개 + 열 설명표</div></div>
-        <div class="card"><span class="label">실습 2 · 15분</span><b>계산 열·피벗 설계</b><p>3단계와 4단계를 실제 표 기준으로 만듭니다.</p><div class="result">수식 1개 + 피벗 기준</div></div>
-        <div class="card"><span class="label">실습 3 · 12분</span><b>인사이트·보고서</b><p>5단계와 6단계를 보고 문장으로 마무리합니다.</p><div class="result">인사이트 1개 + 5문장 초안</div></div>
-        <div class="card"><span class="label">공통 준비 · 3분</span><b>보안 샘플 만들기</b><p>실습 전에 원본을 올리지 않고 안전한 샘플로 바꾸는 기준을 적용합니다.</p><div class="result">익명화 기준 + 샘플 1개</div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">90분 운영: 오프닝 10분 · 핵심 개념 20분 · 실습 45분 · 전환/질의 10분 · 최종 제출 5분. 막혔다면 완성본 대신 현재 단계까지 남깁니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>실습 전체 지도</span></div>
-  </section>
 
-<section class="slide" data-title="예상 결과물">
-    <div class="top"><span>실습 안내</span><span>예상 결과물</span></div>
-    <div class="core">오늘 실습의 결과물은 하나의 완성 보고서가 아니라, 다음 업무에 다시 붙여 쓸 수 있는 작은 작업 패키지입니다.</div>
-    <div class="content">
-      <h2>실습 후 결과물 패키지</h2>
-      <div class="stage-strip"><span>질문</span><span>전처리</span><span>계산·피벗</span><span class="on">결과물</span><span>제출</span></div>
-      <table>
-        <thead>
-          <tr><th>언제</th><th>결과물</th><th>무엇을 담나</th><th>제출 형태</th><th>다음에 쓰는 곳</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><b>실습 1</b></td><td>열 설명표</td><td>센터, 매출, 정산금액, 상담신청수, 등록수의 의미와 확인 필요 항목</td><td>AI 결과 표 캡처 또는 질문 1개</td><td>분석 질문 정하기</td></tr>
-          <tr><td><b>실습 2</b></td><td>계산·피벗 기준</td><td>전환율 공식, 표본 검산 결과, 행·열·값·필터의 피벗 설계</td><td>수식 1개 + 피벗 기준 1개</td><td>3차수 분석·차트의 기준</td></tr>
-          <tr><td><b>실습 3</b></td><td>5문장 보고서</td><td>결론, 숫자 근거, 리스크, 추가 확인, 다음 액션</td><td>보고서 초안 또는 막힌 지점</td><td>팀장 공유용 업무 문장</td></tr>
-          <tr><td><b>공통 준비</b></td><td>보안 샘플·템플릿</td><td>원본 분리, 민감 열 삭제, 값 치환, 재사용 프롬프트</td><td>익명화 예시 또는 템플릿</td><td>실제 업무 적용 기준</td></tr>
-        </tbody>
-      </table>
-      <div class="grid3" style="margin-top:16px">
-        <div class="card"><span class="label">최소 제출</span><b>하나만 올려도 됨</b><p>완성본이 아니어도 캡처, 표 일부, 프롬프트 중 하나면 됩니다.</p></div>
-        <div class="card"><span class="label">막혔을 때</span><b>막힌 단계 제출</b><p>“CSV 붙여넣기에서 막힘”, “수식 검산에서 막힘”처럼 남깁니다.</p></div>
-        <div class="card"><span class="label">좋은 제출</span><b>질문 + 근거</b><p>질문과 고른 이유를 남기면 다음 차수의 차트·대시보드 재료가 됩니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:16px">오늘 결과물은 정답지가 아니라 다음 업무에 다시 쓸 작업 기준입니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>예상 결과물</span></div>
-  </section>
 
 <section class="slide" data-title="실습 시작 체크">
     <div class="top"><span>실습 준비</span><span>O / X 체크</span></div>
@@ -1523,18 +1709,23 @@
     <div class="content">
       <h2>ChatGPT로 실습 시작하기</h2>
       <div class="stage-strip"><span>CSV 복사</span><span class="on">GPT 열기</span><span class="on">프롬프트 입력</span><span>결과 확인</span><span>제출</span></div>
-      <div class="guide">
-        <div class="ai-window">
-          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT 새 대화</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-layout">
-            <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
-            <div class="ai-thread">
-              <div class="ai-msg user"><b>붙여넣을 내용 1</b>실습용 CSV 데이터</div>
-              <div class="ai-msg user"><b>붙여넣을 내용 2</b>장표의 프롬프트</div>
-              <div class="ai-msg ai"><b>나올 결과</b>열 설명표, 확인 필요 항목, 분석 질문</div>
-              <div class="ai-input">여기에 데이터와 프롬프트 입력 <span class="ai-send"></span></div>
+      <div class="real-ui-grid">
+        <div class="real-chatgpt">
+          <div class="real-top">
+            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT</span></div>
+            <div class="real-avatar">김</div>
+          </div>
+          <div class="real-center">
+            <h3>무엇을 도와드릴까요?</h3>
+            <div class="real-input-dark">
+              <div class="real-placeholder">무엇이든 물어보세요</div>
+              <div class="real-input-actions"><span class="real-chip-dark">＋</span><span class="real-chip-dark">검색</span><span class="real-chip-dark">이성</span></div>
+              <div class="real-send-dark">↑</div>
             </div>
           </div>
+          <div class="real-bottom-pills"><span>이미지 만들기</span><span>텍스트 요약</span><span>조언 구하기</span><span>계획 짜기</span></div>
+          <div class="real-callout callout-input" data-num="1"></div>
+          <div class="real-footer-note">ChatGPT는 실수를 할 수 있습니다. 중요한 정보는 확인하세요.</div>
         </div>
         <div class="guide-panel">
           <h3>하나씩 따라 하기</h3>
@@ -1561,14 +1752,31 @@
     <div class="content">
       <h2>Gemini로 실습 시작하기</h2>
       <div class="stage-strip"><span>CSV 복사</span><span class="on">Gemini 열기</span><span class="on">프롬프트 입력</span><span>결과 확인</span><span>제출</span></div>
-      <div class="guide">
-        <div class="ai-window gemini-ui">
-          <div class="ai-head gemini-head"><div class="ai-brand"><span class="ai-mark gemini">G</span>Gemini 새 대화</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-thread">
-            <div class="ai-msg user"><b>1. 데이터</b>CSV 표를 붙여넣습니다.</div>
-            <div class="ai-msg user"><b>2. 요청</b>이 데이터의 열 의미와 분석 질문을 정리해줘.</div>
-            <div class="ai-msg ai"><b>Gemini 결과</b><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
-            <div class="ai-input">여기에 CSV + 프롬프트 입력 <span class="ai-send"></span></div>
+      <div class="real-ui-grid">
+        <div class="real-gemini">
+          <div class="gemini-sidebar-real">
+            <div class="gemini-side-top"><span>☰</span><span>⌕</span></div>
+            <div class="gemini-side-item active">✎ 새 채팅</div>
+            <div class="gemini-side-item">☆ 내 항목</div>
+            <div class="gemini-history"><b>채팅</b><span>이메일 확인 및 확장 프로그램 설정</span><span>데이터 정리 실습</span></div>
+            <div class="gemini-help">⚙ 설정 및 도움말</div>
+          </div>
+          <div class="gemini-main-real">
+            <div class="gemini-word">Gemini</div>
+            <div class="gemini-upgrade">Google AI Plus(으)로 업그레이드</div>
+            <div class="gemini-profile"></div>
+            <div class="gemini-center">
+              <h3><span>이유진님, 안녕하세요</span><br>무엇을 도와드릴까요?</h3>
+              <div class="gemini-input-real">
+                Gemini에게 물어보기
+                <div class="gemini-actions"><span>＋</span><span>도구</span></div>
+                <div class="gemini-mode">빠른 모드⌄</div>
+                <div class="gemini-mic">⌕</div>
+              </div>
+              <div class="gemini-suggestions"><span>이미지 만들기</span><span>글 작성</span><span>학습 도움 받기</span></div>
+            </div>
+            <div class="gemini-bottom-card"><b>개인 AI 어시스턴트인 Gemini를 만나 보세요</b><p>실습에서는 입력창에 CSV와 프롬프트를 함께 붙여넣고 결과 표를 확인합니다.</p></div>
+            <div class="real-callout callout-new" data-num="1"></div>
           </div>
         </div>
         <div class="guide-panel">
@@ -1596,17 +1804,23 @@
     <div class="content">
       <h2>화면에서 할 일: 붙여넣고 구조 읽기</h2>
       <div class="stage-strip"><span>CSV 복사</span><span class="on">AI 붙여넣기</span><span class="on">열 설명표</span><span>질문 선택</span><span>제출</span></div>
-      <div class="ai-duo">
-        <div class="ai-window">
-          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT 새 대화</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-layout">
-            <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
-            <div class="ai-thread">
-              <div class="ai-msg user"><b>1. 데이터 넣기</b>CSV를 그대로 붙여넣거나 파일로 업로드합니다.<span class="file-chip">월,센터,과정,채널,매출...</span></div>
-              <div class="ai-msg user"><b>2. 프롬프트 붙여넣기</b>열 의미, 수치형/범주형, 확인 필요 항목을 정리해줘.</div>
-              <div class="ai-msg ai"><b>AI가 보여줄 것</b><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
-              <div class="ai-input">여기에 CSV + 프롬프트 입력 <span class="ai-send"></span></div>
+      <div class="real-ui-grid">
+        <div class="real-chatgpt">
+          <div class="real-top">
+            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT</span></div>
+            <div class="real-avatar">김</div>
+          </div>
+          <div class="real-center">
+            <h3>실습용 CSV와 프롬프트를 함께 넣습니다</h3>
+            <div class="real-input-dark">
+              <div class="real-placeholder">① CSV 데이터 붙여넣기<br>② “열 의미와 분석 질문을 정리해줘” 붙여넣기</div>
+              <div class="real-input-actions"><span class="real-chip-dark">＋ 파일</span><span class="real-chip-dark">텍스트</span></div>
+              <div class="real-send-dark">↑</div>
             </div>
+          </div>
+          <div class="real-result-box">
+            <b>나올 결과</b>
+            <p>열 설명표 · 수치형/범주형 구분 · 확인 필요 항목 · 다음 분석 질문 3개</p>
           </div>
         </div>
         <div class="guide-panel">
@@ -1711,14 +1925,6 @@
     <div class="footer"><div class="progress"><span style="width:50%"></span></div><span>13 / 26</span></div>
   </section>
 
-<section class="slide section greenish" data-title="계산과 보고로 이어가기" data-sec="3">
-    <div class="content">
-      <span class="section-kicker">NEXT PRACTICE</span>
-      <h2>계산과 보고로 이어가기</h2>
-      <p>데이터 구조를 읽었다면 이제 계산 열과 피벗을 만들고, 근거가 보이는 보고 문장으로 연결합니다.</p>
-      <div class="section-map"><span>계산 열 검산</span><span>피벗 기준 적용</span><span>인사이트·보고서 제출</span></div>
-    </div>
-  </section>
 
 <section class="slide section goldish" data-title="실습 2 간지" data-sec="3">
     <div class="content">
@@ -1852,16 +2058,23 @@
     <div class="content">
       <h2>화면에서 할 일: 공식 받고 표본 검산</h2>
       <div class="stage-strip"><span>AI 공식</span><span class="warn">표본 검산</span><span class="on">계산 열</span><span>피벗 기준</span><span>제출</span></div>
-      <div class="ai-duo">
-        <div class="ai-window">
-          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT / Gemini</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-layout">
-            <div class="ai-side"><span class="active"></span><span></span><span></span></div>
-            <div class="ai-thread">
-              <div class="ai-msg user"><b>나</b>전환율, 환불률, 정산률 계산식을 만들고 첫 3행으로 검산 방법까지 알려줘.</div>
-              <div class="ai-msg ai"><b>AI</b>전환율 = 등록수 / 상담신청수<br>환불률 = 환불건수 / 등록수<br>정산률 = 정산금액 / 매출</div>
-              <div class="ai-input">공식 설명 요청 <span class="ai-send"></span></div>
+      <div class="real-ui-grid">
+        <div class="real-chatgpt">
+          <div class="real-top">
+            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT / Gemini</span></div>
+            <div class="real-avatar">김</div>
+          </div>
+          <div class="real-center">
+            <h3>공식을 받기 전에 “검산 방법”까지 요청합니다</h3>
+            <div class="real-input-dark">
+              <div class="real-placeholder">전환율, 환불률, 정산률 계산식을 만들고<br>첫 3행으로 검산 방법까지 알려줘.</div>
+              <div class="real-input-actions"><span class="real-chip-dark">계산 열</span><span class="real-chip-dark">검산</span><span class="real-chip-dark">피벗</span></div>
+              <div class="real-send-dark">↑</div>
             </div>
+          </div>
+          <div class="real-result-box">
+            <b>AI가 내야 할 결과</b>
+            <p>전환율 = 등록수 ÷ 상담신청수 · 환불률 = 환불건수 ÷ 등록수 · 정산률 = 정산금액 ÷ 매출</p>
           </div>
         </div>
         <div class="ai-window gemini-ui">
@@ -2105,16 +2318,23 @@
     <div class="content">
       <h2>화면에서 할 일: 인사이트를 보고서로 바꾸기</h2>
       <div class="stage-strip"><span>피벗 결과</span><span class="on">발견점</span><span class="warn">단정 검수</span><span class="on">5문장</span><span>제출</span></div>
-      <div class="ai-duo">
-        <div class="ai-window">
-          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT 보고서 초안</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-layout">
-            <div class="ai-side"><span class="active"></span><span></span><span></span></div>
-            <div class="ai-thread">
-              <div class="ai-msg user"><b>나</b>센터·채널별 결과를 보고 결론, 근거, 리스크, 다음 액션, 요청사항 5문장으로 정리해줘.</div>
-              <div class="ai-msg ai"><b>AI 초안</b><span class="type-line long"></span><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
-              <div class="ai-input">5문장 보고서 요청 <span class="ai-send"></span></div>
+      <div class="real-ui-grid">
+        <div class="real-chatgpt">
+          <div class="real-top">
+            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT 보고서 초안</span></div>
+            <div class="real-avatar">김</div>
+          </div>
+          <div class="real-center">
+            <h3>피벗 결과를 “보고 문장”으로 바꿉니다</h3>
+            <div class="real-input-dark">
+              <div class="real-placeholder">센터·채널별 결과를 보고<br>결론, 근거, 리스크, 다음 액션, 요청사항 5문장으로 정리해줘.</div>
+              <div class="real-input-actions"><span class="real-chip-dark">결론</span><span class="real-chip-dark">근거</span><span class="real-chip-dark">액션</span></div>
+              <div class="real-send-dark">↑</div>
             </div>
+          </div>
+          <div class="real-result-box">
+            <b>나올 결과</b>
+            <p>“상담은 높지만 등록 전환이 낮다”처럼 숫자 근거와 다음 확인 질문이 붙은 보고 문장</p>
           </div>
         </div>
         <div class="guide-panel">
@@ -2395,6 +2615,17 @@ AI에게 요청할 일:
   const next = document.querySelector('.next');
   let current = 0;
   let activeSection = '1';
+  function sectionFor(title, index){
+    const t = title || '';
+    if(index <= 10 || t.includes('사전') || t.includes('청사진') || t.includes('목표') || t.includes('방향')) return 'intro';
+    if(t.includes('데이터 종류') || t.includes('데이터 유형') || t.includes('전처리') || t.includes('설명서') || t.includes('프레임워크') || t.includes('리터러시')) return 'data';
+    if(t.includes('AI와 사람') || t.includes('도구') || t.includes('GPT') || t.includes('Gemini') || t.includes('Google') || t.includes('보안') || t.includes('개인정보') || t.includes('체크')) return 'tool';
+    if(t.includes('실습 1') || t.includes('샘플 데이터') || t.includes('CSV 복사')) return 'p1';
+    if(t.includes('실습 2') || t.includes('취합') || t.includes('피벗') || t.includes('검산')) return 'p2';
+    if(t.includes('실습 3') || t.includes('차트') || t.includes('보고서')) return 'p3';
+    if(t.includes('제출') || t.includes('Padlet') || t.includes('마무리') || t.includes('다음 차수') || t.includes('템플릿') || t.includes('리스크')) return 'submit';
+    return 'data';
+  }
   function keywordsFor(title, sec){
     const t = title || '';
     if(t.includes('강사')) return ['강사 소개','프로젝트 경험'];
@@ -2421,7 +2652,7 @@ AI에게 요청할 일:
       activeSection = slide.dataset.sec;
     }
     if(!slide.classList.contains('cover') && !slide.classList.contains('section')) {
-      slide.dataset.sec = slide.dataset.sec || activeSection;
+      slide.dataset.sec = sectionFor(slide.dataset.title, slides.indexOf(slide));
       const top = slide.querySelector('.top');
       if(top && !top.querySelector('.keyword-rail')) {
         const rail = document.createElement('div');
@@ -2433,7 +2664,7 @@ AI에게 요청할 일:
       if(!slide.querySelector('.mini-index')) {
         const nav = document.createElement('div');
         nav.className = 'mini-index';
-        nav.innerHTML = '<span data-sec="1">01 개념/실습</span><span data-sec="2">02 도구/실습</span><span data-sec="3">03 산출물</span>';
+        nav.innerHTML = '<span data-sec="intro">INTRO</span><span data-sec="data">DATA</span><span data-sec="tool">TOOL</span><span data-sec="p1">PRACTICE 1</span><span data-sec="p2">PRACTICE 2</span><span data-sec="p3">PRACTICE 3</span><span data-sec="submit">SUBMIT</span>';
         slide.appendChild(nav);
       }
     }
