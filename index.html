@@ -130,6 +130,42 @@
     .avatar{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:950;flex:0 0 auto}
     .bubble{border:1px solid var(--line);background:#f7fafc;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;color:#344156;font-weight:750;max-width:88%}
     .upload{border:2px dashed #b7c7d9;border-radius:12px;background:#f4f8fc;padding:18px;text-align:center;color:#425165;font-weight:950}
+    .ai-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+    .ai-window{background:#fff;border:1px solid #cfd9e5;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;min-height:360px;display:flex;flex-direction:column}
+    .ai-head{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #dbe4ee;background:#f8fafc}
+    .ai-head.gemini-head{background:linear-gradient(90deg,#edf7ff,#f4ecff)}
+    .ai-brand{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:950;color:#243044}
+    .ai-mark{width:24px;height:24px;border-radius:50%;background:#111827;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:950}
+    .ai-mark.gemini{background:linear-gradient(135deg,#4285f4,#a855f7,#ef6aa8)}
+    .ai-actions{display:flex;gap:7px}
+    .ai-action{width:8px;height:8px;border-radius:50%;background:#bcc8d6}
+    .ai-layout{display:grid;grid-template-columns:88px 1fr;min-height:316px;flex:1}
+    .ai-window.gemini-ui .ai-layout{grid-template-columns:1fr 210px}
+    .ai-side{background:#f3f6fa;border-right:1px solid #dbe4ee;padding:12px 9px;display:grid;gap:8px;align-content:start}
+    .ai-window.gemini-ui .ai-side{border-right:0;border-left:1px solid #dbe4ee;background:#f8fbff}
+    .ai-side span{display:block;height:22px;border-radius:8px;background:#e3ebf4}
+    .ai-side .active{background:#d8e8ff;border:1px solid #b9d4f5}
+    .ai-thread{padding:16px;display:flex;flex-direction:column;gap:10px;min-height:316px}
+    .ai-msg{border:1px solid #d9e3ee;border-radius:16px;padding:12px 13px;font-size:13px;line-height:1.42;color:#354256;font-weight:750;max-width:88%;background:#fff}
+    .ai-msg.user{align-self:flex-end;background:#edf5ff;border-color:#c8daf0}
+    .ai-msg.ai{align-self:flex-start;background:#f8fafc}
+    .ai-msg b{display:block;font-size:12px;color:#1f5fa8;margin-bottom:5px}
+    .file-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid #c9d8e8;background:#fff;border-radius:999px;padding:6px 9px;margin-top:7px;font-size:11px;font-weight:950;color:#516174}
+    .ai-input{margin-top:auto;border:1px solid #cfd9e5;border-radius:18px;padding:10px 12px;display:flex;align-items:center;gap:10px;background:#fff;color:#7a8798;font-size:12px;font-weight:850}
+    .ai-send{margin-left:auto;width:24px;height:24px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(47,102,173,.32);animation:pulseSend 1.8s infinite}
+    .gemini-ui .ai-send{background:linear-gradient(135deg,#4285f4,#a855f7)}
+    .type-line{display:block;height:8px;border-radius:999px;background:linear-gradient(90deg,#cad7e7,#eaf1f8,#cad7e7);background-size:220% 100%;animation:typeShimmer 2.2s infinite;margin:7px 0}
+    .type-line.short{width:62%}
+    .type-line.mid{width:80%}
+    .type-line.long{width:96%}
+    .ui-caption{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:start;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 15px;box-shadow:var(--shadow)}
+    .ui-caption strong{color:var(--blue);font-size:15px}
+    .ui-caption p{font-size:13px;line-height:1.38}
+    .sheet-mini{background:#fff;border:1px solid #d7e1ec;border-radius:12px;padding:10px;margin-top:8px}
+    .sheet-mini .bar{height:9px;border-radius:999px;background:#dce8f5;margin:7px 0}
+    .sheet-mini .bar.green{background:#d9f0e6}.sheet-mini .bar.gold{background:#f3e6c6}
+    @keyframes typeShimmer{0%{background-position:180% 0}100%{background-position:-180% 0}}
+    @keyframes pulseSend{0%,100%{box-shadow:0 0 0 0 rgba(47,102,173,.28)}50%{box-shadow:0 0 0 8px rgba(47,102,173,0)}}
     .sheet{width:100%;border-collapse:collapse;box-shadow:none;font-size:12px}
     .sheet th{background:#eaf3ff;color:#203048}
     .sheet td,.sheet th{padding:7px 8px;border:1px solid #d7e1ec}
@@ -202,6 +238,7 @@
     }
     @media(max-width:1100px){
       .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
+      .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}
     }
     @media(max-width:620px){
       html,body{overflow:auto}.deck{height:auto;min-height:100vh}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
@@ -212,6 +249,7 @@
       .timeline{gap:4px}.row{padding:6px 0;gap:8px}.row strong{font-size:14px}.row p{font-size:11px;line-height:1.35}
       .notice{font-size:12px;line-height:1.4;padding:12px 14px}
       .mock-screen{min-height:0}.mock-body{min-height:0}.padlet-mock{grid-template-columns:1fr}.guide-steps li{font-size:13px}.mini-index{display:none}.toc-card{min-height:0}.safe-item{grid-template-columns:1fr}
+      .ai-window{min-height:0}.ai-thread{min-height:0}.ai-msg{max-width:100%}.ui-caption{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -774,6 +812,45 @@
     <div class="footer"><div class="progress"><span></span></div><span>도구 선택</span></div>
   </section>
 
+  <section class="slide" data-title="AI UI 역할">
+    <div class="top"><span>도구 화면</span><span>ChatGPT / Gemini</span></div>
+    <div class="core">수강생이 헷갈리는 지점은 기능명이 아니라 “어디에 넣고, 어디서 결과를 보는지”입니다.</div>
+    <div class="content">
+      <h2>화면으로 보는 역할 차이</h2>
+      <div class="ai-duo">
+        <div>
+          <div class="ai-window">
+            <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+            <div class="ai-layout">
+              <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
+              <div class="ai-thread">
+                <div class="ai-msg user"><b>나</b>CSV 파일을 보고 열 의미와 분석 질문을 먼저 정리해줘.<span class="file-chip">센터별_월간운영.csv</span></div>
+                <div class="ai-msg ai"><b>ChatGPT</b><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
+                <div class="ai-input">메시지 입력 또는 파일 첨부 <span class="ai-send"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-caption"><strong>오늘의 쓰임</strong><p>파일 전체 구조 읽기, 전처리 기준 만들기, 분석 결과를 보고서 문장으로 정리할 때 씁니다.</p></div>
+        </div>
+        <div>
+          <div class="ai-window gemini-ui">
+            <div class="ai-head gemini-head"><div class="ai-brand"><span class="ai-mark gemini">G</span>Gemini in Sheets</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+            <div class="ai-layout">
+              <div class="ai-thread">
+                <div class="sheet-mini"><div class="bar"></div><div class="bar green"></div><div class="bar"></div><div class="bar gold"></div></div>
+                <div class="ai-input">=AI("이 문의를 주제별로 분류해줘", A2) <span class="ai-send"></span></div>
+                <div class="ai-msg ai"><b>결과</b>환불 안내 / 상담 일정 / 수업 난이도처럼 셀 단위로 분류합니다.</div>
+              </div>
+              <div class="ai-side"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="ui-caption"><strong>오늘의 쓰임</strong><p>이미 시트 안에 있는 여러 행을 반복 분류하거나 요약할 때 씁니다. 숫자 검산은 시트에서 확인합니다.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>도구 화면</span></div>
+  </section>
+
   <section class="slide" data-title="공식 자료 기반">
     <div class="top"><span>출처</span><span>공식 자료</span></div>
     <div class="core">도구 기능은 계속 바뀌므로, 강의안에서는 공식 자료 기준으로 표현합니다.</div>
@@ -1123,6 +1200,39 @@
     <div class="footer"><div class="progress"><span></span></div><span>실습 1 할 일</span></div>
   </section>
 
+  <section class="slide" data-title="실습 1 UI">
+    <div class="top"><span>실습 1</span><span>화면 따라하기</span></div>
+    <div class="core">실습 1은 ChatGPT나 Gemini의 새 대화창에 데이터를 넣고, “이 데이터가 무엇인지”를 먼저 묻는 단계입니다.</div>
+    <div class="content">
+      <h2>화면에서 할 일: 붙여넣고 구조 읽기</h2>
+      <div class="ai-duo">
+        <div class="ai-window">
+          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT 새 대화</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+          <div class="ai-layout">
+            <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
+            <div class="ai-thread">
+              <div class="ai-msg user"><b>1. 데이터 넣기</b>CSV를 그대로 붙여넣거나 파일로 업로드합니다.<span class="file-chip">월,센터,과정,채널,매출...</span></div>
+              <div class="ai-msg user"><b>2. 프롬프트 붙여넣기</b>열 의미, 수치형/범주형, 확인 필요 항목을 정리해줘.</div>
+              <div class="ai-msg ai"><b>AI가 보여줄 것</b><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
+              <div class="ai-input">여기에 CSV + 프롬프트 입력 <span class="ai-send"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="guide-panel">
+          <h3>확인할 결과</h3>
+          <ol class="guide-steps">
+            <li>열 설명표가 나왔는지 봅니다.</li>
+            <li>매출, 정산금액, 상담신청수, 등록수의 의미가 구분됐는지 봅니다.</li>
+            <li>AI가 제안한 질문 중 내 업무와 가까운 질문 1개를 고릅니다.</li>
+            <li>이 질문을 이후 실습 2·3의 기준 질문으로 가져갑니다.</li>
+          </ol>
+          <div class="prompt-mini">오늘 남길 것: “어떤 채널의 등록 전환이 낮은가?”처럼 판단 가능한 질문 1개</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>실습 1 UI</span></div>
+  </section>
+
   <section class="slide" data-title="실습 1 가이드">
     <div class="top"><span>실습 1</span><span>가이드</span></div>
     <div class="core">먼저 원본 데이터를 AI에게 읽히고 “이 데이터로 무엇을 판단할 수 있는지”를 확인합니다.</div>
@@ -1217,6 +1327,40 @@
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>실습 2 할 일</span></div>
+  </section>
+
+  <section class="slide" data-title="실습 2 UI">
+    <div class="top"><span>실습 2</span><span>화면 따라하기</span></div>
+    <div class="core">실습 2는 AI에게 공식을 “만들어 달라”가 아니라, 왜 그 공식이 맞는지 설명하게 한 뒤 시트에서 검산하는 단계입니다.</div>
+    <div class="content">
+      <h2>화면에서 할 일: 공식 받고 표본 검산</h2>
+      <div class="ai-duo">
+        <div class="ai-window">
+          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT / Gemini</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+          <div class="ai-layout">
+            <div class="ai-side"><span class="active"></span><span></span><span></span></div>
+            <div class="ai-thread">
+              <div class="ai-msg user"><b>나</b>전환율, 환불률, 정산률 계산식을 만들고 첫 3행으로 검산 방법까지 알려줘.</div>
+              <div class="ai-msg ai"><b>AI</b>전환율 = 등록수 / 상담신청수<br>환불률 = 환불건수 / 등록수<br>정산률 = 정산금액 / 매출</div>
+              <div class="ai-input">공식 설명 요청 <span class="ai-send"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-window gemini-ui">
+          <div class="ai-head gemini-head"><div class="ai-brand"><span class="ai-mark gemini">S</span>Excel / Google Sheets</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+          <div class="ai-thread">
+            <table class="sheet">
+              <thead><tr><th>상담</th><th>등록</th><th>환불</th><th>전환율</th><th>검산</th></tr></thead>
+              <tbody><tr><td>37</td><td>12</td><td>1</td><td>32.4%</td><td>12÷37</td></tr><tr><td>18</td><td>14</td><td>0</td><td>77.8%</td><td>14÷18</td></tr></tbody>
+            </table>
+            <div class="ai-msg ai"><b>확인</b>AI가 준 공식은 첫 2~3행만 손으로 계산해 맞는지 확인한 뒤 전체 적용합니다.</div>
+            <div class="ai-input">피벗 기준: 행=센터, 열=월, 값=전환율 <span class="ai-send"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ui-caption"><strong>중요</strong><p>이 장표의 목적은 수식을 외우는 것이 아니라, AI가 만든 계산 기준을 사람이 표본 검산하고 피벗 기준으로 연결하는 것입니다.</p></div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>실습 2 UI</span></div>
   </section>
 
   <section class="slide" data-title="실습 2 왜 하는가">
@@ -1399,6 +1543,44 @@
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>실습 3 할 일</span></div>
+  </section>
+
+  <section class="slide" data-title="실습 3 UI">
+    <div class="top"><span>실습 3</span><span>화면 따라하기</span></div>
+    <div class="core">실습 3은 AI가 낸 숫자 설명을 그대로 믿는 시간이 아니라, 보고할 문장으로 바꾸며 검수하는 시간입니다.</div>
+    <div class="content">
+      <h2>화면에서 할 일: 인사이트를 보고서로 바꾸기</h2>
+      <div class="ai-duo">
+        <div class="ai-window">
+          <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT 보고서 초안</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
+          <div class="ai-layout">
+            <div class="ai-side"><span class="active"></span><span></span><span></span></div>
+            <div class="ai-thread">
+              <div class="ai-msg user"><b>나</b>센터·채널별 결과를 보고 결론, 근거, 리스크, 다음 액션, 요청사항 5문장으로 정리해줘.</div>
+              <div class="ai-msg ai"><b>AI 초안</b><span class="type-line long"></span><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
+              <div class="ai-input">5문장 보고서 요청 <span class="ai-send"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="guide-panel">
+          <h3>검수해서 바꿀 문장</h3>
+          <div class="story-note" style="margin-bottom:10px">
+            <strong>나쁜 문장</strong>
+            <p>광고 채널은 효과가 없습니다.</p>
+          </div>
+          <div class="story-note" style="margin-bottom:10px">
+            <strong>좋은 문장</strong>
+            <p>광고 채널은 상담신청은 높지만 등록 전환율이 낮아, 상담 품질 또는 대상자 적합도 확인이 필요합니다.</p>
+          </div>
+          <ol class="guide-steps">
+            <li>단정 표현을 줄입니다.</li>
+            <li>숫자 근거를 붙입니다.</li>
+            <li>다음 확인 질문을 남깁니다.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><div class="progress"><span></span></div><span>실습 3 UI</span></div>
   </section>
 
   <section class="slide" data-title="실습 3 실행 가이드">
