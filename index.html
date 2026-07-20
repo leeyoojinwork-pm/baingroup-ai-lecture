@@ -24,7 +24,7 @@
     *{box-sizing:border-box}
     html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;letter-spacing:0}
     button{font-family:inherit}
-    .deck{position:relative;width:100vw;height:100vh;background:var(--bg)}
+    .deck{position:absolute;left:50%;top:50%;width:1600px;height:900px;background:var(--bg);transform:translate(-50%,-50%) scale(var(--deck-scale,1));transform-origin:center center}
     .slide{position:absolute;inset:0;display:none;padding:32px 54px 82px;background:linear-gradient(180deg,#fbfdff 0%,#f4f8fc 100%);overflow:hidden}
     .slide.active{display:block}
     .top{position:absolute;left:54px;right:54px;top:24px;height:32px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;font-weight:900;color:#5c6877}
@@ -569,6 +569,15 @@
     .survey-mission{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;margin-top:2px;border-left:6px solid var(--blue);background:#edf5ff;border-radius:0 14px 14px 0;padding:18px 22px}
     .survey-mission span{display:flex;align-items:center;justify-content:center;height:38px;border-radius:999px;background:#fff;border:1px solid #c8d7e9;color:#637083;font-weight:950}
     .survey-mission b{font-size:24px;line-height:1.25;color:var(--blue)}
+    .slide[data-title="사전 설문 요약"] h2{font-size:40px;margin-bottom:18px}
+    .slide[data-title="사전 설문 요약"] .survey-board{padding:22px;gap:14px}
+    .slide[data-title="사전 설문 요약"] .survey-card{grid-template-columns:56px 1fr;gap:12px;min-height:110px;padding:14px}
+    .slide[data-title="사전 설문 요약"] .survey-card .num{width:48px;height:48px;border-radius:14px;font-size:18px}
+    .slide[data-title="사전 설문 요약"] .survey-card b{font-size:19px;margin-bottom:6px}
+    .slide[data-title="사전 설문 요약"] .survey-card p{font-size:12.5px;line-height:1.36}
+    .slide[data-title="사전 설문 요약"] .survey-mission{padding:14px 18px;grid-template-columns:124px 1fr}
+    .slide[data-title="사전 설문 요약"] .survey-mission span{height:34px}
+    .slide[data-title="사전 설문 요약"] .survey-mission b{font-size:21px}
     .pdca-board{background:#eef5ff;border:1px solid #c8daee;border-radius:18px;box-shadow:var(--shadow);padding:30px;display:grid;grid-template-columns:1fr 360px 1fr;gap:22px;align-items:center}
     .pdca-center{position:relative;width:330px;height:330px;margin:auto;border:3px solid #93b4dc;border-radius:50%;display:grid;place-items:center;color:#6f91bb;font-weight:950}
     .pdca-center:before,.pdca-center:after{content:"";position:absolute;inset:50px;border:2px solid #aec6e2;border-radius:50%}
@@ -702,6 +711,43 @@
     .keyword-chain .chain-title span{color:var(--blue)}
     .keyword-chain .chain-title b{color:var(--ink)}
     .keyword-chain .chain-sub{color:#657284}
+    .data-source-template{min-height:430px;padding:26px;background:#fff;display:grid;grid-template-rows:auto 1fr auto;gap:18px}
+    .data-source-template:before{display:none}
+    .data-core-circle{position:static;transform:none;width:auto;height:auto;border-radius:18px;padding:20px 24px;background:#132039;text-align:left;box-shadow:none}
+    .data-core-circle span{font-size:13px;margin-bottom:6px;color:#a9c8ff}
+    .data-core-circle b{font-size:26px;line-height:1.2}
+    .data-source-row{position:static;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border:0;background:transparent}
+    .data-source-cell{min-height:138px;border:1px solid #d6e2ee;border-radius:14px;padding:18px 14px;text-align:left}
+    .data-source-cell:before{display:none}
+    .data-source-cell .num{font-size:17px;margin-bottom:10px}
+    .data-source-cell b{font-size:18px}
+    .data-source-cell p{font-size:12px}
+    .data-source-mission{position:static;display:grid;grid-template-columns:92px 1fr;padding:13px 18px}
+    .data-source-mission b{font-size:18px}
+    .idea-ring{min-height:430px;padding:26px;display:grid;grid-template-columns:280px 1fr;grid-template-rows:1fr auto;gap:18px;background:#fff}
+    .idea-ring:before{display:none}
+    .idea-center{position:static;transform:none;width:auto;height:100%;border-radius:18px;background:#132039;color:#fff;text-align:left;padding:26px 24px;display:flex;flex-direction:column;justify-content:center}
+    .idea-center span{color:#a9c8ff}
+    .idea-center b{color:#fff;font-size:26px}
+    .idea-center p{color:#d8e6f7;font-size:13px}
+    .idea-row{position:static;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;border:0}
+    .idea-cell{min-height:150px;border:1px solid #d7e2ee;border-radius:14px;padding:22px 14px 16px;text-align:left}
+    .idea-cell:before{top:12px;left:auto;right:12px;transform:none;width:30px;height:30px;border-width:2px}
+    .idea-cell b{font-size:17px;padding-right:38px}
+    .idea-cell p{font-size:12px}
+    .idea-mission{position:static;grid-column:1 / -1;transform:none;width:auto;padding:13px 18px}
+    .idea-mission b{font-size:18px}
+    .journey-map.mapline{min-height:430px;padding:28px;background:#fff}
+    .journey-map.mapline:before,.journey-map.mapline:after{display:none}
+    .mapline .map-route{grid-template-columns:repeat(3,1fr);gap:12px}
+    .mapline .map-stop{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center;text-align:left;justify-items:start;border:1px solid #d6e2ee;border-radius:14px;background:#fff;padding:14px}
+    .mapline .map-stop:after{display:none}
+    .mapline .map-pin{width:48px;height:48px;border-radius:50%;transform:none;border-width:4px}
+    .mapline .map-pin span{transform:none;font-size:15px}
+    .mapline .map-card{margin-top:0;text-align:left}
+    .mapline .map-card b{font-size:14px}
+    .mapline .map-card p{font-size:12px;max-width:none;margin:0}
+    .mapline .map-card .map-output{display:block;margin-top:5px;font-size:12px}
     .chain-row:before{background:#cbd9e8;height:3px}
     .chain-node{background:#eef5ff;border:2px solid #c5d8ee;color:var(--blue);box-shadow:0 14px 26px rgba(47,102,173,.12)}
     .chain-node:nth-child(2n){background:#f7fbff}
@@ -711,19 +757,13 @@
     .chain-note{background:#fff;border:1px solid #d6e1ec}
     .chain-note strong{color:var(--blue)}
     .chain-note p{color:#39475a}
-    @media(max-height:760px){
-      .slide{padding-bottom:64px}.top{top:18px}.content{top:72px;bottom:62px}.footer{display:none}
-      h1{font-size:56px}h2{font-size:36px;margin-bottom:14px}h3{font-size:19px}p,li{font-size:14px}.card{padding:16px}.code{max-height:300px}pre{font-size:12px}.row{padding:7px 0}.row strong{font-size:15px}.row em{font-size:12px}.section h2{font-size:52px}.section p{font-size:19px}.mock-screen{min-height:285px}.mock-body{min-height:246px}.guide-steps li{font-size:13px}.prompt-mini{max-height:105px}
-      .profile-photo{height:345px}.profile-grid{gap:24px}.profile-text h2{font-size:42px}.profile-text .lead{font-size:18px;margin-bottom:14px}.plain-panel{padding:16px}.plain-panel li{font-size:12px;line-height:1.42}
-      .real-chatgpt,.real-gemini{min-height:320px}.real-center h3{font-size:23px;margin-bottom:18px}.real-input-dark{min-height:86px}.real-bottom-pills{display:none}.real-footer-note{display:none}.gemini-center h3{font-size:26px}.gemini-input-real{min-height:88px}.gemini-bottom-card{display:none}
-    }
-    @media(max-width:1100px){
+    @media(max-width:620px){
       .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split,.data-bridge,.survey-layout,.voc-grid,.map-route,.asis-tobe,.ox-grid,.signature-head,.signature-steps,.signature-bottom{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}.journey-map:before{display:none}
       .change-arrow{grid-template-columns:repeat(3,46px);grid-template-rows:46px;width:auto;justify-content:center;align-self:center;padding:0}.change-arrow .pair-arrow{transform:rotate(90deg)}
       .ai-duo,.real-ui-grid{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}.real-gemini{grid-template-columns:1fr}.gemini-sidebar-real{display:none}
     }
     @media(max-width:620px){
-      html,body{overflow:auto}.deck{height:auto;min-height:100vh}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
+      html,body{overflow:auto}.deck{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:100vh;transform:none}.slide{position:relative;display:block;min-height:100vh;padding:22px 22px 58px;overflow:visible}.slide:not(.active){display:none}
       .top{left:22px;right:22px;top:18px}.content{left:22px;right:22px;top:72px;bottom:24px;justify-content:flex-start;overflow:visible}
       .keyword-rail{display:none}
       .camera-cue{position:static;width:max-content;margin:0 0 12px auto}
@@ -897,53 +937,25 @@
 
 <section class="slide" data-title="실습 전체 지도">
     <div class="top"><span>실습 안내</span><span>전체 지도</span></div>
-    <div class="core">세 번의 실습은 하나의 흐름으로 이어집니다. 질문을 정하고, 안전하게 정리하고, 계산한 뒤, 보고와 템플릿으로 남깁니다.</div>
+    <div class="core">2주차는 데이터를 모으고 정리해 계산 가능한 표로 만드는 수업입니다. 분석과 시각화는 다음 차수에서 더 깊게 다룹니다.</div>
     <div class="content">
-      <h2>오늘 실습 진행판</h2>
+      <h2>2주차에서 실제로 하는 것</h2>
       <div class="stage-map">
-        <div class="stage active"><span class="tag">1</span><b>문제 정의</b><p>센터·과정·채널 중 무엇을 비교할지 질문 1개를 고릅니다.</p></div>
-        <div class="stage"><span class="tag">2</span><b>보안 처리</b><p>실명, 연락처, 계약번호, 민감 메모를 지우거나 샘플로 바꿉니다.</p></div>
-        <div class="stage"><span class="tag">3</span><b>전처리</b><p>날짜, 단위, 센터명, 누락·중복 후보를 표로 정리합니다.</p></div>
-        <div class="stage"><span class="tag">4</span><b>계산·피벗</b><p>전환율, 환불률, 정산률을 만들고 센터·채널 기준으로 접어봅니다.</p></div>
-        <div class="stage"><span class="tag">5</span><b>인사이트</b><p>비교, 변화, 리스크, 다음 액션 중 보고할 판단 1개를 고릅니다.</p></div>
-        <div class="stage"><span class="tag">6</span><b>제출</b><p>완성본, 캡처, 프롬프트, 막힌 지점 중 하나를 남깁니다.</p></div>
+        <div class="stage active"><span class="tag">1</span><b>질문 정하기</b><p>센터·과정·채널 중 무엇을 비교할지 업무 질문 1개를 고릅니다.</p></div>
+        <div class="stage"><span class="tag">2</span><b>안전한 샘플</b><p>원본을 올리지 않고, 민감 열을 지우거나 샘플값으로 바꿉니다.</p></div>
+        <div class="stage"><span class="tag">3</span><b>마스터 표 기준</b><p>날짜, 단위, 센터명, 누락·중복 후보를 같은 기준으로 정리합니다.</p></div>
+        <div class="stage"><span class="tag">4</span><b>계산·피벗</b><p>전환율, 환불률처럼 비교에 필요한 계산 열과 피벗 기준을 만듭니다.</p></div>
+        <div class="stage"><span class="tag">5</span><b>보고 초안</b><p>깊은 분석이 아니라, 계산 결과를 보고 문장 5개로 정리합니다.</p></div>
+        <div class="stage"><span class="tag">6</span><b>제출</b><p>완성본이 아니어도 캡처, 프롬프트, 막힌 단계 중 하나를 남깁니다.</p></div>
       </div>
-      <div class="grid4" style="margin-top:18px">
-        <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>1단계와 3단계의 재료를 만듭니다.</p><div class="result">질문 1개 + 열 설명표</div></div>
-        <div class="card"><span class="label">실습 2 · 15분</span><b>계산 열·피벗 설계</b><p>3단계와 4단계를 실제 표 기준으로 만듭니다.</p><div class="result">수식 1개 + 피벗 기준</div></div>
-        <div class="card"><span class="label">실습 3 · 12분</span><b>인사이트·보고서</b><p>5단계와 6단계를 보고 문장으로 마무리합니다.</p><div class="result">인사이트 1개 + 5문장 초안</div></div>
-        <div class="card"><span class="label">공통 준비 · 3분</span><b>보안 샘플 만들기</b><p>실습 전에 원본을 올리지 않고 안전한 샘플로 바꾸는 기준을 적용합니다.</p><div class="result">익명화 기준 + 샘플 1개</div></div>
+      <div class="grid3" style="margin-top:18px">
+        <div class="card"><span class="label">실습 1 · 10분</span><b>데이터 구조 읽기</b><p>CSV를 AI에 붙여 넣고 열 의미, 확인 필요 항목, 분석 질문을 뽑습니다.</p></div>
+        <div class="card"><span class="label">실습 2 · 15분</span><b>계산 열·피벗 기준</b><p>전환율·환불률 같은 계산 열을 만들고, 센터·채널 기준으로 접어봅니다.</p></div>
+        <div class="card"><span class="label">실습 3 · 12분</span><b>보고 문장 만들기</b><p>표에서 보이는 차이를 결론, 근거, 확인 필요, 다음 액션으로 정리합니다.</p></div>
       </div>
-      <p class="notice" style="margin-top:18px">90분 운영: 오프닝 10분 · 핵심 개념 20분 · 실습 45분 · 전환/질의 10분 · 최종 제출 5분. 막혔다면 완성본 대신 현재 단계까지 남깁니다.</p>
+      <p class="notice" style="margin-top:18px">오늘은 “정리와 계산 가능한 표 만들기”가 중심입니다. 차트·대시보드와 외부 리서치는 3차수·4차수에서 확장합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>실습 전체 지도</span></div>
-  </section>
-
-<section class="slide" data-title="예상 결과물">
-    <div class="top"><span>실습 안내</span><span>예상 결과물</span></div>
-    <div class="core">오늘 실습의 결과물은 하나의 완성 보고서가 아니라, 다음 업무에 다시 붙여 쓸 수 있는 작은 작업 패키지입니다.</div>
-    <div class="content">
-      <h2>실습 후 결과물 패키지</h2>
-      <div class="stage-strip"><span>질문</span><span>전처리</span><span>계산·피벗</span><span class="on">결과물</span><span>제출</span></div>
-      <table>
-        <thead>
-          <tr><th>언제</th><th>결과물</th><th>무엇을 담나</th><th>제출 형태</th><th>다음에 쓰는 곳</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><b>실습 1</b></td><td>열 설명표</td><td>센터, 매출, 정산금액, 상담신청수, 등록수의 의미와 확인 필요 항목</td><td>AI 결과 표 캡처 또는 질문 1개</td><td>분석 질문 정하기</td></tr>
-          <tr><td><b>실습 2</b></td><td>계산·피벗 기준</td><td>전환율 공식, 표본 검산 결과, 행·열·값·필터의 피벗 설계</td><td>수식 1개 + 피벗 기준 1개</td><td>3차수 분석·차트의 기준</td></tr>
-          <tr><td><b>실습 3</b></td><td>5문장 보고서</td><td>결론, 숫자 근거, 리스크, 추가 확인, 다음 액션</td><td>보고서 초안 또는 막힌 지점</td><td>팀장 공유용 업무 문장</td></tr>
-          <tr><td><b>공통 준비</b></td><td>보안 샘플·템플릿</td><td>원본 분리, 민감 열 삭제, 값 치환, 재사용 프롬프트</td><td>익명화 예시 또는 템플릿</td><td>실제 업무 적용 기준</td></tr>
-        </tbody>
-      </table>
-      <div class="grid3" style="margin-top:16px">
-        <div class="card"><span class="label">최소 제출</span><b>하나만 올려도 됨</b><p>완성본이 아니어도 캡처, 표 일부, 프롬프트 중 하나면 됩니다.</p></div>
-        <div class="card"><span class="label">막혔을 때</span><b>막힌 단계 제출</b><p>“CSV 붙여넣기에서 막힘”, “수식 검산에서 막힘”처럼 남깁니다.</p></div>
-        <div class="card"><span class="label">좋은 제출</span><b>질문 + 근거</b><p>질문과 고른 이유를 남기면 다음 차수의 차트·대시보드 재료가 됩니다.</p></div>
-      </div>
-      <p class="notice" style="margin-top:16px">오늘 결과물은 정답지가 아니라 다음 업무에 다시 쓸 작업 기준입니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>예상 결과물</span></div>
   </section>
 
 <section class="slide" data-title="바인그룹 데이터">
@@ -1023,20 +1035,6 @@
     <div class="footer"><div class="progress"><span style="width:15%"></span></div><span>04 / 26</span></div>
   </section>
 
-<section class="slide" data-title="오늘의 목표">
-    <div class="top"><span>목표</span><span>03 / 26</span></div>
-    <div class="core">만족도 문항에 “예, 할 수 있다”고 답할 수 있도록 결과물을 남깁니다.</div>
-    <div class="content">
-      <h2>오늘 끝나면 손에 남는 것</h2>
-      <div class="grid4">
-        <div class="card"><span class="label">01</span><b>업무 질문 1개</b><p>센터·과정·채널 중 무엇을 비교할지 정합니다.</p></div>
-        <div class="card"><span class="label">02</span><b>마스터 표 기준</b><p>여러 파일을 붙일 때 필요한 출처, 키, 표준값을 정합니다.</p></div>
-        <div class="card"><span class="label">03</span><b>계산·피벗 설계</b><p>전환율·환불률을 만들고 센터·채널 기준으로 봅니다.</p></div>
-        <div class="card"><span class="label">04</span><b>5문장 보고 초안</b><p>결론, 숫자 근거, 리스크, 다음 액션을 짧게 남깁니다.</p></div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:12%"></span></div><span>03 / 26</span></div>
-  </section>
 
 
 <section class="slide" data-title="1차수 복습" data-sec="3">
@@ -1159,29 +1157,31 @@
     <div class="content">
       <h2>미니 실습 0. 오늘 볼 질문 고르기</h2>
       <div class="stage-strip"><span class="on">문제 정의</span><span>데이터 읽기</span><span>전처리</span><span>분석</span><span>제출</span></div>
-      <div class="guide">
-        <div class="mock-screen">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mock-title">내 업무 질문 메모</span></div>
-          <div class="mock-body">
-            <div class="chat-row"><div class="avatar">Q</div><div class="bubble">어느 센터·과정·채널을 먼저 개선해야 할까?</div></div>
-            <div class="chat-row"><div class="avatar">Q</div><div class="bubble">상담은 많은데 등록으로 이어지지 않는 구간은 어디일까?</div></div>
-            <div class="chat-row"><div class="avatar">Q</div><div class="bubble">후기와 문의에서 반복되는 불편은 무엇일까?</div></div>
-            <div class="formula">오늘 제출 최소 기준: 내가 보고 싶은 질문 1개</div>
-          </div>
+      <div class="grid3">
+        <div class="card step" data-step="1">
+          <span class="label">비교 대상</span>
+          <b>무엇을 나눠 볼까요?</b>
+          <p>센터, 과정, 채널, 월 중 하나를 고릅니다.</p>
+          <div class="result">예: 센터별 / 채널별</div>
         </div>
-        <div class="guide-panel">
-          <span class="time-chip"><strong>2분</strong> 지금 손 움직이기</span>
-          <h3>하나씩 따라 하기</h3>
-          <ol class="guide-steps">
-            <li>세 가지 예시 중 내 업무와 가장 가까운 것을 고릅니다.</li>
-            <li>“무엇을 비교할지”를 정합니다. 예: 센터, 과정, 채널, 월.</li>
-            <li>“어떤 지표를 볼지”를 정합니다. 예: 매출, 등록수, 전환율, 문의수.</li>
-            <li>질문을 한 문장으로 씁니다.</li>
-            <li>채팅에 질문 한 줄을 남깁니다.</li>
-          </ol>
+        <div class="card step" data-step="2">
+          <span class="label">확인 지표</span>
+          <b>어떤 숫자를 볼까요?</b>
+          <p>매출, 등록수, 전환율, 환불률, 문의수를 고릅니다.</p>
+          <div class="result">예: 상담 대비 등록 전환율</div>
+        </div>
+        <div class="card step" data-step="3">
+          <span class="label">업무 판단</span>
+          <b>그래서 뭘 결정할까요?</b>
+          <p>개선할 센터, 집중할 채널, 확인할 리스크를 정합니다.</p>
+          <div class="result">예: 다음 달 우선 점검 채널</div>
         </div>
       </div>
-      <p class="notice" style="margin-top:18px">지금 질문을 정해두면 뒤의 데이터 유형, 전처리, 도구 선택이 “왜 필요한지” 바로 연결됩니다.</p>
+      <div class="story-note" style="margin-top:18px">
+        <strong>2분 액션</strong>
+        <p>“나는 [센터/과정/채널]별로 [전환율/환불률/문의수]를 비교해서 [다음 액션]을 정하고 싶다.” 한 문장으로 적어둡니다.</p>
+      </div>
+      <p class="notice" style="margin-top:14px">지금 질문을 정해두면 뒤의 데이터 유형, 전처리, 도구 선택이 왜 필요한지 바로 연결됩니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>미니 실습 0</span></div>
   </section>
@@ -1346,34 +1346,11 @@
     <div class="footer"><div class="progress"><span></span></div><span>역할 분담</span></div>
   </section>
 
-<section class="slide" data-title="도구 역할">
-    <div class="top"><span>도구 선택</span><span>07 / 26</span></div>
-    <div class="core">도구를 하나만 고르는 것이 아니라, 역할을 나눠 쓰면 실수가 줄어듭니다.</div>
-    <div class="content">
-      <h2>도구는 대등하지 않습니다. 역할의 위계가 있습니다</h2>
-      <div class="role-orbit">
-        <div class="role-capsule">
-          <div class="brand">AI DESIGN LAYER</div>
-          <div class="role-lens">
-            <b>ChatGPT</b>
-            <p>파일 전체 구조를 읽고 열 의미, 전처리 후보, 계산 열, 피벗 기준, 보고서 문장 초안을 설계합니다.</p>
-          </div>
-          <div class="role-lens">
-            <b>Gemini</b>
-            <p>Google Sheets 안에서 문의·후기 같은 여러 행을 같은 기준으로 반복 분류하고 요약합니다.</p>
-          </div>
-          <div class="role-middle"><span>EXECUTION</span><b>Excel<br>/ Sheets</b></div>
-          <div class="role-bottom">Excel과 Sheets는 AI가 제안한 수식과 피벗을 실제 표에 적용하고, 표본 3~4행을 검산하는 실행·검증 레이어입니다.</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:27%"></span></div><span>07 / 26</span></div>
-  </section>
-
 <section class="slide" data-title="GPT Gemini 선택">
     <div class="top"><span>도구 선택</span><span>ChatGPT vs Gemini</span></div>
     <div class="core">어떤 AI가 더 좋은지가 아니라, 지금 작업이 “파일 전체를 읽는 일”인지 “시트 안에서 반복하는 일”인지 먼저 봅니다.</div>
     <div class="content">
+      <h2>ChatGPT와 Gemini, 언제 무엇을 쓸까</h2>
       <div class="current-future">
         <div class="cf-title"><b>ChatGPT vs Gemini</b><span>파일 전체 설계와 시트 반복 처리의 차이</span></div>
         <div class="cf-side left">
@@ -1399,44 +1376,6 @@
     <div class="footer"><div class="progress"><span></span></div><span>도구 선택</span></div>
   </section>
 
-<section class="slide" data-title="AI UI 역할">
-    <div class="top"><span>도구 화면</span><span>ChatGPT / Gemini</span></div>
-    <div class="core">수강생이 헷갈리는 지점은 기능명이 아니라 “어디에 넣고, 어디서 결과를 보는지”입니다.</div>
-    <div class="content">
-      <h2>화면으로 보는 역할 차이</h2>
-      <div class="ai-duo">
-        <div>
-          <div class="ai-window">
-            <div class="ai-head"><div class="ai-brand"><span class="ai-mark">GPT</span>ChatGPT</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-            <div class="ai-layout">
-              <div class="ai-side"><span class="active"></span><span></span><span></span><span></span></div>
-              <div class="ai-thread">
-                <div class="ai-msg user"><b>나</b>CSV 파일을 보고 열 의미와 분석 질문을 먼저 정리해줘.<span class="file-chip">센터별_월간운영.csv</span></div>
-                <div class="ai-msg ai"><b>ChatGPT</b><span class="type-line long"></span><span class="type-line mid"></span><span class="type-line short"></span></div>
-                <div class="ai-input">메시지 입력 또는 파일 첨부 <span class="ai-send"></span></div>
-              </div>
-            </div>
-          </div>
-          <div class="ui-caption"><strong>오늘의 쓰임</strong><p>파일 전체 구조 읽기, 전처리 기준 만들기, 분석 결과를 보고서 문장으로 정리할 때 씁니다.</p></div>
-        </div>
-        <div>
-          <div class="ai-window gemini-ui">
-            <div class="ai-head gemini-head"><div class="ai-brand"><span class="ai-mark gemini">G</span>Gemini in Sheets</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-            <div class="ai-layout">
-              <div class="ai-thread">
-                <div class="sheet-mini"><div class="bar"></div><div class="bar green"></div><div class="bar"></div><div class="bar gold"></div></div>
-                <div class="ai-input">=AI("이 문의를 주제별로 분류해줘", A2) <span class="ai-send"></span></div>
-                <div class="ai-msg ai"><b>결과</b>환불 안내 / 상담 일정 / 수업 난이도처럼 셀 단위로 분류합니다.</div>
-              </div>
-              <div class="ai-side"><span class="active"></span><span></span><span></span><span></span><span></span></div>
-            </div>
-          </div>
-          <div class="ui-caption"><strong>오늘의 쓰임</strong><p>이미 시트 안에 있는 여러 행을 반복 분류하거나 요약할 때 씁니다. 숫자 검산은 시트에서 확인합니다.</p></div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>도구 화면</span></div>
-  </section>
 
 <section class="slide" data-title="Google Sheets Gemini">
     <div class="top"><span>구글 시트</span><span>16 / 37</span></div>
@@ -1460,52 +1399,7 @@
     <div class="footer"><div class="progress"><span style="width:43%"></span></div><span>16 / 37</span></div>
   </section>
 
-<section class="slide" data-title="AI 분석 주의사항">
-    <div class="top"><span>주의사항</span><span>08 / 32</span></div>
-    <div class="core">실습으로 넘어가기 전에, 업무 데이터에서 절대 놓치면 안 되는 안전 기준을 먼저 확인합니다.</div>
-    <div class="content">
-      <h2>실습 전 안전 체크리스트</h2>
-      <div class="checklist">
-        <div class="check"><div class="box"></div><div><b>개인정보 제거</b><p>실명, 연락처, 주민번호, 계약번호, 상세 주소를 삭제했는가?</p></div></div>
-        <div class="check"><div class="box"></div><div><b>샘플 데이터 사용</b><p>처음 테스트는 실제 파일이 아니라 구조가 같은 가짜 데이터로 했는가?</p></div></div>
-        <div class="check"><div class="box"></div><div><b>단위 확인</b><p>원/만원, 건수/비율, 월/분기 기준이 섞이지 않았는가?</p></div></div>
-        <div class="check"><div class="box"></div><div><b>수식 검산</b><p>AI가 준 수식을 표본 3~4행에 먼저 적용해 맞는지 확인했는가?</p></div></div>
-        <div class="check"><div class="box"></div><div><b>단정 표현 수정</b><p>“원인이다” 대신 “가능성이 있다/확인 필요”로 표현했는가?</p></div></div>
-        <div class="check"><div class="box"></div><div><b>원본 보존</b><p>원본 파일과 AI가 정리한 파일을 분리해 저장했는가?</p></div></div>
-      </div>
-      <p class="notice" style="margin-top:18px">핵심: AI에게 정리를 맡기되, 업무 기준과 수치는 반드시 사람이 검수합니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:29%"></span></div><span>08 / 32</span></div>
-  </section>
 
-<section class="slide" data-title="보안 체크리스트">
-    <div class="top"><span>보안</span><span>19 / 37</span></div>
-    <div class="core">개인 계정에 회사 원본 파일을 통째로 올리는 방식은 피하고, 샘플과 익명화부터 시작합니다.</div>
-    <div class="content">
-      <h2>회사 데이터, 넣어도 되나?</h2>
-      <div class="grid2">
-        <div class="card">
-          <b>기본 원칙</b>
-          <ul>
-            <li>고객 개인정보와 사내 기밀이 담긴 원본 파일은 업로드하지 않습니다.</li>
-            <li>회사 계정의 Workspace Gemini나 승인된 AI 도구라도 사규 확인이 먼저입니다.</li>
-            <li>방법만 배우는 단계에서는 구조가 같은 가짜 샘플 3~4행으로 질문합니다.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <b>체크리스트</b>
-          <ul>
-            <li>[ ] 내 환경이 ChatGPT 웹/앱인지, Google Workspace인지 확인</li>
-            <li>[ ] 무료 계정 업로드 가능 범위 확인</li>
-            <li>[ ] 실명, 연락처, 계약번호, 상세 매출 제거</li>
-            <li>[ ] AI가 준 수식은 표본 3~4행 검산 후 전체 적용</li>
-            <li>[ ] 반복 업무 1개를 골라 프롬프트 템플릿으로 저장</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span style="width:51%"></span></div><span>19 / 37</span></div>
-  </section>
 
 <section class="slide" data-title="보안 데이터 How-to">
     <div class="top"><span>공통 준비</span><span>보안 샘플</span></div>
@@ -1544,45 +1438,6 @@
     <div class="footer"><div class="progress"><span></span></div><span>공통 준비 · 보안 샘플</span></div>
   </section>
 
-<section class="slide" data-title="1분 환기">
-    <div class="top"><span>미니 실습</span><span>3분</span></div>
-    <div class="core">보안 기준을 확인했다면, 실제 데이터 대신 안전한 샘플로 바꾸는 문장을 먼저 만듭니다.</div>
-    <div class="content">
-      <h2>3분 환기. 안전한 샘플로 바꾸기</h2>
-      <div class="stage-strip"><span>읽기</span><span class="warn">보안 처리</span><span>전처리</span><span>분석</span><span>제출</span></div>
-      <div class="grid2">
-        <div class="card focus-red">
-          <span class="label">그대로 올리면 안 되는 예</span>
-          <b>원본 고객/상담 파일</b>
-          <ul>
-            <li>실명, 연락처, 주민번호, 계약번호</li>
-            <li>상세 주소, 결제 정보, 민감한 상담 내용</li>
-            <li>외부 공개 불가 매출·계약 조건</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="label">수업에서 쓰는 방식</span>
-          <b>구조가 같은 가짜 샘플</b>
-          <ul>
-            <li>이름 → 수강생A, 고객001</li>
-            <li>연락처 → 삭제</li>
-            <li>정확한 매출 → 임의 숫자 또는 구간값</li>
-          </ul>
-        </div>
-      </div>
-      <div class="guide-panel" style="margin-top:18px">
-        <h3>하나씩 따라 하기</h3>
-        <ol class="guide-steps">
-          <li>내가 올리려는 표에 실명·연락처가 있는지 봅니다.</li>
-          <li>민감한 열은 삭제하거나 가짜 값으로 바꿉니다.</li>
-          <li>AI에는 “구조가 같은 샘플 데이터”라고 설명합니다.</li>
-          <li>아래 프롬프트를 복사해 새 대화에 붙여 넣을 준비를 합니다.</li>
-        </ol>
-        <div class="prompt-mini">실제 고객 정보는 제외하고 구조가 같은 샘플 데이터로 연습하려고 해. 아래 표를 기준으로 어떤 열을 익명화해야 하는지 체크리스트로 알려줘.</div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>미니 실습 · 샘플화</span></div>
-  </section>
 
 <section class="slide" data-title="개인정보 익명화">
     <div class="top"><span>공통 준비</span><span>개인정보</span></div>
@@ -1624,37 +1479,6 @@
 
 
 
-<section class="slide" data-title="실습 시작 체크">
-    <div class="top"><span>실습 준비</span><span>O / X 체크</span></div>
-    <div class="core">데이터 유형과 도구·보안 기준을 확인했다면, 이제 엑셀/시트와 ChatGPT를 켜고 따라올 준비를 확인합니다.</div>
-    <div class="content">
-      <h2>지금 바로 따라올 준비가 되었나요?</h2>
-      <div class="ox-grid">
-        <div class="ox-card ok">
-          <div class="ox-mark">O</div>
-          <b>준비 완료</b>
-          <p>엑셀 또는 구글 시트와 ChatGPT 창을 함께 열어두고, 샘플 데이터를 복사할 준비가 된 상태입니다.</p>
-          <div class="ox-list">
-            <span>엑셀/구글 시트 화면이 열려 있음</span>
-            <span>ChatGPT 새 대화창이 열려 있음</span>
-            <span>강사 화면을 보며 같은 순서로 따라갈 수 있음</span>
-          </div>
-        </div>
-        <div class="ox-card no">
-          <div class="ox-mark">X</div>
-          <b>아직 준비 전</b>
-          <p>괜찮습니다. 지금은 설치나 계정 문제를 해결하기보다 강사 화면을 보며 흐름을 먼저 따라옵니다.</p>
-          <div class="ox-list">
-            <span>엑셀/시트가 없으면 강사 화면으로만 따라오기</span>
-            <span>ChatGPT 접속이 안 되면 프롬프트만 복사해두기</span>
-            <span>실습 결과 대신 막힌 지점을 제출해도 됨</span>
-          </div>
-        </div>
-      </div>
-      <p class="notice" style="margin-top:18px">O인 분은 바로 실습으로 들어가고, X인 분은 강사 화면을 보며 프롬프트와 순서만 먼저 익힙니다.</p>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>O / X 체크</span></div>
-  </section>
 
 <section class="slide section" data-title="실습 1 간지" data-sec="1">
     <div class="content">
@@ -2079,47 +1903,6 @@
     <div class="footer"><div class="progress"><span style="width:54%"></span></div><span>14 / 26</span></div>
   </section>
 
-<section class="slide" data-title="실습 2 UI">
-    <div class="top"><span>실습 2</span><span>화면 따라하기</span></div>
-    <div class="core">실습 2는 AI에게 공식을 “만들어 달라”가 아니라, 왜 그 공식이 맞는지 설명하게 한 뒤 시트에서 검산하는 단계입니다.</div>
-    <div class="content">
-      <h2>화면에서 할 일: 공식 받고 표본 검산</h2>
-      <div class="stage-strip"><span>AI 공식</span><span class="warn">표본 검산</span><span class="on">계산 열</span><span>피벗 기준</span><span>제출</span></div>
-      <div class="real-ui-grid">
-        <div class="real-chatgpt">
-          <div class="real-top">
-            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT / Gemini</span></div>
-            <div class="real-avatar">김</div>
-          </div>
-          <div class="real-center">
-            <h3>공식을 받기 전에 “검산 방법”까지 요청합니다</h3>
-            <div class="real-input-dark">
-              <div class="real-placeholder">전환율, 환불률, 정산률 계산식을 만들고<br>첫 3행으로 검산 방법까지 알려줘.</div>
-              <div class="real-input-actions"><span class="real-chip-dark">계산 열</span><span class="real-chip-dark">검산</span><span class="real-chip-dark">피벗</span></div>
-              <div class="real-send-dark">↑</div>
-            </div>
-          </div>
-          <div class="real-result-box">
-            <b>AI가 내야 할 결과</b>
-            <p>전환율 = 등록수 ÷ 상담신청수 · 환불률 = 환불건수 ÷ 등록수 · 정산률 = 정산금액 ÷ 매출</p>
-          </div>
-        </div>
-        <div class="ai-window gemini-ui">
-          <div class="ai-head gemini-head"><div class="ai-brand"><span class="ai-mark gemini">S</span>Excel / Google Sheets</div><div class="ai-actions"><span class="ai-action"></span><span class="ai-action"></span><span class="ai-action"></span></div></div>
-          <div class="ai-thread">
-            <table class="sheet">
-              <thead><tr><th>상담</th><th>등록</th><th>환불</th><th>전환율</th><th>검산</th></tr></thead>
-              <tbody><tr><td>37</td><td>12</td><td>1</td><td>32.4%</td><td>12÷37</td></tr><tr><td>18</td><td>14</td><td>0</td><td>77.8%</td><td>14÷18</td></tr></tbody>
-            </table>
-            <div class="ai-msg ai"><b>확인</b>AI가 준 공식은 첫 2~3행만 손으로 계산해 맞는지 확인한 뒤 전체 적용합니다.</div>
-            <div class="ai-input">피벗 기준: 행=센터, 열=월, 값=전환율 <span class="ai-send"></span></div>
-          </div>
-        </div>
-      </div>
-      <div class="ui-caption"><strong>중요</strong><p>이 장표의 목적은 수식을 외우는 것이 아니라, AI가 만든 계산 기준을 사람이 표본 검산하고 피벗 기준으로 연결하는 것입니다.</p></div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>실습 2 UI</span></div>
-  </section>
 
 <section class="slide" data-title="실습 2 실행 가이드">
     <div class="top"><span>실습 2</span><span>실행</span></div>
@@ -2279,17 +2062,19 @@
 
 <section class="slide" data-title="실습 3 질문">
     <div class="top"><span>실습 3</span><span>17 / 26</span></div>
-    <div class="core">분석은 차트를 많이 만드는 일이 아니라, 답해야 할 질문을 좁히는 일입니다.</div>
+    <div class="core">분석은 차트를 많이 만드는 일이 아니라, 오늘 보고할 판단 질문 하나를 고르는 일입니다.</div>
     <div class="content">
-      <h2>좋은 분석 질문 만들기</h2>
-      <div class="stage-strip"><span>비교</span><span>변화</span><span>분포</span><span>관계</span><span class="on">액션</span></div>
-      <div class="grid3">
-        <div class="card"><b>비교</b><p>센터별로 매출과 전환율은 어떻게 다른가?</p></div>
-        <div class="card"><b>변화</b><p>월별로 상담신청과 등록수가 같이 움직이는가?</p></div>
-        <div class="card"><b>원인 후보</b><p>문의는 많은데 등록이 낮은 채널은 어디인가?</p></div>
-        <div class="card"><b>우선순위</b><p>다음 달에 먼저 점검할 센터와 채널은 어디인가?</p></div>
-        <div class="card"><b>리스크</b><p>환불률이 높은 구간은 어느 과정인가?</p></div>
-        <div class="card"><b>액션</b><p>상담 스크립트나 광고 소재를 바꿔야 할 곳은 어디인가?</p></div>
+      <h2>실습 3에서 답할 질문 하나만 고릅니다</h2>
+      <div class="stage-strip"><span>계산 결과</span><span class="on">질문 선택</span><span>차트 선택</span><span>보고 문장</span><span>제출</span></div>
+      <div class="grid4">
+        <div class="card step" data-step="1"><span class="label">비교</span><b>어디가 다른가?</b><p>센터별 매출과 전환율이 어떻게 다른지 봅니다.</p></div>
+        <div class="card step" data-step="2"><span class="label">변화</span><b>무엇이 달라졌나?</b><p>월별 상담신청수와 등록수가 같이 움직이는지 봅니다.</p></div>
+        <div class="card step" data-step="3"><span class="label">리스크</span><b>어디를 확인해야 하나?</b><p>환불률이 높거나 전환율이 낮은 구간을 찾습니다.</p></div>
+        <div class="card step" data-step="4"><span class="label">액션</span><b>다음에 뭘 바꿀까?</b><p>광고, 상담, 과정 운영 중 우선 조정할 지점을 고릅니다.</p></div>
+      </div>
+      <div class="story-note" style="margin-top:18px">
+        <strong>바로 쓸 문장</strong>
+        <p>“나는 이번 데이터에서 [비교/변화/리스크/액션]을 확인하고, [센터/과정/채널] 기준으로 다음 조치를 정하고 싶다.”</p>
       </div>
     </div>
     <div class="footer"><div class="progress"><span style="width:65%"></span></div><span>17 / 26</span></div>
@@ -2339,51 +2124,6 @@
     <div class="footer"><div class="progress"><span style="width:69%"></span></div><span>18 / 26</span></div>
   </section>
 
-<section class="slide" data-title="실습 3 UI">
-    <div class="top"><span>실습 3</span><span>화면 따라하기</span></div>
-    <div class="core">실습 3은 AI가 낸 숫자 설명을 그대로 믿는 시간이 아니라, 보고할 문장으로 바꾸며 검수하는 시간입니다.</div>
-    <div class="content">
-      <h2>화면에서 할 일: 인사이트를 보고서로 바꾸기</h2>
-      <div class="stage-strip"><span>피벗 결과</span><span class="on">발견점</span><span class="warn">단정 검수</span><span class="on">5문장</span><span>제출</span></div>
-      <div class="real-ui-grid">
-        <div class="real-chatgpt">
-          <div class="real-top">
-            <div class="real-brand"><span class="real-icon-btn">☰</span><span class="real-icon-btn">✎</span><span>ChatGPT 보고서 초안</span></div>
-            <div class="real-avatar">김</div>
-          </div>
-          <div class="real-center">
-            <h3>피벗 결과를 “보고 문장”으로 바꿉니다</h3>
-            <div class="real-input-dark">
-              <div class="real-placeholder">센터·채널별 결과를 보고<br>결론, 근거, 리스크, 다음 액션, 요청사항 5문장으로 정리해줘.</div>
-              <div class="real-input-actions"><span class="real-chip-dark">결론</span><span class="real-chip-dark">근거</span><span class="real-chip-dark">액션</span></div>
-              <div class="real-send-dark">↑</div>
-            </div>
-          </div>
-          <div class="real-result-box">
-            <b>나올 결과</b>
-            <p>“상담은 높지만 등록 전환이 낮다”처럼 숫자 근거와 다음 확인 질문이 붙은 보고 문장</p>
-          </div>
-        </div>
-        <div class="guide-panel">
-          <h3>검수해서 바꿀 문장</h3>
-          <div class="story-note" style="margin-bottom:10px">
-            <strong>나쁜 문장</strong>
-            <p>광고 채널은 효과가 없습니다.</p>
-          </div>
-          <div class="story-note" style="margin-bottom:10px">
-            <strong>좋은 문장</strong>
-            <p>광고 채널은 상담신청은 높지만 등록 전환율이 낮아, 상담 품질 또는 대상자 적합도 확인이 필요합니다.</p>
-          </div>
-          <ol class="guide-steps">
-            <li>단정 표현을 줄입니다.</li>
-            <li>숫자 근거를 붙입니다.</li>
-            <li>다음 확인 질문을 남깁니다.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-    <div class="footer"><div class="progress"><span></span></div><span>실습 3 UI</span></div>
-  </section>
 
 <section class="slide" data-title="실습 3 실행 가이드">
     <div class="top"><span>실습 3</span><span>실행 순서</span></div>
@@ -2642,13 +2382,20 @@ AI에게 요청할 일:
   const next = document.querySelector('.next');
   let current = 0;
   let activeSection = '1';
+  function fitDeck(){
+    if(window.innerWidth <= 620){
+      document.documentElement.style.setProperty('--deck-scale', '1');
+      return;
+    }
+    const scale = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    document.documentElement.style.setProperty('--deck-scale', String(scale));
+  }
   function sectionFor(title, index){
     const t = title || '';
     if(index <= 10 || t.includes('사전') || t.includes('청사진') || t.includes('목표') || t.includes('방향')) return 'intro';
     if(t.includes('데이터 종류') || t.includes('데이터 유형') || t.includes('전처리') || t.includes('설명서') || t.includes('프레임워크') || t.includes('리터러시')) return 'data';
     if(t.includes('AI와 사람') || t.includes('도구') || t.includes('GPT') || t.includes('Gemini') || t.includes('Google') || t.includes('보안') || t.includes('개인정보') || t.includes('체크')) return 'tool';
     if(t.includes('실습 1') || t.includes('샘플 데이터') || t.includes('CSV 복사')) return 'p1';
-    if(t.includes('실습 2') || t.includes('취합') || t.includes('피벗') || t.includes('검산')) return 'p2';
     if(t.includes('실습 3') || t.includes('차트') || t.includes('보고서')) return 'p3';
     if(t.includes('제출') || t.includes('Padlet') || t.includes('마무리') || t.includes('다음 차수') || t.includes('템플릿') || t.includes('리스크')) return 'submit';
     return 'data';
@@ -2720,6 +2467,7 @@ AI에게 요청할 일:
     if(updateHash && location.hash !== nextHash) location.hash = nextHash;
   }
   window.show = show;
+  window.addEventListener('resize', fitDeck);
   window.addEventListener('hashchange', () => show(readHashIndex(), false));
   prev.addEventListener('click', () => show(current - 1));
   next.addEventListener('click', () => show(current + 1));
@@ -2736,6 +2484,7 @@ AI에게 요청할 일:
       setTimeout(() => { button.textContent = before; }, 1200);
     });
   });
+  fitDeck();
   show(readHashIndex(), false);
 </script>
 </body>
