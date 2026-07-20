@@ -81,6 +81,7 @@
     .arrow{font-size:36px;font-weight:950;color:var(--blue);text-align:center}
     .step{position:relative}
     .step:before{content:attr(data-step);display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:950;margin-bottom:12px}
+    .step-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--soft-blue);border:1px solid #c8daec;color:var(--blue);font-size:22px;font-weight:950;margin:0 0 12px 10px;vertical-align:top}
     .focus-red{border:3px solid var(--red);box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
     .focus-red:before{background:var(--red)}
     .timeline{display:grid;gap:8px}
@@ -233,7 +234,8 @@
     .section .check p{color:#465366}
     .section .check b{color:var(--ink)}
     .source-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .source-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:var(--shadow)}
+    .source-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;padding:52px 16px 16px;box-shadow:var(--shadow)}
+    .source-card .source-num{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:950}
     .source-card b{display:block;font-size:18px;margin-bottom:8px;color:var(--ink)}
     .source-card p{font-size:13px;line-height:1.4}
     .framework-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
@@ -275,7 +277,16 @@
     .story-note{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
     .story-note strong{font-size:17px;color:var(--blue)}
     .story-note p{font-size:13px;line-height:1.4}
-    .survey-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    .survey-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:stretch}
+    .survey-insight{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+    .survey-insight .headline{display:block;font-size:32px;line-height:1.17;color:var(--ink);font-weight:950;margin-bottom:14px}
+    .survey-insight p{font-size:15px;line-height:1.45;margin-bottom:14px}
+    .survey-tags{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+    .survey-tag{border:1px solid #d6e2ee;background:#f8fbff;border-radius:10px;padding:12px}
+    .survey-tag strong{display:block;color:var(--blue);font-size:12px;margin-bottom:5px}
+    .survey-tag span{color:#2d3b4e;font-size:14px;font-weight:900;line-height:1.25}
+    .survey-scoreboard{display:grid;gap:10px}
+    .survey-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .survey-stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
     .survey-stat .num{display:block;font-size:40px;line-height:1;color:var(--blue);font-weight:950;margin-bottom:10px}
     .survey-stat b{display:block;font-size:18px;line-height:1.22;color:var(--ink);margin-bottom:8px}
@@ -286,6 +297,9 @@
     .meter .track{height:9px;border-radius:999px;background:#dfe8f1;overflow:hidden}
     .meter .fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green))}
     .meter em{font-style:normal;font-size:12px;font-weight:950;color:#5f6e80;text-align:right}
+    .survey-bottom{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center;margin-top:16px;border-left:6px solid var(--blue);background:var(--soft-blue);border-radius:0 10px 10px 0;padding:15px 18px}
+    .survey-bottom strong{color:var(--blue);font-size:15px}
+    .survey-bottom p{font-size:15px;line-height:1.4;color:#253043;font-weight:900}
     .survey-map{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
     .survey-map .map-card{display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;box-shadow:var(--shadow)}
     .survey-map .map-card strong{font-size:15px;color:var(--blue)}
@@ -313,6 +327,33 @@
     .tree-node strong{font-size:14px;color:var(--blue)}
     .tree-node b{display:block;font-size:18px;color:var(--ink);margin-bottom:4px}
     .tree-node p{font-size:12.5px;line-height:1.35}
+    .data-bridge{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;align-items:stretch}
+    .bridge-panel{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow);min-height:250px}
+    .bridge-panel.soft{background:#f7fafc}
+    .bridge-panel.active{border:3px solid var(--red);background:#fff8f6;box-shadow:0 0 0 6px rgba(200,76,58,.12),var(--shadow)}
+    .bridge-panel .eyebrow{display:block;font-size:12px;font-weight:950;color:var(--blue);letter-spacing:.08em;margin-bottom:12px}
+    .bridge-panel b{display:block;font-size:27px;line-height:1.18;color:var(--ink);margin-bottom:12px}
+    .bridge-panel p{font-size:14px;line-height:1.42}
+    .question-stack{display:grid;gap:9px;margin-top:16px}
+    .question-chip{border:1px solid #d6e1ec;background:#fff;border-radius:9px;padding:10px 12px;color:#5e6b7a;font-size:13px;font-weight:900}
+    .data-stack{display:grid;gap:9px;margin-top:14px}
+    .data-row{display:grid;grid-template-columns:88px 1fr;gap:10px;align-items:center;border:1px solid #d8e3ef;background:#fff;border-radius:10px;padding:10px 12px}
+    .data-row strong{color:var(--blue);font-size:13px}
+    .data-row span{color:#354256;font-size:14px;font-weight:850}
+    .bridge-arrow{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--blue);color:#fff;font-size:28px;font-weight:950;margin:0 auto 16px}
+    .bridge-bottom{margin-top:18px;border-left:6px solid var(--green);background:var(--soft-green);border-radius:0 10px 10px 0;padding:15px 18px}
+    .bridge-bottom strong{display:block;color:#1b705d;font-size:14px;margin-bottom:5px}
+    .bridge-bottom p{color:#273648;font-size:18px;font-weight:950;line-height:1.35}
+    .voc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    .voc-card{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+    .voc-person{position:relative;width:48px;height:48px;border-radius:14px;background:var(--soft-blue);border:1px solid #c8daec;flex:0 0 auto}
+    .voc-person:before{content:"";position:absolute;left:15px;top:9px;width:16px;height:16px;border-radius:50%;background:var(--blue)}
+    .voc-person:after{content:"";position:absolute;left:10px;bottom:8px;width:26px;height:15px;border-radius:14px 14px 6px 6px;background:var(--blue)}
+    .voc-bubble{position:relative;border:1px solid #d8e3ef;background:#f8fbff;border-radius:12px;padding:13px 14px}
+    .voc-bubble:before{content:"";position:absolute;left:-8px;top:18px;width:14px;height:14px;background:#f8fbff;border-left:1px solid #d8e3ef;border-bottom:1px solid #d8e3ef;transform:rotate(45deg)}
+    .voc-bubble strong{display:block;color:var(--blue);font-size:13px;margin-bottom:7px}
+    .voc-bubble b{display:block;font-size:18px;line-height:1.2;color:var(--ink);margin-bottom:7px}
+    .voc-bubble p{font-size:12.5px;line-height:1.36}
     .profile-grid{display:grid;grid-template-columns:34% 1fr;gap:34px;align-items:center}
     .profile-photo{height:410px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
     .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
@@ -332,7 +373,7 @@
       .profile-photo{height:345px}.profile-grid{gap:24px}.profile-text h2{font-size:42px}.profile-text .lead{font-size:18px;margin-bottom:14px}.plain-panel{padding:16px}.plain-panel li{font-size:12px;line-height:1.42}
     }
     @media(max-width:1100px){
-      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
+      .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.grid2,.guide,.privacy-grid,.roadmap,.concept-split,.data-bridge,.survey-layout,.voc-grid{grid-template-columns:1fr}.flow,.flow.wide{grid-template-columns:1fr}.arrow{display:none}.row{grid-template-columns:76px 1fr}.row em{display:none}.definition-grid,.toc-grid,.visual-pipeline,.process7,.stage-map,.stage-strip,.checklist,.source-strip,.tool-choice{grid-template-columns:1fr}.stage:after{display:none}.handoff{grid-template-columns:1fr}.handoff .go{display:none}.roadmap-item{grid-template-columns:1fr}.roadmap-hero{min-height:0}
       .ai-duo{grid-template-columns:1fr}.ai-window.gemini-ui .ai-layout,.ai-layout{grid-template-columns:1fr}.ai-side{display:none}.profile-grid,.two-col{grid-template-columns:1fr}.profile-photo{height:360px}
     }
     @media(max-width:620px){
@@ -342,9 +383,11 @@
       h1{font-size:42px}h2{font-size:30px}h3{font-size:18px}p,li{font-size:13px}.grid4,.grid3,.grid2{grid-template-columns:1fr}.card{padding:16px}.cover .content,.section .content{inset:9% 8%;overflow:visible}.cover p{font-size:18px}.meta{display:block;font-size:14px}.side-nav{display:none}.section h2{font-size:42px}.section p{font-size:17px}.section-map span{font-size:12px}
       table{font-size:11px}th,td{padding:7px 8px}.code{max-height:none}
       .flow.wide .card{padding:12px}.flow.wide .card b{font-size:17px;margin-bottom:4px}.flow.wide .card p{font-size:12px;line-height:1.35}.step:before{width:28px;height:28px;margin-bottom:7px}
+      .step-icon{width:34px;height:34px;font-size:17px;margin-left:6px}
       .timeline{gap:4px}.row{padding:6px 0;gap:8px}.row strong{font-size:14px}.row p{font-size:11px;line-height:1.35}
       .notice{font-size:12px;line-height:1.4;padding:12px 14px}
       .mock-screen{min-height:0}.mock-body{min-height:0}.padlet-mock{grid-template-columns:1fr}.guide-steps li{font-size:13px}.mini-index{display:none}.toc-card{min-height:0}.safe-item{grid-template-columns:1fr}
+      .bridge-panel{min-height:0}.bridge-panel b{font-size:22px}.bridge-bottom p{font-size:15px}.data-row{grid-template-columns:1fr}.survey-tags,.survey-stats,.survey-bottom{grid-template-columns:1fr}.survey-insight .headline{font-size:24px}.meter{grid-template-columns:1fr}.meter em{text-align:left}.voc-card{grid-template-columns:44px 1fr}.voc-person{width:40px;height:40px}.voc-person:before{left:13px;top:8px;width:13px;height:13px}.voc-person:after{left:9px;bottom:7px;width:22px;height:13px}
       .ai-window{min-height:0}.ai-thread{min-height:0}.ai-msg{max-width:100%}.ui-caption{grid-template-columns:1fr}
     }
   </style>
@@ -377,8 +420,6 @@
             <div class="plain-panel">
               <h3>주요 경력</h3>
               <ul>
-                <li>팀스파르타 AX 튜터</li>
-                <li>카카오뱅크 X FIN:NECT AI 트랙 강사</li>
                 <li>SK 임직원 대상 AX·AI 실무 적용 교육</li>
                 <li>기아 임직원 대상 AI 업무 활용 교육</li>
                 <li>서울대병원 문서·보고서 실습형 AI 교육</li>
@@ -405,32 +446,38 @@
     <div class="top"><span>오늘 배울 내용</span><span>2주차</span></div>
     <div class="core">AI 모델을 고르는 것보다 먼저 해야 할 일은, AI가 읽을 수 있는 데이터를 확보하고 정리하는 것입니다.</div>
     <div class="content">
-      <h2>순서가 바뀌었습니다. 모델보다 <span class="accent">데이터</span>가 먼저입니다</h2>
-      <div class="decision-formula">
-        <div class="part"><span>Input</span><b>Right Data</b><p>흩어진 매출표, 상담 기록, 후기, 문의를 업무 질문에 맞게 모읍니다.</p></div>
-        <div class="part"><span>Process</span><b>AI + Sheet</b><p>ChatGPT·Gemini는 구조 파악과 정리 후보를 돕고, Excel/Sheets는 계산과 검산을 맡습니다.</p></div>
-        <div class="part"><span>Output</span><b>Work Decision</b><p>센터·과정·채널 중 무엇을 먼저 볼지 판단할 수 있는 표와 문장을 남깁니다.</p></div>
+      <h2>AI 성과를 가르는 질문이 <span class="accent">바뀌었습니다</span></h2>
+      <div class="data-bridge">
+        <div class="bridge-panel soft">
+          <span class="eyebrow">BEFORE</span>
+          <b>어떤 AI를 써야 할까?</b>
+          <p>많은 경우 출발점이 도구 선택이나 프롬프트 문장에 머뭅니다.</p>
+          <div class="question-stack">
+            <div class="question-chip">ChatGPT가 나을까, Gemini가 나을까?</div>
+            <div class="question-chip">프롬프트를 어떻게 써야 할까?</div>
+            <div class="question-chip">자동화 툴을 더 붙여야 할까?</div>
+          </div>
+        </div>
+        <div class="bridge-panel active">
+          <span class="eyebrow">TODAY'S SHIFT</span>
+          <div class="bridge-arrow">→</div>
+          <b>AI가 읽을 수 있는 재료가 먼저입니다</b>
+          <p>모델은 재료를 보고 답합니다. 업무 데이터가 흩어져 있거나 기준이 다르면 좋은 AI도 판단할 근거가 부족합니다.</p>
+        </div>
+        <div class="bridge-panel">
+          <span class="eyebrow">AFTER</span>
+          <b>내 데이터는 바로 분석 가능한가?</b>
+          <div class="data-stack">
+            <div class="data-row"><strong>확보</strong><span>매출표·상담·후기·문의가 어디 있는가</span></div>
+            <div class="data-row"><strong>취합</strong><span>센터·과정·채널·월 기준으로 모을 수 있는가</span></div>
+            <div class="data-row"><strong>정리</strong><span>빈칸·중복·단위·개인정보를 걸러냈는가</span></div>
+            <div class="data-row"><strong>활용</strong><span>표와 문장으로 의사결정에 연결되는가</span></div>
+          </div>
+        </div>
       </div>
-      <div class="grid3" style="margin-top:18px">
-        <div class="card focus-red">
-          <span class="label">오늘 생겨야 할 고민</span>
-          <b>데이터를 어떻게 확보하지?</b>
-          <p>내 업무의 숫자와 기록이 어디에 흩어져 있는지 먼저 떠올립니다.</p>
-        </div>
-        <div class="card">
-          <span class="label">2주차 핵심</span>
-          <b>어떻게 취합하지?</b>
-          <p>센터, 과정, 채널, 월처럼 서로 다른 자료가 만날 기준을 정합니다.</p>
-        </div>
-        <div class="card">
-          <span class="label">다음 차수 연결</span>
-          <b>어떻게 깔끔하게 만들지?</b>
-          <p>빈칸, 중복, 단위, 날짜, 개인정보를 정리해야 분석과 시각화가 가능합니다.</p>
-        </div>
-      </div>
-      <div class="story-note" style="margin-top:18px">
-        <strong>강의 연결 문장</strong>
-        <p>“오늘은 어떤 AI가 더 좋은지 비교하는 시간이 아닙니다. 내 업무 데이터를 AI가 읽을 수 있는 상태로 만드는 순서를 배우는 시간입니다.”</p>
+      <div class="bridge-bottom">
+        <strong>다음 페이지로 넘기는 질문</strong>
+        <p>그래서 오늘의 첫 질문은 “AI를 어떻게 쓰나?”가 아니라 “왜 데이터가 중요한가?”입니다.</p>
       </div>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>2주차 방향</span></div>
@@ -445,11 +492,11 @@
         <p>영상이나 자료를 저장해두는 것만으로는 일이 바뀌지 않습니다. 업무 환경으로 옮기고, 정리하고, 바로 써봐야 내 역량이 됩니다.</p>
       </div>
       <div class="flow wide" style="margin-top:18px">
-        <div class="card step" data-step="1"><b>저장</b><p>좋은 사례, 링크, 영상, 파일을 그냥 흘려보내지 않습니다.</p></div>
-        <div class="card step" data-step="2"><b>옮기기</b><p>휴대폰·메신저에 있는 자료를 PC 업무 환경으로 가져옵니다.</p></div>
-        <div class="card step" data-step="3"><b>분류</b><p>AI 폴더, 실습 폴더, 데이터 표로 다시 찾을 수 있게 둡니다.</p></div>
-        <div class="card step" data-step="4"><b>바로 실행</b><p>미루지 않고 ChatGPT·Gemini에 넣어 결과를 확인합니다.</p></div>
-        <div class="card step focus-red" data-step="5"><b>남기기</b><p>프롬프트, 결과, 막힌 지점을 저장해 다음 업무 템플릿으로 씁니다.</p></div>
+        <div class="card step" data-step="1"><span class="step-icon">↓</span><b>저장</b><p>좋은 사례, 링크, 영상, 파일을 그냥 흘려보내지 않습니다.</p></div>
+        <div class="card step" data-step="2"><span class="step-icon">PC</span><b>옮기기</b><p>휴대폰·메신저에 있는 자료를 PC 업무 환경으로 가져옵니다.</p></div>
+        <div class="card step" data-step="3"><span class="step-icon">▦</span><b>분류</b><p>AI 폴더, 실습 폴더, 데이터 표로 다시 찾을 수 있게 둡니다.</p></div>
+        <div class="card step" data-step="4"><span class="step-icon">▶</span><b>바로 실행</b><p>미루지 않고 ChatGPT·Gemini에 넣어 결과를 확인합니다.</p></div>
+        <div class="card step focus-red" data-step="5"><span class="step-icon">✓</span><b>남기기</b><p>프롬프트, 결과, 막힌 지점을 저장해 다음 업무 템플릿으로 씁니다.</p></div>
       </div>
       <p class="source-note">참고: Notion 페이지 “다들 순서가 틀렸어요”와 원본 영상의 핵심 메시지를 바인그룹 데이터 수업용으로 재구성했습니다.</p>
     </div>
@@ -461,19 +508,37 @@
     <div class="core">사전 설문에서 확인한 병목은 도구 부족보다 데이터 취합, 형식 통일, 비교와 보고의 반복입니다.</div>
     <div class="content">
       <h2>사전 설문에서 보인 오늘의 출발점</h2>
-      <div class="survey-stats">
-        <div class="survey-stat"><span class="num">9/9</span><b>엑셀·시트 사용</b><p>응답자 전원이 Excel 또는 Google Sheets를 업무 데이터의 기본 도구로 사용합니다.</p></div>
-        <div class="survey-stat"><span class="num">6명</span><b>정기 취합·보고 반복</b><p>정기 데이터 취합, 정기 보고서 작성, 파일 정리·병합이 가장 많이 반복됩니다.</p></div>
-        <div class="survey-stat"><span class="num">5명</span><b>비교·원인 분석이 병목</b><p>단순 집계보다 “왜 차이가 나는지” 비교하고 설명하는 과정에서 시간이 많이 듭니다.</p></div>
-        <div class="survey-stat"><span class="num">4명</span><b>보안·개인정보 우려</b><p>고객 정보와 사내 자료를 그대로 AI에 넣기 어렵다는 제약이 반복적으로 나왔습니다.</p></div>
+      <div class="survey-layout">
+        <div class="survey-insight">
+          <span class="headline">도구는 이미 쓰고 있습니다.<br>병목은 “정리된 데이터”입니다.</span>
+          <p>응답자 전원이 엑셀 또는 시트를 사용하고 있었지만, 반복 업무는 취합·비교·보고에 몰려 있었습니다.</p>
+          <p>따라서 오늘 수업은 새로운 도구 소개보다, 기존 업무 데이터를 AI가 읽을 수 있는 구조로 바꾸는 데 초점을 둡니다.</p>
+          <div class="survey-tags">
+            <div class="survey-tag"><strong>반복 업무</strong><span>정기 취합, 보고서, 파일 병합</span></div>
+            <div class="survey-tag"><strong>분석 병목</strong><span>비교, 원인 설명, 기준 통일</span></div>
+            <div class="survey-tag"><strong>운영 제약</strong><span>개인정보, 사내 자료 보안</span></div>
+            <div class="survey-tag"><strong>오늘 목표</strong><span>안전하게 정리하고 검산하기</span></div>
+          </div>
+        </div>
+        <div class="survey-scoreboard">
+          <div class="survey-stats">
+            <div class="survey-stat"><span class="num">9/9</span><b>엑셀·시트 사용</b><p>업무 데이터의 기본 도구는 이미 갖춰져 있습니다.</p></div>
+            <div class="survey-stat"><span class="num">6명</span><b>취합·보고 반복</b><p>정기 데이터 취합과 보고서 작성이 반복됩니다.</p></div>
+            <div class="survey-stat"><span class="num">5명</span><b>비교 분석 병목</b><p>차이의 원인을 설명하는 과정에서 시간이 듭니다.</p></div>
+            <div class="survey-stat"><span class="num">4명</span><b>보안 우려</b><p>고객 정보와 사내 자료를 그대로 올리기 어렵습니다.</p></div>
+          </div>
+          <div class="meter-list">
+            <div class="meter"><b>엑셀 기본 정리</b><div class="track"><span class="fill" style="width:73%"></span></div><em>3.67</em></div>
+            <div class="meter"><b>피벗·차트</b><div class="track"><span class="fill" style="width:36%"></span></div><em>1.78</em></div>
+            <div class="meter"><b>오류·누락 점검</b><div class="track"><span class="fill" style="width:49%"></span></div><em>2.44</em></div>
+            <div class="meter"><b>AI 분석·요약</b><div class="track"><span class="fill" style="width:56%"></span></div><em>2.78</em></div>
+          </div>
+        </div>
       </div>
-      <div class="meter-list">
-        <div class="meter"><b>엑셀 기본 정리</b><div class="track"><span class="fill" style="width:73%"></span></div><em>3.67/5</em></div>
-        <div class="meter"><b>피벗·차트</b><div class="track"><span class="fill" style="width:36%"></span></div><em>1.78/5</em></div>
-        <div class="meter"><b>오류·누락 점검</b><div class="track"><span class="fill" style="width:49%"></span></div><em>2.44/5</em></div>
-        <div class="meter"><b>AI 분석·요약</b><div class="track"><span class="fill" style="width:56%"></span></div><em>2.78/5</em></div>
+      <div class="survey-bottom">
+        <strong>강의 반영</strong>
+        <p>고급 분석보다 먼저, 흩어진 자료를 안전하게 정리하고 AI가 읽을 수 있게 만드는 방법에 집중합니다.</p>
       </div>
-      <p class="notice" style="margin-top:16px">그래서 오늘은 고급 분석보다 먼저, “흩어진 자료를 안전하게 정리하고 AI가 읽을 수 있게 만드는 방법”에 집중합니다.</p>
     </div>
     <div class="footer"><div class="progress"><span></span></div><span>사전 설문</span></div>
   </section>
@@ -483,11 +548,11 @@
     <div class="core">오늘 실습은 수강생이 사전 설문에 적어준 실제 고민을 하나씩 해결하도록 설계했습니다.</div>
     <div class="content">
       <h2>사전 질문을 오늘 실습으로 연결하면</h2>
-      <div class="survey-map">
-        <div class="map-card"><strong>요구 01</strong><div><b>여러 파일·시스템에서 자료를 모으기 어렵다</b><p>실습 1에서 출처, 열 의미, 기준 키를 먼저 정리합니다. 결과물은 열 설명표와 취합 기준입니다.</p></div></div>
-        <div class="map-card"><strong>요구 02</strong><div><b>매출·정산·회원 데이터를 비교해야 한다</b><p>실습 2에서 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다. 결과물은 계산 열과 피벗 기준입니다.</p></div></div>
-        <div class="map-card"><strong>요구 03</strong><div><b>보고서와 대시보드까지 자동화하고 싶다</b><p>실습 3에서 표를 보고 인사이트 문장과 보고서 초안을 만듭니다. 결과물은 5문장 보고 초안입니다.</p></div></div>
-        <div class="map-card"><strong>요구 04</strong><div><b>개인정보 때문에 실제 데이터를 올리기 어렵다</b><p>보안 파트에서 원본 보존, 익명화, 가짜 샘플 생성, 표본 검산 순서를 다룹니다.</p></div></div>
+      <div class="voc-grid">
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 01</strong><b>“여러 파일과 시스템에서 자료를 모으기 어렵습니다.”</b><p>실습 1에서 출처, 열 의미, 기준 키를 먼저 정리합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 02</strong><b>“매출·정산·회원 데이터를 비교해야 합니다.”</b><p>실습 2에서 전환율, 환불률, 월별·센터별 피벗 기준을 설계합니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 03</strong><b>“보고서와 대시보드까지 자동화하고 싶습니다.”</b><p>실습 3에서 표를 보고 인사이트 문장과 보고서 초안을 만듭니다.</p></div></div>
+        <div class="voc-card"><div class="voc-person"></div><div class="voc-bubble"><strong>VOC 04</strong><b>“개인정보 때문에 실제 데이터를 올리기 어렵습니다.”</b><p>보안 파트에서 원본 보존, 익명화, 가짜 샘플 생성 순서를 다룹니다.</p></div></div>
       </div>
       <div class="story-note" style="margin-top:16px">
         <strong>강의 연결 문장</strong>
