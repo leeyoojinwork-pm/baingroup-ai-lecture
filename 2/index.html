@@ -663,12 +663,28 @@
     .voc-bubble strong{display:block;color:var(--blue);font-size:13px;margin-bottom:7px}
     .voc-bubble b{display:block;font-size:18px;line-height:1.2;color:var(--ink);margin-bottom:7px}
     .voc-bubble p{font-size:12.5px;line-height:1.36}
-    .profile-grid{display:grid;grid-template-columns:34% 1fr;gap:34px;align-items:center}
-    .profile-photo{height:410px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .profile-grid{display:grid;grid-template-columns:1.45fr .95fr;gap:42px;align-items:stretch}
+    .profile-main{display:grid;grid-template-columns:250px 1fr;grid-template-rows:auto 1fr auto;gap:24px 34px}
+    .profile-photo{height:300px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
     .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-    .profile-text .eyebrow{font-size:13px;font-weight:950;color:var(--blue);letter-spacing:.08em;margin-bottom:12px}
-    .profile-text h2{font-size:58px;margin-bottom:10px}
-    .profile-text .lead{font-size:23px;line-height:1.35;color:#4f5d6f;font-weight:900;margin-bottom:22px}
+    .profile-head{padding-top:14px}
+    .profile-head h2{font-size:72px;line-height:1;margin-bottom:24px;letter-spacing:-.02em}
+    .profile-title{display:inline-block;min-width:500px;background:#18243a;color:#fff;border-radius:8px;padding:11px 18px;font-size:22px;line-height:1.2;font-weight:850;margin-bottom:24px}
+    .profile-desc{max-width:590px;font-size:20px;line-height:1.48;color:#687589;font-weight:700}
+    .career-panel{grid-column:1 / -1;background:#132039;color:#fff;border-radius:10px;padding:34px 38px;border-left:8px solid #4c88ff;box-shadow:var(--shadow)}
+    .career-panel .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .career-panel h3{font-size:32px;color:#fff}
+    .career-panel .tag{font-size:14px;letter-spacing:.08em;color:#a9c8ff;font-weight:950}
+    .career-panel li{font-size:20px;line-height:1.56;color:#eef5ff;margin-bottom:9px}
+    .career-panel li::marker{color:#79adff}
+    .profile-email{grid-column:1 / -1;color:#3d4a5d;font-size:17px;font-weight:850}
+    .profile-side{display:grid;grid-template-rows:1fr .68fr;gap:22px}
+    .profile-card{background:#fff;border:1px solid #d8e3ef;border-radius:16px;padding:30px 34px;box-shadow:var(--shadow)}
+    .profile-card .card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .profile-card h3{font-size:30px;line-height:1.1;color:var(--ink)}
+    .profile-card .badge{border-radius:999px;background:#edf5ff;color:#2f6fce;padding:8px 20px;font-size:14px;font-weight:950}
+    .profile-card li{font-size:19px;line-height:1.55;margin-bottom:10px;color:#253044}
+    .profile-card li::marker{color:#3f7fe8}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .plain-panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow)}
     .plain-panel h3{font-size:23px;margin-bottom:10px}
@@ -747,25 +763,49 @@
 
 <section class="slide" data-title="강사 소개">
     <div class="top"><span>시작 안내</span><span>02 / 40</span></div>
-    <div class="core">도구 설명보다 실무 산출물로 연결하는 강의입니다.</div>
     <div class="content">
       <div class="profile-grid">
-        <div class="profile-photo"><img src="images/instructor_yujin.jpg" alt="이유진 강사 프로필 사진"></div>
-        <div class="profile-text">
-          <p class="eyebrow">강사 소개</p>
-          <h2>이유진</h2>
-          <p class="lead">AX Consultant / Product Manager</p>
-          <div class="two-col">
-            <div class="plain-panel">
+        <div class="profile-main">
+          <div class="profile-photo"><img src="images/instructor_yujin.jpg" alt="이유진 강사 프로필 사진"></div>
+          <div class="profile-head">
+            <h2>이유진</h2>
+            <div class="profile-title">AX Consultant / Product Manager</div>
+            <p class="profile-desc">기업 현업 과제를 AX·AI 실습 산출물로 전환하는 교육을 설계하고, Product Management 관점으로 업무 적용까지 연결합니다.</p>
+          </div>
+          <div class="career-panel">
+            <div class="panel-head">
               <h3>주요 경력</h3>
-              <ul>
-                <li>SK 임직원 대상 AX·AI 실무 적용 교육</li>
-                <li>기아 임직원 대상 AI 업무 활용 교육</li>
-                <li>서울대병원 문서·보고서 실습형 AI 교육</li>
-              </ul>
+              <span class="tag">PM · AX · Enterprise Education</span>
             </div>
-            <div class="plain-panel">
+            <ul>
+              <li>現 AI 에듀테크 스타트업 PM</li>
+              <li>前 공공기관·페이먼츠 플랫폼 도메인 PM</li>
+              <li>SK, 기아, 서울대병원 등 주요 조직 대상 AX·AI 실무 적용 교육</li>
+              <li>카카오뱅크, 기아 등 주요 기업 임직원 대상 AX·AI 실무 적용 강의 및 멘토링</li>
+            </ul>
+          </div>
+          <div class="profile-email">Email&nbsp;&nbsp;lee.yoojin.work@gmail.com</div>
+        </div>
+        <div class="profile-side">
+          <div class="profile-card">
+            <div class="card-head">
+              <h3>대표 AI·AX 프로젝트</h3>
+              <span class="badge">AI · AX 중심</span>
+            </div>
+            <ul>
+              <li>카카오뱅크 FIN:NECT AI 서비스 기획·BM 강의</li>
+              <li>기아 등 주요 기업 임직원 AX·AI 업무 적용 교육</li>
+              <li>공공기관 AI센터 결제·운영·정산 플랫폼 설계</li>
+              <li>AI 에듀테크 서비스 기획 및 교육 커리큘럼 운영</li>
+              <li>빅데이터 기반 AI 추천 서비스 기획·MVP 설계</li>
+              <li>AI 아이디어톤·해커톤 문제정의·발표 멘토링</li>
+            </ul>
+          </div>
+          <div class="profile-card">
+            <div class="card-head">
               <h3>전문 분야</h3>
+              <span class="badge">실습 중심</span>
+            </div>
               <ul>
                 <li>AI 실무 자동화</li>
                 <li>업무 문서 자동화</li>
@@ -773,7 +813,6 @@
                 <li>데이터 정리·보고서 자동화</li>
                 <li>실습형 커리큘럼 설계</li>
               </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -811,8 +850,8 @@
         </div>
         <div class="shift-card">
           <div class="shift-icon">✓</div>
-          <b>오늘의 목표는 기준 만들기</b>
-          <p>오늘은 “AI가 알아서 분석”이 아니라, 바인그룹 업무 데이터를 AI가 읽고 사람이 검산할 수 있는 기준으로 바꾸는 수업입니다.</p>
+          <b>오늘의 목표는 분석 가능한 데이터 구조 만들기</b>
+          <p>오늘은 “AI가 알아서 분석”이 아니라, 바인그룹 업무 데이터를 AI가 읽고 사람이 검산할 수 있는 표 구조로 바꾸는 수업입니다.</p>
           <ul>
             <li>마스터 표 기준</li>
             <li>전처리 체크리스트</li>
