@@ -1170,9 +1170,9 @@
       <div class="card">
         <b>연습용 샘플 데이터 전달 형식(예시)</b>
         <div class="code" style="margin-top:12px"><pre>sample/00_원본자료
-  ├─ 00_RAW_매출실적_가상.csv
-  ├─ 00_RAW_상담전환_가상.csv
-  ├─ 00_RAW_후기문의_가상.txt
+  ├─ 00_RAW_매출실적_가상.xlsx
+  ├─ 00_RAW_상담전환_가상.xlsx
+  ├─ 00_RAW_후기문의_가상.xlsx
   └─ 00_RAW_운영공유_가상.xlsx
 
 sample/01_AI정리결과
@@ -1194,7 +1194,7 @@ sample/01_AI정리결과
         <div class="card">
           <b>강의 운영 방식</b>
           <p>수강생에게는 <strong>팀스파르타 바인그룹 2주차 강의 멘토링용 가라데이터 ZIP(원본+공유)</strong> 1개를 제공합니다. 압축 해제 후 이 구조 그대로 실습하면 됩니다.</p>
-          <p><a href="data/teamsparta_baingroup_week2_gara_data.zip" download>가라데이터 ZIP 내려받기</a></p>
+          <p><a href="data/teamsparta_baingroup_week2_gara_data.zip" download>가라데이터 ZIP 내려받기 · xlsx 포함</a></p>
           <p class="notice" style="margin-top:12px">핵심은 파일 위치(폴더/시트)와 채널/기준값을 먼저 고정하는 것입니다.</p>
         </div>
       </div>
@@ -1440,7 +1440,7 @@ sample/01_AI정리결과
           <span class="label">샘플 데이터</span>
           <b>연습 데이터 내려받기</b>
           <p><a class="download-link" href="data/teamsparta_baingroup_week2_gara_data.zip" download>샘플데이터.zip 다운로드</a></p>
-          <p class="mini">실습 1과 2에서 바로 쓸 수 있는 연습용 데이터입니다.</p>
+          <p class="mini">한글 깨짐 방지를 위해 원본 CSV와 함께 Excel(.xlsx) 파일을 포함했습니다.</p>
         </div>
 
         <div class="card">
@@ -1493,7 +1493,7 @@ sample/01_AI정리결과
   </section>
 
 <section class="slide" data-title="전처리 실습">
-    <div class="top"><span>실습</span><span><a class="download-link" href="data/teamsparta_baingroup_week2_gara_data.zip" download>가라데이터.zip 다운로드</a></span></div>
+    <div class="top"><span>실습</span><span><a class="download-link" href="data/teamsparta_baingroup_week2_gara_data.zip" download>가라데이터.zip 다운로드 · xlsx 포함</a></span></div>
     <div class="core">연습용 샘플을 열어 바로 손으로 전처리 과정을 한 번 실행합니다.</div>
     <div class="content">
 
@@ -1775,10 +1775,10 @@ sample/01_AI정리결과
       <h2>실습 파일을 내려받아 시작합니다</h2>
       <div class="grid2">
         <div class="card file-download-card">
-          <span class="label">CSV · 연습용 샘플 데이터</span>
-          <b>00_RAW_매출실적_가상.csv</b>
+          <span class="label">Excel · 연습용 샘플 데이터</span>
+          <b>00_RAW_매출실적_가상.xlsx</b>
           <p>월·센터·과정·채널별 매출, 상담신청수, 등록수, 환불건수가 들어 있는 실습용 원본입니다.</p>
-          <a class="file-download-button" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.csv" download>실습 파일 다운로드</a>
+          <a class="file-download-button" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.xlsx" download>실습 파일 다운로드</a>
         </div>
         <div class="card">
           <span class="label">사용 순서</span>
@@ -1801,7 +1801,7 @@ sample/01_AI정리결과
     <div class="content">
       <h2>데이터 구조 읽기 프롬프트</h2>
       <div class="stage-strip"><span>데이터 입력</span><span class="on">프롬프트 실행</span><span>열 설명</span><span>질문 선택</span><span>결과 확인</span></div>
-      <div class="code"><button class="copy">복사</button><pre>업로드한 00_RAW_매출실적_가상.csv는 바인그룹 교육/코칭센터의 월별 매출과 상담 데이터 샘플입니다.
+      <div class="code"><button class="copy">복사</button><pre>업로드한 00_RAW_매출실적_가상.xlsx는 바인그룹 교육/코칭센터의 월별 매출과 상담 데이터 샘플입니다.
 분석을 시작하기 전에 먼저 데이터 구조를 읽고 정리해줘.
 
 요청:
@@ -1848,9 +1848,9 @@ sample/01_AI정리결과
           <ol class="guide-steps">
             <li>브라우저에서 ChatGPT를 엽니다.</li>
             <li>새 대화 화면을 엽니다.</li>
-            <li>강의안에서 실습용 CSV 파일을 내려받습니다.</li>
+            <li>강의안에서 실습용 Excel 파일을 내려받습니다.</li>
             <li>ChatGPT 입력창의 ＋ 버튼을 누릅니다.</li>
-            <li>내려받은 00_RAW_매출실적_가상.csv를 첨부합니다.</li>
+            <li>내려받은 00_RAW_매출실적_가상.xlsx를 첨부합니다.</li>
             <li>프롬프트 페이지의 복사 버튼을 누릅니다.</li>
             <li>파일이 첨부된 입력창에 프롬프트를 붙여넣습니다.</li>
             <li>전송 버튼을 누르고 결과 표를 확인합니다.</li>
@@ -1891,7 +1891,7 @@ sample/01_AI정리결과
               </div>
               <div class="gemini-suggestions"><span>이미지 만들기</span><span>글 작성</span><span>학습 도움 받기</span></div>
             </div>
-            <div class="gemini-bottom-card"><b>CSV 파일과 프롬프트를 함께 실행합니다</b><p>＋ 버튼으로 실습 파일을 첨부한 뒤 프롬프트를 붙여 결과 표를 확인합니다.</p></div>
+            <div class="gemini-bottom-card"><b>Excel 파일과 프롬프트를 함께 실행합니다</b><p>＋ 버튼으로 실습 파일을 첨부한 뒤 프롬프트를 붙여 결과 표를 확인합니다.</p></div>
           </div>
         </div>
         <div class="guide-panel">
@@ -1899,7 +1899,7 @@ sample/01_AI정리결과
           <ol class="guide-steps">
             <li>브라우저에서 Gemini를 엽니다.</li>
             <li>새 대화 입력창을 찾습니다.</li>
-            <li>강의안에서 실습용 CSV 파일을 내려받습니다.</li>
+            <li>강의안에서 실습용 Excel 파일을 내려받습니다.</li>
             <li>Gemini 입력창의 ＋ 버튼으로 파일을 첨부합니다.</li>
             <li>프롬프트를 복사해 파일과 함께 입력합니다.</li>
             <li>전송 버튼을 누릅니다.</li>
@@ -1973,7 +1973,7 @@ sample/01_AI정리결과
       <h2>실습 2에서 할 일</h2>
       <div class="stage-strip"><span>질문</span><span class="on">전처리</span><span class="on">계산 열</span><span class="on">피벗</span><span>인사이트</span></div>
       <div class="grid4">
-        <div class="card step" data-step="1"><b>실습 파일 열기</b><p>00_RAW_매출실적_가상.csv를 Excel 또는 Google Sheets로 엽니다.</p></div>
+        <div class="card step" data-step="1"><b>실습 파일 열기</b><p>00_RAW_매출실적_가상.xlsx를 Excel 또는 Google Sheets로 엽니다.</p></div>
         <div class="card step" data-step="2"><b>AI로 공식 요청</b><p>전환율, 환불률, 등록당 매출의 계산 공식을 요청합니다.</p></div>
         <div class="card step" data-step="3"><b>표본 검산</b><p>3~4행을 손으로 계산해 공식이 맞는지 봅니다.</p></div>
         <div class="card step" data-step="4"><b>피벗 기준 선택</b><p>행, 열, 값, 필터에 무엇을 넣을지 정합니다.</p></div>
@@ -1994,9 +1994,9 @@ sample/01_AI정리결과
       <div class="stage-strip"><span>파일 업로드</span><span class="on">계산 공식</span><span class="on">피벗 설계</span><span>파일 적용</span><span>표본 검산</span></div>
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px;padding:10px 14px;background:#eef5ff;border:1px solid #cbdcf0;border-radius:10px">
         <b style="font-size:15px;color:#284d78">먼저 실습 파일을 내려받아 AI에 업로드합니다.</b>
-        <a class="file-download-button" style="margin:0;padding:9px 14px;font-size:13px;flex:0 0 auto" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.csv" download>00_RAW_매출실적_가상.csv</a>
+        <a class="file-download-button" style="margin:0;padding:9px 14px;font-size:13px;flex:0 0 auto" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.xlsx" download>00_RAW_매출실적_가상.xlsx</a>
       </div>
-      <div class="code"><button class="copy">복사</button><pre>업로드한 00_RAW_매출실적_가상.csv는 바인그룹 교육/코칭센터의 월별 운영 데이터 샘플입니다.
+      <div class="code"><button class="copy">복사</button><pre>업로드한 00_RAW_매출실적_가상.xlsx는 바인그룹 교육/코칭센터의 월별 운영 데이터 샘플입니다.
 원본 파일은 수정하지 않고, Excel 또는 Google Sheets에 적용할 계산 열과 피벗 기준을 설계해줘.
 
 요청:
@@ -2105,12 +2105,12 @@ sample/01_AI정리결과
       <div class="stage-strip"><span class="on">데이터 받기</span><span>계산 열 확인</span><span>AI 업로드</span><span>인사이트 정리</span><span>Excel 저장</span></div>
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 16px;padding:13px 16px;background:#eef5ff;border:1px solid #cbdcf0;border-radius:10px">
         <b style="font-size:16px;color:#284d78">실습 2에서 저장한 파일이 없다면 원본 데이터를 다시 내려받으세요.</b>
-        <a class="file-download-button" style="margin:0;padding:10px 15px;font-size:13px;flex:0 0 auto" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.csv" download>실습 3 데이터 다운로드</a>
+        <a class="file-download-button" style="margin:0;padding:10px 15px;font-size:13px;flex:0 0 auto" href="data/teamsparta_baingroup_week2_gara_data/00_원본자료/00_RAW_매출실적_가상.xlsx" download>실습 3 데이터 다운로드</a>
       </div>
       <div class="grid4">
-        <div class="card step" data-step="1"><b>파일 열기</b><p>CSV를 Excel로 열고 원본 시트를 보존합니다.</p></div>
+        <div class="card step" data-step="1"><b>파일 열기</b><p>Excel 파일을 열고 원본 시트를 보존합니다.</p></div>
         <div class="card step" data-step="2"><b>계산 결과 확인</b><p>전환율, 환불률, 등록당 매출 열과 피벗 결과를 확인합니다.</p></div>
-        <div class="card step" data-step="3"><b>AI에 업로드</b><p>Excel 또는 CSV 파일과 다음 페이지의 프롬프트를 함께 넣습니다.</p></div>
+        <div class="card step" data-step="3"><b>AI에 업로드</b><p>Excel 파일과 다음 페이지의 프롬프트를 함께 넣습니다.</p></div>
         <div class="card step" data-step="4"><b>Excel로 저장</b><p>계산 데이터, 피벗 결과, 인사이트를 한 파일에 정리합니다.</p></div>
       </div>
       <div class="story-note" style="margin-top:18px">
