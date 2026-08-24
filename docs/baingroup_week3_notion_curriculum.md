@@ -49,7 +49,7 @@
 - `04_실습용_분석_대시보드_가상.xlsx`
 
 자료 ZIP:
-https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/public/data/teamsparta_baingroup_week3_gara_data.zip
+https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/data/teamsparta_baingroup_week3_excel_bundle.zip
 
 ## 실습 1. 분석 질문 정하기
 

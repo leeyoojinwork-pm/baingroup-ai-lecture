@@ -8,7 +8,7 @@
 
 - 3차수 노션 상세 페이지: https://teamsparta.notion.site/3-3a22dc3ef514803ebc18e53f5fd85f7c?source=copy_link
 - 3차수 HTML 강의안: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/3/
-- 3차수 실습 데이터 ZIP: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/data/teamsparta_baingroup_week3_gara_data.zip
+- 3차수 실습 데이터 ZIP: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/data/teamsparta_baingroup_week3_excel_bundle.zip
 - Padlet 제출 링크: https://padlet.com/biz14/ai-vpjmvr9t2l3dvkqd
 
 ## 게시물 제목
