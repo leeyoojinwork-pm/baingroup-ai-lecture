@@ -4,6 +4,13 @@
 
 3차수 Padlet은 완성도 평가가 아니라, 수강생이 **질문 → 피벗/차트 → 보고 문장** 흐름을 어디까지 연결했는지 남기는 작업 로그입니다.
 
+## 수업 링크
+
+- 3차수 노션 상세 페이지: https://teamsparta.notion.site/3-3a22dc3ef514803ebc18e53f5fd85f7c?source=copy_link
+- 3차수 HTML 강의안: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/3/
+- 3차수 실습 데이터 ZIP: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/data/teamsparta_baingroup_week3_gara_data.zip
+- Padlet 제출 링크: https://padlet.com/biz14/ai-vpjmvr9t2l3dvkqd
+
 ## 게시물 제목
 
 `3차수 | 이름 | 산출물 유형`
