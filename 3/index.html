@@ -217,7 +217,7 @@
   function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>s.classList.toggle('active',n===current));location.hash=String(current+1).padStart(2,'0')}
   addEventListener('resize',fit); addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(current+1);if(['ArrowLeft','PageUp'].includes(e.key))show(current-1)})
   addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace('#',''),10);if(n&&!Number.isNaN(n))show(n-1)})
-  fit(); const n=parseInt(location.hash.replace('#',''),10); if(n)show(n-1);
+  fit(); const n=parseInt(location.hash.replace('#',''),10); show(n&&!Number.isNaN(n)?n-1:0);
 </script>
 </body>
 </html>
