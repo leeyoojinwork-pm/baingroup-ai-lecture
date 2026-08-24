@@ -22,6 +22,7 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--blue);color:var(--blue);font-weight:900;padding:11px 14px;background:#fff}
     .btn.primary{background:var(--blue);color:#fff}
     .notice{margin-top:34px;padding:18px 20px;border-left:5px solid var(--green);background:#eefaf6;border-radius:12px;color:#315f54;font-weight:800}
+    .direct{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
     @media(max-width:900px){h1{font-size:40px}.grid{grid-template-columns:1fr}.lead{font-size:18px}}
   </style>
 </head>
@@ -60,7 +61,14 @@
       </article>
     </section>
 
-    <div class="notice">3차수 직접 링크: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/3/</div>
+    <div class="notice">
+      3차수 자료가 안 보이면 아래 직접 링크로 열어주세요.
+      <div class="direct">
+        <a class="btn primary" href="./3/">3차수 강의안 바로 열기</a>
+        <a class="btn" href="./week3/">3차수 예비 링크</a>
+        <a class="btn" href="./week3-ai-data-visualization.html">HTML 파일 직접 열기</a>
+      </div>
+    </div>
   </main>
 </body>
 </html>
