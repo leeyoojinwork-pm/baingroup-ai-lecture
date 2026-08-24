@@ -9,9 +9,9 @@
 
 ## 2. ChatGPT 또는 Gemini에 올리는 파일
 
-- `01_RAW_센터채널성과_가상.csv`
-- `02_RAW_수강후기문의_가상.csv`
-- `03_RAW_운영지표_가상.csv`
+- `01_RAW_center_channel_performance_sample.xlsx`
+- `02_RAW_feedback_inquiries_sample.xlsx`
+- `03_RAW_operations_metrics_sample.xlsx`
 
 처음부터 모두 올리지 말고, 01번 파일로 구조를 읽은 뒤 필요한 파일을 추가합니다.
 
@@ -40,7 +40,7 @@ Chrome에서 여는 순서:
 ## 4. 참고하면 좋은 파일
 
 - `09_인사이트_브리핑_모범예시.md`
-- `10_source_log_template.csv`
+- `10_source_log_template.xlsx`
 
 최종 제출 전에 모범 예시와 출처 로그를 확인합니다.
 

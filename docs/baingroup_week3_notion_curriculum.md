@@ -43,9 +43,9 @@
 
 예습 데이터는 한 파일이 아닐 수 있습니다. 매출/상담/후기/운영 자료처럼 여러 파일로 나뉘어 있으면, 먼저 파일별 역할과 연결 기준을 확인한 뒤 하나의 분석 질문으로 좁힙니다.
 
-- `01_RAW_센터채널성과_가상.csv`
-- `02_RAW_수강후기문의_가상.csv`
-- `03_RAW_운영지표_가상.csv`
+- `01_RAW_center_channel_performance_sample.xlsx`
+- `02_RAW_feedback_inquiries_sample.xlsx`
+- `03_RAW_operations_metrics_sample.xlsx`
 - `04_실습용_분석_대시보드_가상.xlsx`
 
 자료 ZIP:
@@ -56,7 +56,7 @@ https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/public/data/teamsparta_b
 **진행 순서**
 
 1. ChatGPT 또는 Gemini를 엽니다.
-2. `01_RAW_센터채널성과_가상.csv`를 먼저 올립니다.
+2. `01_RAW_center_channel_performance_sample.xlsx`를 먼저 올립니다.
 3. 아래 프롬프트를 붙여 넣습니다.
 4. 질문 후보 5개 중 오늘 풀 질문 1개를 고릅니다.
 5. 나온 질문과 추천 이유를 저장합니다.
