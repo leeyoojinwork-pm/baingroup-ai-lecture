@@ -24,7 +24,16 @@ const pages = {
 
 const images = {};
 if (existsSync("dist/3/images/instructor_yujin.jpg")) {
-  images["/3/images/instructor_yujin.jpg"] = readFileSync("dist/3/images/instructor_yujin.jpg").toString("base64");
+  images["/3/images/instructor_yujin.jpg"] = {
+    contentType: "image/jpeg",
+    body: readFileSync("dist/3/images/instructor_yujin.jpg").toString("base64"),
+  };
+}
+if (existsSync("dist/3/images/gemini_ask_button.png")) {
+  images["/3/images/gemini_ask_button.png"] = {
+    contentType: "image/png",
+    body: readFileSync("dist/3/images/gemini_ask_button.png").toString("base64"),
+  };
 }
 
 writeFileSync(
@@ -51,8 +60,8 @@ export default {
     }
 
     if (Object.prototype.hasOwnProperty.call(images, pathname)) {
-      return new Response(base64ToBytes(images[pathname]), {
-        headers: { "content-type": "image/jpeg", "cache-control": "public, max-age=31536000" },
+      return new Response(base64ToBytes(images[pathname].body), {
+        headers: { "content-type": images[pathname].contentType, "cache-control": "public, max-age=31536000" },
       });
     }
 
