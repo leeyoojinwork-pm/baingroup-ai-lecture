@@ -1,6 +1,12 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 
 mkdirSync("dist/server", { recursive: true });
+
+for (const path of ["1", "2", "3", "404.html"]) {
+  if (existsSync(path)) {
+    cpSync(path, `dist/${path}`, { recursive: true });
+  }
+}
 
 writeFileSync(
   "dist/server/index.js",
