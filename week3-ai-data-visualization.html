@@ -321,17 +321,53 @@
     <div class="route"><span class="">INTRO</span><span class="">DATA</span><span class="on">PRACTICE 1</span><span class="">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
     <div class="footer"><div class="bar"><span style="width:64%"></span></div><span>35 / 55</span></div>
   </section>
-<section class="slide section" data-title="PRACTICE 02">
+  <section class="slide compact" data-title="계산 열과 피벗 차이">
+    <div class="top"><span>PRACTICE 2</span><span>36 / 56</span></div>
+    <div style="padding-top:32px">
+      <h2 style="font-size:46px;margin-bottom:14px">계산 열은 숫자를 만들고, 피벗은 기준별로 묶어 비교합니다.</h2>
+      <p class="tagline" style="font-size:19px;margin-bottom:20px">같은 표를 보더라도 “새 지표를 만들 것인지”, “기준별로 요약할 것인지”가 다릅니다.</p>
+      <div class="grid2" style="grid-template-columns:1fr 1fr;gap:22px">
+        <div class="card" style="padding:26px;min-height:355px">
+          <span class="pill">1. 계산 열</span>
+          <h3 style="font-size:30px;margin:16px 0 10px">행마다 비교용 숫자를 추가합니다</h3>
+          <p style="font-size:18px;margin-bottom:18px">원본 표 오른쪽에 상담 전환율, 등록 전환율, 환불률처럼 판단에 필요한 새 열을 만듭니다.</p>
+          <div style="background:#f8fbff;border:1px solid #cfe0f5;border-radius:12px;padding:18px;font-size:21px;line-height:1.65;color:#1d2736;font-weight:700">
+            상담 전환율 = 상담 수 / 리드 수<br>
+            등록 전환율 = 등록 수 / 상담 수<br>
+            환불률 = 환불 수 / 등록 수
+          </div>
+          <p style="font-size:16px;margin-top:16px;color:#627086">예: 블로그 행에 “10 / 40 = 25%”라는 새 숫자를 붙입니다.</p>
+        </div>
+        <div class="card blue" style="padding:26px;min-height:355px">
+          <span class="pill">2. 피벗</span>
+          <h3 style="font-size:30px;margin:16px 0 10px">기준별로 묶어서 차이를 봅니다</h3>
+          <p style="font-size:18px;margin-bottom:18px">센터별, 채널별, 과정별처럼 같은 기준끼리 합치고 평균·합계·비율을 비교합니다.</p>
+          <table style="width:100%;border-collapse:collapse;font-size:18px;background:#fff;border-radius:12px;overflow:hidden">
+            <tr><th style="text-align:left;background:#e8f2ff;padding:11px">채널</th><th style="background:#e8f2ff;padding:11px">리드</th><th style="background:#e8f2ff;padding:11px">상담</th><th style="background:#e8f2ff;padding:11px">등록률</th></tr>
+            <tr><td style="padding:11px;border-bottom:1px solid #d8e4f2">블로그</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">100</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">40</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">25%</td></tr>
+            <tr><td style="padding:11px;border-bottom:1px solid #d8e4f2">검색광고</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">80</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">50</td><td style="text-align:center;border-bottom:1px solid #d8e4f2">40%</td></tr>
+            <tr><td style="padding:11px">지인추천</td><td style="text-align:center">30</td><td style="text-align:center">25</td><td style="text-align:center">72%</td></tr>
+          </table>
+          <p style="font-size:16px;margin-top:16px;color:#627086">예: 채널별로 묶어 “유입은 적지만 등록 전환이 높은 채널”을 찾습니다.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:18px">순서만 기억하면 됩니다. 계산 열로 전환율·환불률 같은 비교 숫자를 만들고, 피벗으로 센터별·채널별·과정별 차이를 봅니다.</p>
+    </div>
+    <div class="route"><span class="">INTRO</span><span class="">DATA</span><span class="">PRACTICE 1</span><span class="on">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
+    <div class="footer"><div class="bar"><span style="width:66%"></span></div><span>36 / 56</span></div>
+  </section>
+
+  <section class="slide section" data-title="PRACTICE 02">
     <div class="top"><span>PRACTICE 2</span><span>35 / 54</span></div>
     <div style="padding-top:42px"><div class="kicker">PRACTICE 02 · 22분</div><h2>피벗과 차트 만들기</h2><p>질문을 정했다면, 같은 데이터를 기준만 바꿔 보면서 차이를 찾습니다.</p></div>
     <div class="route"><span class="">INTRO</span><span class="">DATA</span><span class="">PRACTICE 1</span><span class="on">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
     <div class="footer"><div class="bar"><span style="width:65%"></span></div><span>35 / 54</span></div>
   </section>
-<section class="slide " data-title="피벗/계산 정의">
-    <div class="top"><span>PRACTICE 2</span><span>36 / 54</span></div>
-    <div style="padding-top:42px"><h2>피벗과 계산 열은 역할이 다릅니다.</h2><div class="grid2"><div class="card"><h3>계산 열</h3><p>기존 열을 조합해 새 지표를 만듭니다. 예: 전환율 = 등록 수 / 상담 수</p><div class="mock">consult_rate = consult_count / lead_count<br>enroll_rate = enroll_count / consult_count</div></div><div class="card"><h3>피벗</h3><p>기준을 바꿔 합계·평균·비율을 비교합니다. 예: 센터별, 채널별, 월별</p><div class="mock">행: center<br>열: channel<br>값: enroll_rate 평균</div></div></div></div>
+<section class="slide " data-title="계산·피벗 How-to">
+    <div class="top"><span>PRACTICE 2</span><span>38 / 56</span></div>
+    <div style="padding-top:32px"><h2 style="font-size:46px;margin-bottom:14px">분석 질문을 정했다면, 계산 열과 피벗은 이렇게 만듭니다.</h2><p class="tagline" style="font-size:19px;margin-bottom:18px">질문을 표 작업으로 바꾸는 순서는 정해져 있습니다. 무엇을 비교할지 정하고, 필요한 비율을 만들고, 기준별로 묶어 봅니다.</p><div class="process-flow" style="grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px"><div class="node" style="min-height:218px"><span class="num">1</span><h3>질문을 열로 바꾸기</h3><p>“유입은 많은데 등록 전환이 낮은 채널”을 channel, lead_count, consult_count, enroll_count로 바꿉니다.</p></div><div class="node" style="min-height:218px"><span class="num">2</span><h3>계산 열 추가</h3><p>상담 전환율과 등록 전환율을 만들어 단순 등록 수가 아니라 효율을 봅니다.</p></div><div class="node" style="min-height:218px"><span class="num">3</span><h3>피벗 기준 선택</h3><p>행은 channel, 값은 lead·consult·enroll 합계와 전환율로 둡니다.</p></div><div class="node" style="min-height:218px"><span class="num">4</span><h3>차트와 판단</h3><p>리드 수와 등록 전환율을 나란히 보고 조정할 채널을 고릅니다.</p></div></div><div class="grid2" style="grid-template-columns:1.05fr .95fr;gap:18px;margin-top:18px"><div class="card blue" style="padding:20px;min-height:205px"><span class="pill">B. 채널 비교</span><h3 style="font-size:23px;margin:10px 0 8px">유입은 많은데 등록 전환이 낮은 채널은 무엇인가?</h3><p style="font-size:16px;margin:0 0 10px">계산 열: 상담 전환율 = consult_count / lead_count<br>등록 전환율 = enroll_count / consult_count</p><p style="font-size:16px;margin:0">피벗: 행 channel / 값 lead_count 합계, consult_count 합계, enroll_count 합계, 등록 전환율</p></div><div class="mock" style="min-height:205px;font-size:13px;line-height:1.38;padding:54px 18px 16px">복사 프롬프트<br><br>분석 질문은 “유입은 많은데 등록 전환이 낮은 홍보 채널은 무엇이고, 다음 모집에서 예산이나 운영 방식을 조정해야 할 채널은 무엇인가?”입니다. channel, lead_count, consult_count, enroll_count를 기준으로 필요한 계산 열 수식, 피벗 행/값 설정, 추천 차트, 최종 판단 문장 형식을 순서대로 알려줘.</div></div></div>
     <div class="route"><span class="">INTRO</span><span class="">DATA</span><span class="">PRACTICE 1</span><span class="on">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
-    <div class="footer"><div class="bar"><span style="width:67%"></span></div><span>36 / 54</span></div>
+    <div class="footer"><div class="bar"><span style="width:67%"></span></div><span>38 / 56</span></div>
   </section>
 <section class="slide " data-title="실습 2 따라하기">
     <div class="top"><span>PRACTICE 2</span><span>37 / 54</span></div>
