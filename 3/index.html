@@ -410,9 +410,89 @@
     <div class="route"><span class="">INTRO</span><span class="">DATA</span><span class="">PRACTICE 1</span><span class="on">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
     <div class="footer"><div class="bar"><span style="width:69%"></span></div><span>37 / 54</span></div>
   </section>
+<section class="slide compact" data-title="차트 전 준비물">
+    <div class="top"><span>DATA</span><span>39 / 58</span></div>
+    <div style="padding-top:34px">
+      <div class="kicker">BEFORE CHART</div>
+      <h2 style="font-size:48px;margin-bottom:14px">차트는 마지막에 고릅니다.<br>먼저 표가 준비되어야 합니다.</h2>
+      <p class="tagline" style="font-size:19px;margin-bottom:20px">차트가 갑자기 나오는 것이 아니라, 질문을 표 작업으로 바꾼 다음 자연스럽게 선택합니다.</p>
+      <div class="process-flow" style="grid-template-columns:repeat(5,1fr);gap:12px">
+        <div class="node" style="min-height:205px">
+          <span class="num">1</span>
+          <h3>분석 질문</h3>
+          <p>무엇을 비교해서 어떤 결정을 할지 한 문장으로 정합니다.</p>
+        </div>
+        <div class="node" style="min-height:205px">
+          <span class="num">2</span>
+          <h3>기준 열</h3>
+          <p>센터, 채널, 과정, 월처럼 묶을 기준을 고릅니다.</p>
+        </div>
+        <div class="node" style="min-height:205px">
+          <span class="num">3</span>
+          <h3>값 열</h3>
+          <p>문의 수, 상담 수, 등록 수처럼 비교할 숫자를 고릅니다.</p>
+        </div>
+        <div class="node" style="min-height:205px">
+          <span class="num">4</span>
+          <h3>계산 열</h3>
+          <p>전환율, 환불률, 비중처럼 판단용 숫자를 만듭니다.</p>
+        </div>
+        <div class="node" style="min-height:205px">
+          <span class="num">5</span>
+          <h3>피벗표</h3>
+          <p>기준별로 합계와 비율을 묶어 차트의 재료를 만듭니다.</p>
+        </div>
+      </div>
+      <div class="grid2" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:20px">
+        <div class="card" style="padding:20px;min-height:155px">
+          <span class="pill">예시</span>
+          <p style="font-size:19px;margin-top:12px">B. 채널 비교라면 기준 열은 channel, 값 열은 lead_count·consult_count·enroll_count입니다.</p>
+        </div>
+        <div class="card blue" style="padding:20px;min-height:155px">
+          <span class="pill">다음 장으로 연결</span>
+          <p style="font-size:19px;margin-top:12px">피벗표가 준비되면 이제 질문에 맞게 막대, 꺾은선, 누적막대 중 하나를 고릅니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="route"><span class="">INTRO</span><span class="on">DATA</span><span class="">PRACTICE 1</span><span class="">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
+    <div class="footer"><div class="bar"><span style="width:68%"></span></div><span>39 / 58</span></div>
+  </section>
+<section class="slide compact" data-title="Sheets ChatGPT 시각화 How-to">
+    <div class="top"><span>DATA</span><span>40 / 58</span></div>
+    <div style="padding-top:30px">
+      <div class="kicker">GOOGLE SHEETS + CHATGPT</div>
+      <h2 style="font-size:47px;margin-bottom:12px">ChatGPT에는 차트를 만들어달라고 묻기 전에,<br>차트 설계를 먼저 맡깁니다.</h2>
+      <p class="tagline" style="font-size:19px;margin-bottom:18px">오늘 흐름은 Sheets에서 표를 만들고, ChatGPT로 어떤 열·피벗·차트가 맞는지 확인한 뒤, 다시 Sheets에서 직접 그리는 방식입니다.</p>
+      <div class="process-flow" style="grid-template-columns:repeat(4,1fr);gap:14px">
+        <div class="node" style="min-height:210px">
+          <span class="num">1</span>
+          <h3>표 구조 공유</h3>
+          <p>열 이름과 분석 질문을 ChatGPT에 줍니다. 원본 전체보다 구조와 목적이 먼저입니다.</p>
+        </div>
+        <div class="node" style="min-height:210px">
+          <span class="num">2</span>
+          <h3>계산 열 확인</h3>
+          <p>상담 전환율, 등록 전환율처럼 차트 전에 필요한 지표를 물어봅니다.</p>
+        </div>
+        <div class="node" style="min-height:210px">
+          <span class="num">3</span>
+          <h3>피벗 배치 받기</h3>
+          <p>행, 열, 값에 무엇을 넣을지 추천받고 Sheets에서 직접 피벗을 만듭니다.</p>
+        </div>
+        <div class="node" style="min-height:210px">
+          <span class="num">4</span>
+          <h3>차트 선택</h3>
+          <p>비교·추이·구성 중 질문에 맞는 차트를 고르고 제목과 축을 정리합니다.</p>
+        </div>
+      </div>
+      <div class="mock" style="margin-top:18px;min-height:140px;font-size:14px;line-height:1.45;padding:54px 18px 16px">복사 프롬프트<br><br>아래 분석 질문과 Google Sheets 열 이름을 기준으로, 어떤 계산 열을 만들고 어떤 피벗표와 차트를 만들면 좋을지 설계해줘. 답변은 1) 계산 열 2) 피벗 행/열/값 3) 추천 차트 4) 차트 제목 5) 보고 문장 초안 순서로 정리해줘.</div>
+    </div>
+    <div class="route"><span class="">INTRO</span><span class="on">DATA</span><span class="">PRACTICE 1</span><span class="">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
+    <div class="footer"><div class="bar"><span style="width:69%"></span></div><span>40 / 58</span></div>
+  </section>
 <section class="slide " data-title="차트 유형 선택">
     <div class="top"><span>DATA</span><span>31 / 54</span></div>
-    <div style="padding-top:42px"><h2>질문에 따라 차트가 달라집니다.</h2><div class="source-map"><div class="source-card"><span class="label">비교</span><h3>막대 차트</h3><p>센터별 전환율, 채널별 문의수처럼 항목 간 차이를 볼 때 씁니다.</p><p class="pill">센터·채널 비교</p></div><div class="source-card"><span class="label">추이</span><h3>꺾은선 차트</h3><p>월별 문의수, 주차별 등록률처럼 시간의 흐름을 볼 때 씁니다.</p><p class="pill">월별·주차별 변화</p></div><div class="source-card"><span class="label">구성</span><h3>누적막대/100% 막대</h3><p>센터별 채널 비중, 과정별 문의 유형처럼 전체 안의 구성을 볼 때 씁니다.</p><p class="pill">비중·구성 비교</p></div></div><table class="table" style="margin-top:18px"><tr><th>질문</th><th>추천 차트</th><th>Excel/Sheets에서 배치</th></tr><tr><td>어느 센터가 높은가?</td><td>막대 차트</td><td>행=센터, 값=전환율</td></tr><tr><td>언제 증가/감소했나?</td><td>꺾은선 차트</td><td>행=월, 값=문의수·등록수</td></tr><tr><td>어떤 채널 비중이 큰가?</td><td>누적막대</td><td>행=센터, 열=채널, 값=문의수</td></tr></table></div>
+    <div style="padding-top:28px"><h2 style="font-size:46px;margin-bottom:12px">질문에 따라 차트가 달라집니다.</h2><div class="source-map"><div class="source-card" style="min-height:286px"><span class="label">비교</span><h3>막대 차트</h3><div style="height:92px;border:1px solid #d8e5f2;border-radius:12px;background:#f8fbff;display:flex;align-items:end;gap:16px;padding:16px 18px;margin:10px 0 12px"><span style="height:48px;width:38px;background:#2d66b3;border-radius:8px 8px 0 0"></span><span style="height:68px;width:38px;background:#62a8e8;border-radius:8px 8px 0 0"></span><span style="height:34px;width:38px;background:#9fc6ef;border-radius:8px 8px 0 0"></span></div><p>센터별 전환율, 채널별 문의수처럼 항목 간 차이를 볼 때 씁니다.</p><p class="pill">센터·채널 비교</p></div><div class="source-card" style="min-height:286px"><span class="label">추이</span><h3>꺾은선 차트</h3><div style="height:92px;border:1px solid #d8e5f2;border-radius:12px;background:#f8fbff;margin:10px 0 12px;padding:10px"><svg viewBox="0 0 220 76" width="100%" height="100%" role="img" aria-label="line chart preview"><polyline points="8,58 52,42 96,48 140,24 188,16 212,30" fill="none" stroke="#2d66b3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><g fill="#2d66b3"><circle cx="8" cy="58" r="4"/><circle cx="52" cy="42" r="4"/><circle cx="96" cy="48" r="4"/><circle cx="140" cy="24" r="4"/><circle cx="188" cy="16" r="4"/><circle cx="212" cy="30" r="4"/></g></svg></div><p>월별 문의수, 주차별 등록률처럼 시간의 흐름을 볼 때 씁니다.</p><p class="pill">월별·주차별 변화</p></div><div class="source-card" style="min-height:286px"><span class="label">구성</span><h3>누적막대/100% 막대</h3><div style="height:92px;border:1px solid #d8e5f2;border-radius:12px;background:#f8fbff;display:grid;gap:12px;padding:18px;margin:10px 0 12px"><div style="display:grid;grid-template-columns:45% 35% 20%;overflow:hidden;border-radius:999px"><span style="height:18px;background:#2d66b3"></span><span style="height:18px;background:#62a8e8"></span><span style="height:18px;background:#b8d7f5"></span></div><div style="display:grid;grid-template-columns:25% 50% 25%;overflow:hidden;border-radius:999px"><span style="height:18px;background:#2d66b3"></span><span style="height:18px;background:#62a8e8"></span><span style="height:18px;background:#b8d7f5"></span></div></div><p>센터별 채널 비중, 과정별 문의 유형처럼 전체 안의 구성을 볼 때 씁니다.</p><p class="pill">비중·구성 비교</p></div></div><table class="table" style="margin-top:14px"><tr><th>질문</th><th>추천 차트</th><th>Excel/Sheets에서 배치</th></tr><tr><td>어느 센터가 높은가?</td><td>막대 차트</td><td>행=센터, 값=전환율</td></tr><tr><td>언제 증가/감소했나?</td><td>꺾은선 차트</td><td>행=월, 값=문의수·등록수</td></tr><tr><td>어떤 채널 비중이 큰가?</td><td>누적막대</td><td>행=센터, 열=채널, 값=문의수</td></tr></table></div>
     <div class="route"><span class="">INTRO</span><span class="on">DATA</span><span class="">PRACTICE 1</span><span class="">PRACTICE 2</span><span class="">PRACTICE 3</span><span class="">SUBMIT</span></div>
     <div class="footer"><div class="bar"><span style="width:57%"></span></div><span>31 / 54</span></div>
   </section>
