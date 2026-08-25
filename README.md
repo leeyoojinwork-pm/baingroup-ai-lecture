@@ -11,12 +11,13 @@
 
 ## 바로가기
 
-- 1차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/
-- 2차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/week2-ai-data-analysis.html
-- 3차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/week3-ai-data-visualization.html
+- 전체 회차 링크 모음: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/
+- 1차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/1/
+- 2차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/2/
+- 3차수 발표자료: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/3/
 - 3차수 라우트: https://leeyoojinwork-pm.github.io/baingroup-ai-lecture/3/
-- 1차수 HTML 파일: `index.html`
-- 2차수 HTML 파일: `week2-ai-data-analysis.html`
+- 1차수 HTML 파일: `바인그룹_생성형AI_1차수_발표자료_풀버전_최종본.html`, `1/index.html`
+- 2차수 HTML 파일: `2/index.html`, `week2-ai-data-analysis.html`
 - 3차수 HTML 파일: `week3-ai-data-visualization.html`, `3/index.html`
 - 실습용 예시 자료: https://app.notion.com/p/teamsparta/3872dc3ef5148010ae27fc289b1c9fae?pvs=23
 
