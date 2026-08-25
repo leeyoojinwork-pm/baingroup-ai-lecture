@@ -1,0 +1,172 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>바인그룹 4차수 AI 스마트 리서치 자동화</title><style>
+:root{--ink:#1f2937;--muted:#607086;--blue:#2f69b4;--soft:#eef6ff;--line:#d7e3f2;--navy:#101827;--green:#15846f;--bg:#f3f8fd}*{box-sizing:border-box}body{margin:0;background:#dfeaf5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',Arial,sans-serif;color:var(--ink);overflow:hidden}.slide{display:none;width:100vw;height:100vh;background:var(--bg);padding:28px 36px 24px}.slide.active{display:flex;flex-direction:column}header{height:32px;display:flex;justify-content:space-between;color:#65758c;font-weight:800;font-size:15px;border-bottom:1px solid #cad8e8}main{flex:1;padding:48px 0 20px;overflow:hidden}h1{font-size:56px;line-height:1.13;margin:0 0 28px;font-weight:900;letter-spacing:0;color:#202938}h3{margin:0 0 12px;font-size:28px}.subtitle{font-size:32px;line-height:1.5;color:#526176;max-width:1000px}.cover-meta{display:flex;gap:16px;margin-top:70px}.cover-meta span,.download{display:inline-flex;align-items:center;border:1px solid #b9cde5;background:white;color:#2f69b4;border-radius:14px;padding:16px 22px;font-weight:900;text-decoration:none}.download-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}.download.secondary{background:#102033;color:#fff;border-color:#102033}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.cards.four{grid-template-columns:repeat(4,1fr)}.cards.five{grid-template-columns:repeat(5,1fr)}.timeline-cards{grid-template-columns:repeat(3,1fr)}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:28px;min-height:220px;box-shadow:0 12px 28px rgba(40,70,110,.06)}.card .mini{display:inline-block;color:var(--blue);font-weight:900;margin-bottom:20px}.card p{font-size:22px;line-height:1.55;color:#536175;font-weight:700}.quote,.note,.question{margin-top:22px;background:#e8f2ff;border-left:7px solid var(--blue);border-radius:12px;padding:24px 28px;font-size:26px;font-weight:900;line-height:1.45}.question{background:white;border:2px solid #b8d1ef}.note{font-size:22px;font-weight:800;color:#4d5c70}.big-quote{font-size:48px;line-height:1.45;font-weight:900;background:white;border:1px solid var(--line);border-radius:22px;padding:70px}.profile{display:grid;grid-template-columns:300px 1.1fr .9fr;gap:36px;align-items:start}.profile img{width:300px;height:410px;object-fit:cover;border-radius:22px;border:1px solid #d9e3ef}.profile p{font-size:25px;line-height:1.55;color:#617085}.dark-card{background:#122037;color:white;border-radius:18px;padding:26px;margin-top:26px}.dark-card li,.side-list li{font-size:22px;line-height:1.8}.side-list{background:white;border:1px solid var(--line);border-radius:18px;padding:32px}table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:22px;box-shadow:0 10px 24px rgba(40,70,110,.05)}th{background:#e6f1ff;color:#245fa8;text-align:left}th,td{padding:18px 22px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}.steps{background:white;border:1px solid var(--line);border-radius:18px;padding:16px 30px}.step{display:flex;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);font-size:25px;font-weight:850}.step:last-child{border-bottom:0}.step b{background:var(--blue);color:white;border-radius:50%;width:46px;height:46px;display:grid;place-items:center}.prompt-wrap{margin-top:8px;background:#101827;color:#e7edf6;border-radius:18px;overflow:hidden;border:1px solid #26364d}.prompt-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid #28384f}.copy-btn{border:0;background:white;color:#245fa8;border-radius:10px;padding:9px 14px;font-weight:900;cursor:pointer}.prompt{white-space:pre-wrap;margin:0;padding:22px;font-size:20px;line-height:1.55;font-family:'SFMono-Regular',Consolas,monospace}.ui{height:430px;background:#11161e;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:150px 1fr;color:white;border:1px solid #273243}.ui-side{background:#181d24;padding:38px 28px;display:flex;flex-direction:column;gap:22px}.ui-side i{height:28px;border-radius:10px;background:#303946}.ui-main{padding:34px 54px;position:relative}.ui-top{display:flex;justify-content:space-between;font-size:22px}.ui-top span{color:#7168ff}.ui-center{text-align:center;margin-top:76px}.ui-center h3{font-size:40px}.file-chip{display:inline-block;background:#d8ebff;color:#1f5da8;padding:15px 28px;border-radius:18px;font-size:22px;font-weight:900}.ui-input{position:absolute;left:54px;right:54px;bottom:38px;background:#2a2e36;border:1px solid #505662;border-radius:24px;padding:22px 70px 22px 26px;color:#cbd5e1;font-size:22px;font-weight:800}.ui-input button{position:absolute;right:18px;top:17px;width:42px;height:42px;border-radius:50%;border:0;background:white}.section-cover{height:520px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1d6f67,#2f69b4);color:white;border-radius:28px}.section-cover span{font-size:24px;font-weight:900;opacity:.9}.section-cover h3{font-size:58px;max-width:1100px}.section-cover p{font-size:28px;max-width:980px;line-height:1.55}.qr-wrap{display:flex;align-items:center;gap:60px;background:white;border:1px solid var(--line);border-radius:28px;padding:70px}.qr-wrap img{width:310px;height:310px;object-fit:contain}.qr-wrap p{font-size:28px;color:#526176}footer{height:82px}.stage-nav{margin:0 auto 18px;display:flex;justify-content:center}.stage-nav span{min-width:150px;text-align:center;border:1px solid #c4d5e9;background:white;padding:15px 20px;font-weight:900;color:#748197}.stage-nav span:first-child{border-radius:28px 0 0 28px}.stage-nav span:last-child{border-radius:0 28px 28px 0}.stage-nav .active{background:var(--blue);color:white}.bar{height:8px;background:#d6e4f3}.bar i{display:block;height:100%;background:var(--blue)}@media(max-width:1100px){h1{font-size:42px}.cards,.cards.four,.cards.five{grid-template-columns:1fr 1fr}.profile{grid-template-columns:1fr}.profile img{height:300px}.card p,table,.step{font-size:18px}.prompt{font-size:16px}}
+</style></head><body><section class="slide" id="01">
+<header><span>INTRO</span><span>01 / 29</span></header>
+<main><h1>바인그룹 4차수<br>AI 스마트 리서치 자동화</h1><p class="subtitle">내부 데이터에서 나온 질문을 외부 근거로 검증하고, 보고서 시사점으로 확장합니다.</p><div class="cover-meta"><span>실시간 온라인 AI 교육</span><span>강사 이유진</span><span>90분 실습형</span></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:3.45%"></i></div></footer>
+</section><section class="slide" id="02">
+<header><span>INTRO</span><span>02 / 29</span></header>
+<main><h1>이유진</h1><div class="profile"><img src="../images/instructor_yujin.jpg" alt="이유진 강사"><div><h3>AX Consultant / Product Manager</h3><p>기업 현업 과제를 AX·AI 실습 산출물로 전환하는 교육을 설계하고, Product Management 관점으로 업무 적용까지 연결합니다.</p><div class="dark-card"><h3>주요 경력</h3><ul><li>현 AI 에듀테크 스타트업 PM</li><li>전 공공기관·페이먼츠 플랫폼 도메인 PM</li><li>SK, 서울대병원 등 주요 조직 대상 AX·AI 실무 적용 교육 및 프로젝트 수행</li></ul></div></div><div class="side-list"><h3>강의 전문 분야</h3><ul><li>AX·AI 실무 교육 설계</li><li>병원 문서·보고서 실습</li><li>NotebookLM 자료 활용</li><li>웹앱 프로토타입 제작</li></ul></div></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:6.90%"></i></div></footer>
+</section><section class="slide" id="03">
+<header><span>INTRO</span><span>03 / 29</span></header>
+<main><h1>3차수까지 한 일과 오늘 할 일</h1><div class="timeline-cards"><div class="card"><span class="mini">01</span><h3>2차수</h3><p>여러 파일과 채널 데이터를 한 표로 정리하고 전처리했습니다.</p></div><div class="card"><span class="mini">02</span><h3>3차수</h3><p>정리된 내부 데이터에서 계산 열, 피벗, 차트, 보고 문장을 만들었습니다.</p></div><div class="card"><span class="mini">03</span><h3>4차수</h3><p>내부 인사이트가 진짜 의미 있는지 외부 자료로 확인하고 전략 시사점으로 확장합니다.</p></div></div><div class="quote">오늘 질문: “우리 내부 숫자가 말해주는 신호가, 시장과 고객 맥락에서도 맞는가?”</div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:10.34%"></i></div></footer>
+</section><section class="slide" id="04">
+<header><span>INTRO</span><span>04 / 29</span></header>
+<main><h1>오늘 끝나면 남길 결과물</h1><div class="cards four"><div class="card"><span class="mini">01</span><h3>외부 리서치 질문 3개</h3><p>내부 데이터에서 나온 의문을 외부에서 확인 가능한 질문으로 바꿉니다.</p></div><div class="card"><span class="mini">02</span><h3>소스 로그</h3><p>공공데이터, 공식 자료, YouTube, 경쟁사 페이지 등 출처를 남깁니다.</p></div><div class="card"><span class="mini">03</span><h3>근거 브리핑</h3><p>NotebookLM으로 자료별 핵심 근거와 한계를 정리합니다.</p></div><div class="card"><span class="mini">04</span><h3>비교표와 보고 문장</h3><p>Gemini/ChatGPT로 비교표, 시사점, 다음 액션을 만듭니다.</p></div></div><div class="download-row"><a class="download" href="../data/teamsparta_baingroup_week4_research_pack.zip">실습자료 ZIP 다운로드</a><a class="download" href="../data/week4_external_research_pack.xlsx">엑셀 실습자료 다운로드</a><a class="download secondary" href="../data/week4_research_prompts.md">프롬프트 모음 다운로드</a></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:13.79%"></i></div></footer>
+</section><section class="slide" id="05">
+<header><span>INTRO</span><span>05 / 29</span></header>
+<main><h1>숫자만 보면 끝난 게 아닙니다</h1><table><thead><tr><th>채널</th><th>리드 수</th><th>상담 수</th><th>등록 수</th></tr></thead><tbody><tr><td>블로그</td><td>100</td><td>40</td><td>10</td></tr><tr><td>검색광고</td><td>80</td><td>50</td><td>20</td></tr><tr><td>지인추천</td><td>30</td><td>25</td><td>18</td></tr></tbody></table><div class="question">등록 수만 보면 검색광고가 좋아 보입니다. 그런데 등록 전환율까지 보면 무엇이 달라질까요?</div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:17.24%"></i></div></footer>
+</section><section class="slide" id="06">
+<header><span>INTRO</span><span>06 / 29</span></header>
+<main><h1>숫자에서 인사이트로 가는 순서</h1><div class="cards five"><div class="card"><span class="mini">01</span><h3>1. 숫자 보기</h3><p>리드·상담·등록처럼 현재 값을 확인합니다.</p></div><div class="card"><span class="mini">02</span><h3>2. 비교하기</h3><p>채널별 전환율, 센터별 차이, 전월 대비 변화를 봅니다.</p></div><div class="card"><span class="mini">03</span><h3>3. 이상한 지점 찾기</h3><p>유입은 많은데 등록이 낮은 곳처럼 설명이 필요한 후보를 찾습니다.</p></div><div class="card"><span class="mini">04</span><h3>4. 외부 근거 붙이기</h3><p>시장·경쟁·고객 언어로 내부 신호가 맞는지 확인합니다.</p></div><div class="card"><span class="mini">05</span><h3>5. 액션으로 바꾸기</h3><p>예산 조정, 메시지 수정, 상담 스크립트 개선으로 연결합니다.</p></div></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:20.69%"></i></div></footer>
+</section><section class="slide" id="07">
+<header><span>INTRO</span><span>07 / 29</span></header>
+<main><h1>90분 운영 흐름</h1><table><thead><tr><th>구간</th><th>시간</th><th>해야 할 일</th><th>산출물</th></tr></thead><tbody><tr><td>오프닝</td><td>8분</td><td>3차수 결과를 4차수 질문으로 연결</td><td>오늘 질문 1개</td></tr><tr><td>보안·도구</td><td>12분</td><td>자료를 올려도 되는지 판단하고 도구를 엽니다</td><td>보안 기준표</td></tr><tr><td>실습 1</td><td>15분</td><td>내부 인사이트를 외부 리서치 질문으로 바꿉니다</td><td>리서치 질문 3개</td></tr><tr><td>실습 2</td><td>20분</td><td>NotebookLM으로 근거 브리핑을 만듭니다</td><td>근거 브리핑 1개</td></tr><tr><td>실습 3</td><td>20분</td><td>Gemini/ChatGPT로 비교표와 보고 문장을 만듭니다</td><td>보고 문장 3개</td></tr><tr><td>제출</td><td>10분</td><td>Padlet에 결과와 막힌 지점을 남깁니다</td><td>최종 제출</td></tr></tbody></table></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:24.14%"></i></div></footer>
+</section><section class="slide" id="08">
+<header><span>INTRO</span><span>08 / 29</span></header>
+<main><h1>회사 데이터를 올리기 전에 먼저 볼 것</h1><div class="cards"><div class="card"><span class="mini">01</span><h3>직접 식별자</h3><p>이름, 연락처, 주소, 계좌번호, 계약번호처럼 그 자체로 사람을 찾을 수 있는 값</p></div><div class="card"><span class="mini">02</span><h3>조합 식별자</h3><p>센터+과정+일자+상담내용처럼 여러 값이 합쳐져 특정될 수 있는 값</p></div><div class="card"><span class="mini">03</span><h3>업로드 판단</h3><p>이 데이터만 보고 누군가 특정되면 원본을 올리지 않습니다.</p></div></div><div class="quote">핵심 기준: “AI가 볼 수 있나?”보다 “이 표만 보고 누군가 특정되는가?”를 먼저 봅니다.</div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:27.59%"></i></div></footer>
+</section><section class="slide" id="09">
+<header><span>INTRO</span><span>09 / 29</span></header>
+<main><h1>보안 데이터는 이렇게 바꿉니다</h1><table><thead><tr><th>처리</th><th>예시</th><th>AI에 요청할 말</th></tr></thead><tbody><tr><td>삭제</td><td>계좌번호, 상세 주소</td><td>이 열은 분석에 필요 없으면 삭제해줘</td></tr><tr><td>마스킹</td><td>이유진 → 이*진</td><td>직접 식별자는 일부만 남겨줘</td></tr><tr><td>범주화</td><td>43세 → 40대</td><td>나이/금액/날짜는 구간으로 바꿔줘</td></tr><tr><td>샘플화</td><td>실제 상담내용 → 가짜 상담 유형</td><td>구조만 같은 가짜 샘플 20행을 만들어줘</td></tr></tbody></table><div class="prompt-wrap"><div class="prompt-head"><b>복사 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">아래 데이터에서 누군가 특정될 수 있는 열을 찾아 주세요.
+각 열을 직접 식별자, 조합 식별자, 일반 분석값으로 분류하고, 삭제/마스킹/범주화/샘플화 중 어떤 처리가 필요한지 표로 정리해 주세요.</pre></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:31.03%"></i></div></footer>
+</section><section class="slide" id="10">
+<header><span>INTRO</span><span>10 / 29</span></header>
+<main><h1>오늘 쓰는 도구와 역할</h1><div class="cards four"><div class="card"><span class="mini">01</span><h3>ChatGPT</h3><p>파일을 읽고 분석 질문, 표 구조, 보고 문장을 설계합니다.</p></div><div class="card"><span class="mini">02</span><h3>Gemini</h3><p>Google 검색·시트 흐름과 연결해 외부 근거와 비교표를 만듭니다.</p></div><div class="card"><span class="mini">03</span><h3>NotebookLM</h3><p>업로드한 자료 안에서만 근거 브리핑을 만듭니다.</p></div><div class="card"><span class="mini">04</span><h3>Excel / Sheets</h3><p>계산과 표 검산, 최종 차트 정리를 맡깁니다.</p></div></div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:34.48%"></i></div></footer>
+</section><section class="slide" id="11">
+<header><span>INTRO</span><span>11 / 29</span></header>
+<main><h1>공식 접속 링크</h1><table><thead><tr><th>도구</th><th>링크</th><th>오늘 쓰는 방식</th></tr></thead><tbody><tr><td>ChatGPT</td><td>https://chatgpt.com/</td><td>파일 업로드, 분석 질문, 보고 문장</td></tr><tr><td>ChatGPT 다운로드</td><td>https://openai.com/chatgpt/download/</td><td>앱이 있으면 앱으로 진행 가능</td></tr><tr><td>Gemini</td><td>https://gemini.google.com/</td><td>외부 조사 질문, 비교표</td></tr><tr><td>Google Sheets Gemini</td><td>https://support.google.com/docs/answer/14356410?hl=ko-kr</td><td>시트 안 데이터 분석/차트/피벗 보조</td></tr><tr><td>NotebookLM</td><td>https://notebooklm.google.com/</td><td>근거 자료 브리핑</td></tr><tr><td>YouTube Data API</td><td>https://developers.google.com/youtube/v3</td><td>영상/채널 메타데이터 확인</td></tr><tr><td>공공데이터포털</td><td>https://www.data.go.kr/</td><td>외부 기준점 데이터 수집</td></tr></tbody></table><div class="note">설치가 안 되어도 괜찮습니다. 오늘 실습은 웹 접속만으로 진행할 수 있게 설계했습니다.</div></main>
+<footer><div class="stage-nav"><span class="active">INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:37.93%"></i></div></footer>
+</section><section class="slide" id="12">
+<header><span>PRACTICE 1</span><span>12 / 29</span></header>
+<main><h1>내부 인사이트를 외부 리서치 질문으로 바꿉니다</h1><div class="section-cover"><span>실습 1 · 15분</span><h3>질문을 먼저 좁혀야 자료가 보입니다</h3><p>외부 자료를 많이 찾는 것이 목표가 아니라, 내부 숫자를 설명해 줄 근거를 찾는 것이 목표입니다.</p></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span class="active">PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:41.38%"></i></div></footer>
+</section><section class="slide" id="13">
+<header><span>PRACTICE 1</span><span>13 / 29</span></header>
+<main><h1>시작 전 파일을 엽니다</h1><div class="ui chatgpt"><div class="ui-side"><i></i><i></i><i></i></div><div class="ui-main"><div class="ui-top"><b>ChatGPT 새 대화</b><span>●</span></div><div class="ui-center"><h3>엑셀 파일을 올리고 내부 신호를 질문으로 바꿉니다</h3><div class="file-chip">week4_external_research_pack.xlsx</div></div><div class="ui-input">여기에 파일과 프롬프트를 붙여넣습니다<button></button></div></div></div><div class="steps"><div class="step"><b>1</b><span>실습자료 ZIP을 풉니다.</span></div><div class="step"><b>2</b><span>week4_external_research_pack.xlsx를 엽니다.</span></div><div class="step"><b>3</b><span>01_내부인사이트후보 시트를 봅니다.</span></div><div class="step"><b>4</b><span>가장 궁금한 내부 신호 1개를 고릅니다.</span></div></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span class="active">PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:44.83%"></i></div></footer>
+</section><section class="slide" id="14">
+<header><span>PRACTICE 1</span><span>14 / 29</span></header>
+<main><h1>복사 프롬프트: 리서치 질문 만들기</h1><div class="prompt-wrap"><div class="prompt-head"><b>복사 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">첨부한 week4_external_research_pack.xlsx의 01_내부인사이트후보 시트를 보고,
+외부 리서치로 확인해야 할 질문 5개를 만들어 주세요.
+
+각 질문은 아래 기준으로 정리해 주세요.
+1. 내부 데이터에서 관찰한 신호
+2. 외부에서 확인해야 할 근거
+3. 찾아볼 자료 유형
+4. 이 질문이 의사결정에 주는 의미
+5. 오늘 90분 안에 확인 가능한지 여부
+
+결과는 표로 정리해 주세요.</pre></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span class="active">PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:48.28%"></i></div></footer>
+</section><section class="slide" id="15">
+<header><span>PRACTICE 1</span><span>15 / 29</span></header>
+<main><h1>결과 예시</h1><table><thead><tr><th>내부 신호</th><th>외부 질문</th><th>찾을 자료</th><th>의사결정</th></tr></thead><tbody><tr><td>검색광고 리드는 많지만 등록률 낮음</td><td>검색광고 경쟁 문구가 과도하게 비슷한가?</td><td>경쟁사 광고/랜딩</td><td>광고 문구 수정</td></tr><tr><td>지인추천 등록률 높음</td><td>후기와 추천이 학부모 의사결정에 얼마나 영향을 주는가?</td><td>후기/지역 커뮤니티</td><td>추천 캠페인 확대</td></tr><tr><td>센터별 채널 성과 차이</td><td>지역별 수요와 경쟁 밀도가 다른가?</td><td>공공데이터/경쟁사 위치</td><td>센터별 전략 분리</td></tr></tbody></table></main>
+<footer><div class="stage-nav"><span>INTRO</span><span class="active">PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:51.72%"></i></div></footer>
+</section><section class="slide" id="16">
+<header><span>PRACTICE 2</span><span>16 / 29</span></header>
+<main><h1>NotebookLM으로 근거 브리핑을 만듭니다</h1><div class="section-cover"><span>실습 2 · 20분</span><h3>자료를 읽히는 것이 아니라, 근거를 회수합니다</h3><p>NotebookLM은 내가 넣은 자료 안에서만 답하므로, 출처 기반 브리핑을 만들 때 좋습니다.</p></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span class="active">PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:55.17%"></i></div></footer>
+</section><section class="slide" id="17">
+<header><span>PRACTICE 2</span><span>17 / 29</span></header>
+<main><h1>NotebookLM 시작하기</h1><div class="steps"><div class="step"><b>1</b><span>notebooklm.google.com에 접속합니다.</span></div><div class="step"><b>2</b><span>새 노트북을 만듭니다.</span></div><div class="step"><b>3</b><span>경쟁사 페이지, PDF, YouTube URL, 조사 문서를 소스로 넣습니다.</span></div><div class="step"><b>4</b><span>질문창에 근거 브리핑 프롬프트를 붙여넣습니다.</span></div></div><div class="note">YouTube URL을 넣으면 영상 내용의 핵심을 소스 기반으로 정리하는 데 활용할 수 있습니다. 단, 출처와 맥락 확인은 직접 해야 합니다.</div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span class="active">PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:58.62%"></i></div></footer>
+</section><section class="slide" id="18">
+<header><span>PRACTICE 2</span><span>18 / 29</span></header>
+<main><h1>복사 프롬프트: 근거 브리핑</h1><div class="prompt-wrap"><div class="prompt-head"><b>복사 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">업로드한 소스만 근거로 사용해서 브리핑을 만들어 주세요.
+
+주제: [내부 인사이트와 연결할 주제 입력]
+
+아래 형식으로 정리해 주세요.
+| 확인 질문 | 소스에서 확인된 근거 | 내부 데이터와 연결되는 지점 | 한계/주의 | 보고서 문장 초안 |
+
+근거가 부족한 내용은 추측하지 말고 "근거 부족"이라고 표시해 주세요.</pre></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span class="active">PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:62.07%"></i></div></footer>
+</section><section class="slide" id="19">
+<header><span>PRACTICE 2</span><span>19 / 29</span></header>
+<main><h1>YouTube와 공공데이터는 이렇게 씁니다</h1><table><thead><tr><th>자료</th><th>언제 쓰나</th><th>가져올 것</th></tr></thead><tbody><tr><td>YouTube</td><td>고객 언어와 트렌드 표현을 볼 때</td><td>댓글/제목/반응에서 반복되는 표현</td></tr><tr><td>공공데이터</td><td>지역·인구·기관 수 같은 외부 기준점이 필요할 때</td><td>센터 지역과 비교 가능한 숫자</td></tr><tr><td>경쟁사 홈페이지</td><td>메시지와 상품 구성을 비교할 때</td><td>대상, 혜택, 가격, CTA</td></tr><tr><td>뉴스/리포트</td><td>시장 변화 맥락이 필요할 때</td><td>변화 방향과 근거 문장</td></tr></tbody></table></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span class="active">PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:65.52%"></i></div></footer>
+</section><section class="slide" id="20">
+<header><span>PRACTICE 2</span><span>20 / 29</span></header>
+<main><h1>소스 로그를 남깁니다</h1><table><thead><tr><th>출처명</th><th>URL</th><th>가져온 근거</th><th>신뢰도</th><th>보고서에 쓸지</th></tr></thead><tbody><tr><td>공공데이터포털</td><td>data.go.kr</td><td>지역별 학령인구</td><td>높음</td><td>예</td></tr><tr><td>경쟁사 A</td><td>공식 홈페이지</td><td>무료 진단 강조</td><td>중간</td><td>예</td></tr><tr><td>YouTube 교육 채널</td><td>영상 URL</td><td>학부모 불안 키워드</td><td>중간</td><td>보조 근거</td></tr></tbody></table><div class="quote">외부 리서치는 링크를 많이 모으는 일이 아니라, 나중에 다시 검증할 수 있게 흔적을 남기는 일입니다.</div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span class="active">PRACTICE 2</span><span>PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:68.97%"></i></div></footer>
+</section><section class="slide" id="21">
+<header><span>PRACTICE 3</span><span>21 / 29</span></header>
+<main><h1>Gemini/ChatGPT로 비교표와 보고 문장을 만듭니다</h1><div class="section-cover"><span>실습 3 · 20분</span><h3>근거를 모았다면, 이제 판단 가능한 문장으로 바꿉니다</h3><p>내부 숫자 + 외부 근거 + 다음 액션이 같이 있어야 보고서 문장이 됩니다.</p></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:72.41%"></i></div></footer>
+</section><section class="slide" id="22">
+<header><span>PRACTICE 3</span><span>22 / 29</span></header>
+<main><h1>Gemini Deep Research 질문 만들기</h1><div class="prompt-wrap"><div class="prompt-head"><b>복사 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">바인그룹의 교육/상담/마케팅 업무 관점에서 아래 주제를 조사해 주세요.
+
+주제: [예: 검색광고 리드는 많지만 등록 전환이 낮은 이유]
+
+조사 범위:
+1. 시장/고객 니즈 변화
+2. 경쟁사 메시지와 상품 구성
+3. 참고할 수 있는 공개 데이터
+4. 내부 데이터와 연결했을 때 가능한 해석
+5. 바로 실행할 수 있는 다음 액션
+
+결과는 비교표, 핵심 시사점 5개, 다음 액션 3개로 정리해 주세요.</pre></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:75.86%"></i></div></footer>
+</section><section class="slide" id="23">
+<header><span>PRACTICE 3</span><span>23 / 29</span></header>
+<main><h1>보고 문장 프레임</h1><div class="cards five"><div class="card"><span class="mini">01</span><h3>관찰</h3><p>내부 데이터에서 무엇이 보였는가</p></div><div class="card"><span class="mini">02</span><h3>비교</h3><p>센터·채널·전월·경쟁사와 비교하면 무엇이 다른가</p></div><div class="card"><span class="mini">03</span><h3>근거</h3><p>외부 자료가 그 차이를 뒷받침하는가</p></div><div class="card"><span class="mini">04</span><h3>판단</h3><p>그래서 유지·확대·수정·중단 중 무엇을 할 것인가</p></div><div class="card"><span class="mini">05</span><h3>액션</h3><p>다음 주에 바로 할 일은 무엇인가</p></div></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:79.31%"></i></div></footer>
+</section><section class="slide" id="24">
+<header><span>PRACTICE 3</span><span>24 / 29</span></header>
+<main><h1>복사 프롬프트: 보고 문장 만들기</h1><div class="prompt-wrap"><div class="prompt-head"><b>복사 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">아래 내부 데이터 신호와 외부 리서치 근거를 합쳐 보고 문장 5개를 만들어 주세요.
+
+조건:
+- 각 문장은 관찰한 숫자, 외부 근거, 의미, 다음 액션을 포함합니다.
+- 과장하지 말고 근거가 약한 부분은 "추가 확인 필요"라고 씁니다.
+- 경영진 보고용 2문장, 실무 실행용 3문장으로 나눠 주세요.
+
+내부 신호:
+[붙여넣기]
+
+외부 근거:
+[붙여넣기]</pre></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:82.76%"></i></div></footer>
+</section><section class="slide" id="25">
+<header><span>PRACTICE 3</span><span>25 / 29</span></header>
+<main><h1>좋은 보고 문장 예시</h1><table><thead><tr><th>나쁜 문장</th><th>좋은 문장</th></tr></thead><tbody><tr><td>검색광고가 별로입니다.</td><td>검색광고는 리드 수는 많지만 등록 전환율이 낮아, 다음 모집에서는 광고비를 늘리기보다 랜딩 메시지와 상담 후속 안내를 먼저 수정하는 것이 우선입니다.</td></tr><tr><td>지인추천이 좋습니다.</td><td>지인추천은 유입 규모는 작지만 상담 후 등록 전환이 높아, 후기 콘텐츠와 추천 보상 구조를 결합하면 저비용 고전환 채널로 확대 가능성이 있습니다.</td></tr></tbody></table></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:86.21%"></i></div></footer>
+</section><section class="slide" id="26">
+<header><span>PRACTICE 3</span><span>26 / 29</span></header>
+<main><h1>AI가 만든 결론을 바로 믿지 않습니다</h1><div class="cards"><div class="card"><span class="mini">01</span><h3>근거 확인</h3><p>출처가 실제로 그 말을 하는지 확인합니다.</p></div><div class="card"><span class="mini">02</span><h3>숫자 검산</h3><p>전환율, 비율, 합계가 맞는지 Excel/Sheets에서 다시 봅니다.</p></div><div class="card"><span class="mini">03</span><h3>반대 질문</h3><p>다르게 해석할 가능성이 있는지 묻습니다.</p></div></div><div class="prompt-wrap"><div class="prompt-head"><b>검수 프롬프트</b><button class="copy-btn">복사</button></div><pre class="prompt">위 결론에 대해 반대 관점에서 검토해 주세요.
+1. 근거가 부족한 주장
+2. 다른 해석이 가능한 부분
+3. 숫자 계산을 다시 확인해야 할 부분
+4. 보고서에서 빼거나 완화해야 할 표현
+을 표로 정리해 주세요.</pre></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span class="active">PRACTICE 3</span><span>SUBMIT</span></div><div class="bar"><i style="width:89.66%"></i></div></footer>
+</section><section class="slide" id="27">
+<header><span>SUBMIT</span><span>27 / 29</span></header>
+<main><h1>최종 제출 기준</h1><table><thead><tr><th>제출물</th><th>최소 기준</th></tr></thead><tbody><tr><td>리서치 질문</td><td>내부 데이터에서 나온 질문 3개</td></tr><tr><td>소스 로그</td><td>외부 자료 링크 3개 이상</td></tr><tr><td>근거 브리핑</td><td>NotebookLM 또는 직접 정리한 근거 표 1개</td></tr><tr><td>보고 문장</td><td>내부 숫자+외부 근거+다음 액션이 들어간 문장 3개</td></tr><tr><td>막힌 지점</td><td>어느 단계에서 막혔는지 1줄</td></tr></tbody></table><div class="note">완성본이 아니어도 됩니다. “질문만 만든 상태”, “소스만 모은 상태”, “보고 문장 초안”도 제출 가능합니다.</div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span class="active">SUBMIT</span></div><div class="bar"><i style="width:93.10%"></i></div></footer>
+</section><section class="slide" id="28">
+<header><span>SUBMIT</span><span>28 / 29</span></header>
+<main><h1>4차수에서 가져갈 한 문장</h1><div class="big-quote">내부 데이터는 “무슨 일이 있었는지”를 보여주고,<br>외부 리서치는 “왜 그런지, 다음에 무엇을 할지”를 보강합니다.</div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span class="active">SUBMIT</span></div><div class="bar"><i style="width:96.55%"></i></div></footer>
+</section><section class="slide" id="29">
+<header><span>SUBMIT</span><span>29 / 29</span></header>
+<main><h1>수업 종료 전 만족도 조사</h1><div class="qr-wrap"><img src="../images/satisfaction_qr.png" alt="만족도 QR"><div><h3>만족도 조사</h3><p>아래 링크 또는 QR로 접속해 주세요.</p><a class="download" href="https://forms.gle/GDHNMbDsjq5aRZKFA">https://forms.gle/GDHNMbDsjq5aRZKFA</a></div></div></main>
+<footer><div class="stage-nav"><span>INTRO</span><span>PRACTICE 1</span><span>PRACTICE 2</span><span>PRACTICE 3</span><span class="active">SUBMIT</span></div><div class="bar"><i style="width:100.00%"></i></div></footer>
+</section><script>
+const slides=[...document.querySelectorAll('.slide')];
+function show(n){n=Math.max(1,Math.min(slides.length,n));slides.forEach(s=>s.classList.remove('active'));slides[n-1].classList.add('active');location.hash=String(n).padStart(2,'0')}
+function current(){return Math.max(1,parseInt(location.hash.replace('#','')||'1',10)||1)}
+window.addEventListener('hashchange',()=>show(current()));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')show(current()+1); if(e.key==='ArrowLeft'||e.key==='PageUp')show(current()-1)});
+document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click',async()=>{const txt=btn.closest('.prompt-wrap').querySelector('.prompt').innerText; await navigator.clipboard.writeText(txt); const old=btn.innerText; btn.innerText='복사됨'; setTimeout(()=>btn.innerText=old,1200)}));
+show(current());
+</script></body></html>
